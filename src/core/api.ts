@@ -1,44 +1,63 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 
 const checkStatus = (res: any) => {
-  if (res.ok) {
-    return res;
-  }
-  throw (res);
+  console.log('checking res status', res);
+  return JSON.parse(res);
+  // if (res.ok) {
+  //   return res;
+  // }
+  // throw (res);
 };
 
-type StepId = string;
-/** Navigation can be step id, or true for next, false for no navigation */
-type Navigate = StepId | boolean;
+const buildUrl = (...args: string[]) => {
+  return [...args].join('/');
+};
 
-interface Data {
+export type StepId = string;
+/** Navigation can be step id, or true for next, false for no navigation */
+export type Navigate = StepId | boolean;
+
+export interface Data {
   [name: string]: string | number | boolean;
 };
 
-interface CreateSessionOptions {
+export interface CreateSessionOptions {
   // An initial state with information already provided
-  data?: Data;
+  initialData?: Data;
   // If set as a valid goal, will use auto generated single question interview
   autogen?: string;
-}
+  // Id of the desired interview
+  interview?: string;
+  // Specific release, for testing purposes
+  release?: string;
+};
 
-interface SessionState {
+export interface SessionState {
   session: string;
-}
+};
 
-class Session {
+export class Session {
   private api: AxiosInstance;
-  private model: string;
-  private session: string | undefined;
+  private project: string;
+  private _state: SessionState;
+  
+  get id() {
+    return this._state.session;
+  };
+
+  get state() {
+    return this._state;
+  }
 
   /**
    * Create a new session instance
    * 
-   * @param model The model ID
+   * @param project The project ID
    */
-  constructor(api: AxiosInstance, model: string) {
+  constructor(api: AxiosInstance, project: string, state: SessionState) {
     this.api = api;
-    this.model = model;
+    this.project = project;
+    this._state = state;
   }
 
   /**
@@ -49,36 +68,36 @@ class Session {
    * @param release Target release to test against
    * @returns 
    */
-  create = async (interview: string | null, options?: CreateSessionOptions, release?: string) => {
-    const data = options ?? {};
-    const config: AxiosRequestConfig = {};
+  // create = async (interview: string | null, options?: CreateSessionOptions, release?: string) => {
+  //   const data = options ?? {};
+  //   const config: AxiosRequestConfig = {};
 
-    if(release) {
-      config.params = { release };
-    }
+  //   if(release) {
+  //     config.params = { release };
+  //   }
 
-    let url = this.model;
-    if(interview) {
-      url = [url, interview].join('/');
-    }
+  //   let url = this.model;
+  //   if(interview) {
+  //     url = [url, interview].join('/');
+  //   }
 
-    const res = await this.api.post<SessionState>(url, data, config);
-    this.session = res.data.session;
-    return res.data;
-  }
+  //   const res = await this.api.post<SessionState>(url, data, config);
+  //   this.session = res.data.session;
+  //   return res.data;
+  // }
 
   /**
    * Gets the sessions current state.
    *
    * @param session An existing session ID
    */
-  load = async (session: string) => {
-    // return this.api.get(this.model, { params: { id: this.interview, release: this.release } });
-    const url = [this.model, session].join('/');
-    const res = await this.api.get<SessionState>(url);
-    this.session = session;
-    return res.data;
-  };
+  // load = async (session: string) => {
+  //   // return this.api.get(this.model, { params: { id: this.interview, release: this.release } });
+  //   const url = this.buildUrl(this.model, session);
+  //   const res = await this.api.get<SessionState>(url);
+  //   this.session = session;
+  //   return res.data;
+  // };
 
   /**
    * Save the data but do not progress to the next step.
@@ -94,13 +113,9 @@ class Session {
    * @param navigate The desired navigation after update, defaults to next
    */
   submit = async (data: Data, navigate: Navigate = true) => {
-    if(this.session) {
-      const url = [this.model, this.session].join('/');
-      const res = await this.api.patch<SessionState>(url, { ...data, navigate });
-      return res.data;
-    } else {
-      throw new Error('Session: Cannot submit, no session defined. Create or load a session first.');
-    }
+    const url = buildUrl(this.project, this.id);
+    const res = await this.api.patch<SessionState>(url, { ...data, navigate });
+    return res.data;
   };
 
   /**
@@ -109,40 +124,66 @@ class Session {
    * @param step The desired step ID
    */
   navigate = async (step: StepId) => {
-    if(this.session) {
-      const url = [this.model, this.session].join('/');
-      const res = await this.api.patch<SessionState>(url, { navigate: step });
-      return res.data;
-    } else {
-      throw new Error('Session: Cannot navigate, no session defined. Create or load a session first.');
-    }
+    const url = buildUrl(this.project, this.id);
+    const res = await this.api.patch<SessionState>(url, { navigate: step });
+    return res.data;
   };
 
-}
+};
 
-// need package to provide host url (where to query)
-// optional env (sub location)
-// then want them to be able to create an instance with release and interview id
-// 
+// export type SessionFactory = (model: string) => Session;
 
-
-// need sessions
-// interviews are separate
-// should create session
-// can provide 
-
-export type SessionFactory = (model: string) => Session;
-
-export default (host: string, env: string = 'test') => {
+export const init = (host: string, env: string = 'test') => {
   const api = axios.create({
-    url: env,
-    baseURL: host,
+    baseURL: buildUrl(host, 'example', 'decisionapi', env),
     timeout: 30000,
     headers: { 'Content-Type': 'application/json' },
+    // already passed 200 check
     transformResponse: [checkStatus]
   });
 
   // return session factory
-  const factory: SessionFactory = (model) => new Session(api, model);
-  return factory;
+  // const factory: SessionFactory = (model) => new Session(api, model);
+  // return factory;
+  return {
+    create: async (project: string, options: CreateSessionOptions = {}) => {
+      const { initialData, autogen, interview, release } = options;
+      const config: AxiosRequestConfig = {};
+  
+      if(release) {
+        config.params = { release };
+      }
+  
+      let url = project;
+      if(interview) {
+        url = buildUrl(url, interview);
+      }
+      
+      // returns session id and screen info
+      const res = await api.post<SessionState>(url, { data: initialData, autogen }, config);
+      return res.data;
+
+      // const config: AxiosRequestConfig = {
+      //   params: {
+      //     interview,
+      //     release
+      //   }
+      // };
+
+      // // returns session id and screen info
+      // const res = await api.post<SessionState>(project, { data: initialData, autogen }, config);
+      // return res.data;
+    },
+    load: async (project: string, session: string) => {
+      try {
+        const url = buildUrl('progress', project);
+        const res = await api.post<SessionState>(url, { mode: 'interview2.0' }, { params: { interview: session } });
+        console.log('loaded session', res);
+        // return new Session(api, project, res.data);
+        return res.data;
+      } catch (err) {
+        console.log('api failed, load', err);
+      }
+    }
+  }
 }
