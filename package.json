@@ -1,6 +1,6 @@
 {
     "name": "@decisively-io/interview-sdk",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "An SDK for the Decisively interview system.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -8,7 +8,8 @@
         "clean": "rm -rf dist && rm -rf docs",
         "doc": "typedoc --theme github-wiki",
         "build": "yarn clean && tsc",
-        "dev": "tsc -w"
+        "dev": "tsc -w",
+        "deploy": "yarn build && yarn publish"
     },
     "keywords": [
         "decisively",
