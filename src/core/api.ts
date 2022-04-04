@@ -1,6 +1,6 @@
-import { AxiosInstance, AxiosRequestConfig } from "axios";
-
-import { Session, SessionConfig, Data, Navigate, StepId, SessionId, ProjectId } from "./types";
+import { Axios, AxiosInstance, AxiosRequestConfig } from "axios";
+import { Session, Data, Navigate, StepId, SessionId, ProjectId, Simulate } from "@decisively-io/types-interview";
+import { SessionConfig } from "./types";
 
 export const create = async (api: AxiosInstance, project: ProjectId, options: SessionConfig = {}) => {
   const { initialData, autogen, interview, release } = options;
@@ -16,8 +16,8 @@ export const create = async (api: AxiosInstance, project: ProjectId, options: Se
 };
 
 export const load = async (api: AxiosInstance, project: ProjectId, session: SessionId) => {
-    const res = await api.get<Session>(project, { params: { session } });
-    return res.data;
+  const res = await api.patch<Session>(project, {}, { params: { session } });
+  return res.data;
 };
 
 /**
@@ -26,7 +26,7 @@ export const load = async (api: AxiosInstance, project: ProjectId, session: Sess
  * @param data The data for the current step to submit
  * @param navigate The desired navigation after update, defaults to next
  */
-export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: Data, navigate: Navigate = true) => {
+export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: Data, navigate: Navigate) => {
   const res = await api.patch<Session>(project, { data, navigate }, { params: { session: session } });
   return res.data;
 };
@@ -40,3 +40,8 @@ export const navigate = async (api: AxiosInstance, project: ProjectId, session: 
   const res = await api.patch<Session>(project, { navigate: step }, { params: { session } });
   return res.data;
 };
+
+export const simulate = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: Simulate) => {
+  const res = await api.post<Data>(project, { mode: 'simulate', ...data }, { params: { session } });
+  return res.data;
+}
