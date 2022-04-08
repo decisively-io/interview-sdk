@@ -9,7 +9,7 @@
         "doc": "typedoc --theme github-wiki",
         "build": "yarn clean && tsc",
         "dev": "tsc -w",
-        "prepublish": "yarn build"
+        "deploy": "yarn build && yarn publish"
     },
     "keywords": [
         "decisively",
@@ -21,7 +21,8 @@
     "author": "Decisively",
     "license": "UNLICENSED",
     "devDependencies": {
-        "@decisively-io/types-interview": "^0.1.0",
+        "@decisively-io/types-interview": "^0.1.13",
+        "@types/uuid": "^8.3.4",
         "prettier": "^2.5.1",
         "prettier-eslint": "^13.0.0",
         "typedoc": "^0.22.13",
@@ -32,6 +33,7 @@
     "dependencies": {
         "axios": "^0.26.1",
         "immer": "^9.0.12",
-        "rxjs": "^7.5.5"
+        "rxjs": "^7.5.5",
+        "uuid": "^8.3.2"
     }
 }

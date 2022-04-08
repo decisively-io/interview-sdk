@@ -1,6 +1,10 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosRequestTransformer, AxiosResponseTransformer } from "axios";
-import { Data, State, StepId } from "@decisively-io/types-interview";
-import { buildUrl } from "./util";
+import produce from "immer";
+import { v4 as uuid } from 'uuid';
+
+import { AttributeData, AttributeValue, Control, Session, StepId, ResponseData } from "@decisively-io/types-interview";
+import { ControlTypes } from "./constants";
+import { buildUrl, stateToData, range } from "./util";
 import { create, load, submit, navigate } from './api';
 import { SessionConfig,SessionInstance } from './types';
 import { render } from "./placeholders";
@@ -26,20 +30,46 @@ export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig
   });
 };
 
-// should submit apply any context? depends on collection approach??
+const transformControlValue = (value: AttributeValue, control: Control): any => {
+  switch(control.type) {
+    case ControlTypes.NUMBEROFINSTANCES:
+      return range(Number(value)).map((i) => ({ '@id': uuid() }));
+    case ControlTypes.ENTITY:
+      return value;
+    default:
+      return value;
+  }
+};
 
-const stateToData = (state: State): Data => {
-  return Object.keys(state).reduce((acc: Data, key) => {
-    acc[key] = state[key].value;
-    return acc;
-  }, {});
+interface IControl {
+  attribute?: string;
+  entity?: string;
+}
+
+export const transformResponse = (session: Session, data: ResponseData): ResponseData => {
+  return produce(data, draft => {
+    if(session.data[ '@parent' ]) {
+      draft[ '@parent' ] = session.data[ '@parent' ];
+    }
+
+    for(let id of Object.keys(draft)) {
+      const control = (session.screen.controls as IControl[])
+        .find(c => c.attribute === id || c.entity === id);
+      if(control) {
+        draft[id] = transformControlValue(draft[id], control as Control);
+      }
+    }
+  })
 };
 
 const createSessionTransform = (api: AxiosInstance, project: string, session: string): AxiosResponseTransformer => (res) => {
   res._api = api;
   res._project = project;
-  res.submit = (data: Data, navigate: any) => submit(api, project, session, data, navigate);
-  res.save = (data: Data) => submit(api, project, session, data, false);
+  res.submit = (data: AttributeData, navigate: any) => {
+    console.log('submitting', data);
+    return submit(api, project, session, data, navigate);
+  };
+  res.save = (data: AttributeData) => submit(api, project, session, data, false);
   res.navigate = (step: StepId) => navigate(api, project, session, step);
   res.render = (value: string) => render(value, res.state ? stateToData(res.state) : {});
   return res;
