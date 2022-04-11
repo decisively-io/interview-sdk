@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@decisively-io/types-interview@^0.1.13":
-  version "0.1.13"
-  resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.1.13/21c30e7ce93aa59b74e97d94418e7f5d2550a72b0af7f0ad5ebda3b1796c55c1#7c135ca1c63d7d0d5f9725bc86ee472a15c15637"
-  integrity sha512-Be6pEmmZUgo4Kg4xHmkqcgQG++ZeCPsikpu3qQU4Gex5paLYoNBs+C9mNUXCpVq9QsGRK9CugSn8dBpvLsaJLA==
+"@decisively-io/types-interview@^0.1.17":
+  version "0.1.17"
+  resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.1.17/f4c4ae4e62d907c8790d707d1370f41c145a22e5a3d4b3317bc41ed832520695#fc824b19771fd5cee1bfbaf83008c7799e5c630a"
+  integrity sha512-GxZoBc4zg6PD19d6z5gtvcOD2B0yJoDD4733W6G4ipgesSiPOEUE0wePjgSLAxDfmSMT8AWFY+pgAw7uwo1qyw==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"

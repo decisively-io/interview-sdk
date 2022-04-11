@@ -66,7 +66,7 @@ const createSessionTransform = (api: AxiosInstance, project: string, session: st
   res._api = api;
   res._project = project;
   res.submit = (data: AttributeData, navigate: any) => {
-    console.log('submitting', data);
+    console.log('submitting', data, navigate);
     return submit(api, project, session, data, navigate);
   };
   res.save = (data: AttributeData) => submit(api, project, session, data, false);

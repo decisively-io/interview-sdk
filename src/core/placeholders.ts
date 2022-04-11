@@ -35,6 +35,8 @@ interface AttributeControl {
   onChange?: Subject<string>;
 };
 
+/*
+
 export const generateObserver = (session: SessionInstance, attribute: string, dependencies: string[], debounce = 500) => {
   // const simulated = new Subject();
   
@@ -98,16 +100,25 @@ export const generateObservables = (session: SessionInstance) => {
   })
 };
 
+*/
+
 // data only needs to be the dependencies, however sending the entire
 // form state is likely not that bad and would provide all required data
 export const populate = async (session: SessionInstance, data: AttributeData) => {
   const { _api, _project, sessionId, state } = session;
-  const goals = Object.keys(state);
-  const res: AttributeData = await simulate(_api, _project, sessionId, { goals, data });
-  // update session state with new data
-  return produce(session, (draft) => {
-    Object.keys(res).forEach(id => {
-      draft.state[id].value = res[id];
+  if (state) {
+    const goals = Object.keys(state);
+    const res: AttributeData = await simulate(_api, _project, sessionId, { goals, data });
+    // update session state with new data
+    return produce(session, (draft) => {
+      const { state: s } = draft;
+      if (s !== undefined) {
+        Object.keys(res).forEach(id => {
+          s[id].value = res[id];
+        });
+      }
     });
-  });
+  }
+
+  return session;
 };
