@@ -12,10 +12,12 @@ export interface SessionConfig {
   release?: ReleaseId;
 };
 
+export type Overrides = Record<string, any>;
+
 export interface SessionInstance extends Session {
   _api: AxiosInstance;
   _project: ProjectId;
-  submit: (data: AttributeData, navigate?: Navigate) => Promise<SessionInstance>;
+  submit: (data: AttributeData, navigate?: Navigate, overrides?: Overrides) => Promise<SessionInstance>;
   save: (data: AttributeData) => Promise<SessionInstance>;
   navigate: (step: StepId) => Promise<SessionInstance>;
   render: (value: string) => string;

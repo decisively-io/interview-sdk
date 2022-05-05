@@ -1,9 +1,9 @@
 import { AxiosInstance, AxiosRequestConfig } from "axios";
 import { Session, AttributeData, Navigate, StepId, SessionId, ProjectId, Simulate } from "@decisively-io/types-interview";
-import { SessionConfig } from "./types";
+import { Overrides, SessionConfig } from "./types";
 
 export const create = async (api: AxiosInstance, project: ProjectId, options: SessionConfig = {}) => {
-  const { initialData, autogen, interview, release } = options;
+  const { initialData, autogen, interview, release, ...rest } = options;
   const config: AxiosRequestConfig = {
     params: {
       release,
@@ -11,7 +11,7 @@ export const create = async (api: AxiosInstance, project: ProjectId, options: Se
     }
   };
 
-  const res = await api.post<Session>(project, { data: initialData, autogen }, config);
+  const res = await api.post<Session>(project, { data: initialData, autogen, ...rest }, config);
   return res.data;
 };
 
@@ -25,9 +25,10 @@ export const load = async (api: AxiosInstance, project: ProjectId, session: Sess
  * 
  * @param data The data for the current step to submit
  * @param navigate The desired navigation after update, defaults to next
+ * @param overrdes Other params to pass through to payload
  */
-export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: AttributeData, navigate: Navigate) => {
-  const res = await api.patch<Session>(project, { data, navigate }, { params: { session: session } });
+export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: AttributeData, navigate: Navigate, overrides: Overrides) => {
+  const res = await api.patch<Session>(project, { data, navigate, ...overrides }, { params: { session: session } });
   return res.data;
 };
 

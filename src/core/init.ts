@@ -6,24 +6,26 @@ import { AttributeData, AttributeValue, Control, Session, StepId, ResponseData }
 import { ControlTypes } from "./constants";
 import { buildUrl, stateToData, range } from "./util";
 import { create, load, submit, navigate } from './api';
-import { SessionConfig,SessionInstance } from './types';
+import { Overrides, SessionConfig, SessionInstance } from './types';
 import { render } from "./placeholders";
 
 const MODE = 'interview2.0';
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
+  const { transformRequest = [] } = overrides;
   return axios.create({
     baseURL,
     timeout: 30000,
     headers: { 'Content-Type': 'application/json' },
     transformRequest: [
       (req) => {
-        if(!req.mode) {
+        if (!req.mode) {
           // inject mode onto request if not defined
           req.mode = MODE;
         }
         return req;
       },
+      ...transformRequest as AxiosRequestTransformer[],
       ...axios.defaults.transformRequest as AxiosRequestTransformer[]
     ],
     ...overrides
@@ -31,7 +33,7 @@ export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig
 };
 
 const transformControlValue = (value: AttributeValue, control: Control): any => {
-  switch(control.type) {
+  switch (control.type) {
     case ControlTypes.NUMBEROFINSTANCES:
       return range(Number(value)).map((i) => ({ '@id': uuid() }));
     case ControlTypes.ENTITY:
@@ -48,14 +50,14 @@ interface IControl {
 
 export const transformResponse = (session: Session, data: ResponseData): ResponseData => {
   return produce(data, draft => {
-    if(session.data[ '@parent' ]) {
-      draft[ '@parent' ] = session.data[ '@parent' ];
+    if (session.data['@parent']) {
+      draft['@parent'] = session.data['@parent'];
     }
 
-    for(let id of Object.keys(draft)) {
+    for (let id of Object.keys(draft)) {
       const control = (session.screen.controls as IControl[])
         .find(c => c.attribute === id || c.entity === id);
-      if(control) {
+      if (control) {
         draft[id] = transformControlValue(draft[id], control as Control);
       }
     }
@@ -65,24 +67,24 @@ export const transformResponse = (session: Session, data: ResponseData): Respons
 const createSessionTransform = (api: AxiosInstance, project: string, session: string): AxiosResponseTransformer => (res) => {
   res._api = api;
   res._project = project;
-  res.submit = (data: AttributeData, navigate: any) => {
-    console.log('submitting', data, navigate);
-    return submit(api, project, session, data, navigate);
+  res.submit = (data: AttributeData, navigate: any, overrides: Overrides = {}) => {
+    console.log('submitting', data, navigate, overrides);
+    return submit(api, project, session, data, navigate, overrides);
   };
-  res.save = (data: AttributeData) => submit(api, project, session, data, false);
+  res.save = (data: AttributeData) => submit(api, project, session, data, false, {});
   res.navigate = (step: StepId) => navigate(api, project, session, step);
   res.render = (value: string) => render(value, res.state ? stateToData(res.state) : {});
   return res;
 };
 
-export const init = (host: string, env: string = 'test') => {
+export const init = (host: string, env: string = 'test', overrides: AxiosRequestConfig = {}) => {
   const baseUrl = buildUrl(host, 'example', 'decisionapi', env, 'progress');
-  const api = createApiInstance(baseUrl);
+  const api = createApiInstance(baseUrl, overrides);
 
   const transformApi = (project: string, session: string) => {
     api.defaults.transformResponse = [
-        ...axios.defaults.transformResponse as AxiosResponseTransformer[],
-        createSessionTransform(api, project, session)
+      ...axios.defaults.transformResponse as AxiosResponseTransformer[],
+      createSessionTransform(api, project, session)
     ];
   };
 
