@@ -1,17 +1,17 @@
 import { AxiosInstance, AxiosRequestConfig } from "axios";
 import { Session, AttributeData, Navigate, StepId, SessionId, ProjectId, Simulate } from "@decisively-io/types-interview";
 import { Overrides, SessionConfig } from "./types";
+import { buildUrl } from "./util";
 
 export const create = async (api: AxiosInstance, project: ProjectId, options: SessionConfig = {}) => {
-  const { initialData, autogen, interview, release, ...rest } = options;
+  const { initialData, interview, release, ...rest } = options;
   const config: AxiosRequestConfig = {
     params: {
-      release,
       interview
     }
   };
 
-  const res = await api.post<Session>(project, { data: initialData, autogen, ...rest }, config);
+  const res = await api.post<Session>(buildUrl(project, release), { data: initialData ?? {}, ...rest }, config);
   return res.data;
 };
 

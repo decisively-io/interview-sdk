@@ -1,7 +1,7 @@
 import { State, AttributeData } from '@decisively-io/types-interview';
 
-export const buildUrl = (...args: string[]) => {
-    return [...args].join('/');
+export const buildUrl = (...args: (string | undefined)[]) => {
+  return [...args.filter(a => !!a)].join('/');
 };
 
 export const range = (size: number, startAt: number = 0) => {

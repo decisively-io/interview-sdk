@@ -4,8 +4,6 @@ import { AttributeData, InterviewId, Navigate, ProjectId, ReleaseId, Session, St
 export interface SessionConfig {
   // An initial state with information already provided
   initialData?: AttributeData;
-  // If set as a valid goal, will use auto generated single question interview
-  autogen?: string;
   // Id of the desired interview
   interview?: InterviewId;
   // Specific release, for testing purposes

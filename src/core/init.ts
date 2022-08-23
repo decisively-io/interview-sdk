@@ -9,8 +9,6 @@ import { create, load, submit, navigate } from './api';
 import { Overrides, SessionConfig, SessionInstance } from './types';
 import { render } from "./placeholders";
 
-const MODE = 'interview2.0';
-
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
   const { transformRequest = [] } = overrides;
   return axios.create({
@@ -18,13 +16,6 @@ export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig
     timeout: 30000,
     headers: { 'Content-Type': 'application/json' },
     transformRequest: [
-      (req) => {
-        if (!req.mode) {
-          // inject mode onto request if not defined
-          req.mode = MODE;
-        }
-        return req;
-      },
       ...transformRequest as AxiosRequestTransformer[],
       ...axios.defaults.transformRequest as AxiosRequestTransformer[]
     ],
@@ -77,8 +68,10 @@ const createSessionTransform = (api: AxiosInstance, project: string, session: st
   return res;
 };
 
-export const init = (host: string, env: string = 'test', overrides: AxiosRequestConfig = {}) => {
-  const baseUrl = buildUrl(host, 'example', 'decisionapi', env, 'progress');
+export const defaultPath = ["decisionapi", "interview"];
+
+export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}) => {
+  const baseUrl = buildUrl(host, ...(typeof path === 'string' ? [path] : path));
   const api = createApiInstance(baseUrl, overrides);
 
   const transformApi = (project: string, session: string) => {
