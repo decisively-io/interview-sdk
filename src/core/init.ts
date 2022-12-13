@@ -68,7 +68,7 @@ const createSessionTransform = (api: AxiosInstance, project: string, session: st
   return res;
 };
 
-export const defaultPath = ["decisionapi", "interview"];
+export const defaultPath = ["decisionapi", "session"];
 
 export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}) => {
   const baseUrl = buildUrl(host, ...(typeof path === 'string' ? [path] : path));
