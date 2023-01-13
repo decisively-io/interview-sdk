@@ -26,3 +26,6 @@ export interface SessionInstance extends Session {
   // dynamic interview methods
   chOnScreenData: DynamicUpdateFunction; // allows the render-implementation to notify the SDK that the on-screen data has changed
 };
+
+// this is just typed for clarity
+export type SessionObservable = Partial<Session>;

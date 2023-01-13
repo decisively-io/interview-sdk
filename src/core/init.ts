@@ -1,14 +1,25 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosRequestTransformer, AxiosResponseTransformer } from "axios";
 import produce from "immer";
 import { v4 as uuid } from 'uuid';
-
+import { Subject, interval, take, fromEvent, throttleTime, scan, map, skipWhile, filter, Observable, merge, Subscription, distinctUntilChanged, debounceTime } from "rxjs";
+import isEqual      from "lodash.isequal";
+import Mustache     from "mustache";
 import { AttributeData, AttributeValue, Control, Session, StepId, ResponseData } from "@decisively-io/types-interview";
 import { ControlTypes } from "./constants";
-import { buildUrl, stateToData, range } from "./util";
-import { create, load, submit, navigate } from './api';
-import { DynamicUpdateFunction, Overrides, SessionConfig, SessionInstance } from './types';
-import { render } from "./placeholders";
-import { Subject, interval, take, fromEvent, throttleTime, scan, map, skipWhile, filter, Observable, merge, Subscription } from "rxjs";
+import { buildUrl, 
+         stateToData, 
+         range }        from "./util";
+import { create, 
+          load, 
+          submit, 
+          navigate }    from './api';
+import { DynamicUpdateFunction, 
+         Overrides, 
+         SessionConfig,
+         SessionInstance, 
+         SessionObservable } from './types';
+import { render }            from "./placeholders";
+import { replaceTemplatedText } from "./helpers";
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
   const { transformRequest = [] } = overrides;
@@ -63,7 +74,7 @@ const createSessionTransform = (
     project         : string, 
     session         : string, 
     chOnScreenData? : DynamicUpdateFunction,
-    chSessionState? : (data: Partial<Session>) => void,
+    chSessionState?: (data: SessionObservable) => void,
   ): AxiosResponseTransformer => (res) => {
 
   res._api           = api;
@@ -82,14 +93,14 @@ const createSessionTransform = (
 
   if (chSessionState) {
     chSessionState({
-      sessionId: res.sessionId,
-      status   : res.status   ,
-      context  : res.context  ,
-      data     : res.data     ,
       state    : res.state    ,
       screen   : res.screen   ,
-      steps    : res.steps    ,
-      progress : res.progress ,
+      // sessionId: res.sessionId,
+      // status   : res.status   ,
+      // context  : res.context  ,
+      // data     : res.data     ,
+      // steps    : res.steps    ,
+      // progress : res.progress ,
     });
   }
 
@@ -101,8 +112,11 @@ export const defaultPath = ["decisionapi", "session"];
 /**
  * Initialize the SDK
  * 
- * newDataCallback : SDK -{updated session}-> Renderer
+ * newDataCallback : SDK -{updated session}-> Renderer : 
+ *    - (the function never moves, so we can safely give it to the renderer)
  * chOnScreenData  : Renderer -{updated attribute}-> SDK
+ *    - if using react, the renderer needs to be careful, because unless this function is within
+ *      a HOC, it will be recreated on every render, and the SDK will not be able to send updates
  */
 export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}) => {
 
@@ -115,7 +129,7 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
     project        : string, 
     session        : string,
     chOnScreenData?: DynamicUpdateFunction,
-    chSessionState?: (data: Partial<Session>) => void,
+    chSessionState?: (data: SessionObservable) => void,
   ) => {
     api.defaults.transformResponse = [
       ...axios.defaults.transformResponse as AxiosResponseTransformer[],
@@ -141,30 +155,52 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
       /**
        * $ - Track the current session
        */
-
-      const sessionStateChanged$ = new Subject<Partial<Session>>();
-      const chSessionState = (data: Partial<Session>) => sessionStateChanged$.next(data);
+      const sessionStateChanged$ = new Subject<SessionObservable>();
+      const chSessionState = (data: SessionObservable) => sessionStateChanged$.next(data);
 
       /**
-       * $+$ Merge the two streams above to create a new stream that will be used to update the session
+       * $+$ Merge the two streams above into a single observer that we can subscribe to
        */
 
       sessionState$ = merge(
         onScreenDataChanged$.pipe(
-          throttleTime(1000),
+          // you want a debounce rather than a throttle...wait for a second to ensure the user has finished typing/inputting/selecting/etc.
+          debounceTime(1000),
+          // collect all changes the user makes on-screen
           scan( (acc, curr) => ({ ...acc, ...curr }), {} as AttributeData ),
-          // TODO filter to see if the data is even relevant to the current session/state
-          // TODO work out if we need to make a request back to the server and update the session
           // we don't need to reset the observable during a session, because if an attribute is changed, it should be consistent across all screens
           map( (usrEnteredData) => ({ usrEnteredData }) ),
+
+          // TODO filter based on if the data is even relevant to the current session/state...not sure I can do this without the session state
         ),
         sessionStateChanged$.pipe(
           map( (sessionData) => ({ sessionData }) ),
         ),
       ).pipe(
         scan( (acc, curr) => ({ ...acc, ...curr }), { usrEnteredData: {}, sessionData: {} } ),
+        // if nothing has changed, don't emit
+        distinctUntilChanged( (a, b) => isEqual(a, b) ),
       ).subscribe( (val) => {
-        console.log('observerMTpEg:', val)
+        // console.log('observerMTpEcc:', val);
+        const replacedSession = produce<SessionObservable>(val.sessionData, (draft) => {
+          
+          const {state, screen} = draft;
+          if (state && screen) {
+
+            const replacements = {
+              "5287c6f7-a910-47d2-aa9d-bb157b2d5bba": "I like clouds",
+            };
+            screen.controls.forEach( (ctrl: any) => {
+              replaceTemplatedText(
+                ctrl,
+                ['text', 'label'],
+                replacements,
+              );
+            });
+          }
+        });
+        console.log('replacedSession:', replacedSession);
+        newDataCallback && newDataCallback(replacedSession);
       });
 
       // -- create the session
