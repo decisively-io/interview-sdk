@@ -177,15 +177,15 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
           map( (sessionData) => ({ sessionData }) ),
         ),
       ).pipe(
-        scan( (acc, curr) => ({ ...acc, ...curr }), { usrEnteredData: {}, sessionData: {} } ),
+        scan( (acc, curr) => ({ ...acc, ...curr, count: ++acc.count }), { usrEnteredData: {}, sessionData: {}, count: 0 } ),
         // if nothing has changed, don't emit
         distinctUntilChanged( (a, b) => isEqual(a, b) ),
       ).subscribe( (val) => {
-        // console.log('observerMTpEcc:', val);
+        // console.log('observerMTpEcc:val', val);
         const replacedSession = produce<SessionObservable>(val.sessionData, (draft) => {
           
           const {state, screen} = draft;
-          if (state && screen) {
+          if (state && screen) { // TODO getting a bug that the state is undefined when we navigate BACK, so we don't trip this logic
 
             const replacements = {
               "5287c6f7-a910-47d2-aa9d-bb157b2d5bba": "I like clouds",
@@ -198,8 +198,9 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
               );
             });
           }
+          draft.renderAt = val.count;
         });
-        console.log('replacedSession:', replacedSession);
+        console.log('sdk::observerMTpEcc:replacedSession:', replacedSession);
         newDataCallback && newDataCallback(replacedSession);
       });
 
