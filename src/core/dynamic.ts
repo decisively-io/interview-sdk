@@ -4,30 +4,42 @@ import { AttributeData,
          Simulate, 
          State }          from "@decisively-io/types-interview";
 import { AxiosInstance }  from "axios";
+import isEmpty            from "lodash.isempty";
 import { simulate }       from "./api";
 
 /**
  * Builds a list of known values, and a list of requests to be made against the API for unknown values
  * @param state Is the interview state for the current step
  * @param attribValues Is the data entered by the user (and any static attribute values)
+ * @param ignoreEmpty Set to `true` in order to discard empty values from `attribValues`. This could happen \
+ *                    if the user has entered a value into an input, then deleted it
  * @returns A list of known values, plus preformed requests to be made against the API for the unknown values
  */
-const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeData) => {
+const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeData, ignoreEmpty: boolean) => {
 
   const knownValues  : AttributeData       = {...attribValues};
   const unKnownValues: Partial<Simulate>[] = [];
+
+  if (ignoreEmpty) {
+    // remove all empty known values
+    for (const key of Object.keys(knownValues)) {
+      if (isEmpty(knownValues[key]) || knownValues[key] === '') {
+        delete knownValues[key];
+      }
+    }
+  }
 
   for (const stateObj of state) {
     const { id: goal, dependencies, value } = stateObj;
     if (goal) {
       if (undefined === value) {
         if (dependencies && dependencies.length > 0) {
-          const dependenciesKnown = dependencies.every((dep) => attribValues.hasOwnProperty(dep));
+          const dependenciesKnown = dependencies.every((dep) => knownValues.hasOwnProperty(dep));
           if (dependenciesKnown) {
             unKnownValues.push({
               goal,
               data: dependencies.reduce((acc, cur) => {
-                acc[cur] = attribValues[cur];
+                acc[cur] = knownValues[cur];
                 return (acc);
               }, {} as AttributeData)
             });
@@ -60,7 +72,7 @@ export const buildDynamicReplacements = async (
   sessionId    : SessionId,
   ): Promise<AttributeData> => {
   
-  const replacementQueries = buildDynamicReplacementQueries(state, attribValues);
+  const replacementQueries = buildDynamicReplacementQueries(state, attribValues, true);
 
   try {
     const { knownValues, unKnownValues } = replacementQueries;
