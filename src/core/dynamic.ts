@@ -1,6 +1,10 @@
-import { AttributeData, ProjectId, SessionId, Simulate, State } from "@decisively-io/types-interview";
-import { AxiosInstance } from "axios";
-import { simulate } from "./api";
+import { AttributeData, 
+         ProjectId, 
+         SessionId, 
+         Simulate, 
+         State }          from "@decisively-io/types-interview";
+import { AxiosInstance }  from "axios";
+import { simulate }       from "./api";
 
 /**
  * Builds a list of known values, and a list of requests to be made against the API for unknown values
@@ -10,7 +14,7 @@ import { simulate } from "./api";
  */
 const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeData) => {
 
-  const knownValues  : AttributeData       = {};
+  const knownValues  : AttributeData       = {...attribValues};
   const unKnownValues: Partial<Simulate>[] = [];
 
   for (const stateObj of state) {
@@ -28,19 +32,19 @@ const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeD
               }, {} as AttributeData)
             });
           }
-        } else if (attribValues.hasOwnProperty(goal)) {
-          // if there's no dependencies, and the goal is in the attribValues, then we can use it
-          knownValues[goal] = attribValues[goal];
-        }
+        } 
       } else {
         knownValues[goal] = value;
       }
     }
   }
 
+  // remove requests where the goal already has a value, or was entered directly by the user
+  const unKnownValuesFin = unKnownValues.filter((it) => !knownValues.hasOwnProperty(it.goal!));
+
   return({
     knownValues,   // the known values
-    unKnownValues, // the requests to be made against the API
+    unKnownValues: unKnownValuesFin, // the requests to be made against the API
   });
 }
 
@@ -60,6 +64,7 @@ export const buildDynamicReplacements = async (
 
   try {
     const { knownValues, unKnownValues } = replacementQueries;
+    console.log(`simulating for ${unKnownValues.length} unknown(s)...`);
     const simResAll = (await Promise.all(
       unKnownValues.map( (simReq) => simulate(api, project, sessionId, simReq) )
     )).reduce((acc, simRes, idx) => { 

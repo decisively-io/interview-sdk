@@ -1,6 +1,10 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosRequestTransformer, AxiosResponseTransformer } from "axios";
-import produce from "immer";
-import { v4 as uuid } from 'uuid';
+import axios, { AxiosInstance, 
+  AxiosRequestConfig, 
+  AxiosRequestTransformer, 
+  AxiosResponseTransformer }        from "axios";
+import produce                      from "immer";
+import isEmpty                      from "lodash.isempty";
+import { v4 as uuid }               from 'uuid';
 import { Subject, 
          scan, 
          map, 
@@ -9,30 +13,29 @@ import { Subject,
          Subscription, 
          distinctUntilChanged, 
          debounceTime, 
-         takeWhile } from "rxjs";
-import isEqual      from "lodash.isequal";
+         takeWhile }                from "rxjs";
+import isEqual                      from "lodash.isequal";
 import { AttributeData, 
          AttributeValue, 
          Control, 
          Session, 
          StepId, 
-         ResponseData } from "@decisively-io/types-interview";
-import { ControlTypes } from "./constants";
+         ResponseData }             from "@decisively-io/types-interview";
+import { ControlTypes }             from "./constants";
 import { buildUrl, 
          stateToData, 
-         range }        from "./util";
+         range }                    from "./util";
 import { create, 
           load, 
           submit, 
-          navigate,
-          simulate }    from './api';
+          navigate }                from './api';
 import { DynamicUpdateFunction, 
          Overrides, 
          SessionConfig,
          SessionInstance, 
-         SessionObservable } from './types';
-import { render }            from "./placeholders";
-import { replaceTemplatedText } from "./helpers";
+         SessionObservable }        from './types';
+import { render }                   from "./placeholders";
+import { replaceTemplatedText }     from "./helpers";
 import { buildDynamicReplacements } from "./dynamic";
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
@@ -105,7 +108,8 @@ const createSessionTransform = (
     res.chOnScreenData = chOnScreenData;
   }
 
-  if (chSessionState) {
+  if (chSessionState && !isEmpty(res.screen)) {
+    // note: the check on screen is just a lazy way to check this isn't a simulation response
     chSessionState({
       state    : res.state    ,
       screen   : res.screen   ,
@@ -178,26 +182,29 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
 
       sessionState$ = merge(
         onScreenDataChanged$.pipe(
-          // you want a debounce rather than a throttle...wait for a second to ensure the user has finished typing/inputting/selecting/etc.
+          // debounce (not throttle)...wait for a second to ensure the user has finished typing/inputting/selecting/etc., then emit
           debounceTime(1000),
-          // collect all changes the user makes on-screen
+          // collect all prev. changes the user makes on-screen (across all screens)
           scan( (acc, curr) => ({ ...acc, ...curr }), {} as AttributeData ),
           // we don't need to reset the observable during a session, because if an attribute is changed, it should be consistent across all screens
           map( (usrEnteredData) => ({ usrEnteredData }) ),
 
-          // TODO filter based on if the data is even relevant to the current session/state...not sure I can do this without the session state
+          // TODO filter based on if the data is even relevant to the current session/state...not sure I can do this without the session state, which is the next observable
         ),
         sessionStateChanged$.pipe(
           map( (sessionData) => ({ sessionData }) ),
         ),
       ).pipe(
         takeWhile( (val) => undefined !== newDataCallback ),
-        scan( (acc, curr) => ({ ...acc, ...curr, count: ++acc.count }), { usrEnteredData: {}, sessionData: {}, count: 0 } ),
+        // consolidate all changes into a single object
+        scan( (acc, curr) => ({ ...acc, ...curr }), { usrEnteredData: {}, sessionData: {} } ),
         // if nothing has changed, don't emit
         distinctUntilChanged( (a, b) => isEqual(a, b) ),
+        // if session has not been fetched, don't emit
+        filter( (val) => !isEmpty(val.sessionData) ),
       ).subscribe( async (val) => {
-        // console.log('observerMTpEcc:val', val);
-        // TODO I need to also merge in any static control values that are not dynamic, plus known state values
+        console.log('observerMTpEcc:val', val);
+        // TODO Check, do I need to also merge in any static control values that are not dynamic, plus known state values - or does the graph already take these into account when computing the dependencies?
         const replacedSession = await produce<SessionObservable>(val.sessionData, async (draft) => {
           
           const {state, screen} = draft;
@@ -206,7 +213,7 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
             // TODO getting a bug that the state is undefined when we navigate BACK, so we don't trip this logic..need to see what the backend is doing
 
             // ask the backend to solve for any dynamic attributes, based on the attributes we know (entered and static)
-            const replacements = await buildDynamicReplacements(state, val.usrEnteredData, api, project, draft.sessionId!);
+            const replacements = await buildDynamicReplacements(state, val.usrEnteredData, api, project, (val.sessionData as SessionObservable).sessionId!);
             // replace anything replaceable on the screen
             screen.controls.forEach( (ctrl: any) => {
               replaceTemplatedText(
@@ -216,10 +223,11 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
               );
             });
           }
-          draft.renderAt = val.count;
+          draft.renderAt = Date.now(); // fine-grained enough for the renderer to know when to re-render
         });
-        console.log('sdk::observerMTpEcc:replacedSession:', replacedSession);
+
         if (newDataCallback && replacedSession.screen) {
+          console.log('sdk::observerMTpEcc:replacedSession:', replacedSession);
           newDataCallback(replacedSession);
         }
       });
