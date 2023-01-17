@@ -1,4 +1,4 @@
-import { Step } from '@decisively-io/types-interview';
+import { AttributeData, Step } from '@decisively-io/types-interview';
 import { produce } from 'immer';
 import Mustache from "mustache";
 
@@ -34,7 +34,7 @@ export const getCurrentStep = (s: Step): typeof s | null => {
 
 // -- text replacement helpers
 
-export const replaceTemplatedText = (obj: any, propNames: string[], replacements: Record<string, string>) => {
+export const replaceTemplatedText = (obj: any, propNames: string[], replacements: AttributeData | Record<string, string>) => {
   
   for (const propName of propNames) {
     if (obj.hasOwnProperty(propName) && obj[propName]) {

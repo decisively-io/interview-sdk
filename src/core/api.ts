@@ -42,7 +42,17 @@ export const navigate = async (api: AxiosInstance, project: ProjectId, session: 
   return res.data;
 };
 
-export const simulate = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: Simulate) => {
-  const res = await api.post<AttributeData>(project, { mode: 'simulate', ...data }, { params: { session } });
+export const simulate = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: Partial<Simulate>) => {
+  const res = await api.post<AttributeData>(
+      project, 
+      { 
+        mode: 'api',
+        save: false,
+        ...data,
+      },
+      { 
+        params: { session },
+      }
+    );
   return res.data;
 }

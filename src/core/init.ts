@@ -1,10 +1,22 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosRequestTransformer, AxiosResponseTransformer } from "axios";
 import produce from "immer";
 import { v4 as uuid } from 'uuid';
-import { Subject, interval, take, fromEvent, throttleTime, scan, map, skipWhile, filter, Observable, merge, Subscription, distinctUntilChanged, debounceTime } from "rxjs";
+import { Subject, 
+         scan, 
+         map, 
+         filter, 
+         merge, 
+         Subscription, 
+         distinctUntilChanged, 
+         debounceTime, 
+         takeWhile } from "rxjs";
 import isEqual      from "lodash.isequal";
-import Mustache     from "mustache";
-import { AttributeData, AttributeValue, Control, Session, StepId, ResponseData } from "@decisively-io/types-interview";
+import { AttributeData, 
+         AttributeValue, 
+         Control, 
+         Session, 
+         StepId, 
+         ResponseData } from "@decisively-io/types-interview";
 import { ControlTypes } from "./constants";
 import { buildUrl, 
          stateToData, 
@@ -12,7 +24,8 @@ import { buildUrl,
 import { create, 
           load, 
           submit, 
-          navigate }    from './api';
+          navigate,
+          simulate }    from './api';
 import { DynamicUpdateFunction, 
          Overrides, 
          SessionConfig,
@@ -20,6 +33,7 @@ import { DynamicUpdateFunction,
          SessionObservable } from './types';
 import { render }            from "./placeholders";
 import { replaceTemplatedText } from "./helpers";
+import { buildDynamicReplacements } from "./dynamic";
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
   const { transformRequest = [] } = overrides;
@@ -116,7 +130,7 @@ export const defaultPath = ["decisionapi", "session"];
  *    - (the function never moves, so we can safely give it to the renderer)
  * chOnScreenData  : Renderer -{updated attribute}-> SDK
  *    - if using react, the renderer needs to be careful, because unless this function is within
- *      a HOC, it will be recreated on every render, and the SDK will not be able to send updates
+ *      a HOC, it will be recreated every render, and the SDK will not be able to send updates
  */
 export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}) => {
 
@@ -177,19 +191,23 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
           map( (sessionData) => ({ sessionData }) ),
         ),
       ).pipe(
+        takeWhile( (val) => undefined !== newDataCallback ),
         scan( (acc, curr) => ({ ...acc, ...curr, count: ++acc.count }), { usrEnteredData: {}, sessionData: {}, count: 0 } ),
         // if nothing has changed, don't emit
         distinctUntilChanged( (a, b) => isEqual(a, b) ),
-      ).subscribe( (val) => {
+      ).subscribe( async (val) => {
         // console.log('observerMTpEcc:val', val);
-        const replacedSession = produce<SessionObservable>(val.sessionData, (draft) => {
+        // TODO I need to also merge in any static control values that are not dynamic, plus known state values
+        const replacedSession = await produce<SessionObservable>(val.sessionData, async (draft) => {
           
           const {state, screen} = draft;
-          if (state && screen) { // TODO getting a bug that the state is undefined when we navigate BACK, so we don't trip this logic
 
-            const replacements = {
-              "5287c6f7-a910-47d2-aa9d-bb157b2d5bba": "I like clouds",
-            };
+          if (state && screen) { 
+            // TODO getting a bug that the state is undefined when we navigate BACK, so we don't trip this logic..need to see what the backend is doing
+
+            // ask the backend to solve for any dynamic attributes, based on the attributes we know (entered and static)
+            const replacements = await buildDynamicReplacements(state, val.usrEnteredData, api, project, draft.sessionId!);
+            // replace anything replaceable on the screen
             screen.controls.forEach( (ctrl: any) => {
               replaceTemplatedText(
                 ctrl,
@@ -201,7 +219,9 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
           draft.renderAt = val.count;
         });
         console.log('sdk::observerMTpEcc:replacedSession:', replacedSession);
-        newDataCallback && newDataCallback(replacedSession);
+        if (newDataCallback && replacedSession.screen) {
+          newDataCallback(replacedSession);
+        }
       });
 
       // -- create the session

@@ -104,21 +104,21 @@ export const generateObservables = (session: SessionInstance) => {
 
 // data only needs to be the dependencies, however sending the entire
 // form state is likely not that bad and would provide all required data
-export const populate = async (session: SessionInstance, data: AttributeData) => {
-  const { _api, _project, sessionId, state } = session;
-  if (state) {
-    const goals = Object.keys(state);
-    const res: AttributeData = await simulate(_api, _project, sessionId, { goals, data });
-    // update session state with new data
-    return produce(session, (draft) => {
-      const { state: s } = draft;
-      if (s !== undefined) {
-        Object.keys(res).forEach(id => {
-          s[id].value = res[id];
-        });
-      }
-    });
-  }
+// export const populate = async (session: SessionInstance, data: AttributeData) => {
+//   const { _api, _project, sessionId, state } = session;
+//   if (state) {
+//     const goals = Object.keys(state);
+//     const res: AttributeData = await simulate(_api, _project, sessionId, { goals, data });
+//     // update session state with new data
+//     return produce(session, (draft) => {
+//       const { state: s } = draft;
+//       if (s !== undefined) {
+//         Object.keys(res).forEach(id => {
+//           s[id].value = res[id];
+//         });
+//       }
+//     });
+//   }
 
-  return session;
-};
+//   return session;
+// };
