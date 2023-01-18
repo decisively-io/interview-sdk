@@ -23,7 +23,6 @@ export interface SessionInstance extends Session {
   render: (value: string) => string;
   populate: (data: AttributeData) => Promise<SessionInstance>;
   // dynamic interview
-  renderAt?: number;
   chOnScreenData: DynamicUpdateFunction; // allows the render-implementation to notify the SDK that the on-screen data has changed
   externalLoading?: boolean;             // indicates when the SDK is waiting for external data to be loaded, so the render-implementation can show a loading indicator
 };
