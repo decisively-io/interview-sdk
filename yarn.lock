@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@decisively-io/types-interview@^0.1.24":
-  version "0.1.24"
-  resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.1.24/23bfd8b2eece9db2abe55589935aa40d72e0626e#23bfd8b2eece9db2abe55589935aa40d72e0626e"
-  integrity sha512-lHHifdu2Mphm9iuy4sPMe2xbvJ36iWUzst4zcmNBfiugcOhZ6/2nZvrkJ7l+zOYO5c7aMXlNOyyWwJEnUAXJYQ==
+"@decisively-io/types-interview@^0.1.25":
+  version "0.1.25"
+  resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.1.25/b172c5adb8941997aa5d2c26e0d3b6661c9d8473#b172c5adb8941997aa5d2c26e0d3b6661c9d8473"
+  integrity sha512-JgqpDGRYkQoPxlYccjt342Nf9c2+xyQ/DoVOHZWp1L5fhsWx8uOzZJdsepNvZdqRVBcaTtK8hq2itdCVCsy1Mg==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
@@ -782,11 +782,6 @@ ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
-
-mustache@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/mustache/-/mustache-4.2.0.tgz#e5892324d60a12ec9c2a73359edca52972bf6f64"
-  integrity sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==
 
 natural-compare@^1.4.0:
   version "1.4.0"
