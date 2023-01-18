@@ -203,7 +203,10 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
         // if session has not been fetched, don't emit
         filter( (val) => !isEmpty(val.sessionData) ),
       ).subscribe( async (val) => {
-        console.log('observerMTpEcc:val', val);
+        // console.log('observerMTpEcc:val', val);
+        if (newDataCallback) {
+          newDataCallback({ externalLoading: true });
+        }
         // TODO Check, do I need to also merge in any static control values that are not dynamic, plus known state values - or does the graph already take these into account when computing the dependencies?
         const replacedSession = await produce<SessionObservable>(val.sessionData, async (draft) => {
           
@@ -224,11 +227,14 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
             });
           }
           draft.renderAt = Date.now(); // fine-grained enough for the renderer to know when to re-render
+          draft.externalLoading = false;
         });
 
         if (newDataCallback && replacedSession.screen) {
           console.log('sdk::observerMTpEcc:replacedSession:', replacedSession);
           newDataCallback(replacedSession);
+        } else if (newDataCallback) {
+          newDataCallback({ externalLoading: false });
         }
       });
 
