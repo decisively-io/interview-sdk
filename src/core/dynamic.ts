@@ -38,6 +38,7 @@ const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeD
           if (dependenciesKnown) {
             unKnownValues.push({
               goal,
+              // data: knownValues,
               data: dependencies.reduce((acc, cur) => {
                 acc[cur] = knownValues[cur];
                 return (acc);
@@ -80,6 +81,7 @@ export const buildDynamicReplacements = async (
     const simResAll = (await Promise.all(
       unKnownValues.map( (simReq) => simulate(api, project, sessionId, simReq) )
     )).reduce((acc, simRes, idx) => { 
+      console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
       return({
         ...acc,
         [unKnownValues[idx].goal!] : simRes.outcome,
