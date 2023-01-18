@@ -1,6 +1,6 @@
 {
     "name": "@decisively-io/interview-sdk",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "description": "An SDK for the Decisively interview system.",
     "main": "dist/index.js",
     "types": "dist/types/index.d.ts",
@@ -38,7 +38,6 @@
         "immer": "^9.0.12",
         "lodash.isempty": "^4.4.0",
         "lodash.isequal": "^4.5.0",
-        "mustache": "^4.2.0",
         "rxjs": "^7.5.5",
         "uuid": "^8.3.2"
     }
