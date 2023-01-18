@@ -8,9 +8,9 @@ export const range = (size: number, startAt: number = 0) => {
   return [...Array(size).keys()].map(i => i + startAt);
 };
 
-export const stateToData = (state: State): AttributeData => {
+export const stateToData = (state: State[]): AttributeData => {
   return Object.keys(state).reduce((acc: AttributeData, key) => {
-    acc[key] = state[key].value;
+    acc[key] = state.find( (s) => s.id === key)?.value;
     return acc;
   }, {});
 };

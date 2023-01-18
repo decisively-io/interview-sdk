@@ -1,0 +1,100 @@
+import { AttributeData, 
+         ProjectId, 
+         SessionId, 
+         Simulate, 
+         State }          from "@decisively-io/types-interview";
+import { AxiosInstance }  from "axios";
+import isEmpty            from "lodash.isempty";
+import { simulate }       from "./api";
+
+/**
+ * Builds a list of known values, and a list of requests to be made against the API for unknown values
+ * @param state Is the interview state for the current step
+ * @param attribValues Is the data entered by the user (and any static attribute values)
+ * @param ignoreEmpty Set to `true` in order to discard empty values from `attribValues`. This could happen \
+ *                    if the user has entered a value into an input, then deleted it
+ * @returns A list of known values, plus preformed requests to be made against the API for the unknown values
+ */
+const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeData, ignoreEmpty: boolean) => {
+
+  const knownValues  : AttributeData       = {...attribValues};
+  const unKnownValues: Partial<Simulate>[] = [];
+
+  if (ignoreEmpty) {
+    // remove all empty known values
+    for (const key of Object.keys(knownValues)) {
+      if (isEmpty(knownValues[key]) || knownValues[key] === '') {
+        delete knownValues[key];
+      }
+    }
+  }
+
+  for (const stateObj of state) {
+    const { id: goal, dependencies, value } = stateObj;
+    if (goal) {
+      if (undefined === value) {
+        if (dependencies && dependencies.length > 0) {
+          const dependenciesKnown = dependencies.every((dep) => knownValues.hasOwnProperty(dep));
+          if (dependenciesKnown) {
+            unKnownValues.push({
+              goal,
+              // data: knownValues,
+              data: dependencies.reduce((acc, cur) => {
+                acc[cur] = knownValues[cur];
+                return (acc);
+              }, {} as AttributeData)
+            });
+          }
+        } 
+      } else {
+        knownValues[goal] = value;
+      }
+    }
+  }
+
+  // remove requests where the goal already has a value, or was entered directly by the user
+  const unKnownValuesFin = unKnownValues.filter((it) => !knownValues.hasOwnProperty(it.goal!));
+
+  return({
+    knownValues,   // the known values
+    unKnownValues: unKnownValuesFin, // the requests to be made against the API
+  });
+}
+
+/**
+ * Given an interview session's current state, plus the known attribute values,
+ * gives us a flat object of `Record<goal, value>` for all the dynamic attributes
+ */
+export const buildDynamicReplacements = async (
+  state        : State[], 
+  attribValues : AttributeData,
+  api          : AxiosInstance, 
+  project      : ProjectId, 
+  sessionId    : SessionId,
+  ): Promise<AttributeData> => {
+  
+  const replacementQueries = buildDynamicReplacementQueries(state, attribValues, true);
+
+  try {
+    const { knownValues, unKnownValues } = replacementQueries;
+    console.log(`simulating for ${unKnownValues.length} unknown(s)...`);
+    const simResAll = (await Promise.all(
+      unKnownValues.map( (simReq) => simulate(api, project, sessionId, simReq) )
+    )).reduce((acc, simRes, idx) => { 
+      console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
+      return({
+        ...acc,
+        [unKnownValues[idx].goal!] : simRes.outcome,
+      });
+    }, {} as AttributeData);
+
+    return({
+      ...knownValues,
+      ...simResAll,
+    });
+  } catch (e) {
+    console.error(e);
+  }
+
+  return({});
+}

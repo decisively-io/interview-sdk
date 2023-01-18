@@ -25,7 +25,7 @@ export const load = async (api: AxiosInstance, project: ProjectId, session: Sess
  *
  * @param data The data for the current step to submit
  * @param navigate The desired navigation after update, defaults to next
- * @param overrdes Other params to pass through to payload
+ * @param overrides Other params to pass through to payload
  */
 export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: AttributeData, navigate: Navigate, overrides: Overrides) => {
   const res = await api.patch<Session>(project, { data, navigate, ...overrides }, { params: { session: session } });
@@ -42,7 +42,17 @@ export const navigate = async (api: AxiosInstance, project: ProjectId, session: 
   return res.data;
 };
 
-export const simulate = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: Simulate) => {
-  const res = await api.post<AttributeData>(project, { mode: 'simulate', ...data }, { params: { session } });
+export const simulate = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: Partial<Simulate>) => {
+  const res = await api.post<AttributeData>(
+      project, 
+      { 
+        mode: 'api',
+        save: false,
+        ...data,
+      },
+      { 
+        params: { session },
+      }
+    );
   return res.data;
 }

@@ -12,6 +12,8 @@ export interface SessionConfig {
 
 export type Overrides = Record<string, any>;
 
+export type DynamicUpdateFunction = (data: AttributeData) => void;
+
 export interface SessionInstance extends Session {
   _api: AxiosInstance;
   _project: ProjectId;
@@ -20,4 +22,10 @@ export interface SessionInstance extends Session {
   navigate: (step: StepId) => Promise<SessionInstance>;
   render: (value: string) => string;
   populate: (data: AttributeData) => Promise<SessionInstance>;
+  // dynamic interview
+  chOnScreenData: DynamicUpdateFunction; // allows the render-implementation to notify the SDK that the on-screen data has changed
+  externalLoading?: boolean;             // indicates when the SDK is waiting for external data to be loaded, so the render-implementation can show a loading indicator
 };
+
+// this is just typed for clarity
+export type SessionObservable = Partial<SessionInstance>;

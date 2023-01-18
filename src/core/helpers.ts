@@ -1,5 +1,7 @@
-import { Step } from '@decisively-io/types-interview';
+import { AttributeData, Step } from '@decisively-io/types-interview';
 import { produce } from 'immer';
+
+// -- step helpers
 
 /* eslint-disable no-param-reassign */
 export const setCurrentInStep = (s: Step, id: Step['id']): typeof s => {
@@ -27,4 +29,20 @@ export const getCurrentStep = (s: Step): typeof s | null => {
     (a, s) => (a === null ? getCurrentStep(s) : a),
     null,
   );
+}
+
+// -- text replacement helpers
+
+export const replaceTemplatedText = (obj: any, propNames: string[], replacements: AttributeData | Record<string, string>, defaultReplacement: string = '...') => {
+  
+  for (const propName of propNames) {
+    if (obj.hasOwnProperty(propName) && obj[propName] && typeof obj[propName] === 'string') {
+      // obj[propName] = Mustache.render(obj[propName], replacements, {}); // too heavy...
+      obj[propName] = obj[propName].replace(/{{(.*?)}}/g, (match: string) => {
+        const attributeId = match.replace(/{{(.*?)}}/, '$1');
+        const value = replacements[attributeId] ?? defaultReplacement;
+        return (typeof value === 'string' ? value : String(value));
+      })
+    }
+  }
 }
