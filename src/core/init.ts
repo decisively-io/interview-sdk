@@ -35,7 +35,9 @@ import { DynamicUpdateFunction,
          SessionInstance, 
          SessionObservable }        from './types';
 import { render }                   from "./placeholders";
-import { replaceTemplatedText }     from "./helpers";
+import { cmpAttributeData, 
+         isAttributeDynamic, 
+         replaceTemplatedText }     from "./helpers";
 import { buildDynamicReplacements } from "./dynamic";
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
@@ -130,9 +132,9 @@ export const defaultPath = ["decisionapi", "session"];
 /**
  * Initialize the SDK
  * 
- * newDataCallback : SDK -{updated session}-> Renderer : 
- *    - (the function never moves, so we can safely give it to the renderer)
  * chOnScreenData  : Renderer -{updated attribute}-> SDK
+ *    - (the function never moves, so we can safely give it to the renderer)
+ * newDataCallback : SDK -{updated session}-> Renderer : 
  *    - if using react, the renderer needs to be careful, because unless this function is within
  *      a HOC, it will be recreated every render, and the SDK will not be able to send updates
  */
@@ -188,8 +190,6 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
           scan( (acc, curr) => ({ ...acc, ...curr }), {} as AttributeData ),
           // we don't need to reset the observable during a session, because if an attribute is changed, it should be consistent across all screens
           map( (usrEnteredData) => ({ usrEnteredData }) ),
-
-          // TODO filter based on if the data is even relevant to the current session/state...not sure I can do this without the session state, which is the next observable
         ),
         sessionStateChanged$.pipe(
           map( (sessionData) => ({ sessionData }) ),
@@ -202,20 +202,33 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
         distinctUntilChanged( (a, b) => isEqual(a, b) ),
         // if session has not been fetched, don't emit
         filter( (val) => !isEmpty(val.sessionData) ),
+        // if user is touching a control that is not dynamic, don't emit
+        distinctUntilChanged((prev, curr) => {
+
+          // this is going to be accumulated changes since the last emit
+          const usrEnteredDataChanges   = cmpAttributeData(prev.usrEnteredData, curr.usrEnteredData);
+          const touchedControls         = Object.keys(usrEnteredDataChanges);
+          const changedDynamicAttribute = isAttributeDynamic(touchedControls, (curr.sessionData as SessionObservable).state);
+          // on changing screen, we won't have any changes, but we'll need to emit to replace anything dynamic on-screen
+          const changedScreen           = (prev.sessionData as SessionObservable)?.screen?.id !== (curr.sessionData as SessionObservable)?.screen?.id;
+
+          return (!(changedDynamicAttribute || changedScreen));
+        }),
       ).subscribe( async (val) => {
+
         // console.log('observerMTpEcc:val', val);
         if (newDataCallback) {
           newDataCallback({ externalLoading: true });
         }
-        // TODO Check, do I need to also merge in any static control values that are not dynamic, plus known state values - or does the graph already take these into account when computing the dependencies?
+        // We don't need to also merge in any static control values that are not dynamic, plus known state values - the graph already takes these into account
+        // when computing the dependencies, so it only requests what it needs
         const replacedSession = await produce<SessionObservable>(val.sessionData, async (draft) => {
           
           const {state, screen} = draft;
 
           if (state && screen) { 
-            // TODO getting a bug that the state is undefined when we navigate BACK, so we don't trip this logic..need to see what the backend is doing
 
-            // ask the backend to solve for any dynamic attributes, based on the attributes we know (entered and static)
+            // ask the backend to solve for any dynamic attributes, based on the entered attributes
             const replacements = await buildDynamicReplacements(state, val.usrEnteredData, api, project, (val.sessionData as SessionObservable).sessionId!);
             // replace anything replaceable on the screen
             screen.controls.forEach( (ctrl: any) => {
