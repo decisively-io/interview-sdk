@@ -4,7 +4,6 @@ import { AttributeData,
          Simulate, 
          State }          from "@decisively-io/types-interview";
 import { AxiosInstance }  from "axios";
-import isEmpty            from "lodash.isempty";
 import { simulate }       from "./api";
 
 /**
@@ -23,7 +22,7 @@ const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeD
   if (ignoreEmpty) {
     // remove all empty known values
     for (const key of Object.keys(knownValues)) {
-      if (isEmpty(knownValues[key]) || knownValues[key] === '') {
+      if (knownValues[key] === '') {
         delete knownValues[key];
       }
     }
