@@ -14,3 +14,6 @@ export const stateToData = (state: State[]): AttributeData => {
     return acc;
   }, {});
 };
+
+export const isStrNotNullOrBlank = (str: any): boolean => (!(/^\s*$/).test(str || ''));
+export const isStrNullOrBlank = (str: any): boolean => !isStrNotNullOrBlank(str);

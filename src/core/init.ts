@@ -24,7 +24,8 @@ import { AttributeData,
 import { ControlTypes }             from "./constants";
 import { buildUrl, 
          stateToData, 
-         range }                    from "./util";
+         range, 
+         isStrNotNullOrBlank }      from "./util";
 import { create, 
           load, 
           submit, 
@@ -99,7 +100,7 @@ const createSessionTransform = (
   res._api           = api;
   res._project       = project;
   res.submit         = (data: AttributeData, navigate: any, overrides: Overrides = {}) => {
-      console.log('submitting', data, navigate, overrides);
+      // console.log('submitting', data, navigate, overrides);
       return submit(api, project, session, data, navigate, overrides);
     };
   res.save           = (data: AttributeData) => submit(api, project, session, data, false, {});
@@ -115,7 +116,7 @@ const createSessionTransform = (
     chSessionState({
       state    : res.state    ,
       screen   : res.screen   ,
-      // sessionId: res.sessionId,
+      sessionId: res.sessionId,
       // status   : res.status   ,
       // context  : res.context  ,
       // data     : res.data     ,
@@ -215,39 +216,43 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
           return (!(changedDynamicAttribute || changedScreen));
         }),
       ).subscribe( async (val) => {
-
         // console.log('observerMTpEcc:val', val);
-        if (newDataCallback) {
-          newDataCallback({ externalLoading: true });
-        }
-        // We don't need to also merge in any static control values that are not dynamic, plus known state values - the graph already takes these into account
-        // when computing the dependencies, so it only requests what it needs
-        const replacedSession = await produce<SessionObservable>(val.sessionData, async (draft) => {
-          
-          const {state, screen} = draft;
-
-          if (state && screen) { 
-
-            // ask the backend to solve for any dynamic attributes, based on the entered attributes
-            const replacements = await buildDynamicReplacements(state, val.usrEnteredData, api, project, (val.sessionData as SessionObservable).sessionId!);
-            // replace anything replaceable on the screen
-            screen.controls.forEach( (ctrl: any) => {
-              replaceTemplatedText(
-                ctrl,
-                ['text', 'label'],
-                replacements,
-              );
-            });
+        if (isStrNotNullOrBlank(config.release)) {
+          if (newDataCallback) {
+            newDataCallback({ externalLoading: true });
           }
-          draft.renderAt = Date.now(); // fine-grained enough for the renderer to know when to re-render
-          draft.externalLoading = false;
-        });
+          // We don't need to also merge in any static control values that are not dynamic, plus known state values - the graph already takes these into account
+          // when computing the dependencies, so it only requests what it needs
+          const replacedSession = await produce<SessionObservable>(val.sessionData, async (draft) => {
 
-        if (newDataCallback && replacedSession.screen) {
-          console.log('sdk::observerMTpEcc:replacedSession:', replacedSession);
-          newDataCallback(replacedSession);
-        } else if (newDataCallback) {
-          newDataCallback({ externalLoading: false });
+            const { state, screen } = draft;
+
+            if (state && screen) {
+
+              // ask the backend to solve for any dynamic attributes, based on the entered attributes
+              const replacements = await buildDynamicReplacements(state, val.usrEnteredData, api, project, config.release!, (val.sessionData as SessionObservable).sessionId!);
+              // replace anything replaceable on the screen
+              screen.controls.forEach((ctrl: any) => {
+                replaceTemplatedText(
+                  ctrl,
+                  ['text', 'label'],
+                  replacements,
+                );
+              });
+            }
+            draft.renderAt = Date.now(); // fine-grained enough for the renderer to know when to re-render
+            draft.externalLoading = false;
+          });
+
+          if (newDataCallback && replacedSession.screen) {
+            console.log('sdk::observerMTpEcc:replacedSession:', replacedSession);
+            newDataCallback(replacedSession);
+          } else if (newDataCallback) {
+            newDataCallback({ externalLoading: false });
+          }
+        } else {
+          // not really expecting this to happen...
+          console.warn('sdk::observerMTpEcc:config release is not set, cannot replace dynamic attributes');
         }
       });
 
