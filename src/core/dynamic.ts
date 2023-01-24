@@ -1,5 +1,6 @@
 import { AttributeData, 
          ProjectId, 
+         ReleaseId, 
          SessionId, 
          Simulate, 
          State }          from "@decisively-io/types-interview";
@@ -68,7 +69,8 @@ export const buildDynamicReplacements = async (
   state        : State[], 
   attribValues : AttributeData,
   api          : AxiosInstance, 
-  project      : ProjectId, 
+  project      : ProjectId,
+  release      : ReleaseId,
   sessionId    : SessionId,
   ): Promise<AttributeData> => {
   
@@ -78,7 +80,7 @@ export const buildDynamicReplacements = async (
     const { knownValues, unKnownValues } = replacementQueries;
     console.log(`simulating for ${unKnownValues.length} unknown(s)...`);
     const simResAll = (await Promise.all(
-      unKnownValues.map( (simReq) => simulate(api, project, sessionId, simReq) )
+      unKnownValues.map((simReq) => simulate(api, project, release, sessionId, simReq) )
     )).reduce((acc, simRes, idx) => { 
       console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
       return({

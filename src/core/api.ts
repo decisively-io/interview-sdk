@@ -1,5 +1,5 @@
 import { AxiosInstance, AxiosRequestConfig } from "axios";
-import { Session, AttributeData, Navigate, StepId, SessionId, ProjectId, Simulate } from "@decisively-io/types-interview";
+import { Session, AttributeData, Navigate, StepId, SessionId, ProjectId, Simulate, ReleaseId } from "@decisively-io/types-interview";
 import { Overrides, SessionConfig } from "./types";
 import { buildUrl } from "./util";
 
@@ -42,9 +42,9 @@ export const navigate = async (api: AxiosInstance, project: ProjectId, session: 
   return res.data;
 };
 
-export const simulate = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: Partial<Simulate>) => {
-  const res = await api.post<AttributeData>(
-      project, 
+export const simulate = async (api: AxiosInstance, project: ProjectId, release: ReleaseId, session: SessionId, data: Partial<Simulate>) => {
+  const res = await api.patch<AttributeData>(
+      buildUrl(project, release),
       { 
         mode: 'api',
         save: false,
