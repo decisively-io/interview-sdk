@@ -1,10 +1,11 @@
-import { AttributeData, 
-         ProjectId, 
-         ReleaseId, 
-         SessionId, 
-         Simulate, 
+import { AttributeData,
+         ProjectId,
+         ReleaseId,
+         SessionId,
+         Simulate,
          State }          from "@decisively-io/types-interview";
 import { AxiosInstance }  from "axios";
+import { map } from "rxjs";
 import { simulate }       from "./api";
 
 /**
@@ -36,16 +37,20 @@ const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeD
         if (dependencies && dependencies.length > 0) {
           const dependenciesKnown = dependencies.every((dep) => knownValues.hasOwnProperty(dep));
           if (dependenciesKnown) {
+            const data = dependencies.reduce((acc, cur) => {
+              acc[cur] = knownValues[cur];
+              return (acc);
+            }, {} as AttributeData);
+
+            if( attribValues[ '@parent' ] ) data[ '@parent' ] = attribValues[ '@parent' ];
+
             unKnownValues.push({
               goal,
               // data: knownValues,
-              data: dependencies.reduce((acc, cur) => {
-                acc[cur] = knownValues[cur];
-                return (acc);
-              }, {} as AttributeData)
+              data,
             });
           }
-        } 
+        }
       } else {
         knownValues[goal] = value;
       }
@@ -66,14 +71,14 @@ const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeD
  * gives us a flat object of `Record<goal, value>` for all the dynamic attributes
  */
 export const buildDynamicReplacements = async (
-  state        : State[], 
+  state        : State[],
   attribValues : AttributeData,
-  api          : AxiosInstance, 
+  api          : AxiosInstance,
   project      : ProjectId,
   release      : ReleaseId,
   sessionId    : SessionId,
   ): Promise<AttributeData> => {
-  
+
   const replacementQueries = buildDynamicReplacementQueries(state, attribValues, true);
 
   try {
@@ -81,7 +86,7 @@ export const buildDynamicReplacements = async (
     console.log(`simulating for ${unKnownValues.length} unknown(s)...`);
     const simResAll = (await Promise.all(
       unKnownValues.map((simReq) => simulate(api, project, release, sessionId, simReq) )
-    )).reduce((acc, simRes, idx) => { 
+    )).reduce((acc, simRes, idx) => {
       console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
       return({
         ...acc,
