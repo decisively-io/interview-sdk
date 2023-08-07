@@ -1,6 +1,6 @@
 {
     "name": "@decisively-io/interview-sdk",
-    "version": "0.2.6",
+    "version": "0.3.6",
     "description": "An SDK for the Decisively interview system.",
     "main": "dist/index.js",
     "types": "dist/types/index.d.ts",
@@ -9,7 +9,7 @@
         "doc": "typedoc --theme github-wiki",
         "build": "yarn clean && tsc",
         "dev": "tsc -w",
-        "prepublish": "yarn build"
+        "deploy": "yarn build && yarn publish"
     },
     "keywords": [
         "decisively",
@@ -21,7 +21,10 @@
     "author": "Decisively",
     "license": "UNLICENSED",
     "devDependencies": {
-        "@decisively-io/types-interview": "^0.1.0",
+        "@decisively-io/types-interview": "^0.1.25",
+        "@types/lodash.isempty": "^4.4.7",
+        "@types/lodash.isequal": "^4.5.6",
+        "@types/uuid": "^8.3.4",
         "prettier": "^2.5.1",
         "prettier-eslint": "^13.0.0",
         "typedoc": "^0.22.13",
@@ -32,6 +35,9 @@
     "dependencies": {
         "axios": "^0.26.1",
         "immer": "^9.0.12",
-        "rxjs": "^7.5.5"
+        "lodash.isempty": "^4.4.0",
+        "lodash.isequal": "^4.5.0",
+        "rxjs": "^7.5.5",
+        "uuid": "^8.3.2"
     }
 }

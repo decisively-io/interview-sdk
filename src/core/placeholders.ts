@@ -1,14 +1,14 @@
-import { produce } from 'immer';
+// import { produce } from 'immer';
 import { Subject } from 'rxjs';
-import { debounceTime, map, filter } from 'rxjs/operators';
-import { Data } from "@decisively-io/types-interview";
-import { SessionInstance } from "./types";
-import { simulate } from "./api";
+// import { debounceTime, map, filter } from 'rxjs/operators';
+import { AttributeData } from "@decisively-io/types-interview";
+// import { SessionInstance } from "./types";
+// import { simulate } from "./api";
 
 const templateRegex = /{{(.*?)}}/g;
 const splitRegex = /{{|}}/;
 
-export const render = (template: string, data: Data) => {
+export const render = (template: string, data: AttributeData) => {
   return template.replace(templateRegex, (match) => {
     const attributeId = match.split(splitRegex).filter(Boolean)[0].trim();
     const value = data[attributeId] || '...';
@@ -35,10 +35,12 @@ interface AttributeControl {
   onChange?: Subject<string>;
 };
 
+/*
+
 export const generateObserver = (session: SessionInstance, attribute: string, dependencies: string[], debounce = 500) => {
   // const simulated = new Subject();
   
-  const sub = new Subject<Data>();
+  const sub = new Subject<AttributeData>();
   sub.pipe(
     // debounce input
     debounceTime(debounce),
@@ -68,7 +70,7 @@ export const generateObservables = (session: SessionInstance) => {
     .find(c => (c as AttributeControl).attribute === id);
 
   goals.forEach((g) => {
-    const sub = new Subject<Data>();
+    const sub = new Subject<AttributeData>();
     
     sub.subscribe({
       next: (d) => {
@@ -98,16 +100,25 @@ export const generateObservables = (session: SessionInstance) => {
   })
 };
 
+*/
+
 // data only needs to be the dependencies, however sending the entire
 // form state is likely not that bad and would provide all required data
-export const populate = async (session: SessionInstance, data: Data) => {
-  const { _api, _project, sessionId, state } = session;
-  const goals = Object.keys(state);
-  const res: Data = await simulate(_api, _project, sessionId, { goals, data });
-  // update session state with new data
-  return produce(session, (draft) => {
-    Object.keys(res).forEach(id => {
-      draft.state[id].value = res[id];
-    });
-  });
-};
+// export const populate = async (session: SessionInstance, data: AttributeData) => {
+//   const { _api, _project, sessionId, state } = session;
+//   if (state) {
+//     const goals = Object.keys(state);
+//     const res: AttributeData = await simulate(_api, _project, sessionId, { goals, data });
+//     // update session state with new data
+//     return produce(session, (draft) => {
+//       const { state: s } = draft;
+//       if (s !== undefined) {
+//         Object.keys(res).forEach(id => {
+//           s[id].value = res[id];
+//         });
+//       }
+//     });
+//   }
+
+//   return session;
+// };
