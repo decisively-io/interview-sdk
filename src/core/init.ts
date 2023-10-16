@@ -152,10 +152,11 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
     session        : string,
     chOnScreenData?: DynamicUpdateFunction,
     chSessionState?: (data: SessionObservable) => void,
+    releaseId?: string
   ) => {
     api.defaults.transformResponse = [
       ...axios.defaults.transformResponse as AxiosResponseTransformer[],
-      createSessionTransform(api, project, session, chOnScreenData, chSessionState)
+      createSessionTransform(api, project, session, chOnScreenData, chSessionState, releaseId)
     ];
   };
 
@@ -261,7 +262,7 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
 
       const res = await create(api, project, config);
       // apply transformer for future responses
-      transformApi(project, res.sessionId, chOnScreenData, chSessionState);
+      transformApi(project, res.sessionId, chOnScreenData, chSessionState, config.release);
       // transform this current response
       return createSessionTransform(api, project, res.sessionId, chOnScreenData, chSessionState, config.release)(res) as SessionInstance;
     },
