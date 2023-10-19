@@ -131,6 +131,13 @@ const createSessionTransform = (
 
 export const defaultPath = ["decisionapi", "session"];
 
+export interface InterviewProvider {
+  // create a SessionInstance to work with by calling on the decisively service
+  create: (project: string, config: SessionConfig, newDataCallback?: ((data: any) => void) | undefined) => Promise<SessionInstance>;
+  load: (project: string, sessionId: string) => Promise<SessionInstance>;
+  finish: () => void;
+}
+
 /**
  * Initialize the SDK
  *
@@ -140,7 +147,7 @@ export const defaultPath = ["decisionapi", "session"];
  *    - if using react, the renderer needs to be careful, because unless this function is within
  *      a HOC, it will be recreated every render, and the SDK will not be able to send updates
  */
-export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}) => {
+export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}): InterviewProvider => {
 
   // -- create the api instance
 
@@ -163,8 +170,7 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
   // -- ret
   let sessionState$: Subscription | null = null;
   return {
-    // create a SessionInstance to work with by calling on the decisively service
-    create: async (project: string, config: SessionConfig, newDataCallback?: (data: any) => void) => {
+    create: async (project, config, newDataCallback?) => {
 
       // -- create some observers for this session
 
@@ -266,7 +272,7 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
       // transform this current response
       return createSessionTransform(api, project, res.sessionId, chOnScreenData, chSessionState, config.release)(res) as SessionInstance;
     },
-    load: (project: string, sessionId: string) => {
+    load: (project, sessionId) => {
       // apply transformer for future responses
       transformApi(project, sessionId);
       return load(api, project, sessionId) as Promise<SessionInstance>;

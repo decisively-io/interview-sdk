@@ -4,6 +4,7 @@
 
 ### Interfaces
 
+- [InterviewProvider](../wiki/InterviewProvider)
 - [SessionConfig](../wiki/SessionConfig)
 - [SessionInstance](../wiki/SessionInstance)
 
@@ -57,7 +58,7 @@
 
 #### Defined in
 
-[src/core/types.ts:15](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/types.ts#L15)
+[src/core/types.ts:15](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L15)
 
 ___
 
@@ -67,7 +68,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:13](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/types.ts#L13)
+[src/core/types.ts:13](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L13)
 
 ___
 
@@ -77,7 +78,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:31](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/types.ts#L31)
+[src/core/types.ts:31](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L31)
 
 ## Variables
 
@@ -87,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:132](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/init.ts#L132)
+[src/core/init.ts:132](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/init.ts#L132)
 
 ## Functions
 
@@ -110,7 +111,7 @@ Strips out any common attributes between two AttributeData objects, reporting on
 
 #### Defined in
 
-[src/core/helpers.ts:57](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/helpers.ts#L57)
+[src/core/helpers.ts:57](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L57)
 
 ___
 
@@ -130,7 +131,7 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:20](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/helpers.ts#L20)
+[src/core/helpers.ts:20](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L20)
 
 ___
 
@@ -152,7 +153,7 @@ ___
 
 #### Defined in
 
-[src/core/api.ts:6](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/api.ts#L6)
+[src/core/api.ts:6](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L6)
 
 ___
 
@@ -173,7 +174,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:44](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/init.ts#L44)
+[src/core/init.ts:44](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/init.ts#L44)
 
 ___
 
@@ -193,13 +194,13 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:24](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/helpers.ts#L24)
+[src/core/helpers.ts:24](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L24)
 
 ___
 
 ### init
 
-▸ **init**(`host`, `path?`, `overrides?`): `Object`
+▸ **init**(`host`, `path?`, `overrides?`): [`InterviewProvider`](../wiki/InterviewProvider)
 
 Initialize the SDK
 
@@ -219,17 +220,11 @@ newDataCallback : SDK -{updated session}-> Renderer :
 
 #### Returns
 
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `create` | (`project`: `string`, `config`: [`SessionConfig`](../wiki/SessionConfig), `newDataCallback?`: (`data`: `any`) => `void`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\> |
-| `finish` | () => `void` |
-| `load` | (`project`: `string`, `sessionId`: `string`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\> |
+[`InterviewProvider`](../wiki/InterviewProvider)
 
 #### Defined in
 
-[src/core/init.ts:143](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/init.ts#L143)
+[src/core/init.ts:150](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/init.ts#L150)
 
 ___
 
@@ -256,7 +251,7 @@ NOTE: goals with zero dependencies will have themselves in the dependency list,
 
 #### Defined in
 
-[src/core/helpers.ts:83](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/helpers.ts#L83)
+[src/core/helpers.ts:83](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L83)
 
 ___
 
@@ -278,7 +273,7 @@ ___
 
 #### Defined in
 
-[src/core/api.ts:18](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/api.ts#L18)
+[src/core/api.ts:18](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L18)
 
 ___
 
@@ -303,7 +298,7 @@ Navigate to a specific step.
 
 #### Defined in
 
-[src/core/api.ts:41](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/api.ts#L41)
+[src/core/api.ts:41](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L41)
 
 ___
 
@@ -324,7 +319,7 @@ ___
 
 #### Defined in
 
-[src/core/placeholders.ts:11](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/placeholders.ts#L11)
+[src/core/placeholders.ts:11](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/placeholders.ts#L11)
 
 ___
 
@@ -347,7 +342,7 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:36](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/helpers.ts#L36)
+[src/core/helpers.ts:36](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L36)
 
 ___
 
@@ -368,7 +363,7 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:7](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/helpers.ts#L7)
+[src/core/helpers.ts:7](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L7)
 
 ___
 
@@ -392,7 +387,7 @@ ___
 
 #### Defined in
 
-[src/core/api.ts:46](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/api.ts#L46)
+[src/core/api.ts:46](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L46)
 
 ___
 
@@ -420,7 +415,7 @@ Submit response for current step.
 
 #### Defined in
 
-[src/core/api.ts:30](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/api.ts#L30)
+[src/core/api.ts:30](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L30)
 
 ___
 
@@ -441,4 +436,4 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:75](https://github.com/decisively-io/interview-sdk/blob/7896046/src/core/init.ts#L75)
+[src/core/init.ts:75](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/init.ts#L75)
