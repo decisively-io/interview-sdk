@@ -2,7 +2,7 @@
 
 ## Hierarchy
 
-- `Session`
+- [`Session`](../wiki/Session)
 
   ↳ **`SessionInstance`**
 
@@ -37,7 +37,7 @@
 
 #### Defined in
 
-[src/core/types.ts:18](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L18)
+[src/core/types.ts:18](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L18)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:19](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L19)
+[src/core/types.ts:19](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L19)
 
 ___
 
@@ -57,17 +57,17 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:26](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L26)
+[src/core/types.ts:26](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L26)
 
 ___
 
 ### context
 
-• **context**: `Context`
+• **context**: [`Context`](../wiki/Context)
 
 #### Inherited from
 
-Session.context
+[Session](../wiki/Session).[context](../wiki/Session#context)
 
 #### Defined in
 
@@ -77,11 +77,11 @@ ___
 
 ### data
 
-• **data**: `Record`<`string`, `TypedData`\> & `Parent`
+• **data**: `Record`<`string`, [`TypedData`](../wiki/TypedData)\> & [`Parent`](../wiki/Parent)
 
 #### Inherited from
 
-Session.data
+[Session](../wiki/Session).[data](../wiki/Session#data)
 
 #### Defined in
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:27](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L27)
+[src/core/types.ts:27](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L27)
 
 ___
 
@@ -119,13 +119,13 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:22](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L22)
+[src/core/types.ts:22](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L22)
 
 ___
 
 ### populate
 
-• **populate**: (`data`: `AttributeData`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+• **populate**: (`data`: [`AttributeData`](../wiki/Exports#attributedata)) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Type declaration
 
@@ -135,7 +135,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `AttributeData` |
+| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
 
 ##### Returns
 
@@ -143,17 +143,17 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:24](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L24)
+[src/core/types.ts:24](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L24)
 
 ___
 
 ### progress
 
-• `Optional` **progress**: `Progress`
+• `Optional` **progress**: [`Progress`](../wiki/Progress)
 
 #### Inherited from
 
-Session.progress
+[Session](../wiki/Session).[progress](../wiki/Session#progress)
 
 #### Defined in
 
@@ -181,7 +181,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:23](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L23)
+[src/core/types.ts:23](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L23)
 
 ___
 
@@ -191,7 +191,7 @@ ___
 
 #### Inherited from
 
-Session.renderAt
+[Session](../wiki/Session).[renderAt](../wiki/Session#renderat)
 
 #### Defined in
 
@@ -201,7 +201,7 @@ ___
 
 ### save
 
-• **save**: (`data`: `AttributeData`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+• **save**: (`data`: [`AttributeData`](../wiki/Exports#attributedata)) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Type declaration
 
@@ -211,7 +211,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `AttributeData` |
+| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
 
 ##### Returns
 
@@ -219,17 +219,17 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:21](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L21)
+[src/core/types.ts:21](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L21)
 
 ___
 
 ### screen
 
-• **screen**: `Screen`
+• **screen**: [`Screen`](../wiki/Screen)
 
 #### Inherited from
 
-Session.screen
+[Session](../wiki/Session).[screen](../wiki/Session#screen)
 
 #### Defined in
 
@@ -245,7 +245,7 @@ Unique ID of the session
 
 #### Inherited from
 
-Session.sessionId
+[Session](../wiki/Session).[sessionId](../wiki/Session#sessionid)
 
 #### Defined in
 
@@ -255,11 +255,11 @@ ___
 
 ### state
 
-• `Optional` **state**: `State`[]
+• `Optional` **state**: [`State`](../wiki/State)[]
 
 #### Inherited from
 
-Session.state
+[Session](../wiki/Session).[state](../wiki/Session#state)
 
 #### Defined in
 
@@ -273,7 +273,7 @@ ___
 
 #### Inherited from
 
-Session.status
+[Session](../wiki/Session).[status](../wiki/Session#status)
 
 #### Defined in
 
@@ -283,11 +283,11 @@ ___
 
 ### steps
 
-• **steps**: `Step`[]
+• **steps**: [`Step`](../wiki/Step)[]
 
 #### Inherited from
 
-Session.steps
+[Session](../wiki/Session).[steps](../wiki/Session#steps)
 
 #### Defined in
 
@@ -297,7 +297,7 @@ ___
 
 ### submit
 
-• **submit**: (`data`: `AttributeData`, `navigate?`: `Navigate`, `overrides?`: [`Overrides`](../wiki/Exports#overrides)) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+• **submit**: (`data`: [`AttributeData`](../wiki/Exports#attributedata), `navigate?`: [`Navigate`](../wiki/Exports#navigate), `overrides?`: [`Overrides`](../wiki/Exports#overrides)) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Type declaration
 
@@ -307,8 +307,8 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `AttributeData` |
-| `navigate?` | `Navigate` |
+| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
+| `navigate?` | [`Navigate`](../wiki/Exports#navigate) |
 | `overrides?` | [`Overrides`](../wiki/Exports#overrides) |
 
 ##### Returns
@@ -317,4 +317,4 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:20](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L20)
+[src/core/types.ts:20](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L20)

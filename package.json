@@ -1,6 +1,6 @@
 {
   "name": "@decisively-io/interview-sdk",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "An SDK for the Decisively interview system.",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",

@@ -4,18 +4,59 @@
 
 ### Interfaces
 
+- [Context](../wiki/Context)
+- [IBoolean](../wiki/IBoolean)
+- [IControlsValue](../wiki/IControlsValue)
+- [ICurrency](../wiki/ICurrency)
+- [IDate](../wiki/IDate)
+- [IDateTime](../wiki/IDateTime)
+- [IEntity](../wiki/IEntity)
+- [IEntityInstance](../wiki/IEntityInstance)
+- [IFile](../wiki/IFile)
+- [IImage](../wiki/IImage)
+- [INumberOfInstances](../wiki/INumberOfInstances)
+- [IOptions](../wiki/IOptions)
+- [IText](../wiki/IText)
+- [ITime](../wiki/ITime)
+- [ITypography](../wiki/ITypography)
 - [InterviewProvider](../wiki/InterviewProvider)
+- [Parent](../wiki/Parent)
+- [Progress](../wiki/Progress)
+- [Screen](../wiki/Screen)
+- [Session](../wiki/Session)
 - [SessionConfig](../wiki/SessionConfig)
 - [SessionInstance](../wiki/SessionInstance)
+- [Simulate](../wiki/Simulate)
+- [State](../wiki/State)
+- [Step](../wiki/Step)
+- [TypedData](../wiki/TypedData)
 
 ### Type Aliases
 
+- [AttributeData](../wiki/Exports#attributedata)
+- [AttributeId](../wiki/Exports#attributeid)
+- [AttributeValue](../wiki/Exports#attributevalue)
+- [Control](../wiki/Exports#control)
 - [DynamicUpdateFunction](../wiki/Exports#dynamicupdatefunction)
+- [IEntityValue](../wiki/Exports#ientityvalue)
+- [InterviewId](../wiki/Exports#interviewid)
+- [Navigate](../wiki/Exports#navigate)
+- [NonNestedControl](../wiki/Exports#nonnestedcontrol)
 - [Overrides](../wiki/Exports#overrides)
+- [ProjectId](../wiki/Exports#projectid)
+- [ReleaseId](../wiki/Exports#releaseid)
+- [ResponseData](../wiki/Exports#responsedata)
+- [SessionId](../wiki/Exports#sessionid)
 - [SessionObservable](../wiki/Exports#sessionobservable)
+- [StepId](../wiki/Exports#stepid)
 
 ### Variables
 
+- [DATE\_FORMAT](../wiki/Exports#date_format)
+- [DATE\_TIME\_FORMAT\_12](../wiki/Exports#date_time_format_12)
+- [DATE\_TIME\_FORMAT\_24](../wiki/Exports#date_time_format_24)
+- [TIME\_FORMAT\_12](../wiki/Exports#time_format_12)
+- [TIME\_FORMAT\_24](../wiki/Exports#time_format_24)
 - [defaultPath](../wiki/Exports#defaultpath)
 
 ### Functions
@@ -28,7 +69,7 @@
 - [init](../wiki/Exports#init)
 - [isAttributeDynamic](../wiki/Exports#isattributedynamic)
 - [load](../wiki/Exports#load)
-- [navigate](../wiki/Exports#navigate)
+- [navigate](../wiki/Exports#navigate-1)
 - [render](../wiki/Exports#render)
 - [replaceTemplatedText](../wiki/Exports#replacetemplatedtext)
 - [setCurrentInStep](../wiki/Exports#setcurrentinstep)
@@ -38,9 +79,49 @@
 
 ## Type Aliases
 
+### AttributeData
+
+Ƭ **AttributeData**: `Record`<[`AttributeId`](../wiki/Exports#attributeid), [`AttributeValue`](../wiki/Exports#attributevalue)\>
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:11
+
+___
+
+### AttributeId
+
+Ƭ **AttributeId**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:7
+
+___
+
+### AttributeValue
+
+Ƭ **AttributeValue**: `string` \| `number` \| `boolean` \| `Record`<`string`, [`AttributeValue`](../wiki/Exports#attributevalue)\>[]
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:8
+
+___
+
+### Control
+
+Ƭ **Control**: [`IBoolean`](../wiki/IBoolean) \| [`ICurrency`](../wiki/ICurrency) \| [`IDate`](../wiki/IDate) \| [`ITime`](../wiki/ITime) \| [`IDateTime`](../wiki/IDateTime) \| [`IOptions`](../wiki/IOptions) \| [`IFile`](../wiki/IFile) \| [`IImage`](../wiki/IImage) \| [`INumberOfInstances`](../wiki/INumberOfInstances) \| [`IText`](../wiki/IText) \| [`ITypography`](../wiki/ITypography) \| [`IEntity`](../wiki/IEntity)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:297
+
+___
+
 ### DynamicUpdateFunction
 
-Ƭ **DynamicUpdateFunction**: (`data`: `AttributeData`) => `void`
+Ƭ **DynamicUpdateFunction**: (`data`: [`AttributeData`](../wiki/Exports#attributedata)) => `void`
 
 #### Type declaration
 
@@ -50,7 +131,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `AttributeData` |
+| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
 
 ##### Returns
 
@@ -58,7 +139,49 @@
 
 #### Defined in
 
-[src/core/types.ts:15](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L15)
+[src/core/types.ts:15](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L15)
+
+___
+
+### IEntityValue
+
+Ƭ **IEntityValue**: [`AttributeData`](../wiki/Exports#attributedata) & [`IEntityInstance`](../wiki/IEntityInstance)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:19
+
+___
+
+### InterviewId
+
+Ƭ **InterviewId**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:6
+
+___
+
+### Navigate
+
+Ƭ **Navigate**: [`StepId`](../wiki/Exports#stepid) \| `boolean`
+
+Navigation can be step id, or true for next, false for no navigation
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:10
+
+___
+
+### NonNestedControl
+
+Ƭ **NonNestedControl**: `Exclude`<[`Control`](../wiki/Exports#control), [`IEntity`](../wiki/IEntity)\>
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:276
 
 ___
 
@@ -68,7 +191,47 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:13](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L13)
+[src/core/types.ts:13](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L13)
+
+___
+
+### ProjectId
+
+Ƭ **ProjectId**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:4
+
+___
+
+### ReleaseId
+
+Ƭ **ReleaseId**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:3
+
+___
+
+### ResponseData
+
+Ƭ **ResponseData**: [`AttributeData`](../wiki/Exports#attributedata) & [`Parent`](../wiki/Parent)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:15
+
+___
+
+### SessionId
+
+Ƭ **SessionId**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:5
 
 ___
 
@@ -78,9 +241,69 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:31](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/types.ts#L31)
+[src/core/types.ts:31](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/types.ts#L31)
+
+___
+
+### StepId
+
+Ƭ **StepId**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:2
 
 ## Variables
+
+### DATE\_FORMAT
+
+• `Const` **DATE\_FORMAT**: ``"yyyy-MM-dd"``
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:68
+
+___
+
+### DATE\_TIME\_FORMAT\_12
+
+• `Const` **DATE\_TIME\_FORMAT\_12**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:134
+
+___
+
+### DATE\_TIME\_FORMAT\_24
+
+• `Const` **DATE\_TIME\_FORMAT\_24**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:133
+
+___
+
+### TIME\_FORMAT\_12
+
+• `Const` **TIME\_FORMAT\_12**: ``"h:mm:ss a"``
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:100
+
+___
+
+### TIME\_FORMAT\_24
+
+• `Const` **TIME\_FORMAT\_24**: ``"HH:mm:ss"``
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:99
+
+___
 
 ### defaultPath
 
@@ -88,13 +311,13 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:132](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/init.ts#L132)
+[src/core/init.ts:132](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/init.ts#L132)
 
 ## Functions
 
 ### cmpAttributeData
 
-▸ **cmpAttributeData**(`prev`, `next`): `AttributeData`
+▸ **cmpAttributeData**(`prev`, `next`): [`AttributeData`](../wiki/Exports#attributedata)
 
 Strips out any common attributes between two AttributeData objects, reporting only the latest changes
 
@@ -102,16 +325,16 @@ Strips out any common attributes between two AttributeData objects, reporting on
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `prev` | `AttributeData` | The previous state of the attributes |
-| `next` | `AttributeData` | The current state of the attributes |
+| `prev` | [`AttributeData`](../wiki/Exports#attributedata) | The previous state of the attributes |
+| `next` | [`AttributeData`](../wiki/Exports#attributedata) | The current state of the attributes |
 
 #### Returns
 
-`AttributeData`
+[`AttributeData`](../wiki/Exports#attributedata)
 
 #### Defined in
 
-[src/core/helpers.ts:57](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L57)
+[src/core/helpers.ts:57](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/helpers.ts#L57)
 
 ___
 
@@ -123,7 +346,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `s` | `Step` |
+| `s` | [`Step`](../wiki/Step) |
 
 #### Returns
 
@@ -131,13 +354,13 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:20](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L20)
+[src/core/helpers.ts:20](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/helpers.ts#L20)
 
 ___
 
 ### create
 
-▸ **create**(`api`, `project`, `options?`): `Promise`<`Session`\>
+▸ **create**(`api`, `project`, `options?`): `Promise`<[`Session`](../wiki/Session)\>
 
 #### Parameters
 
@@ -149,11 +372,11 @@ ___
 
 #### Returns
 
-`Promise`<`Session`\>
+`Promise`<[`Session`](../wiki/Session)\>
 
 #### Defined in
 
-[src/core/api.ts:6](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L6)
+[src/core/api.ts:6](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/api.ts#L6)
 
 ___
 
@@ -174,27 +397,27 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:44](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/init.ts#L44)
+[src/core/init.ts:44](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/init.ts#L44)
 
 ___
 
 ### getCurrentStep
 
-▸ **getCurrentStep**(`s`): ``null`` \| `Step`
+▸ **getCurrentStep**(`s`): ``null`` \| [`Step`](../wiki/Step)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `s` | `Step` |
+| `s` | [`Step`](../wiki/Step) |
 
 #### Returns
 
-``null`` \| `Step`
+``null`` \| [`Step`](../wiki/Step)
 
 #### Defined in
 
-[src/core/helpers.ts:24](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L24)
+[src/core/helpers.ts:24](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/helpers.ts#L24)
 
 ___
 
@@ -224,7 +447,7 @@ newDataCallback : SDK -{updated session}-> Renderer :
 
 #### Defined in
 
-[src/core/init.ts:150](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/init.ts#L150)
+[src/core/init.ts:150](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/init.ts#L150)
 
 ___
 
@@ -241,7 +464,7 @@ NOTE: goals with zero dependencies will have themselves in the dependency list,
 | Name | Type |
 | :------ | :------ |
 | `attribId` | `string`[] |
-| `state?` | `State`[] |
+| `state?` | [`State`](../wiki/State)[] |
 
 #### Returns
 
@@ -251,13 +474,13 @@ NOTE: goals with zero dependencies will have themselves in the dependency list,
 
 #### Defined in
 
-[src/core/helpers.ts:83](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L83)
+[src/core/helpers.ts:83](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/helpers.ts#L83)
 
 ___
 
 ### load
 
-▸ **load**(`api`, `project`, `session`): `Promise`<`Session`\>
+▸ **load**(`api`, `project`, `session`): `Promise`<[`Session`](../wiki/Session)\>
 
 #### Parameters
 
@@ -269,17 +492,17 @@ ___
 
 #### Returns
 
-`Promise`<`Session`\>
+`Promise`<[`Session`](../wiki/Session)\>
 
 #### Defined in
 
-[src/core/api.ts:18](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L18)
+[src/core/api.ts:18](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/api.ts#L18)
 
 ___
 
 ### navigate
 
-▸ **navigate**(`api`, `project`, `session`, `step`): `Promise`<`Session`\>
+▸ **navigate**(`api`, `project`, `session`, `step`): `Promise`<[`Session`](../wiki/Session)\>
 
 Navigate to a specific step.
 
@@ -294,11 +517,11 @@ Navigate to a specific step.
 
 #### Returns
 
-`Promise`<`Session`\>
+`Promise`<[`Session`](../wiki/Session)\>
 
 #### Defined in
 
-[src/core/api.ts:41](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L41)
+[src/core/api.ts:41](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/api.ts#L41)
 
 ___
 
@@ -311,7 +534,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `template` | `string` |
-| `data` | `AttributeData` |
+| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
 
 #### Returns
 
@@ -319,7 +542,7 @@ ___
 
 #### Defined in
 
-[src/core/placeholders.ts:11](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/placeholders.ts#L11)
+[src/core/placeholders.ts:11](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/placeholders.ts#L11)
 
 ___
 
@@ -333,7 +556,7 @@ ___
 | :------ | :------ | :------ |
 | `obj` | `any` | `undefined` |
 | `propNames` | `string`[] | `undefined` |
-| `replacements` | `AttributeData` \| `Record`<`string`, `string`\> | `undefined` |
+| `replacements` | [`AttributeData`](../wiki/Exports#attributedata) \| `Record`<`string`, `string`\> | `undefined` |
 | `defaultReplacement` | `string` | `'...'` |
 
 #### Returns
@@ -342,34 +565,34 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:36](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L36)
+[src/core/helpers.ts:36](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/helpers.ts#L36)
 
 ___
 
 ### setCurrentInStep
 
-▸ **setCurrentInStep**(`s`, `id`): `Step`
+▸ **setCurrentInStep**(`s`, `id`): [`Step`](../wiki/Step)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `s` | `Step` |
+| `s` | [`Step`](../wiki/Step) |
 | `id` | `string` |
 
 #### Returns
 
-`Step`
+[`Step`](../wiki/Step)
 
 #### Defined in
 
-[src/core/helpers.ts:7](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/helpers.ts#L7)
+[src/core/helpers.ts:7](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/helpers.ts#L7)
 
 ___
 
 ### simulate
 
-▸ **simulate**(`api`, `project`, `release`, `session`, `data`): `Promise`<`AttributeData`\>
+▸ **simulate**(`api`, `project`, `release`, `session`, `data`): `Promise`<[`AttributeData`](../wiki/Exports#attributedata)\>
 
 #### Parameters
 
@@ -379,21 +602,21 @@ ___
 | `project` | `string` |
 | `release` | `string` |
 | `session` | `string` |
-| `data` | `Partial`<`Simulate`\> |
+| `data` | `Partial`<[`Simulate`](../wiki/Simulate)\> |
 
 #### Returns
 
-`Promise`<`AttributeData`\>
+`Promise`<[`AttributeData`](../wiki/Exports#attributedata)\>
 
 #### Defined in
 
-[src/core/api.ts:46](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L46)
+[src/core/api.ts:46](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/api.ts#L46)
 
 ___
 
 ### submit
 
-▸ **submit**(`api`, `project`, `session`, `data`, `navigate`, `overrides`, `releaseId?`): `Promise`<`Session`\>
+▸ **submit**(`api`, `project`, `session`, `data`, `navigate`, `overrides`, `releaseId?`): `Promise`<[`Session`](../wiki/Session)\>
 
 Submit response for current step.
 
@@ -404,36 +627,36 @@ Submit response for current step.
 | `api` | `AxiosInstance` | - |
 | `project` | `string` | - |
 | `session` | `string` | - |
-| `data` | `AttributeData` | The data for the current step to submit |
-| `navigate` | `Navigate` | The desired navigation after update, defaults to next |
+| `data` | [`AttributeData`](../wiki/Exports#attributedata) | The data for the current step to submit |
+| `navigate` | [`Navigate`](../wiki/Exports#navigate) | The desired navigation after update, defaults to next |
 | `overrides` | [`Overrides`](../wiki/Exports#overrides) | Other params to pass through to payload |
 | `releaseId?` | `string` | - |
 
 #### Returns
 
-`Promise`<`Session`\>
+`Promise`<[`Session`](../wiki/Session)\>
 
 #### Defined in
 
-[src/core/api.ts:30](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/api.ts#L30)
+[src/core/api.ts:30](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/api.ts#L30)
 
 ___
 
 ### transformResponse
 
-▸ **transformResponse**(`session`, `data`): `ResponseData`
+▸ **transformResponse**(`session`, `data`): [`ResponseData`](../wiki/Exports#responsedata)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `session` | `Session` |
-| `data` | `ResponseData` |
+| `session` | [`Session`](../wiki/Session) |
+| `data` | [`ResponseData`](../wiki/Exports#responsedata) |
 
 #### Returns
 
-`ResponseData`
+[`ResponseData`](../wiki/Exports#responsedata)
 
 #### Defined in
 
-[src/core/init.ts:75](https://github.com/decisively-io/interview-sdk/blob/ccfa600/src/core/init.ts#L75)
+[src/core/init.ts:75](https://github.com/decisively-io/interview-sdk/blob/166baed/src/core/init.ts#L75)

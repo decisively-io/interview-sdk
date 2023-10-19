@@ -29,3 +29,5 @@ export interface SessionInstance extends Session {
 
 // this is just typed for clarity
 export type SessionObservable = Partial<SessionInstance>;
+
+export * from "@decisively-io/types-interview";
