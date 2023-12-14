@@ -1,43 +1,43 @@
-import axios, { AxiosInstance, 
-  AxiosRequestConfig, 
-  AxiosRequestTransformer, 
+import axios, { AxiosInstance,
+  AxiosRequestConfig,
+  AxiosRequestTransformer,
   AxiosResponseTransformer }        from "axios";
 import produce                      from "immer";
 import isEmpty                      from "lodash.isempty";
 import { v4 as uuid }               from 'uuid';
-import { Subject, 
-         scan, 
-         map, 
-         filter, 
-         merge, 
-         Subscription, 
-         distinctUntilChanged, 
-         debounceTime, 
+import { Subject,
+         scan,
+         map,
+         filter,
+         merge,
+         Subscription,
+         distinctUntilChanged,
+         debounceTime,
          takeWhile }                from "rxjs";
 import isEqual                      from "lodash.isequal";
-import { AttributeData, 
-         AttributeValue, 
-         Control, 
-         Session, 
-         StepId, 
+import { AttributeData,
+         AttributeValue,
+         Control,
+         Session,
+         StepId,
          ResponseData }             from "@decisively-io/types-interview";
 import { ControlTypes }             from "./constants";
-import { buildUrl, 
-         stateToData, 
-         range, 
+import { buildUrl,
+         stateToData,
+         range,
          isStrNotNullOrBlank }      from "./util";
-import { create, 
-          load, 
-          submit, 
+import { create,
+          load,
+          submit,
           navigate }                from './api';
-import { DynamicUpdateFunction, 
-         Overrides, 
+import { DynamicUpdateFunction,
+         Overrides,
          SessionConfig,
-         SessionInstance, 
+         SessionInstance,
          SessionObservable }        from './types';
 import { render }                   from "./placeholders";
-import { cmpAttributeData, 
-         isAttributeDynamic, 
+import { cmpAttributeData,
+         isAttributeDynamic,
          replaceTemplatedText }     from "./helpers";
 import { buildDynamicReplacements } from "./dynamic";
 
@@ -73,7 +73,7 @@ interface IControl {
 }
 
 export const transformResponse = (session: Session, data: ResponseData): ResponseData => {
-  
+
   return produce(data, draft => {
     if (session.data['@parent']) {
       draft['@parent'] = session.data['@parent'];
@@ -90,18 +90,19 @@ export const transformResponse = (session: Session, data: ResponseData): Respons
 };
 
 const createSessionTransform = (
-    api             : AxiosInstance, 
-    project         : string, 
-    session         : string, 
+    api             : AxiosInstance,
+    project         : string,
+    session         : string,
     chOnScreenData? : DynamicUpdateFunction,
     chSessionState?: (data: SessionObservable) => void,
+    releaseId?: string
   ): AxiosResponseTransformer => (res) => {
 
   res._api           = api;
   res._project       = project;
   res.submit         = (data: AttributeData, navigate: any, overrides: Overrides = {}) => {
       // console.log('submitting', data, navigate, overrides);
-      return submit(api, project, session, data, navigate, overrides);
+      return submit(api, project, session, data, navigate, overrides, releaseId);
     };
   res.save           = (data: AttributeData) => submit(api, project, session, data, false, {});
   res.navigate       = (step: StepId) => navigate(api, project, session, step);
@@ -130,16 +131,23 @@ const createSessionTransform = (
 
 export const defaultPath = ["decisionapi", "session"];
 
+export interface InterviewProvider {
+  // create a SessionInstance to work with by calling on the decisively service
+  create: (project: string, config: SessionConfig, newDataCallback?: ((data: any) => void) | undefined) => Promise<SessionInstance>;
+  load: (project: string, sessionId: string) => Promise<SessionInstance>;
+  finish: () => void;
+}
+
 /**
  * Initialize the SDK
- * 
+ *
  * chOnScreenData  : Renderer -{updated attribute}-> SDK
  *    - (the function never moves, so we can safely give it to the renderer)
- * newDataCallback : SDK -{updated session}-> Renderer : 
+ * newDataCallback : SDK -{updated session}-> Renderer :
  *    - if using react, the renderer needs to be careful, because unless this function is within
  *      a HOC, it will be recreated every render, and the SDK will not be able to send updates
  */
-export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}) => {
+export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}): InterviewProvider => {
 
   // -- create the api instance
 
@@ -147,27 +155,27 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
   const api = createApiInstance(baseUrl, overrides);
 
   const transformApi = (
-    project        : string, 
+    project        : string,
     session        : string,
     chOnScreenData?: DynamicUpdateFunction,
     chSessionState?: (data: SessionObservable) => void,
+    releaseId?: string
   ) => {
     api.defaults.transformResponse = [
       ...axios.defaults.transformResponse as AxiosResponseTransformer[],
-      createSessionTransform(api, project, session, chOnScreenData, chSessionState)
+      createSessionTransform(api, project, session, chOnScreenData, chSessionState, releaseId)
     ];
   };
 
   // -- ret
   let sessionState$: Subscription | null = null;
   return {
-    // create a SessionInstance to work with by calling on the decisively service
-    create: async (project: string, config: SessionConfig, newDataCallback?: (data: any) => void) => {
+    create: async (project, config, newDataCallback?) => {
 
       // -- create some observers for this session
 
       /**
-       * $ - Track what the user enters on-screen by providing a vanilla JS Callback 
+       * $ - Track what the user enters on-screen by providing a vanilla JS Callback
        * for the renderer to optionally notify the SDK of changed onscreen data
        */
       const onScreenDataChanged$ = new Subject<AttributeData>();
@@ -260,11 +268,11 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
 
       const res = await create(api, project, config);
       // apply transformer for future responses
-      transformApi(project, res.sessionId, chOnScreenData, chSessionState);
+      transformApi(project, res.sessionId, chOnScreenData, chSessionState, config.release);
       // transform this current response
-      return createSessionTransform(api, project, res.sessionId, chOnScreenData, chSessionState)(res) as SessionInstance;
+      return createSessionTransform(api, project, res.sessionId, chOnScreenData, chSessionState, config.release)(res) as SessionInstance;
     },
-    load: (project: string, sessionId: string) => {
+    load: (project, sessionId) => {
       // apply transformer for future responses
       transformApi(project, sessionId);
       return load(api, project, sessionId) as Promise<SessionInstance>;

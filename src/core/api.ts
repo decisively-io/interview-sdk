@@ -27,8 +27,9 @@ export const load = async (api: AxiosInstance, project: ProjectId, session: Sess
  * @param navigate The desired navigation after update, defaults to next
  * @param overrides Other params to pass through to payload
  */
-export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: AttributeData, navigate: Navigate, overrides: Overrides) => {
-  const res = await api.patch<Session>(project, { data, navigate, ...overrides }, { params: { session: session } });
+export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: AttributeData, navigate: Navigate, overrides: Overrides, releaseId?: string) => {
+  const url = releaseId === undefined ? project : buildUrl( project, releaseId );
+  const res = await api.patch<Session>(url, { data, navigate, ...overrides }, { params: { session: session } });
   return res.data;
 };
 
@@ -45,12 +46,12 @@ export const navigate = async (api: AxiosInstance, project: ProjectId, session: 
 export const simulate = async (api: AxiosInstance, project: ProjectId, release: ReleaseId, session: SessionId, data: Partial<Simulate>) => {
   const res = await api.patch<AttributeData>(
       buildUrl(project, release),
-      { 
+      {
         mode: 'api',
         save: false,
         ...data,
       },
-      { 
+      {
         params: { session },
       }
     );
