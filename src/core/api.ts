@@ -1,5 +1,5 @@
+import { AttributeData, Navigate, ProjectId, ReleaseId, Session, SessionId, Simulate, StepId } from "@decisively-io/types-interview";
 import { AxiosInstance, AxiosRequestConfig } from "axios";
-import { Session, AttributeData, Navigate, StepId, SessionId, ProjectId, Simulate, ReleaseId } from "@decisively-io/types-interview";
 import { Overrides, SessionConfig } from "./types";
 import { buildUrl } from "./util";
 
@@ -28,7 +28,7 @@ export const load = async (api: AxiosInstance, project: ProjectId, session: Sess
  * @param overrides Other params to pass through to payload
  */
 export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: AttributeData, navigate: Navigate, overrides: Overrides, releaseId?: string) => {
-  const url = releaseId === undefined ? project : buildUrl( project, releaseId );
+  const url = releaseId === undefined ? project : buildUrl(project, releaseId);
   const res = await api.patch<Session>(url, { data, navigate, ...overrides }, { params: { session: session } });
   return res.data;
 };
@@ -43,17 +43,22 @@ export const navigate = async (api: AxiosInstance, project: ProjectId, session: 
   return res.data;
 };
 
-export const simulate = async (api: AxiosInstance, project: ProjectId, release: ReleaseId, session: SessionId, data: Partial<Simulate>) => {
-  const res = await api.patch<AttributeData>(
-      buildUrl(project, release),
-      {
-        mode: 'api',
-        save: false,
-        ...data,
-      },
-      {
-        params: { session },
-      }
-    );
+export const back = async (api: AxiosInstance, project: ProjectId, session: SessionId) => {
+  const res = await api.patch<Session>(project, { navigate: "@back" }, { params: { session } });
   return res.data;
 }
+
+export const simulate = async (api: AxiosInstance, project: ProjectId, release: ReleaseId, session: SessionId, data: Partial<Simulate>) => {
+  const res = await api.patch<AttributeData>(
+    buildUrl(project, release),
+    {
+      mode: "api",
+      save: false,
+      ...data,
+    },
+    {
+      params: { session },
+    },
+  );
+  return res.data;
+};

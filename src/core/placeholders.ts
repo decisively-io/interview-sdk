@@ -1,7 +1,7 @@
-// import { produce } from 'immer';
-import { Subject } from 'rxjs';
 // import { debounceTime, map, filter } from 'rxjs/operators';
 import { AttributeData } from "@decisively-io/types-interview";
+// import { produce } from 'immer';
+import { Subject } from "rxjs";
 // import { SessionInstance } from "./types";
 // import { simulate } from "./api";
 
@@ -11,8 +11,8 @@ const splitRegex = /{{|}}/;
 export const render = (template: string, data: AttributeData) => {
   return template.replace(templateRegex, (match) => {
     const attributeId = match.split(splitRegex).filter(Boolean)[0].trim();
-    const value = data[attributeId] || '...';
-    return typeof value === 'string' ? value : String(value);
+    const value = data[attributeId] || "...";
+    return typeof value === "string" ? value : String(value);
   });
 };
 
@@ -20,7 +20,7 @@ export const render = (template: string, data: AttributeData) => {
 
 /**
  * could try to abstract and insert observables into controls??
- * 
+ *
  * for each attrib in state, make an observable that simulates on event
  * using the observable, insert a method to trigger the event onto each dependant control
  * the control can be found using its attribute field
@@ -28,12 +28,12 @@ export const render = (template: string, data: AttributeData) => {
  *  ie a3 is dependant on a1 and a2
  *  a1 updates => triggers event {a1: value} => does not simulate as missing a2
  *  a2 updates => triggers event {a2: value} => now have { a1: value, a2: value } => triggers simulate
-*/
+ */
 
 interface AttributeControl {
   attribute: string;
   onChange?: Subject<string>;
-};
+}
 
 /*
 

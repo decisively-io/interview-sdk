@@ -1,6 +1,6 @@
 {
   "name": "@decisively-io/interview-sdk",
-  "version": "0.3.11",
+  "version": "0.4.0-alpha.1",
   "description": "An SDK for the Decisively interview system.",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -8,6 +8,8 @@
     "prepublishOnly": "npm run build",
     "clean": "rimraf dist && rimraf docs",
     "doc": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-github-wiki-theme",
+    "check:fix": "npx @biomejs/biome check --apply-unsafe src",
+    "check": "npx @biomejs/biome check src",
     "build": "yarn clean && tsc && npm run doc",
     "dev": "tsc -w",
     "deploy": "yarn build && yarn publish"
@@ -26,11 +28,10 @@
   "author": "Decisively",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@biomejs/biome": "^1.4.1",
     "@types/lodash.isempty": "^4.4.8",
     "@types/lodash.isequal": "^4.5.7",
     "@types/uuid": "^9.0.6",
-    "prettier": "^2.5.1",
-    "prettier-eslint": "^13.0.0",
     "rimraf": "^5.0.5",
     "typedoc": "^0.25.2",
     "typedoc-github-wiki-theme": "^1.1.0",

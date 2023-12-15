@@ -1,19 +1,19 @@
-import { State, AttributeData } from '@decisively-io/types-interview';
+import { AttributeData, State } from "@decisively-io/types-interview";
 
 export const buildUrl = (...args: (string | undefined)[]) => {
-  return [...args.filter(a => !!a)].join('/');
+  return [...args.filter((a) => !!a)].join("/");
 };
 
-export const range = (size: number, startAt: number = 0) => {
-  return [...Array(size).keys()].map(i => i + startAt);
+export const range = (size: number, startAt = 0) => {
+  return [...Array(size).keys()].map((i) => i + startAt);
 };
 
 export const stateToData = (state: State[]): AttributeData => {
   return Object.keys(state).reduce((acc: AttributeData, key) => {
-    acc[key] = state.find( (s) => s.id === key)?.value;
+    acc[key] = state.find((s) => s.id === key)?.value;
     return acc;
   }, {});
 };
 
-export const isStrNotNullOrBlank = (str: any): boolean => (!(/^\s*$/).test(str || ''));
+export const isStrNotNullOrBlank = (str: any): boolean => !/^\s*$/.test(str || "");
 export const isStrNullOrBlank = (str: any): boolean => !isStrNotNullOrBlank(str);
