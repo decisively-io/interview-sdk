@@ -21,7 +21,7 @@ export interface SessionInstance extends Session {
   save: (data: AttributeData) => Promise<SessionInstance>;
   navigate: (step: StepId) => Promise<SessionInstance>;
   render: (value: string) => string;
-  back: () => Promise<void>;
+  back: () => Promise<SessionInstance>;
   populate: (data: AttributeData) => Promise<SessionInstance>;
   // dynamic interview
   chOnScreenData: DynamicUpdateFunction; // allows the render-implementation to notify the SDK that the on-screen data has changed
