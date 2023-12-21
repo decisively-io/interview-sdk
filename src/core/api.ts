@@ -46,7 +46,7 @@ export const navigate = async (api: AxiosInstance, project: ProjectId, session: 
 export const back = async (api: AxiosInstance, project: ProjectId, session: SessionId) => {
   const res = await api.patch<Session>(project, { navigate: "@back" }, { params: { session } });
   return res.data;
-}
+};
 
 export const simulate = async (api: AxiosInstance, project: ProjectId, release: ReleaseId, session: SessionId, data: Partial<Simulate>) => {
   const res = await api.patch<AttributeData>(
