@@ -5,7 +5,7 @@ import isEmpty from "lodash.isempty";
 import isEqual from "lodash.isequal";
 import { Subject, Subscription, debounceTime, distinctUntilChanged, filter, map, merge, scan, takeWhile } from "rxjs";
 import { v4 as uuid } from "uuid";
-import { back, create, load, navigate, submit } from "./api";
+import { back, create, exportTimeline, load, navigate, submit } from "./api";
 import { ControlTypes } from "./constants";
 import { buildDynamicReplacements } from "./dynamic";
 import { cmpAttributeData, isAttributeDynamic, replaceTemplatedText } from "./helpers";
@@ -68,6 +68,9 @@ const createSessionTransform =
     res.navigate = (step: StepId) => navigate(api, project, session, step);
     res.render = (value: string) => render(value, res.state ? stateToData(res.state) : {});
     res.back = async () => back(api, project, session);
+    res.exportTimeline = () => {
+      return exportTimeline(api, project, session);
+    }
 
     if (chOnScreenData) {
       res.chOnScreenData = chOnScreenData;
