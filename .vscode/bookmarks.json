@@ -1,14 +1,14 @@
 {
-	"files": [
-		{
-			"path": "src/core/init.ts",
-			"bookmarks": [
-				{
-					"line": 136,
-					"column": 17,
-					"label": ""
-				}
-			]
-		}
-	]
+  "files": [
+    {
+      "path": "src/core/init.ts",
+      "bookmarks": [
+        {
+          "line": 136,
+          "column": 17,
+          "label": ""
+        }
+      ]
+    }
+  ]
 }

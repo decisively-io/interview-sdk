@@ -5,11 +5,11 @@
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run check && npm run build",
     "clean": "rimraf dist && rimraf docs",
     "doc": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-github-wiki-theme",
-    "check:fix": "npx @biomejs/biome check --apply-unsafe src",
-    "check": "npx @biomejs/biome check src",
+    "check:fix": "tsc --noEmit --project tsconfig.json && npx @biomejs/biome check --apply-unsafe .",
+    "check": "tsc --noEmit --project tsconfig.json && npx @biomejs/biome check .",
     "build": "yarn clean && tsc && npm run doc",
     "dev": "tsc -w",
     "deploy": "yarn build && yarn publish"

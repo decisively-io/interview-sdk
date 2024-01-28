@@ -64,10 +64,14 @@ export const simulate = async (api: AxiosInstance, project: ProjectId, release: 
 };
 
 export const exportTimeline = async (api: AxiosInstance, project: ProjectId, session: SessionId) => {
-  const res = await api.post<string>(`${project}`, {
-    exportTimeline: true,
-  }, {
-    params: { session },
-  });
+  const res = await api.post<string>(
+    `${project}`,
+    {
+      exportTimeline: true,
+    },
+    {
+      params: { session },
+    },
+  );
   return res.data;
-}
+};

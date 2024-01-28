@@ -70,7 +70,7 @@ const createSessionTransform =
     res.back = async () => back(api, project, session);
     res.exportTimeline = () => {
       return exportTimeline(api, project, session);
-    }
+    };
 
     if (chOnScreenData) {
       res.chOnScreenData = chOnScreenData;
