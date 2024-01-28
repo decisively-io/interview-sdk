@@ -22,7 +22,7 @@ The end-styling of the text is up to the run time.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:274
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:293
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:270
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:289
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:273
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:292
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:272
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:291
 
 ___
 
@@ -62,4 +62,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:271
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:290

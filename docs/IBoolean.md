@@ -17,6 +17,7 @@ but not answered.
 - [label](../wiki/IBoolean#label)
 - [labelLength](../wiki/IBoolean#labellength)
 - [required](../wiki/IBoolean#required)
+- [showExplanation](../wiki/IBoolean#showexplanation)
 - [type](../wiki/IBoolean#type)
 - [value](../wiki/IBoolean#value)
 
@@ -89,6 +90,16 @@ ___
 #### Defined in
 
 node_modules/@decisively-io/types-interview/dist/controls.d.ts:14
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:19
 
 ___
 

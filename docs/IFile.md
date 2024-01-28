@@ -15,6 +15,7 @@ Allow a user to upload a file. This metadata is still under construction
 - [max](../wiki/IFile#max)
 - [max\_size](../wiki/IFile#max_size)
 - [required](../wiki/IFile#required)
+- [showExplanation](../wiki/IFile#showexplanation)
 - [type](../wiki/IFile#type)
 
 ## Properties
@@ -27,7 +28,7 @@ uuid
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:191
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:208
 
 ___
 
@@ -39,7 +40,7 @@ The types of file allowed (pdf docx etc)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:195
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:212
 
 ___
 
@@ -51,7 +52,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:185
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:202
 
 ___
 
@@ -61,7 +62,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:187
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:204
 
 ___
 
@@ -71,7 +72,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:188
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:205
 
 ___
 
@@ -83,7 +84,7 @@ The max number of files that can be uploaded. Defaults to 1
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:193
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:210
 
 ___
 
@@ -95,7 +96,7 @@ The maximum size of a document, in Mb
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:197
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:214
 
 ___
 
@@ -105,7 +106,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:189
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:206
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:215
 
 ___
 
@@ -115,4 +126,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:186
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:203

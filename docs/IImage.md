@@ -25,7 +25,7 @@ The base64 date URI of the image
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:211
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:229
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:208
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:226
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:209
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:227

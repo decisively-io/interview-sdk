@@ -13,6 +13,7 @@ Collect information about instances (of an entity) within a tabular structure.
 - [labelLength](../wiki/IEntity#labellength)
 - [max](../wiki/IEntity#max)
 - [min](../wiki/IEntity#min)
+- [showExplanation](../wiki/IEntity#showexplanation)
 - [template](../wiki/IEntity#template)
 - [type](../wiki/IEntity#type)
 - [value](../wiki/IEntity#value)
@@ -27,7 +28,7 @@ describes single 'row' of entries, each of which has all controls from `template
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:290
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:308
 
 ___
 
@@ -39,7 +40,7 @@ The name of the entity
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:287
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:305
 
 ___
 
@@ -51,7 +52,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:282
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:300
 
 ___
 
@@ -61,7 +62,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:284
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:302
 
 ___
 
@@ -71,7 +72,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:285
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:303
 
 ___
 
@@ -81,7 +82,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:295
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:313
 
 ___
 
@@ -93,17 +94,27 @@ min number of instances
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:294
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:312
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:314
 
 ___
 
 ### template
 
-• **template**: [`NonNestedControl`](../wiki/Exports#nonnestedcontrol)[]
+• **template**: [`Control`](../wiki/Exports#control)[]
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:291
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:309
 
 ___
 
@@ -113,7 +124,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:283
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:301
 
 ___
 
@@ -123,4 +134,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:292
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:310

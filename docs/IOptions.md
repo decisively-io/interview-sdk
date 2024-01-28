@@ -31,6 +31,7 @@ attribute (and not send the enum_id to the client.
 - [labelLength](../wiki/IOptions#labellength)
 - [options](../wiki/IOptions#options)
 - [required](../wiki/IOptions#required)
+- [showExplanation](../wiki/IOptions#showexplanation)
 - [type](../wiki/IOptions#type)
 - [value](../wiki/IOptions#value)
 
@@ -44,7 +45,7 @@ Allow a user to add their own option, not in the list, in
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:175
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:191
 
 ___
 
@@ -57,7 +58,7 @@ Default display as standart select
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:160
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:176
 
 ___
 
@@ -69,7 +70,7 @@ uuid
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:168
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:184
 
 ___
 
@@ -79,7 +80,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:166
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:182
 
 ___
 
@@ -89,7 +90,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:164
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:180
 
 ___
 
@@ -101,7 +102,7 @@ uuid, design time only
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:177
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:193
 
 ___
 
@@ -113,7 +114,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:154
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:170
 
 ___
 
@@ -123,7 +124,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:161
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:177
 
 ___
 
@@ -133,7 +134,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:162
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:178
 
 ___
 
@@ -145,7 +146,7 @@ design and runtime
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:170
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:186
 
 ___
 
@@ -155,7 +156,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:163
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:179
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:194
 
 ___
 
@@ -165,7 +176,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:155
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:171
 
 ___
 
@@ -175,4 +186,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:165
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:181

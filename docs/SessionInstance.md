@@ -16,6 +16,7 @@
 - [chOnScreenData](../wiki/SessionInstance#chonscreendata)
 - [context](../wiki/SessionInstance#context)
 - [data](../wiki/SessionInstance#data)
+- [explanations](../wiki/SessionInstance#explanations)
 - [externalLoading](../wiki/SessionInstance#externalloading)
 - [navigate](../wiki/SessionInstance#navigate)
 - [populate](../wiki/SessionInstance#populate)
@@ -42,7 +43,7 @@
 
 #### Defined in
 
-[src/core/types.ts:18](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L18)
+[src/core/types.ts:18](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L18)
 
 ___
 
@@ -52,7 +53,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:19](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L19)
+[src/core/types.ts:19](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L19)
 
 ___
 
@@ -70,7 +71,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:24](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L24)
+[src/core/types.ts:24](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L24)
 
 ___
 
@@ -80,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:28](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L28)
+[src/core/types.ts:28](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L28)
 
 ___
 
@@ -112,13 +113,27 @@ node_modules/@decisively-io/types-interview/dist/core.d.ts:85
 
 ___
 
+### explanations
+
+• `Optional` **explanations**: `Record`<`string`, `string`\>
+
+#### Inherited from
+
+[Session](../wiki/Session).[explanations](../wiki/Session#explanations)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:91
+
+___
+
 ### externalLoading
 
 • `Optional` **externalLoading**: `boolean`
 
 #### Defined in
 
-[src/core/types.ts:29](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L29)
+[src/core/types.ts:29](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L29)
 
 ___
 
@@ -142,7 +157,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:22](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L22)
+[src/core/types.ts:22](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L22)
 
 ___
 
@@ -166,7 +181,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:25](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L25)
+[src/core/types.ts:25](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L25)
 
 ___
 
@@ -204,7 +219,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:23](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L23)
+[src/core/types.ts:23](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L23)
 
 ___
 
@@ -242,7 +257,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:21](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L21)
+[src/core/types.ts:21](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L21)
 
 ___
 
@@ -340,7 +355,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:20](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L20)
+[src/core/types.ts:20](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L20)
 
 ## Methods
 
@@ -354,4 +369,4 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:26](https://github.com/decisively-io/interview-sdk/blob/798cf52/src/core/types.ts#L26)
+[src/core/types.ts:26](https://github.com/decisively-io/interview-sdk/blob/dbff46b/src/core/types.ts#L26)

@@ -15,6 +15,7 @@ Collects text from the user.
 - [max](../wiki/IText#max)
 - [multi](../wiki/IText#multi)
 - [required](../wiki/IText#required)
+- [showExplanation](../wiki/IText#showexplanation)
 - [type](../wiki/IText#type)
 - [value](../wiki/IText#value)
 - [variation](../wiki/IText#variation)
@@ -29,7 +30,7 @@ uuid
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:250
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:268
 
 ___
 
@@ -39,7 +40,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:248
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:266
 
 ___
 
@@ -49,7 +50,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:247
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:265
 
 ___
 
@@ -61,7 +62,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:242
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:260
 
 ___
 
@@ -71,7 +72,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:244
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:262
 
 ___
 
@@ -81,7 +82,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:245
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:263
 
 ___
 
@@ -93,7 +94,7 @@ The maximum length of the string
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:253
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:271
 
 ___
 
@@ -110,7 +111,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:259
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:277
 
 ___
 
@@ -120,7 +121,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:246
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:264
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:281
 
 ___
 
@@ -130,7 +141,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:243
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:261
 
 ___
 
@@ -140,7 +151,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:251
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:269
 
 ___
 
@@ -150,4 +161,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:254
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:272

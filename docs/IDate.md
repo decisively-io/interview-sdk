@@ -17,6 +17,7 @@ Do not send a time component back.
 - [max](../wiki/IDate#max)
 - [min](../wiki/IDate#min)
 - [required](../wiki/IDate#required)
+- [showExplanation](../wiki/IDate#showexplanation)
 - [type](../wiki/IDate#type)
 - [value](../wiki/IDate#value)
 
@@ -28,7 +29,7 @@ Do not send a time component back.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:57
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:59
 
 ___
 
@@ -40,7 +41,7 @@ uuid
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:59
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:61
 
 ___
 
@@ -48,11 +49,11 @@ ___
 
 • `Optional` **default**: `string`
 
-YYYY-MM-DD
+'YYYY-MM-DD'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:62
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:65
 
 ___
 
@@ -62,7 +63,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:56
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:58
 
 ___
 
@@ -74,7 +75,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:51
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:53
 
 ___
 
@@ -84,7 +85,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:53
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:55
 
 ___
 
@@ -94,7 +95,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:54
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:56
 
 ___
 
@@ -106,7 +107,7 @@ Maximum date allowed, YYYY-MM-DD
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:66
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:69
 
 ___
 
@@ -118,7 +119,7 @@ Minimum date allowed, YYYY-MM-DD
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:64
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:67
 
 ___
 
@@ -128,7 +129,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:55
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:57
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:70
 
 ___
 
@@ -138,7 +149,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:52
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:54
 
 ___
 
@@ -146,6 +157,8 @@ ___
 
 • `Optional` **value**: ``null`` \| `string`
 
+'YYYY-MM-DD'
+
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:60
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:63

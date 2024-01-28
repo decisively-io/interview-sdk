@@ -18,6 +18,7 @@ It's metadata is basically a merge of the date and time, but with seperate min/m
 - [labelLength](../wiki/IDateTime#labellength)
 - [minutes\_increment](../wiki/IDateTime#minutes_increment)
 - [required](../wiki/IDateTime#required)
+- [showExplanation](../wiki/IDateTime#showexplanation)
 - [time\_max](../wiki/IDateTime#time_max)
 - [time\_min](../wiki/IDateTime#time_min)
 - [type](../wiki/IDateTime#type)
@@ -34,7 +35,7 @@ Whether to display time with an 'AM/PM' or in 24 hour time.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:129
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:143
 
 ___
 
@@ -46,7 +47,7 @@ uuid
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:114
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:127
 
 ___
 
@@ -54,11 +55,11 @@ ___
 
 • `Optional` **date\_max**: `string`
 
-YYYY-MM-DD
+'YYYY-MM-DD', 'now'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:121
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:135
 
 ___
 
@@ -66,11 +67,11 @@ ___
 
 • `Optional` **date\_min**: `string`
 
-YYYY-MM-DD
+'YYYY-MM-DD', 'now'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:119
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:133
 
 ___
 
@@ -78,11 +79,11 @@ ___
 
 • `Optional` **default**: `string`
 
-YYYY-MM-DD HH:mm:ss
+'YYYY-MM-DD HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:117
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:131
 
 ___
 
@@ -92,7 +93,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:112
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:125
 
 ___
 
@@ -104,7 +105,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:107
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:120
 
 ___
 
@@ -114,7 +115,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:109
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:122
 
 ___
 
@@ -124,7 +125,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:110
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:123
 
 ___
 
@@ -136,7 +137,7 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:131
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:145
 
 ___
 
@@ -146,7 +147,19 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:111
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:124
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+mui picker doesn't have this control
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:147
 
 ___
 
@@ -154,11 +167,11 @@ ___
 
 • `Optional` **time\_max**: `string`
 
-HH:mm:ss
+'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:125
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:139
 
 ___
 
@@ -166,11 +179,11 @@ ___
 
 • `Optional` **time\_min**: `string`
 
-HH:mm:ss
+'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:123
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:137
 
 ___
 
@@ -180,7 +193,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:108
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:121
 
 ___
 
@@ -188,6 +201,8 @@ ___
 
 • `Optional` **value**: ``null`` \| `string`
 
+'YYYY-MM-DD HH:mm:ss'
+
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:115
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:129

@@ -12,6 +12,7 @@
 
 - [context](../wiki/Session#context)
 - [data](../wiki/Session#data)
+- [explanations](../wiki/Session#explanations)
 - [progress](../wiki/Session#progress)
 - [renderAt](../wiki/Session#renderat)
 - [screen](../wiki/Session#screen)
@@ -39,6 +40,16 @@ ___
 #### Defined in
 
 node_modules/@decisively-io/types-interview/dist/core.d.ts:85
+
+___
+
+### explanations
+
+• `Optional` **explanations**: `Record`<`string`, `string`\>
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:91
 
 ___
 

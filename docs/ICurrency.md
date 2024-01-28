@@ -18,6 +18,7 @@ A number input for inputting currency values. This should:
 - [max](../wiki/ICurrency#max)
 - [min](../wiki/ICurrency#min)
 - [required](../wiki/ICurrency#required)
+- [showExplanation](../wiki/ICurrency#showexplanation)
 - [symbol](../wiki/ICurrency#symbol)
 - [type](../wiki/ICurrency#type)
 - [value](../wiki/ICurrency#value)
@@ -32,7 +33,7 @@ uuid
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:36
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:37
 
 ___
 
@@ -42,7 +43,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:34
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:35
 
 ___
 
@@ -52,7 +53,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:33
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:34
 
 ___
 
@@ -64,7 +65,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:28
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:29
 
 ___
 
@@ -74,7 +75,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:30
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:31
 
 ___
 
@@ -84,7 +85,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:31
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:32
 
 ___
 
@@ -96,7 +97,7 @@ Maximum number allowed - if not set assume no restriction
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:43
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:44
 
 ___
 
@@ -108,7 +109,7 @@ Minimum number allowed - if not set assume no restriction
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:41
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:42
 
 ___
 
@@ -118,7 +119,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:32
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:33
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:45
 
 ___
 
@@ -134,7 +145,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:39
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:40
 
 ___
 
@@ -144,7 +155,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:29
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:30
 
 ___
 
@@ -154,4 +165,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:37
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:38

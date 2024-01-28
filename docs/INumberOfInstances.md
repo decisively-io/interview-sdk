@@ -31,7 +31,7 @@ See the link above for more detail.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:228
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:246
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:229
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:247
 
 ___
 
@@ -53,7 +53,7 @@ The name of the entity
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:232
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:250
 
 ___
 
@@ -65,7 +65,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:224
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:242
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:226
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:244
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:227
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:245
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:237
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:255
 
 ___
 
@@ -107,7 +107,7 @@ The minimum number of instances. 0 or greater.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:236
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:254
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:225
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:243
 
 ___
 
@@ -127,4 +127,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:230
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:248

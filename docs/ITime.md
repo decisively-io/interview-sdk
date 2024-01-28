@@ -19,6 +19,7 @@ Do not send a date component back.
 - [min](../wiki/ITime#min)
 - [minutes\_increment](../wiki/ITime#minutes_increment)
 - [required](../wiki/ITime#required)
+- [showExplanation](../wiki/ITime#showexplanation)
 - [type](../wiki/ITime#type)
 - [value](../wiki/ITime#value)
 
@@ -30,7 +31,7 @@ Do not send a date component back.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:97
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:109
 
 ___
 
@@ -43,7 +44,7 @@ Regardless of this input the server expects 24 hour time
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:94
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:106
 
 ___
 
@@ -55,7 +56,7 @@ uuid
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:82
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:93
 
 ___
 
@@ -63,11 +64,11 @@ ___
 
 • `Optional` **default**: `string`
 
-HH:mm:ss
+'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:85
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:97
 
 ___
 
@@ -77,7 +78,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:80
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:91
 
 ___
 
@@ -89,7 +90,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:75
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:86
 
 ___
 
@@ -99,7 +100,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:77
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:88
 
 ___
 
@@ -109,7 +110,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:78
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:89
 
 ___
 
@@ -117,11 +118,11 @@ ___
 
 • `Optional` **max**: `string`
 
-Maximum time allowed, HH:mm:ss
+Maximum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:89
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:101
 
 ___
 
@@ -129,11 +130,11 @@ ___
 
 • `Optional` **min**: `string`
 
-Minimum time allowed, HH:mm:ss
+Minimum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:87
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:99
 
 ___
 
@@ -145,7 +146,7 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:96
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:108
 
 ___
 
@@ -155,7 +156,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:79
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:90
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:110
 
 ___
 
@@ -165,7 +176,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:76
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:87
 
 ___
 
@@ -173,6 +184,8 @@ ___
 
 • `Optional` **value**: ``null`` \| `string`
 
+'HH:mm:ss'
+
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:83
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:95
