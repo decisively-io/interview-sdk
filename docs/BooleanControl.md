@@ -1,0 +1,141 @@
+# Interface: BooleanControl
+
+A control to collect a true or false response from a user. Usually rendered as a checkbox.
+Note: the control needs to allow for an indeterminate (or uncertain) response - i.e. the
+user did not provide an answer. You can't send back undefined as the server will interpret
+that as requiring an answer again later. Send back null to mark the question as reviewed
+but not
+}answered.
+
+## Hierarchy
+
+- `BaseControl`
+
+  ↳ **`BooleanControl`**
+
+## Table of contents
+
+### Properties
+
+- [attribute](../wiki/BooleanControl#attribute)
+- [default](../wiki/BooleanControl#default)
+- [disabled](../wiki/BooleanControl#disabled)
+- [id](../wiki/BooleanControl#id)
+- [label](../wiki/BooleanControl#label)
+- [labelLength](../wiki/BooleanControl#labellength)
+- [required](../wiki/BooleanControl#required)
+- [showExplanation](../wiki/BooleanControl#showexplanation)
+- [type](../wiki/BooleanControl#type)
+- [value](../wiki/BooleanControl#value)
+
+## Properties
+
+### attribute
+
+• **attribute**: `string`
+
+#### Overrides
+
+BaseControl.attribute
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:24
+
+___
+
+### default
+
+• `Optional` **default**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:22
+
+___
+
+### disabled
+
+• `Optional` **disabled**: ``true``
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:21
+
+___
+
+### id
+
+• **id**: `string`
+
+#### Overrides
+
+BaseControl.id
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:16
+
+___
+
+### label
+
+• `Optional` **label**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:18
+
+___
+
+### labelLength
+
+• `Optional` **labelLength**: `number`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:19
+
+___
+
+### required
+
+• `Optional` **required**: ``true``
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:20
+
+___
+
+### showExplanation
+
+• `Optional` **showExplanation**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:25
+
+___
+
+### type
+
+• **type**: ``"boolean"``
+
+#### Overrides
+
+BaseControl.type
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:17
+
+___
+
+### value
+
+• `Optional` **value**: ``null`` \| `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:23

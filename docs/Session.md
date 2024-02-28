@@ -29,7 +29,7 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:84
+node_modules/@decisively-io/types-interview/dist/core.d.ts:92
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:85
+node_modules/@decisively-io/types-interview/dist/core.d.ts:93
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:91
+node_modules/@decisively-io/types-interview/dist/core.d.ts:99
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:89
+node_modules/@decisively-io/types-interview/dist/core.d.ts:97
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:90
+node_modules/@decisively-io/types-interview/dist/core.d.ts:98
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:88
+node_modules/@decisively-io/types-interview/dist/core.d.ts:96
 
 ___
 
@@ -91,7 +91,7 @@ Unique ID of the session
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:82
+node_modules/@decisively-io/types-interview/dist/core.d.ts:90
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:86
+node_modules/@decisively-io/types-interview/dist/core.d.ts:94
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:83
+node_modules/@decisively-io/types-interview/dist/core.d.ts:91
 
 ___
 
@@ -121,4 +121,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:87
+node_modules/@decisively-io/types-interview/dist/core.d.ts:95

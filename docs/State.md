@@ -18,7 +18,7 @@ The state attribute provides the values and additional information about attribu
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:43
+node_modules/@decisively-io/types-interview/dist/core.d.ts:51
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:42
+node_modules/@decisively-io/types-interview/dist/core.d.ts:50
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:44
+node_modules/@decisively-io/types-interview/dist/core.d.ts:52

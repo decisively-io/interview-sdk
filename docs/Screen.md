@@ -12,13 +12,13 @@
 
 ### controls
 
-• **controls**: [`Control`](../wiki/Exports#control)[]
+• **controls**: [`RenderableControl`](../wiki/Exports#renderablecontrol)[]
 
 The list of controls to be displayed on the screen
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:72
+node_modules/@decisively-io/types-interview/dist/core.d.ts:80
 
 ___
 
@@ -30,7 +30,7 @@ Unique ID of the screen
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:70
+node_modules/@decisively-io/types-interview/dist/core.d.ts:78
 
 ___
 
@@ -42,4 +42,4 @@ The title of the screen. This may differ from the title in the step
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:68
+node_modules/@decisively-io/types-interview/dist/core.d.ts:76

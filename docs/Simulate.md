@@ -19,7 +19,7 @@ Data structure used to calculate the value for a Dynamic Attribute.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:38
+node_modules/@decisively-io/types-interview/dist/core.d.ts:46
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:37
+node_modules/@decisively-io/types-interview/dist/core.d.ts:45
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:35
+node_modules/@decisively-io/types-interview/dist/core.d.ts:43
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:36
+node_modules/@decisively-io/types-interview/dist/core.d.ts:44

@@ -6,7 +6,7 @@ import isEqual from "lodash.isequal";
 import { Subject, Subscription, debounceTime, distinctUntilChanged, filter, map, merge, scan, takeWhile } from "rxjs";
 import { v4 as uuid } from "uuid";
 import { back, create, exportTimeline, load, navigate, submit } from "./api";
-import { ControlTypes } from "./constants";
+import { ControlTypesInfo } from "./constants";
 import { buildDynamicReplacements } from "./dynamic";
 import { cmpAttributeData, isAttributeDynamic, replaceTemplatedText } from "./helpers";
 import { render } from "./placeholders";
@@ -26,9 +26,9 @@ export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig
 
 const transformControlValue = (value: AttributeValue, control: Control): any => {
   switch (control.type) {
-    case ControlTypes.NUMBEROFINSTANCES:
+    case ControlTypesInfo.NUMBER_OF_INSTANCES.id:
       return range(Number(value)).map((i) => ({ "@id": uuid() }));
-    case ControlTypes.ENTITY:
+    case ControlTypesInfo.ENTITY.id:
       return value;
     default:
       return value;

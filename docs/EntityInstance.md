@@ -1,10 +1,10 @@
-# Interface: IEntityInstance
+# Interface: EntityInstance
 
 ## Table of contents
 
 ### Properties
 
-- [@id](../wiki/IEntityInstance#@id)
+- [@id](../wiki/EntityInstance#@id)
 
 ## Properties
 

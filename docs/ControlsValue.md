@@ -1,4 +1,4 @@
-# Interface: IControlsValue
+# Interface: ControlsValue
 
 ## Indexable
 
