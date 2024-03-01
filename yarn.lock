@@ -19,10 +19,10 @@
   resolved "https://registry.npmjs.org/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-1.4.1.tgz"
   integrity sha512-PZWy2Idndqux38p6AXSDQM2ldRAWi32bvb7bMbTN0ALzpWYMYnxd71ornatumSSJYoNhKmxzDLq+jct7nZJ79w==
 
-"@decisively-io/types-interview@^0.2.0-alpha.7":
-  version "0.2.0-alpha.7"
-  resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.2.0-alpha.7/054adb06c80166cdcadbab6feb994d87c9907d5f"
-  integrity sha512-Z4w3ylSb8Xv8NeWVBdSNjkzzfASLz5SXQSFZMCgRrLWVuKOITi+r+7VI3Ka0tbTbM9E67TWqUPDiWGCmK6t1gA==
+"@decisively-io/types-interview@^0.2.0":
+  version "0.2.0"
+  resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.2.0/e1ba2d90e6dd1ba5661ad71cc645174c40acce4e"
+  integrity sha512-bWCYgmhD3fOO+3jmFLYtI+GCR5NRRp55FaECEtrduO07X/eLEfy+v6ilycjaY6nVUBMsQTvzzoSZeKsxE0akSQ==
 
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"

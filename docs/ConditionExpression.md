@@ -11,11 +11,11 @@
 
 ### elements
 
-• **elements**: [`ConditionValue`](../wiki/Exports#conditionvalue) \| [`ConditionExpression`](../wiki/ConditionExpression)[]
+• **elements**: ([`ConditionExpression`](../wiki/ConditionExpression) \| [`ConditionValue`](../wiki/ConditionValue))[]
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:414
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:408
 
 ___
 
@@ -25,4 +25,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:413
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:407
