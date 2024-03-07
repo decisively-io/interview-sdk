@@ -16,17 +16,17 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:404
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:402
 
 ___
 
 ### type
 
-• **type**: ``"value"`` \| ``"attribute"`` \| ``"current-date"``
+• **type**: ``"value"`` \| ``"attribute"``
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:402
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:400
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:403
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:401

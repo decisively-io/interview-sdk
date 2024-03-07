@@ -28,17 +28,12 @@ export const getCurrentStep = (s: Step): typeof s | null => {
 
 // -- text replacement helpers
 
-export const replaceTemplatedText = (obj: any, propNames: string[], replacements: AttributeData | Record<string, string>, defaultReplacement = "...") => {
-  for (const propName of propNames) {
-    if (Object.hasOwn(obj, propName) && obj[propName] && typeof obj[propName] === "string") {
-      // obj[propName] = Mustache.render(obj[propName], replacements, {}); // too heavy...
-      obj[propName] = obj[propName].replace(/{{(.*?)}}/g, (match: string) => {
-        const attributeId = match.replace(/{{(.*?)}}/, "$1");
-        const value = replacements[attributeId] ?? defaultReplacement;
-        return typeof value === "string" ? value : String(value);
-      });
-    }
-  }
+export const replaceTemplatedText = (text: string, replacements: AttributeData | Record<string, string>) => {
+  return text.replace(/{{(.*?)}}/g, (match: string) => {
+    const attributeId = match.replace(/{{(.*?)}}/, "$1");
+    const value = replacements[attributeId] ?? "...";
+    return typeof value === "string" ? value : String(value);
+  });
 };
 
 // -- attribute helpers
@@ -75,20 +70,17 @@ export const cmpAttributeData = (prev: AttributeData, next: AttributeData): Attr
  */
 export const isAttributeDynamic = (attribId: AttributeId[], state?: State[]): boolean => {
   // flatten state object
-  const stateFlat = (state ?? []).reduce(
-    (acc, cur) => {
-      if (!acc.includes(cur.id)) {
-        acc.push(cur.id);
+  const stateFlat = (state ?? []).reduce((acc, cur) => {
+    if (!acc.includes(cur.id)) {
+      acc.push(cur.id);
+    }
+    for (const dep of cur.dependencies ?? []) {
+      if (!acc.includes(dep)) {
+        acc.push(dep);
       }
-      for (const dep of cur.dependencies ?? []) {
-        if (!acc.includes(dep)) {
-          acc.push(dep);
-        }
-      }
-      return acc;
-    },
-    [] as AttributeId[],
-  );
+    }
+    return acc;
+  }, [] as AttributeId[]);
 
   return attribId.some((attrib) => stateFlat.includes(attrib));
 };

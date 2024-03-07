@@ -1,14 +1,15 @@
 {
   "name": "@decisively-io/interview-sdk",
-  "version": "0.5.0",
+  "version": "0.6.0-alpha.51",
   "description": "An SDK for the Decisively interview system.",
   "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "prepublishOnly": "npm run check && npm run build",
+    "test": "jest",
+    "prepublishOnly": "npm run check:fix && npm run test && npm run build",
     "clean": "rimraf dist && rimraf docs",
     "doc": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-github-wiki-theme",
-    "check:fix": "tsc --noEmit --project tsconfig.json && npx @biomejs/biome check --apply-unsafe .",
+    "check:fix": "tsc --noEmit --project tsconfig.json && npx @biomejs/biome check --apply .",
     "check": "tsc --noEmit --project tsconfig.json && npx @biomejs/biome check .",
     "build": "yarn clean && tsc && npm run doc",
     "dev": "tsc -w",
@@ -28,10 +29,15 @@
   "author": "Decisively",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@biomejs/biome": "^1.4.1",
+    "@biomejs/biome": "^1.5.3",
+    "@swc/jest": "^0.2.36",
+    "@types/jest": "^29.5.12",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/lodash.isempty": "^4.4.8",
     "@types/lodash.isequal": "^4.5.7",
+    "@types/lodash.set": "^4.3.9",
     "@types/uuid": "^9.0.6",
+    "jest": "^29.7.0",
     "rimraf": "^5.0.5",
     "typedoc": "^0.25.2",
     "typedoc-github-wiki-theme": "^1.1.0",
@@ -39,12 +45,13 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@decisively-io/types-interview": "^0.2.0",
+    "@decisively-io/types-interview": "^0.3.0-alpha.4",
     "axios": "^0.26.1",
     "immer": "^9.0.12",
+    "lodash.debounce": "^4.0.8",
     "lodash.isempty": "^4.4.0",
     "lodash.isequal": "^4.5.0",
-    "rxjs": "^7.5.5",
+    "lodash.set": "^4.3.2",
     "uuid": "^8.3.2"
   }
 }

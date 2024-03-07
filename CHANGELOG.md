@@ -1,3 +1,9 @@
+## 0.6.0
+
+- dynamic container support
+- move `SessionInstance` to a class and unify logic
+- add conditional logic
+
 ## 0.5.0
 
 - update `@decisively-io/types-interview`

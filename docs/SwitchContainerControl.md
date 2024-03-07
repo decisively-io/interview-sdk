@@ -1,10 +1,18 @@
-# Interface: SwitchContainerControl
+# Interface: SwitchContainerControl<C\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `C` | [`Control`](../wiki/Exports#control) |
 
 ## Hierarchy
 
 - `BaseControl`
 
   ↳ **`SwitchContainerControl`**
+
+  ↳↳ [`RenderableSwitchContainerControl`](../wiki/RenderableSwitchContainerControl)
 
 ## Table of contents
 
@@ -59,7 +67,7 @@ ___
 
 ### outcome\_false
 
-• **outcome\_false**: [`Control`](../wiki/Exports#control)[]
+• **outcome\_false**: `C`[]
 
 #### Defined in
 
@@ -69,7 +77,7 @@ ___
 
 ### outcome\_true
 
-• **outcome\_true**: [`Control`](../wiki/Exports#control)[]
+• **outcome\_true**: `C`[]
 
 #### Defined in
 

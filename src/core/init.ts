@@ -1,17 +1,16 @@
-import { AttributeData, AttributeValue, Control, ResponseData, Session, StepId } from "@decisively-io/types-interview";
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosRequestTransformer, AxiosResponseTransformer } from "axios";
+import { AttributeData, AttributeValue, Control, ResponseData, Screen, Session, StepId } from "@decisively-io/types-interview";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosRequestTransformer } from "axios";
 import produce from "immer";
+import debounce from "lodash.debounce";
 import isEmpty from "lodash.isempty";
 import isEqual from "lodash.isequal";
-import { Subject, Subscription, debounceTime, distinctUntilChanged, filter, map, merge, scan, takeWhile } from "rxjs";
 import { v4 as uuid } from "uuid";
 import { back, create, exportTimeline, load, navigate, submit } from "./api";
 import { ControlTypesInfo } from "./constants";
-import { buildDynamicReplacements } from "./dynamic";
-import { cmpAttributeData, isAttributeDynamic, replaceTemplatedText } from "./helpers";
-import { render } from "./placeholders";
-import { DynamicUpdateFunction, Overrides, SessionConfig, SessionInstance, SessionObservable } from "./types";
-import { buildUrl, isStrNotNullOrBlank, range, stateToData } from "./util";
+import { DynamicReplacementQueries, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
+import { replaceTemplatedText } from "./helpers";
+import { Overrides, SessionConfig } from "./types";
+import { buildUrl, iterateControls, range } from "./util";
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
   const { transformRequest = [] } = overrides;
@@ -35,11 +34,6 @@ const transformControlValue = (value: AttributeValue, control: Control): any => 
   }
 };
 
-interface IControl {
-  attribute?: string;
-  entity?: string;
-}
-
 export const transformResponse = (session: Session, data: ResponseData): ResponseData => {
   return produce(data, (draft) => {
     if (session.data["@parent"]) {
@@ -47,7 +41,7 @@ export const transformResponse = (session: Session, data: ResponseData): Respons
     }
 
     for (const id of Object.keys(draft)) {
-      const control = (session.screen.controls as IControl[]).find((c) => c.attribute === id || c.entity === id);
+      const control = (session.screen.controls as any[]).find((c) => c.attribute === id || c.entity === id);
       if (control) {
         draft[id] = transformControlValue(draft[id], control as Control);
       }
@@ -55,52 +49,312 @@ export const transformResponse = (session: Session, data: ResponseData): Respons
   });
 };
 
-const createSessionTransform =
-  (api: AxiosInstance, project: string, session: string, chOnScreenData?: DynamicUpdateFunction, chSessionState?: (data: SessionObservable) => void, releaseId?: string): AxiosResponseTransformer =>
-  (res) => {
-    res._api = api;
-    res._project = project;
-    res.submit = (data: AttributeData, navigate: any, overrides: Overrides = {}) => {
-      // console.log('submitting', data, navigate, overrides);
-      return submit(api, project, session, data, navigate, overrides, releaseId);
-    };
-    res.save = (data: AttributeData) => submit(api, project, session, data, false, {});
-    res.navigate = (step: StepId) => navigate(api, project, session, step);
-    res.render = (value: string) => render(value, res.state ? stateToData(res.state) : {});
-    res.back = async () => back(api, project, session);
-    res.exportTimeline = () => {
-      return exportTimeline(api, project, session);
-    };
-
-    if (chOnScreenData) {
-      res.chOnScreenData = chOnScreenData;
-    }
-
-    if (chSessionState && !isEmpty(res.screen)) {
-      // note: the check on screen is just a lazy way to check this isn't a simulation response
-      chSessionState({
-        state: res.state,
-        screen: res.screen,
-        sessionId: res.sessionId,
-        // status   : res.status   ,
-        // context  : res.context  ,
-        // data     : res.data     ,
-        // steps    : res.steps    ,
-        // progress : res.progress ,
-      });
-    }
-
-    return res;
-  };
-
 export const defaultPath = ["decisionapi", "session"];
+
+type NewDataCallback = ((data: any) => void) | undefined;
 
 export interface InterviewProvider {
   // create a SessionInstance to work with by calling on the decisively service
-  create: (project: string, config: SessionConfig, newDataCallback?: ((data: any) => void) | undefined) => Promise<SessionInstance>;
+  create: (project: string, config: SessionConfig, newDataCallback?: NewDataCallback) => Promise<SessionInstance>;
   load: (project: string, sessionId: string) => Promise<SessionInstance>;
   finish: () => void;
 }
+
+interface SessionInstanceOptions {
+  session: Session;
+  api: AxiosInstance;
+  project: string;
+  release?: string;
+  newDataCallback?: (session: SessionObservable) => void;
+  responseElements?: any[];
+}
+
+interface SessionInternal {
+  userData: AttributeData;
+  prevUserData: AttributeData;
+
+  replacements: AttributeData;
+  replacementQueries: DynamicReplacementQueries | undefined;
+
+  // we only care about the latest request
+  latestRequest: number | undefined;
+}
+
+const postProcessControl = (control: any, replacements: any) => {
+  if (control.templateText) {
+    control.text = replaceTemplatedText(control.templateText, replacements);
+  }
+  if (control.templateLabel) {
+    control.label = replaceTemplatedText(control.templateLabel, replacements);
+  }
+};
+
+export class SessionInstance implements Session {
+  renderAt: number = Date.now();
+  externalLoading = false;
+
+  private session!: Session;
+  private options: Omit<SessionInstanceOptions, "session">;
+  private processedScreen: Screen | undefined;
+  private internals: SessionInternal = {
+    userData: {},
+    prevUserData: {},
+    replacements: {},
+    replacementQueries: undefined,
+    latestRequest: undefined,
+  };
+
+  constructor(options: SessionInstanceOptions) {
+    const { session, ...otherOptions } = options;
+    // @ts-ignore
+    this.updateDynamicValues = debounce(this.updateDynamicValues.bind(this), 1000);
+    this.options = otherOptions;
+    this.updateSession(session);
+
+    this.chOnScreenData = this.chOnScreenData.bind(this);
+  }
+
+  private get api() {
+    return this.options.api;
+  }
+
+  private get release() {
+    return this.options.release;
+  }
+
+  private get project() {
+    return this.options.project;
+  }
+
+  private triggerUpdate(update: Partial<{ externalLoading: boolean; screen: Screen }>) {
+    const { externalLoading, screen } = update;
+
+    const updated = this.externalLoading !== externalLoading || !isEqual(this.processedScreen, screen);
+    if (updated) {
+      this.externalLoading = externalLoading ?? false;
+      this.processedScreen = screen ?? this.processedScreen;
+      this.renderAt = Date.now();
+
+      this.options.newDataCallback?.(update);
+    }
+  }
+
+  chOnScreenData(data: AttributeData) {
+    Object.assign(this.internals.userData, data);
+    this.calculateUnknowns();
+    this.updateDynamicValues();
+  }
+
+  private calculateUnknowns() {
+    const { state } = this.session;
+
+    const screen = this.screen;
+
+    if (state && screen) {
+      if (!isEqual(this.internals.prevUserData, this.internals.userData) && Object.keys(this.internals.userData).length > 0) {
+        this.internals.replacementQueries = buildDynamicReplacementQueries(state, this.internals.userData, true);
+        if (this.internals.replacementQueries.unKnownValues.length || Object.keys(this.internals.replacementQueries.knownValues).length > 0) {
+          Object.assign(this.internals.replacements, this.internals.replacementQueries?.knownValues);
+          console.log(this.internals);
+          const loading = this.internals.replacementQueries.unKnownValues.length > 0;
+
+          const newScreen = produce(screen, (draft) => {
+            iterateControls(draft.controls, (control: any) => {
+              if (control.dependencies && this.internals.replacementQueries?.unKnownValues.length) {
+                if (this.internals.replacementQueries?.unKnownValues.some((dep) => control.dependencies.includes(dep.goal))) {
+                  control.loading = true;
+                }
+              }
+              if (!control.loading) {
+                postProcessControl(control, this.internals.replacements);
+              }
+            });
+          });
+
+          if (loading) {
+            this.internals.latestRequest = Date.now();
+          }
+
+          this.triggerUpdate({
+            externalLoading: this.externalLoading || loading,
+            screen: newScreen,
+          });
+        }
+      }
+    }
+    this.internals.prevUserData = { ...this.internals.userData };
+  }
+
+  private async updateDynamicValues() {
+    if (this.release) {
+      if (this.internals.replacementQueries?.unKnownValues?.length && this.session.screen) {
+        const requestId = this.internals.latestRequest;
+
+        const replacedSession = await produce<SessionObservable>(this.session, async (draft) => {
+          const { screen } = draft;
+
+          // ask the backend to solve for any dynamic attributes, based on the entered attributes
+          Object.assign(this.internals.replacements, await simulateUnknowns(this.internals.replacementQueries!.unKnownValues, this.api, this.project, this.release!, this.sessionId));
+
+          // replace anything replaceable on the screen
+          iterateControls(screen!.controls, (control: any) => {
+            if (control.loading) {
+              control.loading = undefined;
+            }
+
+            postProcessControl(control, this.internals.replacements);
+          });
+        });
+
+        // are we still the last request?
+        if (this.internals.latestRequest === requestId) {
+          if (replacedSession.screen) {
+            this.triggerUpdate({
+              externalLoading: false,
+              screen: replacedSession.screen,
+            });
+          } else {
+            this.triggerUpdate({ externalLoading: false });
+          }
+        }
+      }
+    }
+  }
+
+  private updateSession(session: Session) {
+    const prevSession = this.session;
+    const currentRenderAt = this.renderAt;
+    this.session = session;
+    if (!isEmpty(session.screen)) {
+      if (prevSession?.screen?.id !== session.screen?.id) {
+        this.internals = {
+          userData: {},
+          prevUserData: {},
+          replacements: {},
+          replacementQueries: undefined,
+          latestRequest: undefined,
+        };
+      }
+
+      this.processedScreen = produce(session.screen as Screen, (draft) => {
+        iterateControls(draft.controls, (control: any) => {
+          postProcessControl(control, this.internals.replacements);
+        });
+      });
+
+      this.calculateUnknowns();
+      this.updateDynamicValues();
+      // @ts-ignore
+      this.updateDynamicValues.flush();
+    }
+
+    // hasn't updated, force it
+    if (currentRenderAt === this.renderAt) {
+      this.triggerUpdate({
+        screen: session.screen,
+      });
+    }
+  }
+
+  // -- session getters
+
+  get status() {
+    return this.session.status;
+  }
+
+  get sessionId() {
+    return this.session.sessionId;
+  }
+
+  get screen() {
+    return this.processedScreen ?? this.session.screen;
+  }
+
+  get state() {
+    return this.session.state;
+  }
+
+  get context() {
+    return this.session.context;
+  }
+
+  get data() {
+    return this.session.data;
+  }
+
+  get steps() {
+    return this.session.steps;
+  }
+
+  get progress() {
+    return this.session.progress;
+  }
+
+  get explanations() {
+    return this.session.explanations;
+  }
+
+  get graph() {
+    return (this.session as any).graph;
+  }
+
+  set graph(graph) {
+    (this.session as any).graph = graph;
+  }
+
+  get reporting() {
+    return (this.session as any).reporting;
+  }
+
+  get report() {
+    return (this.session as any).report;
+  }
+
+  // -- methods
+
+  async submit(data: AttributeData, navigate?: any, overrides: Overrides = {}) {
+    this.triggerUpdate({ externalLoading: true });
+    this.updateSession(
+      await submit(this.api, this.project, this.sessionId, transformResponse(this, data as any), navigate, {
+        response: this.options.responseElements,
+        ...overrides,
+      }),
+    );
+    this.triggerUpdate({ externalLoading: false });
+    return this;
+  }
+
+  async save(data: AttributeData) {
+    this.triggerUpdate({ externalLoading: true });
+    this.updateSession(
+      await submit(this.api, this.project, this.sessionId, transformResponse(this, data as any), false, {
+        response: this.options.responseElements,
+      }),
+    );
+    this.triggerUpdate({ externalLoading: false });
+    return this;
+  }
+
+  async navigate(step: StepId) {
+    this.triggerUpdate({ externalLoading: true });
+    this.updateSession(await navigate(this.api, this.project, this.sessionId, step));
+    this.triggerUpdate({ externalLoading: false });
+    return this;
+  }
+
+  async back() {
+    this.triggerUpdate({ externalLoading: true });
+    this.updateSession(await back(this.api, this.project, this.sessionId));
+    this.triggerUpdate({ externalLoading: false });
+    return this;
+  }
+
+  exportTimeline() {
+    return exportTimeline(this.api, this.project, this.sessionId);
+  }
+}
+
+export type SessionObservable = Partial<SessionInstance>;
 
 /**
  * Initialize the SDK
@@ -113,120 +367,19 @@ export interface InterviewProvider {
  */
 export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}): InterviewProvider => {
   // -- create the api instance
-
   const baseUrl = buildUrl(host, ...(typeof path === "string" ? [path] : path));
   const api = createApiInstance(baseUrl, overrides);
 
-  const transformApi = (project: string, session: string, chOnScreenData?: DynamicUpdateFunction, chSessionState?: (data: SessionObservable) => void, releaseId?: string) => {
-    api.defaults.transformResponse = [...(axios.defaults.transformResponse as AxiosResponseTransformer[]), createSessionTransform(api, project, session, chOnScreenData, chSessionState, releaseId)];
-  };
-
   // -- ret
-  let sessionState$: Subscription | null = null;
   return {
     create: async (project, config, newDataCallback?) => {
-      // -- create some observers for this session
-
-      /**
-       * $ - Track what the user enters on-screen by providing a vanilla JS Callback
-       * for the renderer to optionally notify the SDK of changed onscreen data
-       */
-      const onScreenDataChanged$ = new Subject<AttributeData>();
-      const chOnScreenData = (data: AttributeData) => onScreenDataChanged$.next(data);
-
-      /**
-       * $ - Track the current session
-       */
-      const sessionStateChanged$ = new Subject<SessionObservable>();
-      const chSessionState = (data: SessionObservable) => sessionStateChanged$.next(data);
-
-      /**
-       * $+$ Merge the two streams above into a single observer that we can subscribe to
-       */
-
-      sessionState$ = merge(
-        onScreenDataChanged$.pipe(
-          // debounce (not throttle)...wait for a second to ensure the user has finished typing/inputting/selecting/etc., then emit
-          debounceTime(1000),
-          // collect all prev. changes the user makes on-screen (across all screens)
-          scan((acc, curr) => ({ ...acc, ...curr }), {} as AttributeData),
-          // we don't need to reset the observable during a session, because if an attribute is changed, it should be consistent across all screens
-          map((usrEnteredData) => ({ usrEnteredData })),
-        ),
-        sessionStateChanged$.pipe(map((sessionData) => ({ sessionData }))),
-      )
-        .pipe(
-          takeWhile((val) => undefined !== newDataCallback),
-          // consolidate all changes into a single object
-          scan((acc, curr) => ({ ...acc, ...curr }), { usrEnteredData: {}, sessionData: {} }),
-          // if nothing has changed, don't emit
-          distinctUntilChanged((a, b) => isEqual(a, b)),
-          // if session has not been fetched, don't emit
-          filter((val) => !isEmpty(val.sessionData)),
-          // if user is touching a control that is not dynamic, don't emit
-          distinctUntilChanged((prev, curr) => {
-            // this is going to be accumulated changes since the last emit
-            const usrEnteredDataChanges = cmpAttributeData(prev.usrEnteredData, curr.usrEnteredData);
-            const touchedControls = Object.keys(usrEnteredDataChanges);
-            const changedDynamicAttribute = isAttributeDynamic(touchedControls, (curr.sessionData as SessionObservable).state);
-            // on changing screen, we won't have any changes, but we'll need to emit to replace anything dynamic on-screen
-            const changedScreen = (prev.sessionData as SessionObservable)?.screen?.id !== (curr.sessionData as SessionObservable)?.screen?.id;
-
-            return !(changedDynamicAttribute || changedScreen);
-          }),
-        )
-        .subscribe(async (val) => {
-          // console.log('observerMTpEcc:val', val);
-          if (isStrNotNullOrBlank(config.release)) {
-            if (newDataCallback) {
-              newDataCallback({ externalLoading: true });
-            }
-            // We don't need to also merge in any static control values that are not dynamic, plus known state values - the graph already takes these into account
-            // when computing the dependencies, so it only requests what it needs
-            const replacedSession = await produce<SessionObservable>(val.sessionData, async (draft) => {
-              const { state, screen } = draft;
-
-              if (state && screen) {
-                // ask the backend to solve for any dynamic attributes, based on the entered attributes
-                const replacements = await buildDynamicReplacements(state, val.usrEnteredData, api, project, config.release!, (val.sessionData as SessionObservable).sessionId!);
-                // replace anything replaceable on the screen
-                for (const ctrl of screen.controls) {
-                  replaceTemplatedText(ctrl, ["text", "label"], replacements);
-                }
-              }
-              draft.renderAt = Date.now(); // fine-grained enough for the renderer to know when to re-render
-              draft.externalLoading = false;
-            });
-
-            if (newDataCallback && replacedSession.screen) {
-              console.log("sdk::observerMTpEcc:replacedSession:", replacedSession);
-              newDataCallback(replacedSession);
-            } else if (newDataCallback) {
-              newDataCallback({ externalLoading: false });
-            }
-          } else {
-            // not really expecting this to happen...
-            console.warn("sdk::observerMTpEcc:config release is not set, cannot replace dynamic attributes");
-          }
-        });
-
-      // -- create the session
-
-      const res = await create(api, project, config);
-      // apply transformer for future responses
-      transformApi(project, res.sessionId, chOnScreenData, chSessionState, config.release);
-      // transform this current response
-      return createSessionTransform(api, project, res.sessionId, chOnScreenData, chSessionState, config.release)(res) as SessionInstance;
+      const session = await create(api, project, config);
+      return new SessionInstance({ session: session, api, responseElements: config.responseElements, project, newDataCallback, ...config });
     },
-    load: (project, sessionId) => {
-      // apply transformer for future responses
-      transformApi(project, sessionId);
-      return load(api, project, sessionId) as Promise<SessionInstance>;
+    load: async (project, sessionId) => {
+      const session = await load(api, project, sessionId);
+      return new SessionInstance({ session, api, project });
     },
-    finish: () => {
-      if (sessionState$) {
-        sessionState$.unsubscribe();
-      }
-    },
+    finish: () => {},
   };
 };

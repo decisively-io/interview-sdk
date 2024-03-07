@@ -1,372 +1,573 @@
-# Interface: SessionInstance
+# Class: SessionInstance
 
-## Hierarchy
+## Implements
 
 - [`Session`](../wiki/Session)
 
-  ↳ **`SessionInstance`**
-
 ## Table of contents
+
+### Constructors
+
+- [constructor](../wiki/SessionInstance#constructor)
 
 ### Properties
 
-- [\_api](../wiki/SessionInstance#_api)
-- [\_project](../wiki/SessionInstance#_project)
-- [back](../wiki/SessionInstance#back)
-- [chOnScreenData](../wiki/SessionInstance#chonscreendata)
+- [externalLoading](../wiki/SessionInstance#externalloading)
+- [internals](../wiki/SessionInstance#internals)
+- [options](../wiki/SessionInstance#options)
+- [processedScreen](../wiki/SessionInstance#processedscreen)
+- [renderAt](../wiki/SessionInstance#renderat)
+- [session](../wiki/SessionInstance#session)
+
+### Accessors
+
+- [api](../wiki/SessionInstance#api)
 - [context](../wiki/SessionInstance#context)
 - [data](../wiki/SessionInstance#data)
 - [explanations](../wiki/SessionInstance#explanations)
-- [externalLoading](../wiki/SessionInstance#externalloading)
-- [navigate](../wiki/SessionInstance#navigate)
-- [populate](../wiki/SessionInstance#populate)
+- [graph](../wiki/SessionInstance#graph)
 - [progress](../wiki/SessionInstance#progress)
-- [render](../wiki/SessionInstance#render)
-- [renderAt](../wiki/SessionInstance#renderat)
-- [save](../wiki/SessionInstance#save)
+- [project](../wiki/SessionInstance#project)
+- [release](../wiki/SessionInstance#release)
+- [report](../wiki/SessionInstance#report)
+- [reporting](../wiki/SessionInstance#reporting)
 - [screen](../wiki/SessionInstance#screen)
 - [sessionId](../wiki/SessionInstance#sessionid)
 - [state](../wiki/SessionInstance#state)
 - [status](../wiki/SessionInstance#status)
 - [steps](../wiki/SessionInstance#steps)
-- [submit](../wiki/SessionInstance#submit)
 
 ### Methods
 
+- [back](../wiki/SessionInstance#back)
+- [calculateUnknowns](../wiki/SessionInstance#calculateunknowns)
+- [chOnScreenData](../wiki/SessionInstance#chonscreendata)
 - [exportTimeline](../wiki/SessionInstance#exporttimeline)
+- [navigate](../wiki/SessionInstance#navigate)
+- [save](../wiki/SessionInstance#save)
+- [submit](../wiki/SessionInstance#submit)
+- [triggerUpdate](../wiki/SessionInstance#triggerupdate)
+- [updateDynamicValues](../wiki/SessionInstance#updatedynamicvalues)
+- [updateSession](../wiki/SessionInstance#updatesession)
+
+## Constructors
+
+### constructor
+
+• **new SessionInstance**(`options`)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `options` | `SessionInstanceOptions` |
+
+#### Defined in
+
+[src/core/init.ts:107](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L107)
 
 ## Properties
 
-### \_api
-
-• **\_api**: `AxiosInstance`
-
-#### Defined in
-
-[src/core/types.ts:18](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L18)
-
-___
-
-### \_project
-
-• **\_project**: `string`
-
-#### Defined in
-
-[src/core/types.ts:19](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L19)
-
-___
-
-### back
-
-• **back**: () => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-#### Type declaration
-
-▸ (): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-##### Returns
-
-`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-#### Defined in
-
-[src/core/types.ts:24](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L24)
-
-___
-
-### chOnScreenData
-
-• **chOnScreenData**: [`DynamicUpdateFunction`](../wiki/Exports#dynamicupdatefunction)
-
-#### Defined in
-
-[src/core/types.ts:28](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L28)
-
-___
-
-### context
-
-• **context**: [`Context`](../wiki/Context)
-
-#### Inherited from
-
-[Session](../wiki/Session).[context](../wiki/Session#context)
-
-#### Defined in
-
-node_modules/@decisively-io/types-interview/dist/core.d.ts:92
-
-___
-
-### data
-
-• **data**: `Record`<`string`, [`TypedData`](../wiki/TypedData)\> & [`Parent`](../wiki/Parent)
-
-#### Inherited from
-
-[Session](../wiki/Session).[data](../wiki/Session#data)
-
-#### Defined in
-
-node_modules/@decisively-io/types-interview/dist/core.d.ts:93
-
-___
-
-### explanations
-
-• `Optional` **explanations**: `Record`<`string`, `string`\>
-
-#### Inherited from
-
-[Session](../wiki/Session).[explanations](../wiki/Session#explanations)
-
-#### Defined in
-
-node_modules/@decisively-io/types-interview/dist/core.d.ts:99
-
-___
-
 ### externalLoading
 
-• `Optional` **externalLoading**: `boolean`
+• **externalLoading**: `boolean` = `false`
 
 #### Defined in
 
-[src/core/types.ts:29](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L29)
+[src/core/init.ts:94](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L94)
 
 ___
 
-### navigate
+### internals
 
-• **navigate**: (`step`: `string`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-#### Type declaration
-
-▸ (`step`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `step` | `string` |
-
-##### Returns
-
-`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+• `Private` **internals**: `SessionInternal`
 
 #### Defined in
 
-[src/core/types.ts:22](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L22)
+[src/core/init.ts:99](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L99)
 
 ___
 
-### populate
+### options
 
-• **populate**: (`data`: [`AttributeData`](../wiki/Exports#attributedata)) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-#### Type declaration
-
-▸ (`data`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
-
-##### Returns
-
-`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+• `Private` **options**: `Omit`<`SessionInstanceOptions`, ``"session"``\>
 
 #### Defined in
 
-[src/core/types.ts:25](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L25)
+[src/core/init.ts:97](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L97)
 
 ___
 
-### progress
+### processedScreen
 
-• `Optional` **progress**: [`Progress`](../wiki/Progress)
-
-#### Inherited from
-
-[Session](../wiki/Session).[progress](../wiki/Session#progress)
+• `Private` **processedScreen**: `undefined` \| [`Screen`](../wiki/Screen)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:97
-
-___
-
-### render
-
-• **render**: (`value`: `string`) => `string`
-
-#### Type declaration
-
-▸ (`value`): `string`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `string` |
-
-##### Returns
-
-`string`
-
-#### Defined in
-
-[src/core/types.ts:23](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L23)
+[src/core/init.ts:98](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L98)
 
 ___
 
 ### renderAt
 
-• `Optional` **renderAt**: `number`
+• **renderAt**: `number`
 
-#### Inherited from
+#### Implementation of
 
 [Session](../wiki/Session).[renderAt](../wiki/Session#renderat)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:98
+[src/core/init.ts:93](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L93)
 
 ___
 
-### save
+### session
 
-• **save**: (`data`: [`AttributeData`](../wiki/Exports#attributedata)) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-#### Type declaration
-
-▸ (`data`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
-
-##### Returns
-
-`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+• `Private` **session**: [`Session`](../wiki/Session)
 
 #### Defined in
 
-[src/core/types.ts:21](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L21)
+[src/core/init.ts:96](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L96)
+
+## Accessors
+
+### api
+
+• `Private` `get` **api**(): `AxiosInstance`
+
+#### Returns
+
+`AxiosInstance`
+
+#### Defined in
+
+[src/core/init.ts:117](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L117)
+
+___
+
+### context
+
+• `get` **context**(): [`Context`](../wiki/Context)
+
+#### Returns
+
+[`Context`](../wiki/Context)
+
+#### Implementation of
+
+[Session](../wiki/Session).[context](../wiki/Session#context)
+
+#### Defined in
+
+[src/core/init.ts:277](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L277)
+
+___
+
+### data
+
+• `get` **data**(): `Record`<`string`, [`TypedData`](../wiki/TypedData)\> & [`Parent`](../wiki/Parent)
+
+#### Returns
+
+`Record`<`string`, [`TypedData`](../wiki/TypedData)\> & [`Parent`](../wiki/Parent)
+
+#### Implementation of
+
+[Session](../wiki/Session).[data](../wiki/Session#data)
+
+#### Defined in
+
+[src/core/init.ts:281](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L281)
+
+___
+
+### explanations
+
+• `get` **explanations**(): `undefined` \| `Record`<`string`, `string`\>
+
+#### Returns
+
+`undefined` \| `Record`<`string`, `string`\>
+
+#### Implementation of
+
+[Session](../wiki/Session).[explanations](../wiki/Session#explanations)
+
+#### Defined in
+
+[src/core/init.ts:293](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L293)
+
+___
+
+### graph
+
+• `get` **graph**(): `any`
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+[src/core/init.ts:297](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L297)
+
+• `set` **graph**(`graph`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `graph` | `any` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/core/init.ts:301](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L301)
+
+___
+
+### progress
+
+• `get` **progress**(): `undefined` \| [`Progress`](../wiki/Progress)
+
+#### Returns
+
+`undefined` \| [`Progress`](../wiki/Progress)
+
+#### Implementation of
+
+[Session](../wiki/Session).[progress](../wiki/Session#progress)
+
+#### Defined in
+
+[src/core/init.ts:289](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L289)
+
+___
+
+### project
+
+• `Private` `get` **project**(): `string`
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[src/core/init.ts:125](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L125)
+
+___
+
+### release
+
+• `Private` `get` **release**(): `undefined` \| `string`
+
+#### Returns
+
+`undefined` \| `string`
+
+#### Defined in
+
+[src/core/init.ts:121](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L121)
+
+___
+
+### report
+
+• `get` **report**(): `any`
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+[src/core/init.ts:309](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L309)
+
+___
+
+### reporting
+
+• `get` **reporting**(): `any`
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+[src/core/init.ts:305](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L305)
 
 ___
 
 ### screen
 
-• **screen**: [`Screen`](../wiki/Screen)
+• `get` **screen**(): [`Screen`](../wiki/Screen)
 
-#### Inherited from
+#### Returns
+
+[`Screen`](../wiki/Screen)
+
+#### Implementation of
 
 [Session](../wiki/Session).[screen](../wiki/Session#screen)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:96
+[src/core/init.ts:269](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L269)
 
 ___
 
 ### sessionId
 
-• **sessionId**: `string`
+• `get` **sessionId**(): `string`
 
 Unique ID of the session
 
-#### Inherited from
+#### Returns
+
+`string`
+
+#### Implementation of
 
 [Session](../wiki/Session).[sessionId](../wiki/Session#sessionid)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:90
+[src/core/init.ts:265](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L265)
 
 ___
 
 ### state
 
-• `Optional` **state**: [`State`](../wiki/State)[]
+• `get` **state**(): `undefined` \| [`State`](../wiki/State)[]
 
-#### Inherited from
+#### Returns
+
+`undefined` \| [`State`](../wiki/State)[]
+
+#### Implementation of
 
 [Session](../wiki/Session).[state](../wiki/Session#state)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:94
+[src/core/init.ts:273](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L273)
 
 ___
 
 ### status
 
-• **status**: ``"complete"`` \| ``"error"`` \| ``"in-progress"``
+• `get` **status**(): ``"complete"`` \| ``"in-progress"`` \| ``"error"``
 
-#### Inherited from
+#### Returns
+
+``"complete"`` \| ``"in-progress"`` \| ``"error"``
+
+#### Implementation of
 
 [Session](../wiki/Session).[status](../wiki/Session#status)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:91
+[src/core/init.ts:261](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L261)
 
 ___
 
 ### steps
 
-• **steps**: [`Step`](../wiki/Step)[]
+• `get` **steps**(): [`Step`](../wiki/Step)[]
 
-#### Inherited from
+#### Returns
+
+[`Step`](../wiki/Step)[]
+
+#### Implementation of
 
 [Session](../wiki/Session).[steps](../wiki/Session#steps)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:95
+[src/core/init.ts:285](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L285)
 
-___
+## Methods
 
-### submit
+### back
 
-• **submit**: (`data`: [`AttributeData`](../wiki/Exports#attributedata), `navigate?`: [`Navigate`](../wiki/Exports#navigate), `overrides?`: [`Overrides`](../wiki/Exports#overrides)) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+▸ **back**(): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
-#### Type declaration
-
-▸ (`data`, `navigate?`, `overrides?`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
-| `navigate?` | [`Navigate`](../wiki/Exports#navigate) |
-| `overrides?` | [`Overrides`](../wiki/Exports#overrides) |
-
-##### Returns
+#### Returns
 
 `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Defined in
 
-[src/core/types.ts:20](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L20)
+[src/core/init.ts:345](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L345)
 
-## Methods
+___
 
-### exportTimeline
+### calculateUnknowns
 
-▸ **exportTimeline**(): `Promise`<`any`\>
+▸ `Private` **calculateUnknowns**(): `void`
 
 #### Returns
 
-`Promise`<`any`\>
+`void`
 
 #### Defined in
 
-[src/core/types.ts:26](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/types.ts#L26)
+[src/core/init.ts:148](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L148)
+
+___
+
+### chOnScreenData
+
+▸ **chOnScreenData**(`data`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/core/init.ts:142](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L142)
+
+___
+
+### exportTimeline
+
+▸ **exportTimeline**(): `Promise`<`string`\>
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Defined in
+
+[src/core/init.ts:352](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L352)
+
+___
+
+### navigate
+
+▸ **navigate**(`step`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `step` | `string` |
+
+#### Returns
+
+`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+
+#### Defined in
+
+[src/core/init.ts:338](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L338)
+
+___
+
+### save
+
+▸ **save**(`data`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
+
+#### Returns
+
+`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+
+#### Defined in
+
+[src/core/init.ts:327](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L327)
+
+___
+
+### submit
+
+▸ **submit**(`data`, `navigate?`, `overrides?`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | [`AttributeData`](../wiki/Exports#attributedata) |
+| `navigate?` | `any` |
+| `overrides` | [`Overrides`](../wiki/Exports#overrides) |
+
+#### Returns
+
+`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+
+#### Defined in
+
+[src/core/init.ts:315](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L315)
+
+___
+
+### triggerUpdate
+
+▸ `Private` **triggerUpdate**(`update`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `update` | `Partial`<{ `externalLoading`: `boolean` ; `screen`: [`Screen`](../wiki/Screen)  }\> |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/core/init.ts:129](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L129)
+
+___
+
+### updateDynamicValues
+
+▸ `Private` **updateDynamicValues**(): `Promise`<`void`\>
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/core/init.ts:188](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L188)
+
+___
+
+### updateSession
+
+▸ `Private` **updateSession**(`session`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `session` | [`Session`](../wiki/Session) |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/core/init.ts:224](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L224)

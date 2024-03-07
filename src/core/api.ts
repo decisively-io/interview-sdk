@@ -4,14 +4,14 @@ import { Overrides, SessionConfig } from "./types";
 import { buildUrl } from "./util";
 
 export const create = async (api: AxiosInstance, project: ProjectId, options: SessionConfig = {}) => {
-  const { initialData, release, ...rest } = options;
+  const { initialData, release, responseElements, ...rest } = options;
   // const config: AxiosRequestConfig = {
   //   params: {
   //     interview
   //   }
   // };
 
-  const res = await api.post<Session>(buildUrl(project, release), { data: initialData ?? {}, ...rest });
+  const res = await api.post<Session>(buildUrl(project, release), { data: initialData ?? {}, response: responseElements, ...rest });
   return res.data;
 };
 
@@ -27,9 +27,9 @@ export const load = async (api: AxiosInstance, project: ProjectId, session: Sess
  * @param navigate The desired navigation after update, defaults to next
  * @param overrides Other params to pass through to payload
  */
-export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: AttributeData, navigate: Navigate, overrides: Overrides, releaseId?: string) => {
+export const submit = async (api: AxiosInstance, project: ProjectId, session: SessionId, data: AttributeData, navigate: Navigate, overrides?: Overrides, releaseId?: string) => {
   const url = releaseId === undefined ? project : buildUrl(project, releaseId);
-  const res = await api.patch<Session>(url, { data, navigate, ...overrides }, { params: { session: session } });
+  const res = await api.patch<Session>(url, { data, navigate: navigate || undefined, ...overrides }, { params: { session: session } });
   return res.data;
 };
 
@@ -38,13 +38,13 @@ export const submit = async (api: AxiosInstance, project: ProjectId, session: Se
  *
  * @param step The desired step ID
  */
-export const navigate = async (api: AxiosInstance, project: ProjectId, session: SessionId, step: StepId) => {
-  const res = await api.patch<Session>(project, { navigate: step }, { params: { session } });
+export const navigate = async (api: AxiosInstance, project: ProjectId, session: SessionId, step: StepId, overrides?: Overrides) => {
+  const res = await api.patch<Session>(project, { navigate: step, ...overrides }, { params: { session } });
   return res.data;
 };
 
-export const back = async (api: AxiosInstance, project: ProjectId, session: SessionId) => {
-  const res = await api.patch<Session>(project, { navigate: "@back" }, { params: { session } });
+export const back = async (api: AxiosInstance, project: ProjectId, session: SessionId, overrides?: Overrides) => {
+  const res = await api.patch<Session>(project, { navigate: "@back", ...overrides }, { params: { session } });
   return res.data;
 };
 

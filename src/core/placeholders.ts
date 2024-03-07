@@ -1,7 +1,6 @@
 // import { debounceTime, map, filter } from 'rxjs/operators';
 import { AttributeData } from "@decisively-io/types-interview";
 // import { produce } from 'immer';
-import { Subject } from "rxjs";
 // import { SessionInstance } from "./types";
 // import { simulate } from "./api";
 
@@ -18,28 +17,11 @@ export const render = (template: string, data: AttributeData) => {
 
 // react / fe could just use populate and debounce the state updates
 
-/**
- * could try to abstract and insert observables into controls??
- *
- * for each attrib in state, make an observable that simulates on event
- * using the observable, insert a method to trigger the event onto each dependant control
- * the control can be found using its attribute field
- * method is auto debounced / caches the previous call
- *  ie a3 is dependant on a1 and a2
- *  a1 updates => triggers event {a1: value} => does not simulate as missing a2
- *  a2 updates => triggers event {a2: value} => now have { a1: value, a2: value } => triggers simulate
- */
-
-interface AttributeControl {
-  attribute: string;
-  onChange?: Subject<string>;
-}
-
 /*
 
 export const generateObserver = (session: SessionInstance, attribute: string, dependencies: string[], debounce = 500) => {
   // const simulated = new Subject();
-  
+
   const sub = new Subject<AttributeData>();
   sub.pipe(
     // debounce input
@@ -71,7 +53,7 @@ export const generateObservables = (session: SessionInstance) => {
 
   goals.forEach((g) => {
     const sub = new Subject<AttributeData>();
-    
+
     sub.subscribe({
       next: (d) => {
         // simulate

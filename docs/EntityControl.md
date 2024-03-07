@@ -1,6 +1,12 @@
-# Interface: EntityControl
+# Interface: EntityControl<C\>
 
 Collect information about instances (of an entity) within a tabular structure.
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `C` | [`Control`](../wiki/Exports#control) |
 
 ## Hierarchy
 
@@ -146,7 +152,7 @@ ___
 
 ### template
 
-• **template**: [`Control`](../wiki/Exports#control)[]
+• **template**: `C`[]
 
 #### Defined in
 

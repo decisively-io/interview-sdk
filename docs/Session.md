@@ -1,10 +1,8 @@
 # Interface: Session
 
-## Hierarchy
+## Implemented by
 
-- **`Session`**
-
-  ↳ [`SessionInstance`](../wiki/SessionInstance)
+- [`SessionInstance`](../wiki/SessionInstance)
 
 ## Table of contents
 
@@ -107,7 +105,7 @@ ___
 
 ### status
 
-• **status**: ``"complete"`` \| ``"error"`` \| ``"in-progress"``
+• **status**: ``"complete"`` \| ``"in-progress"`` \| ``"error"``
 
 #### Defined in
 

@@ -1,0 +1,104 @@
+{
+  "context": {
+    "entity": "global"
+  },
+  "data": {
+    "2f652955-8b64-4001-823a-75d8a04e6f1a": {
+      "type": "auto"
+    },
+    "c0b4d98c-262a-461c-ab9c-d8b76c7630a3": {
+      "type": "auto"
+    },
+    "490391b8-d532-4541-b623-a59ca58b3b94": {
+      "type": "auto"
+    }
+  },
+  "reportId": "41ab7ca3-fece-4d05-a7dd-2033054708e0",
+  "steps": [
+    {
+      "id": "94744f66-930b-4443-a980-45a02f950271",
+      "title": "Step 1",
+      "context": {
+        "entity": "global"
+      },
+      "current": true,
+      "complete": false,
+      "visited": false,
+      "time_estimate": 0,
+      "skipped": false
+    }
+  ],
+  "screen": {
+    "title": "Step 1",
+    "id": "94744f66-930b-4443-a980-45a02f950271",
+    "controls": [
+      {
+        "id": "3963a87b-0f0c-4679-8e6f-6abb28b21a2a",
+        "label": "a",
+        "required": true,
+        "createdAt": 1709651907997,
+        "attribute": "2f652955-8b64-4001-823a-75d8a04e6f1a",
+        "type": "text"
+      },
+      {
+        "id": "23856255-21e9-41a3-b9f6-1c569a56a77e",
+        "type": "typography",
+        "text": "+",
+        "style": "body1"
+      },
+      {
+        "id": "bedef0d0-6d51-47d0-ade2-4fb50927702a",
+        "label": "b",
+        "required": true,
+        "createdAt": 1709651911163,
+        "attribute": "c0b4d98c-262a-461c-ab9c-d8b76c7630a3",
+        "type": "text"
+      },
+      {
+        "id": "d4825e92-344c-497b-b44d-56e3a7195e62",
+        "type": "typography",
+        "text": "+",
+        "style": "body1"
+      },
+      {
+        "id": "ec1818cc-aa1c-4d26-9b49-e1e9e2f7f7c6",
+        "label": "c",
+        "required": true,
+        "createdAt": 1709651913428,
+        "attribute": "490391b8-d532-4541-b623-a59ca58b3b94",
+        "type": "text"
+      },
+      {
+        "id": "507241f4-48a2-456e-85b5-341b31a09ab7",
+        "type": "typography",
+        "text": "=",
+        "style": "body1"
+      },
+      {
+        "id": "624545be-81dd-4ace-a0f7-6b517ccf1bad",
+        "type": "typography",
+        "text": "the answer is {{5cb42d4e-486e-4e87-8136-b8ca49e30702}}",
+        "style": "banner-green"
+      }
+    ],
+    "attributes": ["2f652955-8b64-4001-823a-75d8a04e6f1a", "c0b4d98c-262a-461c-ab9c-d8b76c7630a3", "490391b8-d532-4541-b623-a59ca58b3b94"],
+    "buttons": {
+      "next": true,
+      "back": false
+    }
+  },
+  "state": [
+    {
+      "id": "5cb42d4e-486e-4e87-8136-b8ca49e30702",
+      "dependencies": ["2f652955-8b64-4001-823a-75d8a04e6f1a", "c0b4d98c-262a-461c-ab9c-d8b76c7630a3", "490391b8-d532-4541-b623-a59ca58b3b94"]
+    }
+  ],
+  "progress": {
+    "percentage": 0,
+    "time": 15
+  },
+  "sessionId": "22b32af4-83a2-4b1b-960e-c4201c53666a",
+  "status": "in-progress",
+  "explanations": {},
+  "goal": "b6a1bf21-6ec4-41e7-a5da-fb0f18231582"
+}

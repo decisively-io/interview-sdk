@@ -12,7 +12,7 @@
 
 ### create
 
-• **create**: (`project`: `string`, `config`: [`SessionConfig`](../wiki/SessionConfig), `newDataCallback?`: (`data`: `any`) => `void`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+• **create**: (`project`: `string`, `config`: [`SessionConfig`](../wiki/SessionConfig), `newDataCallback?`: `NewDataCallback`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Type declaration
 
@@ -24,7 +24,7 @@
 | :------ | :------ |
 | `project` | `string` |
 | `config` | [`SessionConfig`](../wiki/SessionConfig) |
-| `newDataCallback?` | (`data`: `any`) => `void` |
+| `newDataCallback?` | `NewDataCallback` |
 
 ##### Returns
 
@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[src/core/init.ts:100](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/init.ts#L100)
+[src/core/init.ts:58](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L58)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:102](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/init.ts#L102)
+[src/core/init.ts:60](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L60)
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:101](https://github.com/decisively-io/interview-sdk/blob/8cacc7d/src/core/init.ts#L101)
+[src/core/init.ts:59](https://github.com/decisively-io/interview-sdk/blob/d926468/src/core/init.ts#L59)
