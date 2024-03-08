@@ -314,6 +314,10 @@ export class SessionInstance implements Session {
     return (this.session as any).report;
   }
 
+  set report(report) {
+    (this.session as any).report = report;
+  }
+
   // -- methods
 
   async submit(data: AttributeData, navigate?: any, overrides: Overrides = {}) {
