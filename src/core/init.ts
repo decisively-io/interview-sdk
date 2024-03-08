@@ -87,6 +87,10 @@ const postProcessControl = (control: any, replacements: any) => {
   if (control.templateLabel) {
     control.label = replaceTemplatedText(control.templateLabel, replacements);
   }
+  if (control.type === "switch_container" && control.kind === "dynamic" && control.attribute) {
+    control.branch = replacements[control.attribute] ? "true" : "false";
+    console.log(control.branch);
+  }
 };
 
 export class SessionInstance implements Session {
@@ -153,15 +157,15 @@ export class SessionInstance implements Session {
     if (state && screen) {
       if (!isEqual(this.internals.prevUserData, this.internals.userData) && Object.keys(this.internals.userData).length > 0) {
         this.internals.replacementQueries = buildDynamicReplacementQueries(state, this.internals.userData, true);
-        if (this.internals.replacementQueries.unKnownValues.length || Object.keys(this.internals.replacementQueries.knownValues).length > 0) {
+        if (this.internals.replacementQueries.unknownValues.length || Object.keys(this.internals.replacementQueries.knownValues).length > 0) {
           Object.assign(this.internals.replacements, this.internals.replacementQueries?.knownValues);
           console.log(this.internals);
-          const loading = this.internals.replacementQueries.unKnownValues.length > 0;
+          const loading = this.internals.replacementQueries.unknownValues.length > 0;
 
           const newScreen = produce(screen, (draft) => {
             iterateControls(draft.controls, (control: any) => {
-              if (control.dependencies && this.internals.replacementQueries?.unKnownValues.length) {
-                if (this.internals.replacementQueries?.unKnownValues.some((dep) => control.dependencies.includes(dep.goal))) {
+              if (control.dynamicAttributes && this.internals.replacementQueries?.unknownValues.length) {
+                if (this.internals.replacementQueries?.unknownValues.some((dep) => control.dynamicAttributes.includes(dep.goal))) {
                   control.loading = true;
                 }
               }
@@ -187,14 +191,14 @@ export class SessionInstance implements Session {
 
   private async updateDynamicValues() {
     if (this.release) {
-      if (this.internals.replacementQueries?.unKnownValues?.length && this.session.screen) {
+      if (this.internals.replacementQueries?.unknownValues?.length && this.session.screen) {
         const requestId = this.internals.latestRequest;
 
         const replacedSession = await produce<SessionObservable>(this.session, async (draft) => {
           const { screen } = draft;
 
           // ask the backend to solve for any dynamic attributes, based on the entered attributes
-          Object.assign(this.internals.replacements, await simulateUnknowns(this.internals.replacementQueries!.unKnownValues, this.api, this.project, this.release!, this.sessionId));
+          Object.assign(this.internals.replacements, await simulateUnknowns(this.internals.replacementQueries!.unknownValues, this.api, this.project, this.release!, this.sessionId));
 
           // replace anything replaceable on the screen
           iterateControls(screen!.controls, (control: any) => {

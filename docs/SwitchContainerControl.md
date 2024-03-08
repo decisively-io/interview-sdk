@@ -21,6 +21,7 @@
 - [attribute](../wiki/SwitchContainerControl#attribute)
 - [condition](../wiki/SwitchContainerControl#condition)
 - [id](../wiki/SwitchContainerControl#id)
+- [kind](../wiki/SwitchContainerControl#kind)
 - [outcome\_false](../wiki/SwitchContainerControl#outcome_false)
 - [outcome\_true](../wiki/SwitchContainerControl#outcome_true)
 - [type](../wiki/SwitchContainerControl#type)
@@ -62,6 +63,16 @@ BaseControl.id
 #### Defined in
 
 node_modules/@decisively-io/types-interview/dist/controls.d.ts:388
+
+___
+
+### kind
+
+• `Optional` **kind**: ``"dynamic"`` \| ``"static"``
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:393
 
 ___
 

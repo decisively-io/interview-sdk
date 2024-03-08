@@ -5,7 +5,7 @@ import { simulate } from "./api";
 
 export interface DynamicReplacementQueries {
   knownValues: AttributeData;
-  unKnownValues: Partial<Simulate>[];
+  unknownValues: Partial<Simulate>[];
 }
 
 /**
@@ -18,7 +18,7 @@ export interface DynamicReplacementQueries {
  */
 export const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeData, ignoreEmpty: boolean): DynamicReplacementQueries => {
   const knownValues: AttributeData = { ...attribValues };
-  const unKnownValues: Partial<Simulate>[] = [];
+  const unknownsWithSatisfiedDependencies: Partial<Simulate>[] = [];
 
   if (ignoreEmpty) {
     // remove all empty known values
@@ -30,23 +30,26 @@ export const buildDynamicReplacementQueries = (state: State[], attribValues: Att
   }
 
   for (const stateObj of state) {
-    if (knownValues[stateObj.id] === undefined && stateObj.value) {
+    if (knownValues[stateObj.id] === undefined && stateObj.value && !stateObj.dependencies?.length) {
       knownValues[stateObj.id] = stateObj.value;
     }
   }
 
   const knownKeys = Object.keys(knownValues);
+
+  const unknownWithMissingDependencies = [];
+
   for (const stateObj of state) {
     const { id: goal, dependencies } = stateObj;
     if (goal) {
       if (dependencies && dependencies.length > 0) {
         const data: AttributeData = {};
         if (attribValues["@parent"]) data["@parent"] = attribValues["@parent"];
-        const dependenciesKnown = dependencies.every((dep) => {
+        const unknownDependencies = dependencies.reduce((unknownDependencies, dep) => {
           const value = knownValues[dep];
           if (value !== undefined) {
             set(data, dep, value);
-            return true;
+            return unknownDependencies;
           }
 
           let hasAnyMatch = false;
@@ -66,26 +69,56 @@ export const buildDynamicReplacementQueries = (state: State[], attribValues: Att
               set(data, key, knownValues[key]);
             }
           }
-          return hasAnyMatch;
-        });
-        if (dependenciesKnown) {
-          unKnownValues.push({
+
+          if (!hasAnyMatch) {
+            unknownDependencies.push(dep);
+          }
+          return unknownDependencies;
+        }, [] as string[]);
+
+        if (unknownDependencies.length === 0) {
+          unknownsWithSatisfiedDependencies.push({
             goal,
             data,
+          });
+        } else {
+          // the goal has missing dependencies, but the missing dependencies may be other unknowns
+          unknownWithMissingDependencies.push({
+            goal,
+            data,
+            unknownDependencies,
           });
         }
       }
     }
   }
 
+  // ok now we have a list of unknowns with missing dependencies, we need to check if any of the missing dependencies are also states and if they ARE known, then we can add the goal to the unKnownValues
+  for (const unknownWithMissingDependency of unknownWithMissingDependencies) {
+    const { goal, data, unknownDependencies } = unknownWithMissingDependency;
+    const allActuallySatisfied = unknownDependencies.every((dep) => {
+      const actuallySatisfied = unknownsWithSatisfiedDependencies.find((it) => it.goal === dep);
+      if (actuallySatisfied) {
+        Object.assign(data, actuallySatisfied?.data);
+      }
+      return actuallySatisfied;
+    });
+    if (allActuallySatisfied) {
+      unknownsWithSatisfiedDependencies.push({
+        goal,
+        data,
+      });
+    }
+  }
+
   // remove requests where the goal already has a value, or was entered directly by the user
-  const unKnownValuesFin = unKnownValues.filter((it) => {
+  const unknownValues = unknownsWithSatisfiedDependencies.filter((it) => {
     return attribValues[it.goal!] === undefined;
   });
 
   return {
     knownValues, // the known values
-    unKnownValues: unKnownValuesFin, // the requests to be made against the API
+    unknownValues: unknownValues, // the requests to be made against the API
   };
 };
 

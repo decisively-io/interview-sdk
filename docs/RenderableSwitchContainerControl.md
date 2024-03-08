@@ -14,6 +14,7 @@
 - [branch](../wiki/RenderableSwitchContainerControl#branch)
 - [condition](../wiki/RenderableSwitchContainerControl#condition)
 - [id](../wiki/RenderableSwitchContainerControl#id)
+- [kind](../wiki/RenderableSwitchContainerControl#kind)
 - [outcome\_false](../wiki/RenderableSwitchContainerControl#outcome_false)
 - [outcome\_true](../wiki/RenderableSwitchContainerControl#outcome_true)
 - [type](../wiki/RenderableSwitchContainerControl#type)
@@ -40,7 +41,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:396
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:397
 
 ___
 
@@ -69,6 +70,20 @@ ___
 #### Defined in
 
 node_modules/@decisively-io/types-interview/dist/controls.d.ts:388
+
+___
+
+### kind
+
+• `Optional` **kind**: ``"dynamic"`` \| ``"static"``
+
+#### Inherited from
+
+[SwitchContainerControl](../wiki/SwitchContainerControl).[kind](../wiki/SwitchContainerControl#kind)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:393
 
 ___
 

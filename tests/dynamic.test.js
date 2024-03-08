@@ -51,7 +51,7 @@ describe("Dynamic", () => {
       },
       true,
     );
-    expect(result.unKnownValues).toEqual([
+    expect(result.unknownValues).toEqual([
       {
         goal: "5cb42d4e-486e-4e87-8136-b8ca49e30702",
         data: {
