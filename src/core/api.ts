@@ -1,6 +1,6 @@
-import { AttributeData, Navigate, ProjectId, ReleaseId, Session, SessionId, Simulate, StepId } from "@decisively-io/types-interview";
-import { AxiosInstance, AxiosRequestConfig } from "axios";
-import { Overrides, SessionConfig } from "./types";
+import type { AttributeData, Navigate, ProjectId, ReleaseId, Session, SessionId, Simulate, StepId } from "@decisively-io/types-interview";
+import { type AxiosInstance, AxiosRequestConfig } from "axios";
+import type { Overrides, SessionConfig } from "./types";
 import { buildUrl } from "./util";
 
 export const create = async (api: AxiosInstance, project: ProjectId, options: SessionConfig = {}) => {

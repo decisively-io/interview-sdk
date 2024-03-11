@@ -297,29 +297,34 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@biomejs/biome@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.npmjs.org/@biomejs/biome/-/biome-1.5.3.tgz"
-  integrity sha512-yvZCa/g3akwTaAQ7PCwPWDCkZs3Qa5ONg/fgOUT9e6wAWsPftCjLQFPXBeGxPK30yZSSpgEmRCfpGTmVbUjGgg==
+"@biomejs/biome@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/@biomejs/biome/-/biome-1.6.0.tgz"
+  integrity sha512-hvP8K1+CV8qc9eNdXtPwzScVxFSHB448CPKSqX6+8IW8G7bbhBVKGC80BowExJN5+vu+kzsj4xkWa780MAOlJw==
   optionalDependencies:
-    "@biomejs/cli-darwin-arm64" "1.5.3"
-    "@biomejs/cli-darwin-x64" "1.5.3"
-    "@biomejs/cli-linux-arm64" "1.5.3"
-    "@biomejs/cli-linux-arm64-musl" "1.5.3"
-    "@biomejs/cli-linux-x64" "1.5.3"
-    "@biomejs/cli-linux-x64-musl" "1.5.3"
-    "@biomejs/cli-win32-arm64" "1.5.3"
-    "@biomejs/cli-win32-x64" "1.5.3"
+    "@biomejs/cli-darwin-arm64" "1.6.0"
+    "@biomejs/cli-darwin-x64" "1.6.0"
+    "@biomejs/cli-linux-arm64" "1.6.0"
+    "@biomejs/cli-linux-arm64-musl" "1.6.0"
+    "@biomejs/cli-linux-x64" "1.6.0"
+    "@biomejs/cli-linux-x64-musl" "1.6.0"
+    "@biomejs/cli-win32-arm64" "1.6.0"
+    "@biomejs/cli-win32-x64" "1.6.0"
 
-"@biomejs/cli-darwin-arm64@1.5.3":
-  version "1.5.3"
-  resolved "https://registry.npmjs.org/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-1.5.3.tgz"
-  integrity sha512-ImU7mh1HghEDyqNmxEZBoMPr8SxekkZuYcs+gynKlNW+TALQs7swkERiBLkG9NR0K1B3/2uVzlvYowXrmlW8hw==
+"@biomejs/cli-darwin-arm64@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-1.6.0.tgz"
+  integrity sha512-K1Fjqye5pt+Ua+seC7V/2bFjfnqOaEOcQbBQSiiefB/VPNOb6lA5NFIfJ1PskTA3JrMXE1k7iqKQn56qrKFS6A==
 
 "@decisively-io/types-interview@^0.3.0":
   version "0.3.0"
   resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.3.0/522765f7dc4e8a6ad1812cd6920fdbc90ff13fba"
   integrity sha512-EW2rxMrd+Hq2QSreDnxv3ubi7vfPoEZqnXduRc/Gtk8SEOSn7ckyUaq4jKOiRHqmQTOqAJEUJ9nIBvNFkuV7kw==
+
+"@imminently/standard@^0.1.4":
+  version "0.1.4"
+  resolved "https://npm.pkg.github.com/download/@imminently/standard/0.1.4/94b0ba0f6b6bd209f13420df3fddbd8971589cc3"
+  integrity sha512-cnvYC95E+IC2ZSNAAxuWCWBSsSxSK8Zy7MF9AsxJokIeNnT6WYeWHXlYN9tnFIXCWVMLAVk7tbiVwfKUqi7cQQ==
 
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"

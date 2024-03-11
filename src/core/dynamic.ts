@@ -1,11 +1,13 @@
-import { AttributeData, ProjectId, ReleaseId, SessionId, Simulate, State } from "@decisively-io/types-interview";
-import { AxiosInstance } from "axios";
+import type { AttributeData, ProjectId, ReleaseId, SessionId, Simulate, State } from "@decisively-io/types-interview";
+import type { AxiosInstance } from "axios";
 import set from "lodash.set";
 import { simulate } from "./api";
 
+export type UnknownValues = Record<string, Partial<Simulate>>;
+
 export interface DynamicReplacementQueries {
   knownValues: AttributeData;
-  unknownValues: Partial<Simulate>[];
+  unknownValues: UnknownValues;
 }
 
 /**
@@ -18,6 +20,7 @@ export interface DynamicReplacementQueries {
  */
 export const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeData, ignoreEmpty: boolean): DynamicReplacementQueries => {
   const knownValues: AttributeData = { ...attribValues };
+  const allData: AttributeData = { ...attribValues };
   const unknownsWithSatisfiedDependencies: Partial<Simulate>[] = [];
 
   if (ignoreEmpty) {
@@ -26,16 +29,19 @@ export const buildDynamicReplacementQueries = (state: State[], attribValues: Att
       if (knownValues[key] === "") {
         delete knownValues[key];
       }
+      if (allData[key] === "") {
+        delete allData[key];
+      }
     }
   }
 
   for (const stateObj of state) {
-    if (knownValues[stateObj.id] === undefined && stateObj.value && !stateObj.dependencies?.length) {
-      knownValues[stateObj.id] = stateObj.value;
+    if (allData[stateObj.id] === undefined && stateObj.value) {
+      allData[stateObj.id] = stateObj.value;
     }
   }
 
-  const knownKeys = Object.keys(knownValues);
+  const knownKeys = Object.keys(allData);
 
   const unknownWithMissingDependencies = [];
 
@@ -44,10 +50,14 @@ export const buildDynamicReplacementQueries = (state: State[], attribValues: Att
     if (goal) {
       if (dependencies && dependencies.length > 0) {
         const data: AttributeData = {};
-        if (attribValues["@parent"]) data["@parent"] = attribValues["@parent"];
+        let userInputInvolved = false;
         const unknownDependencies = dependencies.reduce((unknownDependencies, dep) => {
-          const value = knownValues[dep];
+          const value = allData[dep];
           if (value !== undefined) {
+            if (attribValues[dep] !== undefined) {
+              userInputInvolved = true;
+            }
+
             set(data, dep, value);
             return unknownDependencies;
           }
@@ -64,9 +74,13 @@ export const buildDynamicReplacementQueries = (state: State[], attribValues: Att
                 idParts.push(parts.shift());
                 const index = parts.shift();
                 idParts.push(index);
-                set(data, `${idParts.join(".")}.@id`, parseInt(index as any) + 1);
+                set(data, `${idParts.join(".")}.@id`, Number.parseInt(index as any) + 1);
               }
-              set(data, key, knownValues[key]);
+              set(data, key, allData[key]);
+
+              if (attribValues[key] !== undefined) {
+                userInputInvolved = true;
+              }
             }
           }
 
@@ -76,18 +90,21 @@ export const buildDynamicReplacementQueries = (state: State[], attribValues: Att
           return unknownDependencies;
         }, [] as string[]);
 
-        if (unknownDependencies.length === 0) {
-          unknownsWithSatisfiedDependencies.push({
-            goal,
-            data,
-          });
-        } else {
-          // the goal has missing dependencies, but the missing dependencies may be other unknowns
-          unknownWithMissingDependencies.push({
-            goal,
-            data,
-            unknownDependencies,
-          });
+        // only resimulate if the user has entered a value that effects the outcome & we know all the dependencies
+        if (userInputInvolved) {
+          if (unknownDependencies.length === 0) {
+            unknownsWithSatisfiedDependencies.push({
+              goal,
+              data,
+            });
+          } else {
+            // the goal has missing dependencies, but the missing dependencies may be other unknowns
+            unknownWithMissingDependencies.push({
+              goal,
+              data,
+              unknownDependencies,
+            });
+          }
         }
       }
     }
@@ -112,10 +129,12 @@ export const buildDynamicReplacementQueries = (state: State[], attribValues: Att
   }
 
   // remove requests where the goal already has a value, or was entered directly by the user
-  const unknownValues = unknownsWithSatisfiedDependencies.filter((it) => {
-    return attribValues[it.goal!] === undefined;
-  });
-
+  const unknownValues: UnknownValues = {};
+  for (const unknownValue of unknownsWithSatisfiedDependencies) {
+    if (attribValues[unknownValue.goal!] === undefined) {
+      unknownValues[unknownValue.goal!] = unknownValue;
+    }
+  }
   return {
     knownValues, // the known values
     unknownValues: unknownValues, // the requests to be made against the API

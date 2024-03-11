@@ -1,5 +1,5 @@
 // import { debounceTime, map, filter } from 'rxjs/operators';
-import { AttributeData } from "@decisively-io/types-interview";
+import type { AttributeData } from "@decisively-io/types-interview";
 // import { produce } from 'immer';
 // import { SessionInstance } from "./types";
 // import { simulate } from "./api";

@@ -1,4 +1,4 @@
-import { AttributeData, AttributeId, State, Step } from "@decisively-io/types-interview";
+import type { AttributeData, AttributeId, State, Step } from "@decisively-io/types-interview";
 import { produce } from "immer";
 
 // -- step helpers

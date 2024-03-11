@@ -1,5 +1,5 @@
-import { AttributeData, AttributeValue, Control, ResponseData, Screen, Session, StepId } from "@decisively-io/types-interview";
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosRequestTransformer } from "axios";
+import type { AttributeData, AttributeValue, Control, ResponseData, Screen, Session, Simulate, StepId } from "@decisively-io/types-interview";
+import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
 import produce from "immer";
 import debounce from "lodash.debounce";
 import isEmpty from "lodash.isempty";
@@ -7,9 +7,9 @@ import isEqual from "lodash.isequal";
 import { v4 as uuid } from "uuid";
 import { back, create, exportTimeline, load, navigate, submit } from "./api";
 import { ControlTypesInfo } from "./constants";
-import { DynamicReplacementQueries, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
+import { type DynamicReplacementQueries, type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
-import { Overrides, SessionConfig } from "./types";
+import type { Overrides, SessionConfig } from "./types";
 import { buildUrl, iterateControls, range } from "./util";
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
@@ -36,10 +36,6 @@ const transformControlValue = (value: AttributeValue, control: Control): any => 
 
 export const transformResponse = (session: Session, data: ResponseData): ResponseData => {
   return produce(data, (draft) => {
-    if (session.data["@parent"]) {
-      draft["@parent"] = session.data["@parent"];
-    }
-
     for (const id of Object.keys(draft)) {
       const control = (session.screen.controls as any[]).find((c) => c.attribute === id || c.entity === id);
       if (control) {
@@ -74,7 +70,8 @@ interface SessionInternal {
   prevUserData: AttributeData;
 
   replacements: AttributeData;
-  replacementQueries: DynamicReplacementQueries | undefined;
+  unknownsRequiringSimulate: UnknownValues;
+  unknownsAlreadySimulated: UnknownValues;
 
   // we only care about the latest request
   latestRequest: number | undefined;
@@ -88,8 +85,10 @@ const postProcessControl = (control: any, replacements: any) => {
     control.label = replaceTemplatedText(control.templateLabel, replacements);
   }
   if (control.type === "switch_container" && control.kind === "dynamic" && control.attribute) {
-    control.branch = replacements[control.attribute] ? "true" : "false";
-    console.log(control.branch);
+    const update = replacements[control.attribute];
+    if (update !== undefined) {
+      control.branch = replacements[control.attribute] ? "true" : "false";
+    }
   }
 };
 
@@ -104,7 +103,8 @@ export class SessionInstance implements Session {
     userData: {},
     prevUserData: {},
     replacements: {},
-    replacementQueries: undefined,
+    unknownsRequiringSimulate: {},
+    unknownsAlreadySimulated: {},
     latestRequest: undefined,
   };
 
@@ -145,8 +145,9 @@ export class SessionInstance implements Session {
 
   chOnScreenData(data: AttributeData) {
     Object.assign(this.internals.userData, data);
-    this.calculateUnknowns();
+    // call this first so the debounce doesn't fire during unknown calculation
     this.updateDynamicValues();
+    this.calculateUnknowns();
   }
 
   private calculateUnknowns() {
@@ -156,16 +157,28 @@ export class SessionInstance implements Session {
 
     if (state && screen) {
       if (!isEqual(this.internals.prevUserData, this.internals.userData) && Object.keys(this.internals.userData).length > 0) {
-        this.internals.replacementQueries = buildDynamicReplacementQueries(state, this.internals.userData, true);
-        if (this.internals.replacementQueries.unknownValues.length || Object.keys(this.internals.replacementQueries.knownValues).length > 0) {
-          Object.assign(this.internals.replacements, this.internals.replacementQueries?.knownValues);
-          console.log(this.internals);
-          const loading = this.internals.replacementQueries.unknownValues.length > 0;
+        const replacementQueries = buildDynamicReplacementQueries(state, this.internals.userData, true);
+        if (replacementQueries.unknownValues.length || Object.keys(replacementQueries.knownValues).length > 0) {
+          Object.assign(this.internals.replacements, replacementQueries?.knownValues);
+
+          for (const [key, value] of Object.entries(replacementQueries.unknownValues)) {
+            if (value) {
+              const alreadySimulated = this.internals.unknownsAlreadySimulated[key];
+              if (alreadySimulated) {
+                if (isEqual(alreadySimulated.data, value.data)) {
+                  continue;
+                }
+              }
+            }
+            this.internals.unknownsRequiringSimulate[key] = value;
+          }
+
+          const loading = Object.keys(this.internals.unknownsRequiringSimulate).length > 0;
 
           const newScreen = produce(screen, (draft) => {
             iterateControls(draft.controls, (control: any) => {
-              if (control.dynamicAttributes && this.internals.replacementQueries?.unknownValues.length) {
-                if (this.internals.replacementQueries?.unknownValues.some((dep) => control.dynamicAttributes.includes(dep.goal))) {
+              if (control.dynamicAttributes && Object.keys(this.internals.unknownsRequiringSimulate).length > 0) {
+                if (control.dynamicAttributes.some((dynamic: string) => this.internals.unknownsRequiringSimulate[dynamic])) {
                   control.loading = true;
                 }
               }
@@ -191,27 +204,31 @@ export class SessionInstance implements Session {
 
   private async updateDynamicValues() {
     if (this.release) {
-      if (this.internals.replacementQueries?.unknownValues?.length && this.session.screen) {
+      if (Object.keys(this.internals.unknownsRequiringSimulate).length > 0 && this.session.screen) {
         const requestId = this.internals.latestRequest;
 
-        const replacedSession = await produce<SessionObservable>(this.session, async (draft) => {
-          const { screen } = draft;
-
-          // ask the backend to solve for any dynamic attributes, based on the entered attributes
-          Object.assign(this.internals.replacements, await simulateUnknowns(this.internals.replacementQueries!.unknownValues, this.api, this.project, this.release!, this.sessionId));
-
-          // replace anything replaceable on the screen
-          iterateControls(screen!.controls, (control: any) => {
-            if (control.loading) {
-              control.loading = undefined;
-            }
-
-            postProcessControl(control, this.internals.replacements);
-          });
-        });
+        const result = await simulateUnknowns(Object.values(this.internals.unknownsRequiringSimulate), this.api, this.project, this.release!, this.sessionId);
 
         // are we still the last request?
         if (this.internals.latestRequest === requestId) {
+          const replacedSession = await produce<SessionObservable>(this.session, async (draft) => {
+            const { screen } = draft;
+
+            // ask the backend to solve for any dynamic attributes, based on the entered attributes
+            Object.assign(this.internals.replacements, result);
+
+            // replace anything replaceable on the screen
+            iterateControls(screen!.controls, (control: any) => {
+              if (control.loading) {
+                control.loading = undefined;
+              }
+
+              postProcessControl(control, this.internals.replacements);
+            });
+          });
+
+          this.internals.unknownsAlreadySimulated = { ...this.internals.unknownsRequiringSimulate };
+          this.internals.unknownsRequiringSimulate = {};
           if (replacedSession.screen) {
             this.triggerUpdate({
               externalLoading: false,
@@ -230,26 +247,38 @@ export class SessionInstance implements Session {
     const currentRenderAt = this.renderAt;
     this.session = session;
     if (!isEmpty(session.screen)) {
+      const replacements: AttributeData = {};
+      if (session.state) {
+        for (const stateObj of session.state) {
+          if (replacements[stateObj.id] === undefined && stateObj.value) {
+            replacements[stateObj.id] = stateObj.value;
+          }
+        }
+      }
       if (prevSession?.screen?.id !== session.screen?.id) {
         this.internals = {
           userData: {},
           prevUserData: {},
-          replacements: {},
-          replacementQueries: undefined,
+          replacements: replacements,
+          unknownsRequiringSimulate: {},
+          unknownsAlreadySimulated: {},
           latestRequest: undefined,
         };
       }
 
-      this.processedScreen = produce(session.screen as Screen, (draft) => {
+      /*this.processedScreen = produce(session.screen as Screen, (draft) => {
         iterateControls(draft.controls, (control: any) => {
           postProcessControl(control, this.internals.replacements);
         });
       });
 
-      this.calculateUnknowns();
+      // call this first so the debounce doesn't fire during unknown calculation
       this.updateDynamicValues();
+      this.calculateUnknowns();
+
+      // force trigger an update of dynamic values
       // @ts-ignore
-      this.updateDynamicValues.flush();
+      this.updateDynamicValues.flush();*/
     }
 
     // hasn't updated, force it

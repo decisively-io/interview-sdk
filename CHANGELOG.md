@@ -1,3 +1,7 @@
+## 0.6.2
+
+- only simulate values whose dependencies have changed
+
 ## 0.6.0
 
 - dynamic container support

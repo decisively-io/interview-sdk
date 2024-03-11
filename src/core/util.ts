@@ -1,4 +1,4 @@
-import { AttributeData, Control, State } from "@decisively-io/types-interview";
+import type { AttributeData, Control, State } from "@decisively-io/types-interview";
 
 export const buildUrl = (...args: (string | undefined)[]) => {
   return [...args.filter((a) => !!a)].join("/");
