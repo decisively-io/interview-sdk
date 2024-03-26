@@ -1,4 +1,13 @@
-import type { AttributeData, AttributeValue, Control, ResponseData, Screen, Session, Simulate, StepId } from "@decisively-io/types-interview";
+import type {
+  AttributeData,
+  AttributeValue,
+  Control,
+  ResponseData,
+  Screen,
+  Session,
+  Simulate,
+  StepId,
+} from "@decisively-io/types-interview";
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
 import produce from "immer";
 import debounce from "lodash.debounce";
@@ -7,7 +16,12 @@ import isEqual from "lodash.isequal";
 import { v4 as uuid } from "uuid";
 import { back, create, exportTimeline, load, navigate, submit } from "./api";
 import { ControlTypesInfo } from "./constants";
-import { type DynamicReplacementQueries, type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
+import {
+  type DynamicReplacementQueries,
+  type UnknownValues,
+  buildDynamicReplacementQueries,
+  simulateUnknowns,
+} from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
 import type { Overrides, SessionConfig } from "./types";
 import { buildUrl, iterateControls, range } from "./util";
@@ -18,7 +32,10 @@ export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig
     baseURL,
     timeout: 30000,
     headers: { "Content-Type": "application/json" },
-    transformRequest: [...(transformRequest as AxiosRequestTransformer[]), ...(axios.defaults.transformRequest as AxiosRequestTransformer[])],
+    transformRequest: [
+      ...(transformRequest as AxiosRequestTransformer[]),
+      ...(axios.defaults.transformRequest as AxiosRequestTransformer[]),
+    ],
     ...overrides,
   });
 };
@@ -156,8 +173,11 @@ export class SessionInstance implements Session {
     const screen = this.screen;
 
     if (state && screen) {
-      if (!isEqual(this.internals.prevUserData, this.internals.userData) && Object.keys(this.internals.userData).length > 0) {
-        const replacementQueries = buildDynamicReplacementQueries(state, this.internals.userData, true);
+      if (
+        !isEqual(this.internals.prevUserData, this.internals.userData) &&
+        Object.keys(this.internals.userData).length > 0
+      ) {
+        const replacementQueries = buildDynamicReplacementQueries(state, this.internals.userData);
         if (replacementQueries.unknownValues.length || Object.keys(replacementQueries.knownValues).length > 0) {
           Object.assign(this.internals.replacements, replacementQueries?.knownValues);
 
@@ -178,7 +198,9 @@ export class SessionInstance implements Session {
           const newScreen = produce(screen, (draft) => {
             iterateControls(draft.controls, (control: any) => {
               if (control.dynamicAttributes && Object.keys(this.internals.unknownsRequiringSimulate).length > 0) {
-                if (control.dynamicAttributes.some((dynamic: string) => this.internals.unknownsRequiringSimulate[dynamic])) {
+                if (
+                  control.dynamicAttributes.some((dynamic: string) => this.internals.unknownsRequiringSimulate[dynamic])
+                ) {
                   control.loading = true;
                 }
               }
@@ -207,7 +229,13 @@ export class SessionInstance implements Session {
       if (Object.keys(this.internals.unknownsRequiringSimulate).length > 0 && this.session.screen) {
         const requestId = this.internals.latestRequest;
 
-        const result = await simulateUnknowns(Object.values(this.internals.unknownsRequiringSimulate), this.api, this.project, this.release!, this.sessionId);
+        const result = await simulateUnknowns(
+          Object.values(this.internals.unknownsRequiringSimulate),
+          this.api,
+          this.project,
+          this.release,
+          this.sessionId,
+        );
 
         // are we still the last request?
         if (this.internals.latestRequest === requestId) {
@@ -218,13 +246,15 @@ export class SessionInstance implements Session {
             Object.assign(this.internals.replacements, result);
 
             // replace anything replaceable on the screen
-            iterateControls(screen!.controls, (control: any) => {
-              if (control.loading) {
-                control.loading = undefined;
-              }
+            if (screen?.controls) {
+              iterateControls(screen.controls, (control: any) => {
+                if (control.loading) {
+                  control.loading = undefined;
+                }
 
-              postProcessControl(control, this.internals.replacements);
-            });
+                postProcessControl(control, this.internals.replacements);
+              });
+            }
           });
 
           this.internals.unknownsAlreadySimulated = { ...this.internals.unknownsRequiringSimulate };
@@ -402,7 +432,11 @@ export type SessionObservable = Partial<SessionInstance>;
  *    - if using react, the renderer needs to be careful, because unless this function is within
  *      a HOC, it will be recreated every render, and the SDK will not be able to send updates
  */
-export const init = (host: string, path: string | string[] = defaultPath, overrides: AxiosRequestConfig = {}): InterviewProvider => {
+export const init = (
+  host: string,
+  path: string | string[] = defaultPath,
+  overrides: AxiosRequestConfig = {},
+): InterviewProvider => {
   // -- create the api instance
   const baseUrl = buildUrl(host, ...(typeof path === "string" ? [path] : path));
   const api = createApiInstance(baseUrl, overrides);
@@ -411,7 +445,14 @@ export const init = (host: string, path: string | string[] = defaultPath, overri
   return {
     create: async (project, config, newDataCallback?) => {
       const session = await create(api, project, config);
-      return new SessionInstance({ session: session, api, responseElements: config.responseElements, project, newDataCallback, ...config });
+      return new SessionInstance({
+        session: session,
+        api,
+        responseElements: config.responseElements,
+        project,
+        newDataCallback,
+        ...config,
+      });
     },
     load: async (project, sessionId) => {
       const session = await load(api, project, sessionId);

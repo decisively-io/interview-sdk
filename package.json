@@ -1,6 +1,6 @@
 {
   "name": "@decisively-io/interview-sdk",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "An SDK for the Decisively interview system.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,8 +20,9 @@
   "author": "Decisively",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@biomejs/biome": "1.6.0",
-    "@imminently/standard": "^0.1.4",
+    "@biomejs/biome": "^1.6.3",
+    "@imminently/standard": "^0.2.1",
+    "@swc/core": "^1.4.11",
     "@swc/jest": "^0.2.36",
     "@types/jest": "^29.5.12",
     "@types/lodash.debounce": "^4.0.9",

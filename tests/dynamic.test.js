@@ -49,7 +49,6 @@ describe("Dynamic", () => {
         "numbers.0.c817df3b-5674-4d72-9340-417c38789728": "12",
         "numbers.1.c817df3b-5674-4d72-9340-417c38789728": "25",
       },
-      true,
     );
     expect(Object.values(result.unknownValues)).toEqual([
       {
@@ -168,11 +167,15 @@ describe("Dynamic", () => {
         {
           value: true,
           id: "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/07712027-6266-422f-a74f-1fca0dab2d13",
-          dependencies: ["numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728"],
+          dependencies: [
+            "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728",
+          ],
         },
         {
           id: "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/00d22f36-31db-49d7-ad00-95840e40f55b",
-          dependencies: ["numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/e0bddd71-d294-49bd-b760-c1381233cdad"],
+          dependencies: [
+            "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/e0bddd71-d294-49bd-b760-c1381233cdad",
+          ],
         },
         {
           value: "4",
@@ -216,7 +219,8 @@ describe("Dynamic", () => {
             type: "typography",
             text: "value: 12",
             style: "body1",
-            templateText: "value: {{numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728}}",
+            templateText:
+              "value: {{numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728}}",
             dynamicAttributes: ["numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728"],
           },
           {
@@ -283,7 +287,9 @@ describe("Dynamic", () => {
                     style: "banner-red",
                   },
                 ],
-                dynamicAttributes: ["numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/00d22f36-31db-49d7-ad00-95840e40f55b"],
+                dynamicAttributes: [
+                  "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/00d22f36-31db-49d7-ad00-95840e40f55b",
+                ],
                 branch: "true",
               },
               {
@@ -304,14 +310,18 @@ describe("Dynamic", () => {
             type: "typography",
             text: "value: 12",
             style: "body1",
-            templateText: "value: {{numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728}}",
-            dynamicAttributes: ["numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728"],
+            templateText:
+              "value: {{numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728}}",
+            dynamicAttributes: [
+              "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728",
+            ],
           },
           {
             id: "e9907189-cf83-4362-b68c-c715f4729257",
             type: "text",
             required: true,
-            attribute: "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728",
+            attribute:
+              "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728",
             label: "the number's value",
             showExplanation: false,
             value: "12",
@@ -320,7 +330,8 @@ describe("Dynamic", () => {
             id: "16d77cfc-e842-4b5f-a5f6-bf3d27ff8817",
             createdAt: 1709905106272,
             type: "switch_container",
-            attribute: "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/07712027-6266-422f-a74f-1fca0dab2d13",
+            attribute:
+              "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/07712027-6266-422f-a74f-1fca0dab2d13",
             kind: "dynamic",
             condition: {
               type: "equals",
@@ -340,7 +351,8 @@ describe("Dynamic", () => {
                 id: "394c56bd-fc0b-48cb-a972-bfd31ffdf55a",
                 createdAt: 1709905218073,
                 type: "switch_container",
-                attribute: "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/00d22f36-31db-49d7-ad00-95840e40f55b",
+                attribute:
+                  "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/00d22f36-31db-49d7-ad00-95840e40f55b",
                 kind: "dynamic",
                 condition: {
                   type: "equals",
@@ -371,19 +383,24 @@ describe("Dynamic", () => {
                     style: "banner-red",
                   },
                 ],
-                dynamicAttributes: ["numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/00d22f36-31db-49d7-ad00-95840e40f55b"],
+                dynamicAttributes: [
+                  "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/00d22f36-31db-49d7-ad00-95840e40f55b",
+                ],
                 branch: "false",
               },
               {
                 id: "90514a6f-66c3-438b-8450-bfc20d2614ce",
                 type: "text",
                 required: true,
-                attribute: "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/e0bddd71-d294-49bd-b760-c1381233cdad",
+                attribute:
+                  "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/e0bddd71-d294-49bd-b760-c1381233cdad",
                 label: "Explain yourself",
                 showExplanation: false,
               },
             ],
-            dynamicAttributes: ["numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/07712027-6266-422f-a74f-1fca0dab2d13"],
+            dynamicAttributes: [
+              "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/07712027-6266-422f-a74f-1fca0dab2d13",
+            ],
             branch: "true",
           },
           {
@@ -391,7 +408,8 @@ describe("Dynamic", () => {
             type: "typography",
             text: "value: 4",
             style: "body1",
-            templateText: "value: {{numbers/6dd7a100-c4b9-4e24-95a4-baa6efee937a/c817df3b-5674-4d72-9340-417c38789728}}",
+            templateText:
+              "value: {{numbers/6dd7a100-c4b9-4e24-95a4-baa6efee937a/c817df3b-5674-4d72-9340-417c38789728}}",
             dynamicAttributes: ["numbers/6dd7a100-c4b9-4e24-95a4-baa6efee937a/c817df3b-5674-4d72-9340-417c38789728"],
           },
           {
@@ -458,7 +476,9 @@ describe("Dynamic", () => {
                     style: "banner-red",
                   },
                 ],
-                dynamicAttributes: ["numbers/6dd7a100-c4b9-4e24-95a4-baa6efee937a/00d22f36-31db-49d7-ad00-95840e40f55b"],
+                dynamicAttributes: [
+                  "numbers/6dd7a100-c4b9-4e24-95a4-baa6efee937a/00d22f36-31db-49d7-ad00-95840e40f55b",
+                ],
                 branch: "false",
               },
               {
@@ -591,7 +611,8 @@ describe("Dynamic", () => {
       "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728": "12",
       "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/07712027-6266-422f-a74f-1fca0dab2d13": true,
       "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/00d22f36-31db-49d7-ad00-95840e40f55b": true,
-      "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728": "12",
+      "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/c817df3b-5674-4d72-9340-417c38789728":
+        "12",
       "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/07712027-6266-422f-a74f-1fca0dab2d13": true,
       "numbers/6dd7a100-c4b9-4e24-95a4-baa6efee937a/c817df3b-5674-4d72-9340-417c38789728": "4",
       "5cb42d4e-486e-4e87-8136-b8ca49e30702": 28,

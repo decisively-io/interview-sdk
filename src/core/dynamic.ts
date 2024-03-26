@@ -14,26 +14,15 @@ export interface DynamicReplacementQueries {
  * Builds a list of known values, and a list of requests to be made against the API for unknown values
  * @param state Is the interview state for the current step
  * @param attribValues Is the data entered by the user (and any static attribute values)
- * @param ignoreEmpty Set to `true` in order to discard empty values from `attribValues`. This could happen \
- *                    if the user has entered a value into an input, then deleted it
  * @returns A list of known values, plus preformed requests to be made against the API for the unknown values
  */
-export const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeData, ignoreEmpty: boolean): DynamicReplacementQueries => {
+export const buildDynamicReplacementQueries = (
+  state: State[],
+  attribValues: AttributeData,
+): DynamicReplacementQueries => {
   const knownValues: AttributeData = { ...attribValues };
   const allData: AttributeData = { ...attribValues };
   const unknownsWithSatisfiedDependencies: Partial<Simulate>[] = [];
-
-  if (ignoreEmpty) {
-    // remove all empty known values
-    for (const key of Object.keys(knownValues)) {
-      if (knownValues[key] === "") {
-        delete knownValues[key];
-      }
-      if (allData[key] === "") {
-        delete allData[key];
-      }
-    }
-  }
 
   for (const stateObj of state) {
     if (allData[stateObj.id] === undefined && stateObj.value) {
@@ -131,8 +120,10 @@ export const buildDynamicReplacementQueries = (state: State[], attribValues: Att
   // remove requests where the goal already has a value, or was entered directly by the user
   const unknownValues: UnknownValues = {};
   for (const unknownValue of unknownsWithSatisfiedDependencies) {
-    if (attribValues[unknownValue.goal!] === undefined) {
-      unknownValues[unknownValue.goal!] = unknownValue;
+    if (unknownValue.goal) {
+      if (attribValues[unknownValue.goal] === undefined) {
+        unknownValues[unknownValue.goal] = unknownValue;
+      }
     }
   }
   return {
@@ -145,11 +136,22 @@ export const buildDynamicReplacementQueries = (state: State[], attribValues: Att
  * Given an interview session's current state, plus the known attribute values,
  * gives us a flat object of `Record<goal, value>` for all the dynamic attributes
  */
-export const simulateUnknowns = async (unKnownValues: Partial<Simulate>[], api: AxiosInstance, project: ProjectId, release: ReleaseId, sessionId: SessionId): Promise<AttributeData> => {
+export const simulateUnknowns = async (
+  unKnownValues: Partial<Simulate>[],
+  api: AxiosInstance,
+  project: ProjectId,
+  release: ReleaseId,
+  sessionId: SessionId,
+): Promise<AttributeData> => {
   try {
-    const simResAll = (await Promise.all(unKnownValues.map((simReq) => simulate(api, project, release, sessionId, simReq)))).reduce((acc, simRes, idx) => {
-      console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
-      acc[unKnownValues[idx].goal!] = simRes.outcome;
+    const simResAll = (
+      await Promise.all(unKnownValues.map((simReq) => simulate(api, project, release, sessionId, simReq)))
+    ).reduce((acc, simRes, idx) => {
+      const goal = unKnownValues[idx].goal;
+      if (goal) {
+        console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
+        acc[goal] = simRes.outcome;
+      }
       return acc;
     }, {} as AttributeData);
 

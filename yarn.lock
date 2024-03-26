@@ -297,34 +297,34 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@biomejs/biome@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/@biomejs/biome/-/biome-1.6.0.tgz"
-  integrity sha512-hvP8K1+CV8qc9eNdXtPwzScVxFSHB448CPKSqX6+8IW8G7bbhBVKGC80BowExJN5+vu+kzsj4xkWa780MAOlJw==
+"@biomejs/biome@^1.6.3":
+  version "1.6.3"
+  resolved "https://registry.npmjs.org/@biomejs/biome/-/biome-1.6.3.tgz"
+  integrity sha512-Xnp/TIpIcTnRA4LwerJuoGYQJEqwXtn5AL0U0OPXll/QGbAKmcUAfizU880xTwZRD4f53iceqODLDaD3wxYlIw==
   optionalDependencies:
-    "@biomejs/cli-darwin-arm64" "1.6.0"
-    "@biomejs/cli-darwin-x64" "1.6.0"
-    "@biomejs/cli-linux-arm64" "1.6.0"
-    "@biomejs/cli-linux-arm64-musl" "1.6.0"
-    "@biomejs/cli-linux-x64" "1.6.0"
-    "@biomejs/cli-linux-x64-musl" "1.6.0"
-    "@biomejs/cli-win32-arm64" "1.6.0"
-    "@biomejs/cli-win32-x64" "1.6.0"
+    "@biomejs/cli-darwin-arm64" "1.6.3"
+    "@biomejs/cli-darwin-x64" "1.6.3"
+    "@biomejs/cli-linux-arm64" "1.6.3"
+    "@biomejs/cli-linux-arm64-musl" "1.6.3"
+    "@biomejs/cli-linux-x64" "1.6.3"
+    "@biomejs/cli-linux-x64-musl" "1.6.3"
+    "@biomejs/cli-win32-arm64" "1.6.3"
+    "@biomejs/cli-win32-x64" "1.6.3"
 
-"@biomejs/cli-darwin-arm64@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-1.6.0.tgz"
-  integrity sha512-K1Fjqye5pt+Ua+seC7V/2bFjfnqOaEOcQbBQSiiefB/VPNOb6lA5NFIfJ1PskTA3JrMXE1k7iqKQn56qrKFS6A==
+"@biomejs/cli-darwin-arm64@1.6.3":
+  version "1.6.3"
+  resolved "https://registry.npmjs.org/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-1.6.3.tgz"
+  integrity sha512-0E8PGu3/8HSkBJdtjno+niJE1ANS/12D7sPK65vw5lTBYmmaYwJdfclDp6XO0IAX7uVd3/YtXlsEua0SVrNt3Q==
 
 "@decisively-io/types-interview@^0.3.0":
   version "0.3.0"
   resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.3.0/522765f7dc4e8a6ad1812cd6920fdbc90ff13fba"
   integrity sha512-EW2rxMrd+Hq2QSreDnxv3ubi7vfPoEZqnXduRc/Gtk8SEOSn7ckyUaq4jKOiRHqmQTOqAJEUJ9nIBvNFkuV7kw==
 
-"@imminently/standard@^0.1.4":
-  version "0.1.4"
-  resolved "https://npm.pkg.github.com/download/@imminently/standard/0.1.4/94b0ba0f6b6bd209f13420df3fddbd8971589cc3"
-  integrity sha512-cnvYC95E+IC2ZSNAAxuWCWBSsSxSK8Zy7MF9AsxJokIeNnT6WYeWHXlYN9tnFIXCWVMLAVk7tbiVwfKUqi7cQQ==
+"@imminently/standard@^0.2.1":
+  version "0.2.1"
+  resolved "https://npm.pkg.github.com/download/@imminently/standard/0.2.1/f6a86a49f1c46c7c3d094bdd32927fc484e75c39"
+  integrity sha512-CI2CHfoeH6YWtJsE+zxdlf4sXIJBDxyaFO53OjTzk65zvgvZpLz9FcIJA/9M3ypkQfR2I4wDzCAZN6tfZrjAOg==
 
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
@@ -609,29 +609,29 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
-"@swc/core-darwin-arm64@1.4.4":
-  version "1.4.4"
-  resolved "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.4.4.tgz"
-  integrity sha512-goSHS8yvDgha93RHIV2Vn50neYasqbc4K1g/nKOV6T8kiKVv4w/rmqNJu9Aa0mPGVJtjcr0NvX6bBwE0T4HIzg==
+"@swc/core-darwin-arm64@1.4.11":
+  version "1.4.11"
+  resolved "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.4.11.tgz"
+  integrity sha512-C1j1Qp/IHSelVWdEnT7f0iONWxQz6FAqzjCF2iaL+0vFg4V5f2nlgrueY8vj5pNNzSGhrAlxsMxEIp4dj1MXkg==
 
-"@swc/core@*":
-  version "1.4.4"
-  resolved "https://registry.npmjs.org/@swc/core/-/core-1.4.4.tgz"
-  integrity sha512-P88AHGWM8xPY3Tjj5360V6vqKCS5UfsyffPJVnr7BKSr45rlG4/pjEGGmFYQjg6ztgPyrGLYz1jSyzajTqTVIA==
+"@swc/core@*", "@swc/core@^1.4.11":
+  version "1.4.11"
+  resolved "https://registry.npmjs.org/@swc/core/-/core-1.4.11.tgz"
+  integrity sha512-WKEakMZxkVwRdgMN4AMJ9K5nysY8g8npgQPczmjBeNK5In7QEAZAJwnyccrWwJZU0XjVeHn2uj+XbOKdDW17rg==
   dependencies:
     "@swc/counter" "^0.1.2"
     "@swc/types" "^0.1.5"
   optionalDependencies:
-    "@swc/core-darwin-arm64" "1.4.4"
-    "@swc/core-darwin-x64" "1.4.4"
-    "@swc/core-linux-arm-gnueabihf" "1.4.4"
-    "@swc/core-linux-arm64-gnu" "1.4.4"
-    "@swc/core-linux-arm64-musl" "1.4.4"
-    "@swc/core-linux-x64-gnu" "1.4.4"
-    "@swc/core-linux-x64-musl" "1.4.4"
-    "@swc/core-win32-arm64-msvc" "1.4.4"
-    "@swc/core-win32-ia32-msvc" "1.4.4"
-    "@swc/core-win32-x64-msvc" "1.4.4"
+    "@swc/core-darwin-arm64" "1.4.11"
+    "@swc/core-darwin-x64" "1.4.11"
+    "@swc/core-linux-arm-gnueabihf" "1.4.11"
+    "@swc/core-linux-arm64-gnu" "1.4.11"
+    "@swc/core-linux-arm64-musl" "1.4.11"
+    "@swc/core-linux-x64-gnu" "1.4.11"
+    "@swc/core-linux-x64-musl" "1.4.11"
+    "@swc/core-win32-arm64-msvc" "1.4.11"
+    "@swc/core-win32-ia32-msvc" "1.4.11"
+    "@swc/core-win32-x64-msvc" "1.4.11"
 
 "@swc/counter@^0.1.2", "@swc/counter@^0.1.3":
   version "0.1.3"
