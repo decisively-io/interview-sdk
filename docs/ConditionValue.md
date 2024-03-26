@@ -16,7 +16,7 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:403
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:406
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:401
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:404
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:402
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:405

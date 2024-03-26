@@ -27,6 +27,7 @@
 - [OptionsControl](../wiki/OptionsControl)
 - [Parent](../wiki/Parent)
 - [Progress](../wiki/Progress)
+- [RenderableCertaintyContainerControl](../wiki/RenderableCertaintyContainerControl)
 - [RenderableSwitchContainerControl](../wiki/RenderableSwitchContainerControl)
 - [RepeatingContainerControl](../wiki/RepeatingContainerControl)
 - [Screen](../wiki/Screen)
@@ -150,7 +151,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:399
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:402
 
 ___
 
@@ -160,7 +161,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:414
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:417
 
 ___
 
@@ -170,7 +171,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:415
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:418
 
 ___
 
@@ -194,7 +195,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:25](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/types.ts#L25)
+[src/core/types.ts:25](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/types.ts#L25)
 
 ___
 
@@ -214,7 +215,7 @@ ___
 
 #### Defined in
 
-[src/core/formatting.ts:1](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/formatting.ts#L1)
+[src/core/formatting.ts:1](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/formatting.ts#L1)
 
 ___
 
@@ -242,7 +243,7 @@ Use `ControlValue` instead
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:422
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:425
 
 ___
 
@@ -456,7 +457,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:23](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/types.ts#L23)
+[src/core/types.ts:23](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/types.ts#L23)
 
 ___
 
@@ -482,11 +483,11 @@ ___
 
 ### RenderableControl
 
-Ƭ **RenderableControl**: [`BooleanControl`](../wiki/BooleanControl) \| [`CurrencyControl`](../wiki/CurrencyControl) \| [`DateControl`](../wiki/DateControl) \| [`TimeControl`](../wiki/TimeControl) \| [`DateTimeControl`](../wiki/DateTimeControl) \| [`OptionsControl`](../wiki/OptionsControl) \| [`FileControl`](../wiki/FileControl) \| [`ImageControl`](../wiki/ImageControl) \| [`NumberOfInstancesControl`](../wiki/NumberOfInstancesControl) \| [`TextControl`](../wiki/TextControl) \| [`TypographyControl`](../wiki/TypographyControl) \| [`RenderableEntityControl`](../wiki/Exports#renderableentitycontrol) \| [`RenderableSwitchContainerControl`](../wiki/RenderableSwitchContainerControl) & { `dynamicAttributes?`: `string`[] ; `loading?`: `boolean`  }
+Ƭ **RenderableControl**: [`BooleanControl`](../wiki/BooleanControl) \| [`CurrencyControl`](../wiki/CurrencyControl) \| [`DateControl`](../wiki/DateControl) \| [`TimeControl`](../wiki/TimeControl) \| [`DateTimeControl`](../wiki/DateTimeControl) \| [`OptionsControl`](../wiki/OptionsControl) \| [`FileControl`](../wiki/FileControl) \| [`ImageControl`](../wiki/ImageControl) \| [`NumberOfInstancesControl`](../wiki/NumberOfInstancesControl) \| [`TextControl`](../wiki/TextControl) \| [`TypographyControl`](../wiki/TypographyControl) \| [`RenderableEntityControl`](../wiki/Exports#renderableentitycontrol) \| [`RenderableSwitchContainerControl`](../wiki/RenderableSwitchContainerControl) \| [`RenderableCertaintyContainerControl`](../wiki/RenderableCertaintyContainerControl) & { `dynamicAttributes?`: `string`[] ; `loading?`: `boolean`  }
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:409
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:412
 
 ___
 
@@ -496,7 +497,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:413
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:416
 
 ___
 
@@ -536,7 +537,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:424](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L424)
+[src/core/init.ts:431](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L431)
 
 ___
 
@@ -603,7 +604,7 @@ node_modules/@decisively-io/types-interview/dist/core.d.ts:2
 
 #### Defined in
 
-[src/core/constants.ts:1](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/constants.ts#L1)
+[src/core/constants.ts:1](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/constants.ts#L1)
 
 ___
 
@@ -672,7 +673,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:65](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L65)
+[src/core/init.ts:66](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L66)
 
 ## Functions
 
@@ -695,7 +696,7 @@ ___
 
 #### Defined in
 
-[src/core/api.ts:77](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/api.ts#L77)
+[src/core/api.ts:77](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/api.ts#L77)
 
 ___
 
@@ -718,7 +719,7 @@ Strips out any common attributes between two AttributeData objects, reporting on
 
 #### Defined in
 
-[src/core/helpers.ts:46](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/helpers.ts#L46)
+[src/core/helpers.ts:46](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/helpers.ts#L46)
 
 ___
 
@@ -738,7 +739,7 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:18](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/helpers.ts#L18)
+[src/core/helpers.ts:18](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/helpers.ts#L18)
 
 ___
 
@@ -760,7 +761,7 @@ ___
 
 #### Defined in
 
-[src/core/api.ts:15](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/api.ts#L15)
+[src/core/api.ts:15](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/api.ts#L15)
 
 ___
 
@@ -781,7 +782,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:29](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L29)
+[src/core/init.ts:30](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L30)
 
 ___
 
@@ -803,7 +804,7 @@ ___
 
 #### Defined in
 
-[src/core/api.ts:103](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/api.ts#L103)
+[src/core/api.ts:103](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/api.ts#L103)
 
 ___
 
@@ -824,7 +825,7 @@ ___
 
 #### Defined in
 
-[src/core/formatting.ts:3](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/formatting.ts#L3)
+[src/core/formatting.ts:3](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/formatting.ts#L3)
 
 ___
 
@@ -844,7 +845,7 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:22](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/helpers.ts#L22)
+[src/core/helpers.ts:22](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/helpers.ts#L22)
 
 ___
 
@@ -874,7 +875,7 @@ newDataCallback : SDK -{updated session}-> Renderer :
 
 #### Defined in
 
-[src/core/init.ts:435](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L435)
+[src/core/init.ts:442](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L442)
 
 ___
 
@@ -901,7 +902,7 @@ NOTE: goals with zero dependencies will have themselves in the dependency list,
 
 #### Defined in
 
-[src/core/helpers.ts:71](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/helpers.ts#L71)
+[src/core/helpers.ts:71](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/helpers.ts#L71)
 
 ___
 
@@ -922,7 +923,7 @@ ___
 
 #### Defined in
 
-[src/core/util.ts:21](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/util.ts#L21)
+[src/core/util.ts:21](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/util.ts#L21)
 
 ___
 
@@ -944,7 +945,7 @@ ___
 
 #### Defined in
 
-[src/core/api.ts:31](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/api.ts#L31)
+[src/core/api.ts:31](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/api.ts#L31)
 
 ___
 
@@ -970,7 +971,7 @@ Navigate to a specific step.
 
 #### Defined in
 
-[src/core/api.ts:66](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/api.ts#L66)
+[src/core/api.ts:66](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/api.ts#L66)
 
 ___
 
@@ -991,7 +992,7 @@ ___
 
 #### Defined in
 
-[src/core/placeholders.ts:10](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/placeholders.ts#L10)
+[src/core/placeholders.ts:10](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/placeholders.ts#L10)
 
 ___
 
@@ -1012,7 +1013,7 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:31](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/helpers.ts#L31)
+[src/core/helpers.ts:31](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/helpers.ts#L31)
 
 ___
 
@@ -1033,7 +1034,7 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:6](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/helpers.ts#L6)
+[src/core/helpers.ts:6](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/helpers.ts#L6)
 
 ___
 
@@ -1057,7 +1058,7 @@ ___
 
 #### Defined in
 
-[src/core/api.ts:82](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/api.ts#L82)
+[src/core/api.ts:82](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/api.ts#L82)
 
 ___
 
@@ -1085,7 +1086,7 @@ Submit response for current step.
 
 #### Defined in
 
-[src/core/api.ts:43](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/api.ts#L43)
+[src/core/api.ts:43](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/api.ts#L43)
 
 ___
 
@@ -1106,4 +1107,4 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:54](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L54)
+[src/core/init.ts:55](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L55)

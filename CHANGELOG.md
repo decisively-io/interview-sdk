@@ -1,3 +1,7 @@
+## 0.6.4
+
+- add dynamic certainty container support
+
 ## 0.6.2
 
 - only simulate values whose dependencies have changed

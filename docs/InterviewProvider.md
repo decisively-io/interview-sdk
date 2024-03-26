@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[src/core/init.ts:71](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L71)
+[src/core/init.ts:72](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L72)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:73](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L73)
+[src/core/init.ts:74](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L74)
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:72](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L72)
+[src/core/init.ts:73](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L73)

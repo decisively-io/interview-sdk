@@ -21,17 +21,20 @@ describe("Dynamic", () => {
       dataCallback,
     );
     session.chOnScreenData({
-      a: 1,
+      "2f652955-8b64-4001-823a-75d8a04e6f1a": 1,
+      "c0b4d98c-262a-461c-ab9c-d8b76c7630a3": 1,
     });
     session.chOnScreenData({
-      b: 2,
-    });
-    session.chOnScreenData({
-      c: 3,
+      "2f652955-8b64-4001-823a-75d8a04e6f1a": 2,
+      "490391b8-d532-4541-b623-a59ca58b3b94": 3,
     });
     jest.advanceTimersByTime(1000);
-    // TODO: proper test
-    //expect(dataCallback).toHaveBeenCalledTimes(0);
+    expect(dataCallback).toHaveBeenCalledTimes(2);
+    expect(session.internals.userData).toMatchObject({
+      "2f652955-8b64-4001-823a-75d8a04e6f1a": 2,
+      "c0b4d98c-262a-461c-ab9c-d8b76c7630a3": 1,
+      "490391b8-d532-4541-b623-a59ca58b3b94": 3,
+    });
   });
 
   it("2. replacement queries", () => {
@@ -63,7 +66,7 @@ describe("Dynamic", () => {
     ]);
   });
 
-  it("2. only requests relevant information", async () => {
+  it("3. only requests relevant information", async () => {
     const sessionData = {
       context: {
         entity: "global",

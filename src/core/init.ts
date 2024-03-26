@@ -2,6 +2,7 @@ import type {
   AttributeData,
   AttributeValue,
   Control,
+  RenderableControl,
   ResponseData,
   Screen,
   Session,
@@ -105,6 +106,12 @@ const postProcessControl = (control: any, replacements: any) => {
     const update = replacements[control.attribute];
     if (update !== undefined) {
       control.branch = replacements[control.attribute] ? "true" : "false";
+    }
+  }
+  if (control.type === "certainty_container") {
+    const update = replacements[control.attribute];
+    if (update !== undefined) {
+      control.branch = replacements[control.attribute] === null ? "uncertain" : "certain";
     }
   }
 };

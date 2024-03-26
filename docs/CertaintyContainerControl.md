@@ -1,10 +1,18 @@
-# Interface: CertaintyContainerControl
+# Interface: CertaintyContainerControl<C\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `C` | [`Control`](../wiki/Exports#control) |
 
 ## Hierarchy
 
 - `BaseControl`
 
   ↳ **`CertaintyContainerControl`**
+
+  ↳↳ [`RenderableCertaintyContainerControl`](../wiki/RenderableCertaintyContainerControl)
 
 ## Table of contents
 
@@ -34,7 +42,7 @@ ___
 
 ### certain
 
-• **certain**: [`Control`](../wiki/Exports#control)[]
+• **certain**: `C`[]
 
 #### Defined in
 
@@ -72,7 +80,7 @@ ___
 
 ### uncertain
 
-• **uncertain**: [`Control`](../wiki/Exports#control)[]
+• **uncertain**: `C`[]
 
 #### Defined in
 

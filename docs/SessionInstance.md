@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[src/core/init.ts:128](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L128)
+[src/core/init.ts:135](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L135)
 
 ## Properties
 
@@ -74,7 +74,7 @@
 
 #### Defined in
 
-[src/core/init.ts:114](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L114)
+[src/core/init.ts:121](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L121)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:119](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L119)
+[src/core/init.ts:126](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L126)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:117](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L117)
+[src/core/init.ts:124](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L124)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:118](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L118)
+[src/core/init.ts:125](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L125)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:113](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L113)
+[src/core/init.ts:120](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L120)
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:116](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L116)
+[src/core/init.ts:123](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L123)
 
 ## Accessors
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:138](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L138)
+[src/core/init.ts:145](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L145)
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:340](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L340)
+[src/core/init.ts:347](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L347)
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:344](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L344)
+[src/core/init.ts:351](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L351)
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:356](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L356)
+[src/core/init.ts:363](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L363)
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:360](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L360)
+[src/core/init.ts:367](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L367)
 
 • `set` **graph**(`graph`): `void`
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:364](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L364)
+[src/core/init.ts:371](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L371)
 
 ___
 
@@ -244,7 +244,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:352](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L352)
+[src/core/init.ts:359](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L359)
 
 ___
 
@@ -258,7 +258,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:146](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L146)
+[src/core/init.ts:153](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L153)
 
 ___
 
@@ -272,7 +272,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:142](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L142)
+[src/core/init.ts:149](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L149)
 
 ___
 
@@ -286,7 +286,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:372](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L372)
+[src/core/init.ts:379](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L379)
 
 • `set` **report**(`report`): `void`
 
@@ -302,7 +302,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:376](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L376)
+[src/core/init.ts:383](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L383)
 
 ___
 
@@ -316,7 +316,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:368](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L368)
+[src/core/init.ts:375](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L375)
 
 ___
 
@@ -334,7 +334,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:332](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L332)
+[src/core/init.ts:339](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L339)
 
 ___
 
@@ -354,7 +354,7 @@ Unique ID of the session
 
 #### Defined in
 
-[src/core/init.ts:328](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L328)
+[src/core/init.ts:335](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L335)
 
 ___
 
@@ -372,7 +372,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:336](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L336)
+[src/core/init.ts:343](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L343)
 
 ___
 
@@ -390,7 +390,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:324](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L324)
+[src/core/init.ts:331](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L331)
 
 ___
 
@@ -408,7 +408,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:348](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L348)
+[src/core/init.ts:355](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L355)
 
 ## Methods
 
@@ -422,7 +422,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:412](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L412)
+[src/core/init.ts:419](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L419)
 
 ___
 
@@ -436,7 +436,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:170](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L170)
+[src/core/init.ts:177](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L177)
 
 ___
 
@@ -456,7 +456,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:163](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L163)
+[src/core/init.ts:170](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L170)
 
 ___
 
@@ -470,7 +470,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:419](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L419)
+[src/core/init.ts:426](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L426)
 
 ___
 
@@ -490,7 +490,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:405](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L405)
+[src/core/init.ts:412](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L412)
 
 ___
 
@@ -510,7 +510,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:394](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L394)
+[src/core/init.ts:401](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L401)
 
 ___
 
@@ -532,7 +532,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:382](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L382)
+[src/core/init.ts:389](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L389)
 
 ___
 
@@ -552,7 +552,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:150](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L150)
+[src/core/init.ts:157](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L157)
 
 ___
 
@@ -566,7 +566,7 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:227](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L227)
+[src/core/init.ts:234](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L234)
 
 ___
 
@@ -586,4 +586,4 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:275](https://github.com/decisively-io/interview-sdk/blob/31e98c0/src/core/init.ts#L275)
+[src/core/init.ts:282](https://github.com/decisively-io/interview-sdk/blob/78a96ba/src/core/init.ts#L282)
