@@ -23,6 +23,7 @@ Allow a user to upload a file. This metadata is still under construction
 - [required](../wiki/FileControl#required)
 - [showExplanation](../wiki/FileControl#showexplanation)
 - [type](../wiki/FileControl#type)
+- [version](../wiki/FileControl#version)
 
 ## Properties
 
@@ -38,7 +39,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:239
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:240
 
 ___
 
@@ -50,7 +51,7 @@ The types of file allowed (pdf docx etc)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:243
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:244
 
 ___
 
@@ -66,7 +67,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:233
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:234
 
 ___
 
@@ -76,7 +77,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:235
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:236
 
 ___
 
@@ -86,7 +87,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:236
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:237
 
 ___
 
@@ -98,7 +99,7 @@ The max number of files that can be uploaded. Defaults to 1
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:241
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:242
 
 ___
 
@@ -110,7 +111,7 @@ The maximum size of a document, in Mb
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:245
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:246
 
 ___
 
@@ -120,7 +121,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:237
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:238
 
 ___
 
@@ -130,7 +131,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:246
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:247
 
 ___
 
@@ -144,4 +145,18 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:234
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:235
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

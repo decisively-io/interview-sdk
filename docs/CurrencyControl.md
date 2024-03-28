@@ -28,6 +28,7 @@ A number input for inputting currency values. This should:
 - [symbol](../wiki/CurrencyControl#symbol)
 - [type](../wiki/CurrencyControl#type)
 - [value](../wiki/CurrencyControl#value)
+- [version](../wiki/CurrencyControl#version)
 
 ## Properties
 
@@ -43,7 +44,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:47
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:48
 
 ___
 
@@ -53,7 +54,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:45
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:46
 
 ___
 
@@ -63,7 +64,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:44
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:45
 
 ___
 
@@ -79,7 +80,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:39
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:40
 
 ___
 
@@ -89,7 +90,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:41
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:42
 
 ___
 
@@ -99,7 +100,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:42
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:43
 
 ___
 
@@ -111,7 +112,7 @@ Maximum number allowed - if not set assume no restriction
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:54
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:55
 
 ___
 
@@ -123,7 +124,7 @@ Minimum number allowed - if not set assume no restriction
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:52
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:53
 
 ___
 
@@ -133,7 +134,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:43
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:44
 
 ___
 
@@ -143,7 +144,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:55
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:56
 
 ___
 
@@ -159,7 +160,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:50
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:51
 
 ___
 
@@ -173,7 +174,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:40
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:41
 
 ___
 
@@ -183,4 +184,18 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:48
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:49
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

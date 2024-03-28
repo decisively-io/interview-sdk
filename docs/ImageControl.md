@@ -21,6 +21,7 @@ be done in code in the SDK
 - [data](../wiki/ImageControl#data)
 - [id](../wiki/ImageControl#id)
 - [type](../wiki/ImageControl#type)
+- [version](../wiki/ImageControl#version)
 
 ## Properties
 
@@ -46,7 +47,7 @@ The base64 date URI of the image
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:264
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:265
 
 ___
 
@@ -60,7 +61,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:261
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:262
 
 ___
 
@@ -74,4 +75,18 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:262
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:263
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

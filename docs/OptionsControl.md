@@ -40,6 +40,7 @@ attribute (and not send the enum_id to the client.
 - [showExplanation](../wiki/OptionsControl#showexplanation)
 - [type](../wiki/OptionsControl#type)
 - [value](../wiki/OptionsControl#value)
+- [version](../wiki/OptionsControl#version)
 
 ## Properties
 
@@ -51,7 +52,7 @@ Allow a user to add their own option, not in the list, in
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:218
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:219
 
 ___
 
@@ -64,7 +65,7 @@ Default display as standart select
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:206
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:207
 
 ___
 
@@ -80,7 +81,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:214
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:215
 
 ___
 
@@ -90,7 +91,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:212
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:213
 
 ___
 
@@ -100,7 +101,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:210
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:211
 
 ___
 
@@ -112,7 +113,7 @@ uuid, design time only
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:220
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:221
 
 ___
 
@@ -128,7 +129,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:200
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:201
 
 ___
 
@@ -138,7 +139,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:207
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:208
 
 ___
 
@@ -148,7 +149,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:208
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:209
 
 ___
 
@@ -160,7 +161,7 @@ design and runtime
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:216
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:217
 
 ___
 
@@ -170,7 +171,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:209
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:210
 
 ___
 
@@ -180,7 +181,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:221
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:222
 
 ___
 
@@ -194,7 +195,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:201
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:202
 
 ___
 
@@ -204,4 +205,18 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:211
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:212
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

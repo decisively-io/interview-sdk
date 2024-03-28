@@ -20,6 +20,7 @@ The end-styling of the text is up to the run time.
 - [style](../wiki/TypographyControl#style)
 - [text](../wiki/TypographyControl#text)
 - [type](../wiki/TypographyControl#type)
+- [version](../wiki/TypographyControl#version)
 
 ## Properties
 
@@ -43,7 +44,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:342
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:343
 
 ___
 
@@ -57,7 +58,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:338
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:339
 
 ___
 
@@ -67,7 +68,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:341
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:342
 
 ___
 
@@ -77,7 +78,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:340
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:341
 
 ___
 
@@ -91,4 +92,18 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:339
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:340
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

@@ -28,6 +28,7 @@ Do not send a date component back.
 - [showExplanation](../wiki/TimeControl#showexplanation)
 - [type](../wiki/TimeControl#type)
 - [value](../wiki/TimeControl#value)
+- [version](../wiki/TimeControl#version)
 
 ## Properties
 
@@ -37,7 +38,7 @@ Do not send a date component back.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:127
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:128
 
 ___
 
@@ -50,7 +51,7 @@ Regardless of this input the server expects 24 hour time
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:124
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:125
 
 ___
 
@@ -66,7 +67,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:111
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:112
 
 ___
 
@@ -78,7 +79,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:115
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:116
 
 ___
 
@@ -88,7 +89,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:109
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:110
 
 ___
 
@@ -104,7 +105,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:104
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:105
 
 ___
 
@@ -114,7 +115,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:106
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:107
 
 ___
 
@@ -124,7 +125,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:107
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:108
 
 ___
 
@@ -136,7 +137,7 @@ Maximum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:119
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:120
 
 ___
 
@@ -148,7 +149,7 @@ Minimum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:117
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:118
 
 ___
 
@@ -160,7 +161,7 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:126
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:127
 
 ___
 
@@ -170,7 +171,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:108
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:109
 
 ___
 
@@ -180,7 +181,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:128
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:129
 
 ___
 
@@ -194,7 +195,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:105
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:106
 
 ___
 
@@ -206,4 +207,18 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:113
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:114
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

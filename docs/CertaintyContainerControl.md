@@ -23,6 +23,7 @@
 - [id](../wiki/CertaintyContainerControl#id)
 - [type](../wiki/CertaintyContainerControl#type)
 - [uncertain](../wiki/CertaintyContainerControl#uncertain)
+- [version](../wiki/CertaintyContainerControl#version)
 
 ## Properties
 
@@ -36,7 +37,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:383
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:384
 
 ___
 
@@ -46,7 +47,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:384
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:385
 
 ___
 
@@ -60,7 +61,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:381
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:382
 
 ___
 
@@ -74,7 +75,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:382
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:383
 
 ___
 
@@ -84,4 +85,18 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:385
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:386
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

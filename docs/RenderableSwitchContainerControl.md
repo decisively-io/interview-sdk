@@ -18,6 +18,7 @@
 - [outcome\_false](../wiki/RenderableSwitchContainerControl#outcome_false)
 - [outcome\_true](../wiki/RenderableSwitchContainerControl#outcome_true)
 - [type](../wiki/RenderableSwitchContainerControl#type)
+- [version](../wiki/RenderableSwitchContainerControl#version)
 
 ## Properties
 
@@ -41,7 +42,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:397
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:398
 
 ___
 
@@ -55,7 +56,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:392
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:393
 
 ___
 
@@ -69,7 +70,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:388
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:389
 
 ___
 
@@ -83,7 +84,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:393
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:394
 
 ___
 
@@ -97,7 +98,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:391
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:392
 
 ___
 
@@ -111,7 +112,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:390
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:391
 
 ___
 
@@ -125,4 +126,18 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:389
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:390
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+[SwitchContainerControl](../wiki/SwitchContainerControl).[version](../wiki/SwitchContainerControl#version)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

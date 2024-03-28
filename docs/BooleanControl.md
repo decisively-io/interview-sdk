@@ -27,6 +27,7 @@ but not
 - [showExplanation](../wiki/BooleanControl#showexplanation)
 - [type](../wiki/BooleanControl#type)
 - [value](../wiki/BooleanControl#value)
+- [version](../wiki/BooleanControl#version)
 
 ## Properties
 
@@ -40,7 +41,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:24
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:25
 
 ___
 
@@ -50,7 +51,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:22
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:23
 
 ___
 
@@ -60,7 +61,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:21
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:22
 
 ___
 
@@ -74,7 +75,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:16
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:17
 
 ___
 
@@ -84,7 +85,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:18
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:19
 
 ___
 
@@ -94,7 +95,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:19
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:20
 
 ___
 
@@ -104,7 +105,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:20
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:21
 
 ___
 
@@ -114,7 +115,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:25
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:26
 
 ___
 
@@ -128,7 +129,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:17
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:18
 
 ___
 
@@ -138,4 +139,18 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:23
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:24
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

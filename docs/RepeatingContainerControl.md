@@ -15,6 +15,7 @@
 - [entity](../wiki/RepeatingContainerControl#entity)
 - [id](../wiki/RepeatingContainerControl#id)
 - [type](../wiki/RepeatingContainerControl#type)
+- [version](../wiki/RepeatingContainerControl#version)
 
 ## Properties
 
@@ -38,7 +39,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:378
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:379
 
 ___
 
@@ -48,7 +49,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:377
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:378
 
 ___
 
@@ -62,7 +63,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:375
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:376
 
 ___
 
@@ -76,4 +77,18 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:376
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:377
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6

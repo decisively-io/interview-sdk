@@ -26,6 +26,7 @@ Do not send a time component back.
 - [showExplanation](../wiki/DateControl#showexplanation)
 - [type](../wiki/DateControl#type)
 - [value](../wiki/DateControl#value)
+- [version](../wiki/DateControl#version)
 
 ## Properties
 
@@ -35,7 +36,7 @@ Do not send a time component back.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:73
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:74
 
 ___
 
@@ -51,7 +52,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:75
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:76
 
 ___
 
@@ -63,7 +64,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:79
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:80
 
 ___
 
@@ -73,7 +74,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:72
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:73
 
 ___
 
@@ -89,7 +90,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:67
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:68
 
 ___
 
@@ -99,7 +100,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:69
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:70
 
 ___
 
@@ -109,7 +110,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:70
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:71
 
 ___
 
@@ -121,7 +122,7 @@ Maximum date allowed, YYYY-MM-DD
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:83
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:84
 
 ___
 
@@ -133,7 +134,7 @@ Minimum date allowed, YYYY-MM-DD
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:81
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:82
 
 ___
 
@@ -143,7 +144,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:71
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:72
 
 ___
 
@@ -153,7 +154,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:84
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:85
 
 ___
 
@@ -167,7 +168,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:68
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:69
 
 ___
 
@@ -179,4 +180,18 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:77
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:78
+
+___
+
+### version
+
+• `Optional` **version**: `number`
+
+#### Inherited from
+
+BaseControl.version
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
