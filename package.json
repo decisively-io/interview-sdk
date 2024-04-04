@@ -6,6 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
+    "watch:test": "jest --watchAll",
     "prepublishOnly": "npm run check:fix && npm run test && npm run build",
     "clean": "rimraf dist && rimraf docs",
     "doc": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-github-wiki-theme",
@@ -15,8 +16,17 @@
     "dev": "tsc -w",
     "deploy": "yarn build && yarn publish"
   },
-  "files": ["dist", "docs"],
-  "keywords": ["decisively", "interview", "api", "sdk", "typescript"],
+  "files": [
+    "dist",
+    "docs"
+  ],
+  "keywords": [
+    "decisively",
+    "interview",
+    "api",
+    "sdk",
+    "typescript"
+  ],
   "author": "Decisively",
   "license": "UNLICENSED",
   "devDependencies": {
@@ -40,11 +50,13 @@
   "dependencies": {
     "@decisively-io/types-interview": "^0.3.2",
     "axios": "^0.26.1",
+    "date-fns": "^3.6.0",
     "immer": "^9.0.12",
     "lodash.debounce": "^4.0.8",
     "lodash.isempty": "^4.4.0",
     "lodash.isequal": "^4.5.0",
     "lodash.set": "^4.3.2",
     "uuid": "^8.3.2"
-  }
+  },
+  "packageManager": "yarn@1.21.0"
 }
