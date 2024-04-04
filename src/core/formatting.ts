@@ -16,7 +16,8 @@ export const formatValue = (value: string, formatters?: Formatter[]) => {
         case "date":
           if (args[1]) {
             try {
-              result = format(value, args[1]);
+              const fmt = args.slice(1);
+              result = format(value, fmt.join(" "));
             } catch (error) {
               // Ignore all errors- we will just use the current string
             }

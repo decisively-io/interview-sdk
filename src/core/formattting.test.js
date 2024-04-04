@@ -10,4 +10,8 @@ describe("Formatting Tests", () => {
     const response = formatValue("2002-01-02T10:00:00.000Z", ["date yyyy-MM-dd"]);
     expect(response).toEqual("2002-01-02");
   });
+  it("3. date with spaces", async () => {
+    const response = formatValue("2002-01-02T10:00:00.000Z", ["date do LLLL"]);
+    expect(response).toEqual("2nd January");
+  });
 });
