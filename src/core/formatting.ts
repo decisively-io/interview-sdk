@@ -6,7 +6,7 @@ export const formatValue = (value: string, formatters?: Formatter[]) => {
   let result = value;
   if (Array.isArray(formatters)) {
     for (const f of formatters) {
-      const args = f.split(' ');
+      const args = f.split(" ");
       switch (args[0]) {
         case "currency":
           if (!Number.isNaN(Number.parseFloat(result))) {
@@ -21,6 +21,7 @@ export const formatValue = (value: string, formatters?: Formatter[]) => {
               // Ignore all errors- we will just use the current string
             }
           }
+          break;
         default:
         // Do nothing
       }
