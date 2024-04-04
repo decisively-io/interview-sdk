@@ -1,106 +1,164 @@
-import { AttributeData,
-         ProjectId,
-         ReleaseId,
-         SessionId,
-         Simulate,
-         State }          from "@decisively-io/types-interview";
-import { AxiosInstance }  from "axios";
-import { map } from "rxjs";
-import { simulate }       from "./api";
+import type { AttributeData, ProjectId, ReleaseId, SessionId, Simulate, State } from "@decisively-io/types-interview";
+import type { AxiosInstance } from "axios";
+import set from "lodash.set";
+import { simulate } from "./api";
+
+export type UnknownValues = Record<string, Partial<Simulate>>;
+
+export interface DynamicReplacementQueries {
+  knownValues: AttributeData;
+  unknownValues: UnknownValues;
+}
 
 /**
  * Builds a list of known values, and a list of requests to be made against the API for unknown values
  * @param state Is the interview state for the current step
  * @param attribValues Is the data entered by the user (and any static attribute values)
- * @param ignoreEmpty Set to `true` in order to discard empty values from `attribValues`. This could happen \
- *                    if the user has entered a value into an input, then deleted it
  * @returns A list of known values, plus preformed requests to be made against the API for the unknown values
  */
-const buildDynamicReplacementQueries = (state: State[], attribValues: AttributeData, ignoreEmpty: boolean) => {
+export const buildDynamicReplacementQueries = (
+  state: State[],
+  attribValues: AttributeData,
+): DynamicReplacementQueries => {
+  const knownValues: AttributeData = { ...attribValues };
+  const allData: AttributeData = { ...attribValues };
+  const unknownsWithSatisfiedDependencies: Partial<Simulate>[] = [];
 
-  const knownValues  : AttributeData       = {...attribValues};
-  const unKnownValues: Partial<Simulate>[] = [];
+  for (const stateObj of state) {
+    if (allData[stateObj.id] === undefined && stateObj.value) {
+      allData[stateObj.id] = stateObj.value;
+    }
+  }
 
-  if (ignoreEmpty) {
-    // remove all empty known values
-    for (const key of Object.keys(knownValues)) {
-      if (knownValues[key] === '') {
-        delete knownValues[key];
+  const knownKeys = Object.keys(allData);
+
+  const unknownWithMissingDependencies = [];
+
+  for (const stateObj of state) {
+    const { id: goal, dependencies } = stateObj;
+    if (goal) {
+      if (dependencies && dependencies.length > 0) {
+        const data: AttributeData = {};
+        let userInputInvolved = false;
+        const unknownDependencies = dependencies.reduce((unknownDependencies, dep) => {
+          const value = allData[dep];
+          if (value !== undefined) {
+            if (attribValues[dep] !== undefined) {
+              userInputInvolved = true;
+            }
+
+            set(data, dep, value);
+            return unknownDependencies;
+          }
+
+          let hasAnyMatch = false;
+          // in the case of entity controls the dep will be the global as we have no instances yet, therefore also check for a global match
+          for (const key of knownKeys) {
+            const match = key.endsWith(dep);
+            if (match) {
+              hasAnyMatch = true;
+              const parts = key.split(".");
+              const idParts = [];
+              while (parts.length > 1) {
+                idParts.push(parts.shift());
+                const index = parts.shift();
+                idParts.push(index);
+                set(data, `${idParts.join(".")}.@id`, Number.parseInt(index as any) + 1);
+              }
+              set(data, key, allData[key]);
+
+              if (attribValues[key] !== undefined) {
+                userInputInvolved = true;
+              }
+            }
+          }
+
+          if (!hasAnyMatch) {
+            unknownDependencies.push(dep);
+          }
+          return unknownDependencies;
+        }, [] as string[]);
+
+        // only resimulate if the user has entered a value that effects the outcome & we know all the dependencies
+        if (userInputInvolved) {
+          if (unknownDependencies.length === 0) {
+            unknownsWithSatisfiedDependencies.push({
+              goal,
+              data,
+            });
+          } else {
+            // the goal has missing dependencies, but the missing dependencies may be other unknowns
+            unknownWithMissingDependencies.push({
+              goal,
+              data,
+              unknownDependencies,
+            });
+          }
+        }
       }
     }
   }
 
-  for (const stateObj of state) {
-    const { id: goal, dependencies, value } = stateObj;
-    if (goal) {
-      if (undefined === value) {
-        if (dependencies && dependencies.length > 0) {
-          const dependenciesKnown = dependencies.every((dep) => knownValues.hasOwnProperty(dep));
-          if (dependenciesKnown) {
-            const data = dependencies.reduce((acc, cur) => {
-              acc[cur] = knownValues[cur];
-              return (acc);
-            }, {} as AttributeData);
-
-            if( attribValues[ '@parent' ] ) data[ '@parent' ] = attribValues[ '@parent' ];
-
-            unKnownValues.push({
-              goal,
-              // data: knownValues,
-              data,
-            });
-          }
-        }
-      } else {
-        knownValues[goal] = value;
+  // ok now we have a list of unknowns with missing dependencies, we need to check if any of the missing dependencies are also states and if they ARE known, then we can add the goal to the unKnownValues
+  for (const unknownWithMissingDependency of unknownWithMissingDependencies) {
+    const { goal, data, unknownDependencies } = unknownWithMissingDependency;
+    const allActuallySatisfied = unknownDependencies.every((dep) => {
+      const actuallySatisfied = unknownsWithSatisfiedDependencies.find((it) => it.goal === dep);
+      if (actuallySatisfied) {
+        Object.assign(data, actuallySatisfied?.data);
       }
+      return actuallySatisfied;
+    });
+    if (allActuallySatisfied) {
+      unknownsWithSatisfiedDependencies.push({
+        goal,
+        data,
+      });
     }
   }
 
   // remove requests where the goal already has a value, or was entered directly by the user
-  const unKnownValuesFin = unKnownValues.filter((it) => !knownValues.hasOwnProperty(it.goal!));
-
-  return({
-    knownValues,   // the known values
-    unKnownValues: unKnownValuesFin, // the requests to be made against the API
-  });
-}
+  const unknownValues: UnknownValues = {};
+  for (const unknownValue of unknownsWithSatisfiedDependencies) {
+    if (unknownValue.goal) {
+      if (attribValues[unknownValue.goal] === undefined) {
+        unknownValues[unknownValue.goal] = unknownValue;
+      }
+    }
+  }
+  return {
+    knownValues, // the known values
+    unknownValues: unknownValues, // the requests to be made against the API
+  };
+};
 
 /**
  * Given an interview session's current state, plus the known attribute values,
  * gives us a flat object of `Record<goal, value>` for all the dynamic attributes
  */
-export const buildDynamicReplacements = async (
-  state        : State[],
-  attribValues : AttributeData,
-  api          : AxiosInstance,
-  project      : ProjectId,
-  release      : ReleaseId,
-  sessionId    : SessionId,
-  ): Promise<AttributeData> => {
-
-  const replacementQueries = buildDynamicReplacementQueries(state, attribValues, true);
-
+export const simulateUnknowns = async (
+  unKnownValues: Partial<Simulate>[],
+  api: AxiosInstance,
+  project: ProjectId,
+  release: ReleaseId,
+  sessionId: SessionId,
+): Promise<AttributeData> => {
   try {
-    const { knownValues, unKnownValues } = replacementQueries;
-    console.log(`simulating for ${unKnownValues.length} unknown(s)...`);
-    const simResAll = (await Promise.all(
-      unKnownValues.map((simReq) => simulate(api, project, release, sessionId, simReq) )
-    )).reduce((acc, simRes, idx) => {
-      console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
-      return({
-        ...acc,
-        [unKnownValues[idx].goal!] : simRes.outcome,
-      });
+    const simResAll = (
+      await Promise.all(unKnownValues.map((simReq) => simulate(api, project, release, sessionId, simReq)))
+    ).reduce((acc, simRes, idx) => {
+      const goal = unKnownValues[idx].goal;
+      if (goal) {
+        console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
+        acc[goal] = simRes.outcome;
+      }
+      return acc;
     }, {} as AttributeData);
 
-    return({
-      ...knownValues,
-      ...simResAll,
-    });
+    return simResAll;
   } catch (e) {
     console.error(e);
   }
 
-  return({});
-}
+  return {};
+};
