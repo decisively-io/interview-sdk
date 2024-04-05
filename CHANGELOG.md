@@ -1,3 +1,7 @@
+## 0.7.1
+
+- fix @parent not being present in response
+
 ## 0.6.4
 
 - add dynamic certainty container support

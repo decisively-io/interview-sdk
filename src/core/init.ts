@@ -54,6 +54,10 @@ const transformControlValue = (value: AttributeValue, control: Control): any => 
 
 export const transformResponse = (session: Session, data: ResponseData): ResponseData => {
   return produce(data, (draft) => {
+    if (session.data["@parent"]) {
+      draft["@parent"] = session.data["@parent"];
+    }
+
     for (const id of Object.keys(draft)) {
       const control = (session.screen.controls as any[]).find((c) => c.attribute === id || c.entity === id);
       if (control) {
