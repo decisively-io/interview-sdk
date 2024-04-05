@@ -1,0 +1,372 @@
+{
+  "context": {
+    "id": "b12aa10e-acf7-46ca-82f0-b622233be29f",
+    "entity": "individual",
+    "name": "the individual",
+    "path": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f"
+  },
+  "data": {
+    "@parent": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f",
+    "marital_status": [
+      {
+        "@id": "",
+        "cafbce19-7883-46b9-964d-c3d640b7c8c4": {
+          "type": "auto"
+        },
+        "2106dc13-8b21-4467-8f54-0c1bbfe1e303": {
+          "type": "auto"
+        },
+        "ac3f916b-119b-4f5f-842d-0ca17042b0c7": {
+          "type": "auto"
+        },
+        "c8c1c3a5-ec1f-4004-bec7-7d9f8befb275": {
+          "type": "auto"
+        }
+      }
+    ]
+  },
+  "reportId": "47f641c6-f83c-4322-97fd-d69fb33dd1ac",
+  "steps": [
+    {
+      "id": "2cc497f7-f7d1-474c-8b85-93c4260354ea",
+      "title": "Landing Page",
+      "context": {
+        "entity": "global"
+      },
+      "current": false,
+      "complete": true,
+      "visited": true,
+      "time_estimate": 0,
+      "skipped": false
+    },
+    {
+      "id": "4afb304a-3497-4e94-b237-786b73815ae4/b12aa10e-acf7-46ca-82f0-b622233be29f",
+      "metaId": "4afb304a-3497-4e94-b237-786b73815ae4",
+      "title": "Individual Information Collection",
+      "context": {
+        "entity": "individual",
+        "id": "b12aa10e-acf7-46ca-82f0-b622233be29f"
+      },
+      "steps": [
+        {
+          "id": "a589ae96-32a7-4e4d-8785-a4a3fea0e717",
+          "title": "Residency",
+          "context": {
+            "id": "b12aa10e-acf7-46ca-82f0-b622233be29f",
+            "entity": "individual",
+            "name": "the individual",
+            "path": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f"
+          },
+          "current": false,
+          "complete": true,
+          "visited": true,
+          "time_estimate": 0,
+          "skipped": false
+        },
+        {
+          "id": "28a08175-3e75-427c-9e7a-17e20c7a61d8",
+          "title": "Income and Assets",
+          "context": {
+            "id": "b12aa10e-acf7-46ca-82f0-b622233be29f",
+            "entity": "individual",
+            "name": "the individual",
+            "path": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f"
+          },
+          "current": false,
+          "complete": true,
+          "visited": true,
+          "time_estimate": 0,
+          "skipped": false
+        },
+        {
+          "id": "86850dc5-75ed-4565-ac9f-7a022b6d7b7e",
+          "title": "Accommodation",
+          "context": {
+            "id": "b12aa10e-acf7-46ca-82f0-b622233be29f",
+            "entity": "individual",
+            "name": "the individual",
+            "path": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f"
+          },
+          "current": false,
+          "complete": true,
+          "visited": true,
+          "time_estimate": 0,
+          "skipped": false
+        },
+        {
+          "id": "bf4c1478-2523-4361-a0a2-468b21928b9f",
+          "title": "Relationship",
+          "context": {
+            "id": "b12aa10e-acf7-46ca-82f0-b622233be29f",
+            "entity": "individual",
+            "name": "the individual",
+            "path": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f"
+          },
+          "current": true,
+          "complete": false,
+          "visited": false,
+          "time_estimate": 0,
+          "skipped": false
+        }
+      ],
+      "current": false,
+      "complete": true,
+      "visited": true,
+      "path": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f",
+      "time_estimate": 0,
+      "index": 1,
+      "skipped": false
+    },
+    {
+      "id": "3c3e7a38-62c3-43d7-a9ec-321cd0f100db",
+      "title": "Combined Results",
+      "context": {
+        "entity": "global"
+      },
+      "current": false,
+      "complete": false,
+      "visited": false,
+      "time_estimate": 0,
+      "skipped": false
+    }
+  ],
+  "screen": {
+    "title": "Relationship",
+    "id": "bf4c1478-2523-4361-a0a2-468b21928b9f/b12aa10e-acf7-46ca-82f0-b622233be29f",
+    "controls": [
+      {
+        "id": "46e0a010-83b3-4623-a56a-30491a154ba0",
+        "type": "typography",
+        "text": "Johnny Bouy",
+        "style": "h4",
+        "templateText": "{{individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a}}",
+        "dynamicAttributes": [
+          "individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a"
+        ]
+      },
+      {
+        "id": "3e6e7392-2d69-4f12-837d-6dea36ae1468",
+        "type": "entity",
+        "template": [
+          {
+            "id": "d7b91d91-80c9-41ac-adc3-5955da76088c",
+            "type": "date",
+            "attribute": "cafbce19-7883-46b9-964d-c3d640b7c8c4",
+            "label": "Johnny Bouy's date of marriage",
+            "default": "2006-03-27",
+            "allowManual": true,
+            "showExplanation": false,
+            "templateLabel": "{{individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a}}'s date of marriage",
+            "dynamicAttributes": [
+              "individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a"
+            ],
+            "value": "2006-03-27"
+          },
+          {
+            "required": true,
+            "attribute": "2106dc13-8b21-4467-8f54-0c1bbfe1e303",
+            "label": "Johnny Bouy's relationship status",
+            "default": "SIN",
+            "id": "c99f516e-5f19-494d-a894-9971d4ed0884",
+            "type": "options",
+            "templateLabel": "{{individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a}}'s relationship status",
+            "dynamicAttributes": [
+              "individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a"
+            ],
+            "value": "SIN",
+            "options": [
+              {
+                "label": "Defacto",
+                "value": "DEF"
+              },
+              {
+                "label": "Divorced",
+                "value": "DIV"
+              },
+              {
+                "label": "Married",
+                "value": "MAR"
+              },
+              {
+                "label": "Registered",
+                "value": "REG"
+              },
+              {
+                "label": "Separated",
+                "value": "SEP"
+              },
+              {
+                "label": "Single",
+                "value": "SIN"
+              },
+              {
+                "label": "Widowed",
+                "value": "WID"
+              }
+            ]
+          },
+          {
+            "required": true,
+            "attribute": "ac3f916b-119b-4f5f-842d-0ca17042b0c7",
+            "label": "Johnny Bouy's relationship qualifier",
+            "default": "_",
+            "id": "598ee792-8821-454d-84ff-945a08660160",
+            "type": "options",
+            "templateLabel": "{{individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a}}'s relationship qualifier",
+            "dynamicAttributes": [
+              "individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a"
+            ],
+            "value": "_",
+            "options": [
+              {
+                "label": "Ill Sep / Both Left Home ",
+                "value": "ILB"
+              },
+              {
+                "label": "Ill Sep / Left Home ",
+                "value": "ILC"
+              },
+              {
+                "label": "Ill Sep / Ptnr Left Home ",
+                "value": "ILP"
+              },
+              {
+                "label": "Tmp Sep / Both Left Home ",
+                "value": "TEB"
+              },
+              {
+                "label": "Tmp Sep / Left Home ",
+                "value": "TEC"
+              },
+              {
+                "label": "Tmp Sep / Ptnr Left Home ",
+                "value": "TEP"
+              },
+              {
+                "label": "In Gaol ",
+                "value": "GAC"
+              },
+              {
+                "label": "Ptnr in Gaol ",
+                "value": "GAP"
+              },
+              {
+                "label": "Psych Care / Both L Home ",
+                "value": "PSB"
+              },
+              {
+                "label": "Psych Care / Left Home ",
+                "value": "PSC"
+              },
+              {
+                "label": "Ptnr in Psych Care ",
+                "value": "PSP"
+              },
+              {
+                "label": "In Respite Care ",
+                "value": "REC"
+              },
+              {
+                "label": "Ptnr in Respite Care ",
+                "value": "REP"
+              },
+              {
+                "label": "O/seas (Never in Aust) ",
+                "value": "OVC"
+              },
+              {
+                "label": "Ptnr O/S Never in Aust ",
+                "value": "OVP"
+              },
+              {
+                "label": "Dependent Female ",
+                "value": "DEP"
+              },
+              {
+                "label": "Deserted Wife ",
+                "value": "DES"
+              },
+              {
+                "label": "Partner in Gaol ",
+                "value": "PIJ"
+              },
+              {
+                "label": "Ptr in Mental Hospital ",
+                "value": "PMH"
+              },
+              {
+                "label": "S24 Provisions apply ",
+                "value": "S24"
+              },
+              {
+                "label": "Separated Under One Roof ",
+                "value": "SUR"
+              },
+              {
+                "label": "Defacto Partner Died ",
+                "value": "WDD"
+              },
+              {
+                "label": "Widow ",
+                "value": "WID"
+              },
+              {
+                "label": "None of the above",
+                "value": "_"
+              }
+            ]
+          },
+          {
+            "id": "dd996e60-0c17-4224-858e-25579969abe9",
+            "type": "text",
+            "attribute": "c8c1c3a5-ec1f-4004-bec7-7d9f8befb275",
+            "label": "Johnny Bouy's partner's ID",
+            "default": "Sally Bouy",
+            "showExplanation": false,
+            "templateLabel": "{{individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a}}'s partner's ID",
+            "dynamicAttributes": [
+              "individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a"
+            ],
+            "value": "Sally Bouy"
+          }
+        ],
+        "label": "marital_status",
+        "display": "vertical",
+        "entity": "marital_status",
+        "min": 1,
+        "value": []
+      }
+    ],
+    "attributes": [
+      {
+        "marital_status": [
+          "cafbce19-7883-46b9-964d-c3d640b7c8c4",
+          "2106dc13-8b21-4467-8f54-0c1bbfe1e303",
+          "ac3f916b-119b-4f5f-842d-0ca17042b0c7",
+          "c8c1c3a5-ec1f-4004-bec7-7d9f8befb275"
+        ]
+      }
+    ],
+    "allAttributes": [
+      "individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a"
+    ],
+    "buttons": {
+      "next": true,
+      "back": true
+    }
+  },
+  "state": [
+    {
+      "value": "Johnny Bouy",
+      "id": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f/94c59869-f7bf-4672-b8b6-6419b16e241a"
+    }
+  ],
+  "progress": {
+    "percentage": 71.42857142857143,
+    "time": 15
+  },
+  "sessionId": "3ab925cf-3a24-4024-b3d5-2f7355af3b8f",
+  "status": "in-progress",
+  "explanations": {},
+  "goal": "abab6e05-1423-429b-9645-5cc5e0913645"
+}

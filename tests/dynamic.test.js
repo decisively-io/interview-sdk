@@ -8,7 +8,7 @@ describe("Dynamic", () => {
       // mock the adapter
       adapter: async (config) => {
         return {
-          data: require("./mock-session.json"),
+          data: require("./dynamic-session"),
         };
       },
     });

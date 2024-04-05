@@ -149,7 +149,7 @@ export const simulateUnknowns = async (
     ).reduce((acc, simRes, idx) => {
       const goal = unKnownValues[idx].goal;
       if (goal) {
-        console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
+        //console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
         acc[goal] = simRes.outcome;
       }
       return acc;

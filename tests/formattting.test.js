@@ -1,4 +1,4 @@
-const { formatValue } = require("./formatting");
+const { formatValue } = require("../src/core/formatting");
 
 describe("Formatting Tests", () => {
   it("1. currency", async () => {
