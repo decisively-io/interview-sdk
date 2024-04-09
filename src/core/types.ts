@@ -1,5 +1,5 @@
 import {
-  type AttributeData,
+  type AttributeValues,
   type InterviewId,
   Navigate,
   ProjectId,
@@ -11,7 +11,7 @@ import { AxiosInstance } from "axios";
 
 export interface SessionConfig {
   // An initial state with information already provided
-  initialData?: AttributeData;
+  initialData?: AttributeValues;
   // Id of the desired interview
   interview?: InterviewId;
   // Specific release, for testing purposes
@@ -22,6 +22,6 @@ export interface SessionConfig {
 
 export type Overrides = Record<string, any>;
 
-export type DynamicUpdateFunction = (data: AttributeData) => void;
+export type DynamicUpdateFunction = (data: AttributeValues) => void;
 
 export * from "@decisively-io/types-interview";

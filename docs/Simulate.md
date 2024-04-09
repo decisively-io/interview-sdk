@@ -15,7 +15,7 @@ Data structure used to calculate the value for a Dynamic Attribute.
 
 ### data
 
-• **data**: [`AttributeData`](../wiki/Exports#attributedata)
+• **data**: [`AttributeValues`](../wiki/Exports#attributevalues)
 
 #### Defined in
 

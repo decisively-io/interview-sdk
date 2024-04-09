@@ -1,5 +1,5 @@
 // import { debounceTime, map, filter } from 'rxjs/operators';
-import type { AttributeData } from "@decisively-io/types-interview";
+import type { AttributeValues } from "@decisively-io/types-interview";
 // import { produce } from 'immer';
 // import { SessionInstance } from "./types";
 // import { simulate } from "./api";
@@ -7,7 +7,7 @@ import type { AttributeData } from "@decisively-io/types-interview";
 const templateRegex = /{{(.*?)}}/g;
 const splitRegex = /{{|}}/;
 
-export const render = (template: string, data: AttributeData) => {
+export const render = (template: string, data: AttributeValues) => {
   return template.replace(templateRegex, (match) => {
     const attributeId = match.split(splitRegex).filter(Boolean)[0].trim();
     const value = data[attributeId] || "...";
@@ -22,7 +22,7 @@ export const render = (template: string, data: AttributeData) => {
 export const generateObserver = (session: SessionInstance, attribute: string, dependencies: string[], debounce = 500) => {
   // const simulated = new Subject();
 
-  const sub = new Subject<AttributeData>();
+  const sub = new Subject<AttributeValues>();
   sub.pipe(
     // debounce input
     debounceTime(debounce),
@@ -52,7 +52,7 @@ export const generateObservables = (session: SessionInstance) => {
     .find(c => (c as AttributeControl).attribute === id);
 
   goals.forEach((g) => {
-    const sub = new Subject<AttributeData>();
+    const sub = new Subject<AttributeValues>();
 
     sub.subscribe({
       next: (d) => {
@@ -86,11 +86,11 @@ export const generateObservables = (session: SessionInstance) => {
 
 // data only needs to be the dependencies, however sending the entire
 // form state is likely not that bad and would provide all required data
-// export const populate = async (session: SessionInstance, data: AttributeData) => {
+// export const populate = async (session: SessionInstance, data: AttributeValues) => {
 //   const { _api, _project, sessionId, state } = session;
 //   if (state) {
 //     const goals = Object.keys(state);
-//     const res: AttributeData = await simulate(_api, _project, sessionId, { goals, data });
+//     const res: AttributeValues = await simulate(_api, _project, sessionId, { goals, data });
 //     // update session state with new data
 //     return produce(session, (draft) => {
 //       const { state: s } = draft;

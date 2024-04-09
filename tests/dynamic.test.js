@@ -30,7 +30,7 @@ describe("Dynamic", () => {
     });
     jest.advanceTimersByTime(1000);
     expect(dataCallback).toHaveBeenCalledTimes(2);
-    expect(session.internals.userData).toMatchObject({
+    expect(session.internals.userValues).toMatchObject({
       "2f652955-8b64-4001-823a-75d8a04e6f1a": 2,
       "c0b4d98c-262a-461c-ab9c-d8b76c7630a3": 1,
       "490391b8-d532-4541-b623-a59ca58b3b94": 3,
@@ -622,7 +622,7 @@ describe("Dynamic", () => {
       "86159399-996a-49e9-89d1-d3214dc71594": true,
     });
 
-    session.internals.userData = {
+    session.internals.userValues = {
       "numbers/768abf7b-7e91-4fa5-b6f1-b1d6268689e5/e0bddd71-d294-49bd-b760-c1381233cdad": "asdasdasd",
     };
     await session.calculateUnknowns();

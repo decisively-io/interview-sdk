@@ -1,5 +1,5 @@
 import type {
-  AttributeData,
+  AttributeValues,
   Navigate,
   ProjectId,
   ReleaseId,
@@ -44,7 +44,7 @@ export const submit = async (
   api: AxiosInstance,
   project: ProjectId,
   session: SessionId,
-  data: AttributeData,
+  data: AttributeValues,
   navigate: Navigate,
   overrides?: Overrides,
   releaseId?: string,
@@ -86,7 +86,7 @@ export const simulate = async (
   session: SessionId,
   data: Partial<Simulate>,
 ) => {
-  const res = await api.patch<AttributeData>(
+  const res = await api.patch<AttributeValues>(
     buildUrl(project, release),
     {
       mode: "api",

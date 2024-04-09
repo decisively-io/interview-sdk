@@ -1,3 +1,8 @@
+## 0.8.0
+
+- add support for formatters for dynamic text and improve date formatting
+- add locale support
+
 ## 0.7.1
 
 - fix @parent not being present in response

@@ -23,18 +23,19 @@ describe("Response", () => {
     );
 
     await session.save({
-      test: "test"
-    })
+      test: "test",
+    });
 
-    expect(adapaterCallback).toHaveBeenNthCalledWith(2, expect.objectContaining({
-      data: JSON.stringify({
-        data: {
-          test: "test",
-          "@parent": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f",
-        }
-      })
-    }))
-
+    expect(adapaterCallback).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        data: JSON.stringify({
+          data: {
+            test: "test",
+            "@parent": "individual/b12aa10e-acf7-46ca-82f0-b622233be29f",
+          },
+        }),
+      }),
+    );
   });
-
 });

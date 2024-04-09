@@ -1,6 +1,6 @@
 {
   "name": "@decisively-io/interview-sdk",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "An SDK for the Decisively interview system.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,7 +39,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@decisively-io/types-interview": "^0.3.2",
+    "@decisively-io/types-interview": "^0.4.1",
     "axios": "^0.26.1",
     "date-fns": "^3.6.0",
     "immer": "^9.0.12",

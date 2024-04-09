@@ -14,4 +14,4 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:13
+node_modules/@decisively-io/types-interview/dist/core.d.ts:17

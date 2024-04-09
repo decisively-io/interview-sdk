@@ -1,5 +1,6 @@
-import type { AttributeData, AttributeId, State, Step } from "@decisively-io/types-interview";
+import type { AttributeData, AttributeId, AttributeValues, Session, State, Step } from "@decisively-io/types-interview";
 import { produce } from "immer";
+import { formatValue } from "./formatting";
 
 // -- step helpers
 
@@ -28,23 +29,33 @@ export const getCurrentStep = (s: Step): typeof s | null => {
 
 // -- text replacement helpers
 
-export const replaceTemplatedText = (text: string, replacements: AttributeData | Record<string, string>) => {
+export const replaceTemplatedText = (
+  text: string,
+  replacements: AttributeValues | Record<string, string>,
+  state?: State[],
+  locale?: Session["locale"],
+) => {
   return text.replace(/{{(.*?)}}/g, (match: string) => {
-    const attributeId = match.replace(/{{(.*?)}}/, "$1");
-    const value = replacements[attributeId] ?? "...";
-    return typeof value === "string" ? value : String(value);
+    const [attribute, ...formatters] = match
+      .replace(/{{(.*?)}}/, "$1")
+      .split("|")
+      .map((s) => s.trim());
+    const value = replacements[attribute];
+    const type = state?.find((state) => state.id === attribute)?.type;
+
+    return formatValue(value, { formatters, type, locale }) ?? "...";
   });
 };
 
 // -- attribute helpers
 
 /**
- * Strips out any common attributes between two AttributeData objects, reporting only the latest changes
+ * Strips out any common attributes between two AttributeValues objects, reporting only the latest changes
  * @param prev The previous state of the attributes
  * @param next The current state of the attributes
  */
-export const cmpAttributeData = (prev: AttributeData, next: AttributeData): AttributeData => {
-  const ret: AttributeData = {};
+export const cmpAttributeData = (prev: AttributeValues, next: AttributeValues): AttributeValues => {
+  const ret: AttributeValues = {};
 
   for (const key of Object.keys(next)) {
     if (next[key] !== prev[key]) {

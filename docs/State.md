@@ -8,6 +8,7 @@ The state attribute provides the values and additional information about attribu
 
 - [dependencies](../wiki/State#dependencies)
 - [id](../wiki/State#id)
+- [type](../wiki/State#type)
 - [value](../wiki/State#value)
 
 ## Properties
@@ -18,7 +19,7 @@ The state attribute provides the values and additional information about attribu
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:51
+node_modules/@decisively-io/types-interview/dist/core.d.ts:52
 
 ___
 
@@ -32,10 +33,20 @@ node_modules/@decisively-io/types-interview/dist/core.d.ts:50
 
 ___
 
+### type
+
+• **type**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:51
+
+___
+
 ### value
 
 • `Optional` **value**: `any`
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:52
+node_modules/@decisively-io/types-interview/dist/core.d.ts:53

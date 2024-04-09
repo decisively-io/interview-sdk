@@ -1,4 +1,4 @@
-import type { AttributeData, Control, State } from "@decisively-io/types-interview";
+import type { AttributeValues, Control, State } from "@decisively-io/types-interview";
 
 export const buildUrl = (...args: (string | undefined)[]) => {
   return [...args.filter((a) => !!a)].join("/");
@@ -8,8 +8,8 @@ export const range = (size: number, startAt = 0) => {
   return [...Array(size).keys()].map((i) => i + startAt);
 };
 
-export const stateToData = (state: State[]): AttributeData => {
-  return Object.keys(state).reduce((acc: AttributeData, key) => {
+export const stateToData = (state: State[]): AttributeValues => {
+  return Object.keys(state).reduce((acc: AttributeValues, key) => {
     acc[key] = state.find((s) => s.id === key)?.value;
     return acc;
   }, {});

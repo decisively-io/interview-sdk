@@ -1,12 +1,12 @@
 import type {
   AttributeData,
   AttributeValue,
+  AttributeValues,
   Control,
-  RenderableControl,
   ResponseData,
   Screen,
   Session,
-  Simulate,
+  State,
   StepId,
 } from "@decisively-io/types-interview";
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
@@ -17,12 +17,7 @@ import isEqual from "lodash.isequal";
 import { v4 as uuid } from "uuid";
 import { back, create, exportTimeline, load, navigate, submit } from "./api";
 import { ControlTypesInfo } from "./constants";
-import {
-  type DynamicReplacementQueries,
-  type UnknownValues,
-  buildDynamicReplacementQueries,
-  simulateUnknowns,
-} from "./dynamic";
+import { type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
 import type { Overrides, SessionConfig } from "./types";
 import { buildUrl, iterateControls, range } from "./util";
@@ -88,10 +83,10 @@ interface SessionInstanceOptions {
 }
 
 interface SessionInternal {
-  userData: AttributeData;
-  prevUserData: AttributeData;
+  userValues: AttributeValues;
+  prevUserValues: AttributeValues;
 
-  replacements: AttributeData;
+  replacements: AttributeValues;
   unknownsRequiringSimulate: UnknownValues;
   unknownsAlreadySimulated: UnknownValues;
 
@@ -99,12 +94,12 @@ interface SessionInternal {
   latestRequest: number | undefined;
 }
 
-const postProcessControl = (control: any, replacements: any) => {
+const postProcessControl = (control: any, replacements: any, state: State[] | undefined, locale: Session["locale"]) => {
   if (control.templateText) {
-    control.text = replaceTemplatedText(control.templateText, replacements);
+    control.text = replaceTemplatedText(control.templateText, replacements, state, locale);
   }
   if (control.templateLabel) {
-    control.label = replaceTemplatedText(control.templateLabel, replacements);
+    control.label = replaceTemplatedText(control.templateLabel, replacements, state, locale);
   }
   if (control.type === "switch_container" && control.kind === "dynamic" && control.attribute) {
     const update = replacements[control.attribute];
@@ -128,8 +123,8 @@ export class SessionInstance implements Session {
   private options: Omit<SessionInstanceOptions, "session">;
   private processedScreen: Screen | undefined;
   private internals: SessionInternal = {
-    userData: {},
-    prevUserData: {},
+    userValues: {},
+    prevUserValues: {},
     replacements: {},
     unknownsRequiringSimulate: {},
     unknownsAlreadySimulated: {},
@@ -171,8 +166,8 @@ export class SessionInstance implements Session {
     }
   }
 
-  chOnScreenData(data: AttributeData) {
-    Object.assign(this.internals.userData, data);
+  chOnScreenData(data: AttributeValues) {
+    Object.assign(this.internals.userValues, data);
     // call this first so the debounce doesn't fire during unknown calculation
     this.updateDynamicValues();
     this.calculateUnknowns();
@@ -185,10 +180,10 @@ export class SessionInstance implements Session {
 
     if (state && screen) {
       if (
-        !isEqual(this.internals.prevUserData, this.internals.userData) &&
-        Object.keys(this.internals.userData).length > 0
+        !isEqual(this.internals.prevUserValues, this.internals.userValues) &&
+        Object.keys(this.internals.userValues).length > 0
       ) {
-        const replacementQueries = buildDynamicReplacementQueries(state, this.internals.userData);
+        const replacementQueries = buildDynamicReplacementQueries(state, this.internals.userValues);
         if (replacementQueries.unknownValues.length || Object.keys(replacementQueries.knownValues).length > 0) {
           Object.assign(this.internals.replacements, replacementQueries?.knownValues);
 
@@ -216,7 +211,7 @@ export class SessionInstance implements Session {
                 }
               }
               if (!control.loading) {
-                postProcessControl(control, this.internals.replacements);
+                postProcessControl(control, this.internals.replacements, this.state, this.session.locale);
               }
             });
           });
@@ -232,7 +227,7 @@ export class SessionInstance implements Session {
         }
       }
     }
-    this.internals.prevUserData = { ...this.internals.userData };
+    this.internals.prevUserValues = { ...this.internals.userValues };
   }
 
   private async updateDynamicValues() {
@@ -263,7 +258,7 @@ export class SessionInstance implements Session {
                   control.loading = undefined;
                 }
 
-                postProcessControl(control, this.internals.replacements);
+                postProcessControl(control, this.internals.replacements, this.state, this.session.locale);
               });
             }
           });
@@ -288,7 +283,7 @@ export class SessionInstance implements Session {
     const currentRenderAt = this.renderAt;
     this.session = session;
     if (!isEmpty(session.screen)) {
-      const replacements: AttributeData = {};
+      const replacements: AttributeValues = {};
       if (session.state) {
         for (const stateObj of session.state) {
           if (replacements[stateObj.id] === undefined && stateObj.value) {
@@ -298,8 +293,8 @@ export class SessionInstance implements Session {
       }
       if (prevSession?.screen?.id !== session.screen?.id) {
         this.internals = {
-          userData: {},
-          prevUserData: {},
+          userValues: {},
+          prevUserValues: {},
           replacements: replacements,
           unknownsRequiringSimulate: {},
           unknownsAlreadySimulated: {},
@@ -390,7 +385,7 @@ export class SessionInstance implements Session {
 
   // -- methods
 
-  async submit(data: AttributeData, navigate?: any, overrides: Overrides = {}) {
+  async submit(data: AttributeValues, navigate?: any, overrides: Overrides = {}) {
     this.triggerUpdate({ externalLoading: true });
     this.updateSession(
       await submit(this.api, this.project, this.sessionId, transformResponse(this, data as any), navigate, {
@@ -402,7 +397,7 @@ export class SessionInstance implements Session {
     return this;
   }
 
-  async save(data: AttributeData) {
+  async save(data: AttributeValues) {
     this.triggerUpdate({ externalLoading: true });
     this.updateSession(
       await submit(this.api, this.project, this.sessionId, transformResponse(this, data as any), false, {

@@ -22,7 +22,7 @@ ___
 
 ### type
 
-• **type**: ``"value"`` \| ``"attribute"``
+• **type**: ``"attribute"`` \| ``"value"``
 
 #### Defined in
 

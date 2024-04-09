@@ -1,4 +1,4 @@
-import type { AttributeData, ProjectId, ReleaseId, SessionId, Simulate, State } from "@decisively-io/types-interview";
+import type { AttributeValues, ProjectId, ReleaseId, SessionId, Simulate, State } from "@decisively-io/types-interview";
 import type { AxiosInstance } from "axios";
 import set from "lodash.set";
 import { simulate } from "./api";
@@ -6,7 +6,7 @@ import { simulate } from "./api";
 export type UnknownValues = Record<string, Partial<Simulate>>;
 
 export interface DynamicReplacementQueries {
-  knownValues: AttributeData;
+  knownValues: AttributeValues;
   unknownValues: UnknownValues;
 }
 
@@ -18,10 +18,10 @@ export interface DynamicReplacementQueries {
  */
 export const buildDynamicReplacementQueries = (
   state: State[],
-  attribValues: AttributeData,
+  attribValues: AttributeValues,
 ): DynamicReplacementQueries => {
-  const knownValues: AttributeData = { ...attribValues };
-  const allData: AttributeData = { ...attribValues };
+  const knownValues: AttributeValues = { ...attribValues };
+  const allData: AttributeValues = { ...attribValues };
   const unknownsWithSatisfiedDependencies: Partial<Simulate>[] = [];
 
   for (const stateObj of state) {
@@ -38,7 +38,7 @@ export const buildDynamicReplacementQueries = (
     const { id: goal, dependencies } = stateObj;
     if (goal) {
       if (dependencies && dependencies.length > 0) {
-        const data: AttributeData = {};
+        const data: AttributeValues = {};
         let userInputInvolved = false;
         const unknownDependencies = dependencies.reduce((unknownDependencies, dep) => {
           const value = allData[dep];
@@ -142,7 +142,7 @@ export const simulateUnknowns = async (
   project: ProjectId,
   release: ReleaseId,
   sessionId: SessionId,
-): Promise<AttributeData> => {
+): Promise<AttributeValues> => {
   try {
     const simResAll = (
       await Promise.all(unKnownValues.map((simReq) => simulate(api, project, release, sessionId, simReq)))
@@ -153,7 +153,7 @@ export const simulateUnknowns = async (
         acc[goal] = simRes.outcome;
       }
       return acc;
-    }, {} as AttributeData);
+    }, {} as AttributeValues);
 
     return simResAll;
   } catch (e) {
