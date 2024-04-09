@@ -39,6 +39,20 @@ describe("Formatting Tests", () => {
       });
       expect(text).toEqual("value is: 1st January");
     }
+
+    {
+      const text = replaceTemplatedText("value is: {{a|date}}", {
+        a: "2000-01-01 23:12",
+      });
+      expect(text).toEqual("value is: 01/01/2000 11:12 PM");
+    }
+
+    {
+      const text = replaceTemplatedText("value is: {{a|date}}", {
+        a: "2000-01-01",
+      });
+      expect(text).toEqual("value is: 01/01/2000");
+    }
   });
 });
 

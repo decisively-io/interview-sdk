@@ -5,8 +5,10 @@ export type Formatter = "currency" | `date ${string}` | "date";
 
 const PARSE_FORMATS = [
   "uuuu-MM-dd'T'HH:mm:ss",
-  "uuuu-MM-dd",
   "uuuu-MM-dd HH:mm:ss",
+  "uuuu-MM-dd'T'HH:mm",
+  "uuuu-MM-dd HH:mm",
+  "uuuu-MM-dd",
   "-yyyyyy-MM-dd",
   "yyyyyy-MM-dd",
   "-yyyyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
@@ -50,16 +52,22 @@ const formatDateTimeDefault = (value: string, type: string | undefined, locale: 
     if (node && node.type === "date") result = localLocale.format("l");
     else result = localLocale.format("l LT");*/
 
-    const formatOptions: Intl.DateTimeFormatOptions =
-      type === "date"
-        ? {}
-        : {
-            hour: "2-digit",
-            minute: "2-digit",
-            day: "numeric",
-            month: "numeric",
-            year: "numeric",
-          };
+    let isDate = type === "date";
+    // check if it's a date
+    if (!isDate) {
+      isDate =
+        date.getHours() === 0 && date.getMinutes() === 0 && date.getSeconds() === 0 && date.getMilliseconds() === 0;
+    }
+
+    const formatOptions: Intl.DateTimeFormatOptions = isDate
+      ? {}
+      : {
+          hour: "2-digit",
+          minute: "2-digit",
+          day: "numeric",
+          month: "numeric",
+          year: "numeric",
+        };
     return new Intl.DateTimeFormat([locale, "en-AU"], formatOptions).format(date).toUpperCase().replace(/,/g, "");
   }
   return value;

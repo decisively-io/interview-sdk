@@ -1,3 +1,7 @@
+## 0.8.1
+
+- only format as datetime if there is a date and time
+
 ## 0.8.0
 
 - add support for formatters for dynamic text and improve date formatting
