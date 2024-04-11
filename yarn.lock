@@ -321,10 +321,10 @@
   resolved "https://registry.npmjs.org/@biomejs/cli-linux-x64/-/cli-linux-x64-1.6.3.tgz"
   integrity sha512-vyn8TQaTZg617hjqFitwGmb1St5XXvq6I3vmxU/QFalM74BryMSvYCrYWb2Yw/TkykdEwZTMGYp+SWHRb04fTg==
 
-"@decisively-io/types-interview@^0.4.2":
-  version "0.4.2"
-  resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.4.2/0a9bbcb8ea46d39a805c4ea591d33ccafa4e8ea3"
-  integrity sha512-jwmDNKLnCSexpjZ8cW/ZadSxijQxS9CJBf6fKyelahCSLW1VKF9u3Lw/X2H9uynTIHIGhLyMeBPAYH+lSIrJWw==
+"@decisively-io/types-interview@^0.4.3":
+  version "0.4.3"
+  resolved "https://npm.pkg.github.com/download/@decisively-io/types-interview/0.4.3/0ca3cbd004a095ac00102ba97924bf2c0404a440"
+  integrity sha512-MM9hb7td8sKnwHasBvrPvRt0BXatjNOgNgHm+Fsti6OTzZJGbV2h60PgGAP1B8xt/vggzC/Wh34wqPqH3PZ0FQ==
 
 "@imminently/standard@^0.2.1":
   version "0.2.1"
