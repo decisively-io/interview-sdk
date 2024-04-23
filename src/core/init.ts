@@ -388,10 +388,18 @@ export class SessionInstance implements Session {
   async submit(data: AttributeValues, navigate?: any, overrides: Overrides = {}) {
     this.triggerUpdate({ externalLoading: true });
     this.updateSession(
-      await submit(this.api, this.project, this.sessionId, transformResponse(this, data as any), navigate, {
-        response: this.options.responseElements,
-        ...overrides,
-      }),
+      await submit(
+        this.api,
+        this.project,
+        this.sessionId,
+        transformResponse(this, data as any),
+        navigate,
+        {
+          response: this.options.responseElements,
+          ...overrides,
+        },
+        this.release,
+      ),
     );
     this.triggerUpdate({ externalLoading: false });
     return this;
@@ -400,9 +408,15 @@ export class SessionInstance implements Session {
   async save(data: AttributeValues) {
     this.triggerUpdate({ externalLoading: true });
     this.updateSession(
-      await submit(this.api, this.project, this.sessionId, transformResponse(this, data as any), false, {
-        response: this.options.responseElements,
-      }),
+      await submit(
+        this.api,
+        this.project,
+        this.sessionId,
+        transformResponse(this, data as any),
+        false,
+        { response: this.options.responseElements },
+        this.release,
+      ),
     );
     this.triggerUpdate({ externalLoading: false });
     return this;
