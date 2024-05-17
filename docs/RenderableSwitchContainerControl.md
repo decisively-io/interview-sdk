@@ -2,7 +2,7 @@
 
 ## Hierarchy
 
-- [`SwitchContainerControl`](../wiki/SwitchContainerControl)<[`RenderableControl`](../wiki/Exports#renderablecontrol)\>
+- [`SwitchContainerControl`](../wiki/SwitchContainerControl)\<[`RenderableControl`](../wiki/Exports#renderablecontrol)\>
 
   ↳ **`RenderableSwitchContainerControl`**
 
@@ -12,6 +12,8 @@
 
 - [attribute](../wiki/RenderableSwitchContainerControl#attribute)
 - [branch](../wiki/RenderableSwitchContainerControl#branch)
+- [columnHeading](../wiki/RenderableSwitchContainerControl#columnheading)
+- [columnWidth](../wiki/RenderableSwitchContainerControl#columnwidth)
 - [condition](../wiki/RenderableSwitchContainerControl#condition)
 - [id](../wiki/RenderableSwitchContainerControl#id)
 - [kind](../wiki/RenderableSwitchContainerControl#kind)
@@ -32,7 +34,7 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:5
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
 
 ___
 
@@ -42,7 +44,39 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:398
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:454
+
+___
+
+### columnHeading
+
+• `Optional` **columnHeading**: `string`
+
+`columnHeading` is relevant only when nested within a repeat_container, and will otherwise be ignored
+
+#### Inherited from
+
+[SwitchContainerControl](../wiki/SwitchContainerControl).[columnHeading](../wiki/SwitchContainerControl#columnheading)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:448
+
+___
+
+### columnWidth
+
+• `Optional` **columnWidth**: `number`
+
+`columnWidth` is relevant only when nested within a repeat_container, and will otherwise be ignored
+
+#### Inherited from
+
+[SwitchContainerControl](../wiki/SwitchContainerControl).[columnWidth](../wiki/SwitchContainerControl#columnwidth)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:450
 
 ___
 
@@ -56,7 +90,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:393
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:445
 
 ___
 
@@ -70,7 +104,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:389
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:441
 
 ___
 
@@ -84,7 +118,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:394
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:446
 
 ___
 
@@ -98,7 +132,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:392
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:444
 
 ___
 
@@ -112,7 +146,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:391
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:443
 
 ___
 
@@ -126,7 +160,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:390
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:442
 
 ___
 
@@ -140,4 +174,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:7

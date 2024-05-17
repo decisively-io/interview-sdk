@@ -21,6 +21,7 @@ It's metadata is basically a merge of the date and time, but with seperate min/m
 - [disabled](../wiki/DateTimeControl#disabled)
 - [id](../wiki/DateTimeControl#id)
 - [label](../wiki/DateTimeControl#label)
+- [labelDisplay](../wiki/DateTimeControl#labeldisplay)
 - [labelLength](../wiki/DateTimeControl#labellength)
 - [minutes\_increment](../wiki/DateTimeControl#minutes_increment)
 - [required](../wiki/DateTimeControl#required)
@@ -42,7 +43,7 @@ Whether to display time with an 'AM/PM' or in 24 hour time.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:166
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:192
 
 ___
 
@@ -58,7 +59,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:150
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:176
 
 ___
 
@@ -70,7 +71,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:158
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:184
 
 ___
 
@@ -82,7 +83,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:156
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:182
 
 ___
 
@@ -94,7 +95,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:154
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:180
 
 ___
 
@@ -104,7 +105,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:148
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:174
 
 ___
 
@@ -120,7 +121,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:143
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:168
 
 ___
 
@@ -130,7 +131,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:145
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:170
+
+___
+
+### labelDisplay
+
+• `Optional` **labelDisplay**: [`LabelDisplay`](../wiki/Exports#labeldisplay)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:171
 
 ___
 
@@ -140,7 +151,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:146
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:172
 
 ___
 
@@ -152,7 +163,7 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:168
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:194
 
 ___
 
@@ -162,7 +173,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:147
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:173
 
 ___
 
@@ -174,7 +185,7 @@ mui picker doesn't have this control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:170
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:196
 
 ___
 
@@ -186,7 +197,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:162
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:188
 
 ___
 
@@ -198,7 +209,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:160
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:186
 
 ___
 
@@ -212,7 +223,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:144
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:169
 
 ___
 
@@ -224,7 +235,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:152
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:178
 
 ___
 
@@ -238,4 +249,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:7

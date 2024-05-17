@@ -10,11 +10,11 @@ Interacting with the Interview API follows the following outline:
 2. Navigate through screens in the interview using a PATCH and providing data along the way
 3. Eventually your interview will end up in a complete state and a decision report will be fired in the backend.
 
-Note: Unlike the Batch API, the decision report is not sent to the client, and is only streamed into the backend. This is to prevent leaking sensitive information to clients, including the internal rules and data elements. 
+Note: Unlike the Batch API, the decision report is not sent to the client, and is only streamed into the backend. This is to prevent leaking sensitive information to clients, including the internal rules and data elements.
 
 ## Payload
 
-The payload response from the server is shown below. 
+The payload response from the server is shown below.
 
 ```
 {
@@ -34,7 +34,7 @@ The payload response from the server is shown below.
 
 - For the data attribute see [Data](./docs/Data.md)
 - For the steps attribute see [Steps](./docs/Steps.md)
-- For the screen (and contorls) attribute see [Steps](./docs/Steps.md)
+- For the screen (and controls) attribute see [Steps](./docs/Steps.md)
 - For the context attribute see [Steps](./docs/Context.md)
 - For the state attribute see [Steps](./docs/Context.md)
 
@@ -62,7 +62,7 @@ Starts an interview process by calling the API with a POST command. You pass the
 - config: Additional configuration options
   - initialData: Data to start the interview off with (optional)
   - interview: Id of the specific interview to load (if you don't include this the backend will attempt to load the default interview)
-  - release: The id of the release of the project to use. You generally shouldn't use this in production as it will force the backend to use a specific release rather than the latest version. 
+  - release: The id of the release of the project to use. You generally shouldn't use this in production as it will force the backend to use a specific release rather than the latest version.
 - newDataCallback: A function that will be called whenever new data is retrieved from the server. Allows you to perform additional actions when the SDK receives information
 
 ### load
@@ -74,12 +74,12 @@ Stops receiving updates about the interview session as the interview is now comp
 ## Session
 The response from the create and load commands in init is a Session object that allows you to interact with the interview. It has the following commands:
 
-- submit: Send the data collected from the user on this screen and then navigate to the appropriate screen. You will generally provide the id of the next step in the step chain. 
-- save: Send the data collected from the user on this screen, but don't navigate to the next screen. 
+- submit: Send the data collected from the user on this screen and then navigate to the appropriate screen. You will generally provide the id of the next step in the step chain.
+- save: Send the data collected from the user on this screen, but don't navigate to the next screen.
 - navigate: Navigate to a particular screen. Changes to data on the current screen is discarded
 - render: Special command you can use to render the text returned from the server. This will replace any dynamic attributes. See [State](./docs/State.md) page
 
-> The Session contains the data returned from the server, but it's the responsibility of the UI implementation to convert and display this to the user on the screen (or use the Decisively React Interview SDK). 
+> The Session contains the data returned from the server, but it's the responsibility of the UI implementation to convert and display this to the user on the screen (or use the Decisively React Interview SDK).
 
 ## Advanced Consumption
 

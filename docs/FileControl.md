@@ -17,6 +17,7 @@ Allow a user to upload a file. This metadata is still under construction
 - [file\_type](../wiki/FileControl#file_type)
 - [id](../wiki/FileControl#id)
 - [label](../wiki/FileControl#label)
+- [labelDisplay](../wiki/FileControl#labeldisplay)
 - [labelLength](../wiki/FileControl#labellength)
 - [max](../wiki/FileControl#max)
 - [max\_size](../wiki/FileControl#max_size)
@@ -39,7 +40,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:240
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:268
 
 ___
 
@@ -51,7 +52,7 @@ The types of file allowed (pdf docx etc)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:244
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:272
 
 ___
 
@@ -67,7 +68,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:234
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:261
 
 ___
 
@@ -77,7 +78,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:236
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:263
+
+___
+
+### labelDisplay
+
+• `Optional` **labelDisplay**: [`LabelDisplay`](../wiki/Exports#labeldisplay)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:264
 
 ___
 
@@ -87,7 +98,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:237
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:265
 
 ___
 
@@ -99,7 +110,7 @@ The max number of files that can be uploaded. Defaults to 1
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:242
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:270
 
 ___
 
@@ -111,7 +122,7 @@ The maximum size of a document, in Mb
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:246
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:274
 
 ___
 
@@ -121,7 +132,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:238
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:266
 
 ___
 
@@ -131,7 +142,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:247
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:275
 
 ___
 
@@ -145,7 +156,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:235
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:262
 
 ___
 
@@ -159,4 +170,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:7

@@ -15,6 +15,8 @@ The end-styling of the text is up to the run time.
 ### Properties
 
 - [attribute](../wiki/TypographyControl#attribute)
+- [columnHeading](../wiki/TypographyControl#columnheading)
+- [columnWidth](../wiki/TypographyControl#columnwidth)
 - [emoji](../wiki/TypographyControl#emoji)
 - [id](../wiki/TypographyControl#id)
 - [style](../wiki/TypographyControl#style)
@@ -34,7 +36,31 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:5
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+
+___
+
+### columnHeading
+
+• `Optional` **columnHeading**: `string`
+
+`columnHeading` is relevant only when nested within a repeat_container, and will otherwise be ignored
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:375
+
+___
+
+### columnWidth
+
+• `Optional` **columnWidth**: `number`
+
+`columnWidth` is relevant only when nested within a repeat_container, and will otherwise be ignored
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:377
 
 ___
 
@@ -44,7 +70,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:343
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:373
 
 ___
 
@@ -58,7 +84,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:339
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:369
 
 ___
 
@@ -68,7 +94,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:342
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:372
 
 ___
 
@@ -78,7 +104,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:341
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:371
 
 ___
 
@@ -92,7 +118,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:340
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:370
 
 ___
 
@@ -106,4 +132,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:7

@@ -1,4 +1,4 @@
-# Interface: SwitchContainerControl<C\>
+# Interface: SwitchContainerControl\<C\>
 
 ## Type parameters
 
@@ -19,6 +19,8 @@
 ### Properties
 
 - [attribute](../wiki/SwitchContainerControl#attribute)
+- [columnHeading](../wiki/SwitchContainerControl#columnheading)
+- [columnWidth](../wiki/SwitchContainerControl#columnwidth)
 - [condition](../wiki/SwitchContainerControl#condition)
 - [id](../wiki/SwitchContainerControl#id)
 - [kind](../wiki/SwitchContainerControl#kind)
@@ -39,7 +41,31 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:5
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+
+___
+
+### columnHeading
+
+• `Optional` **columnHeading**: `string`
+
+`columnHeading` is relevant only when nested within a repeat_container, and will otherwise be ignored
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:448
+
+___
+
+### columnWidth
+
+• `Optional` **columnWidth**: `number`
+
+`columnWidth` is relevant only when nested within a repeat_container, and will otherwise be ignored
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:450
 
 ___
 
@@ -49,7 +75,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:393
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:445
 
 ___
 
@@ -63,7 +89,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:389
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:441
 
 ___
 
@@ -73,7 +99,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:394
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:446
 
 ___
 
@@ -83,7 +109,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:392
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:444
 
 ___
 
@@ -93,7 +119,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:391
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:443
 
 ___
 
@@ -107,7 +133,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:390
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:442
 
 ___
 
@@ -121,4 +147,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:7

@@ -19,6 +19,7 @@ Do not send a time component back.
 - [disabled](../wiki/DateControl#disabled)
 - [id](../wiki/DateControl#id)
 - [label](../wiki/DateControl#label)
+- [labelDisplay](../wiki/DateControl#labeldisplay)
 - [labelLength](../wiki/DateControl#labellength)
 - [max](../wiki/DateControl#max)
 - [min](../wiki/DateControl#min)
@@ -36,7 +37,7 @@ Do not send a time component back.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:74
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:98
 
 ___
 
@@ -52,7 +53,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:76
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:100
 
 ___
 
@@ -64,7 +65,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:80
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:104
 
 ___
 
@@ -74,7 +75,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:73
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:97
 
 ___
 
@@ -90,7 +91,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:68
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:91
 
 ___
 
@@ -100,7 +101,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:70
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:93
+
+___
+
+### labelDisplay
+
+• `Optional` **labelDisplay**: [`LabelDisplay`](../wiki/Exports#labeldisplay)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:94
 
 ___
 
@@ -110,7 +121,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:71
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:95
 
 ___
 
@@ -118,11 +129,11 @@ ___
 
 • `Optional` **max**: `string`
 
-Maximum date allowed, YYYY-MM-DD
+Maximum date allowed
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:84
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:108
 
 ___
 
@@ -130,11 +141,11 @@ ___
 
 • `Optional` **min**: `string`
 
-Minimum date allowed, YYYY-MM-DD
+Minimum date allowed
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:82
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:106
 
 ___
 
@@ -144,7 +155,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:72
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:96
 
 ___
 
@@ -154,7 +165,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:85
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:109
 
 ___
 
@@ -168,7 +179,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:69
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:92
 
 ___
 
@@ -180,7 +191,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:78
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:102
 
 ___
 
@@ -194,4 +205,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:7

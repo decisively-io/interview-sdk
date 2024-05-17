@@ -17,6 +17,7 @@ Collects text from the user.
 - [disabled](../wiki/TextControl#disabled)
 - [id](../wiki/TextControl#id)
 - [label](../wiki/TextControl#label)
+- [labelDisplay](../wiki/TextControl#labeldisplay)
 - [labelLength](../wiki/TextControl#labellength)
 - [max](../wiki/TextControl#max)
 - [multi](../wiki/TextControl#multi)
@@ -41,7 +42,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:314
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:344
 
 ___
 
@@ -51,7 +52,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:312
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:342
 
 ___
 
@@ -61,7 +62,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:311
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:341
 
 ___
 
@@ -77,7 +78,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:306
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:335
 
 ___
 
@@ -87,7 +88,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:308
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:337
+
+___
+
+### labelDisplay
+
+• `Optional` **labelDisplay**: [`LabelDisplay`](../wiki/Exports#labeldisplay)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:338
 
 ___
 
@@ -97,7 +108,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:309
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:339
 
 ___
 
@@ -109,7 +120,7 @@ The maximum length of the string
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:317
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:347
 
 ___
 
@@ -126,7 +137,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:323
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:353
 
 ___
 
@@ -136,7 +147,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:310
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:340
 
 ___
 
@@ -146,7 +157,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:327
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:357
 
 ___
 
@@ -160,7 +171,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:307
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:336
 
 ___
 
@@ -170,17 +181,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:315
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:345
 
 ___
 
 ### variation
 
-• `Optional` **variation**: { `type`: ``"email"``  } \| { `type`: ``"number"``  }
+• `Optional` **variation**: \{ `type`: ``"email"``  } \| \{ `type`: ``"number"``  }
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:318
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:348
 
 ___
 
@@ -194,4 +205,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:7

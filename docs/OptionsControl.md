@@ -34,6 +34,7 @@ attribute (and not send the enum_id to the client.
 - [enum\_id](../wiki/OptionsControl#enum_id)
 - [id](../wiki/OptionsControl#id)
 - [label](../wiki/OptionsControl#label)
+- [labelDisplay](../wiki/OptionsControl#labeldisplay)
 - [labelLength](../wiki/OptionsControl#labellength)
 - [options](../wiki/OptionsControl#options)
 - [required](../wiki/OptionsControl#required)
@@ -52,7 +53,7 @@ Allow a user to add their own option, not in the list, in
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:219
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:246
 
 ___
 
@@ -65,7 +66,7 @@ Default display as standart select
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:207
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:233
 
 ___
 
@@ -81,7 +82,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:215
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:242
 
 ___
 
@@ -91,7 +92,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:213
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:240
 
 ___
 
@@ -101,7 +102,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:211
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:238
 
 ___
 
@@ -113,7 +114,7 @@ uuid, design time only
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:221
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:248
 
 ___
 
@@ -129,7 +130,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:201
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:227
 
 ___
 
@@ -139,7 +140,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:208
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:234
+
+___
+
+### labelDisplay
+
+• `Optional` **labelDisplay**: [`LabelDisplay`](../wiki/Exports#labeldisplay)
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:235
 
 ___
 
@@ -149,7 +160,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:209
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:236
 
 ___
 
@@ -161,7 +172,7 @@ design and runtime
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:217
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:244
 
 ___
 
@@ -171,7 +182,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:210
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:237
 
 ___
 
@@ -181,7 +192,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:222
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:249
 
 ___
 
@@ -195,7 +206,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:202
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:228
 
 ___
 
@@ -205,7 +216,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:212
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:239
 
 ___
 
@@ -219,4 +230,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:7

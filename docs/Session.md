@@ -34,7 +34,7 @@ ___
 
 ### data
 
-• **data**: `Record`<`string`, [`AttributeData`](../wiki/AttributeData)\> & [`Parent`](../wiki/Parent)
+• **data**: `Record`\<`string`, [`AttributeData`](../wiki/AttributeData)\> & [`Parent`](../wiki/Parent)
 
 #### Defined in
 
@@ -44,7 +44,7 @@ ___
 
 ### explanations
 
-• `Optional` **explanations**: `Record`<`string`, `string`\>
+• `Optional` **explanations**: `Record`\<`string`, `string`\>
 
 #### Defined in
 
