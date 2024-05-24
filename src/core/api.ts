@@ -86,7 +86,8 @@ export const simulate = async (
   session: SessionId,
   data: Partial<Simulate>,
 ) => {
-  const res = await api.patch<AttributeValues>(
+  // Dynamic interactions are now on a post (due to new interaction behaviour in backend)
+  const res = await api.post<AttributeValues>(
     buildUrl(project, release),
     {
       mode: "api",
