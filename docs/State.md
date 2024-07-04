@@ -8,6 +8,7 @@ The state attribute provides the values and additional information about attribu
 
 - [dependencies](../wiki/State#dependencies)
 - [id](../wiki/State#id)
+- [instanceTemplate](../wiki/State#instancetemplate)
 - [type](../wiki/State#type)
 - [value](../wiki/State#value)
 
@@ -30,6 +31,16 @@ ___
 #### Defined in
 
 node_modules/@decisively-io/types-interview/dist/core.d.ts:50
+
+___
+
+### instanceTemplate
+
+• `Optional` **instanceTemplate**: `string`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/core.d.ts:54
 
 ___
 

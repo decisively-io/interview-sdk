@@ -16,17 +16,17 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:465
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:471
 
 ___
 
 ### type
 
-• **type**: ``"attribute"`` \| ``"value"``
+• **type**: ``"value"`` \| ``"attribute"``
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:463
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:469
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:464
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:470

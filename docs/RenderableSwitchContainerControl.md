@@ -2,7 +2,7 @@
 
 ## Hierarchy
 
-- [`SwitchContainerControl`](../wiki/SwitchContainerControl)\<[`RenderableControl`](../wiki/Exports#renderablecontrol)\>
+- [`SwitchContainerControl`](../wiki/SwitchContainerControl)<[`RenderableControl`](../wiki/Exports#renderablecontrol)\>
 
   ↳ **`RenderableSwitchContainerControl`**
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:454
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:460
 
 ___
 

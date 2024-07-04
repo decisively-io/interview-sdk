@@ -2,7 +2,7 @@
 
 ## Hierarchy
 
-- [`RepeatingContainerControl`](../wiki/RepeatingContainerControl)\<[`RenderableControl`](../wiki/Exports#renderablecontrol)\>
+- [`RepeatingContainerControl`](../wiki/RepeatingContainerControl)<[`RenderableControl`](../wiki/Exports#renderablecontrol)\>
 
   ↳ **`RenderableRepeatingContainerControl`**
 

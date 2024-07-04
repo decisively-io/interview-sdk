@@ -1,4 +1,4 @@
-# Interface: CertaintyContainerControl\<C\>
+# Interface: CertaintyContainerControl<C\>
 
 ## Type parameters
 

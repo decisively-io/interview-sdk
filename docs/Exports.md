@@ -19,6 +19,7 @@
 - [DateControl](../wiki/DateControl)
 - [DateTimeControl](../wiki/DateTimeControl)
 - [EntityControl](../wiki/EntityControl)
+- [EntityControlInstance](../wiki/EntityControlInstance)
 - [EntityInstance](../wiki/EntityInstance)
 - [FileControl](../wiki/FileControl)
 - [FormatOptions](../wiki/FormatOptions)
@@ -30,6 +31,7 @@
 - [Parent](../wiki/Parent)
 - [Progress](../wiki/Progress)
 - [RenderableCertaintyContainerControl](../wiki/RenderableCertaintyContainerControl)
+- [RenderableEntityControl](../wiki/RenderableEntityControl)
 - [RenderableRepeatingContainerControl](../wiki/RenderableRepeatingContainerControl)
 - [RenderableSwitchContainerControl](../wiki/RenderableSwitchContainerControl)
 - [RepeatingContainerControl](../wiki/RepeatingContainerControl)
@@ -79,7 +81,6 @@
 - [ReleaseId](../wiki/Exports#releaseid)
 - [RenderableControl](../wiki/Exports#renderablecontrol)
 - [RenderableControlType](../wiki/Exports#renderablecontroltype)
-- [RenderableEntityControl](../wiki/Exports#renderableentitycontrol)
 - [ResponseData](../wiki/Exports#responsedata)
 - [SessionId](../wiki/Exports#sessionid)
 - [SessionObservable](../wiki/Exports#sessionobservable)
@@ -132,7 +133,7 @@ ___
 
 ### AttributeValue
 
-Ƭ **AttributeValue**: `string` \| `number` \| `boolean` \| `Record`\<`string`, [`AttributeValue`](../wiki/Exports#attributevalue)\>[]
+Ƭ **AttributeValue**: `string` \| `number` \| `boolean` \| `Record`<`string`, [`AttributeValue`](../wiki/Exports#attributevalue)\>[]
 
 #### Defined in
 
@@ -142,7 +143,7 @@ ___
 
 ### AttributeValues
 
-Ƭ **AttributeValues**: `Record`\<[`AttributeId`](../wiki/Exports#attributeid), [`AttributeValue`](../wiki/Exports#attributevalue)\>
+Ƭ **AttributeValues**: `Record`<[`AttributeId`](../wiki/Exports#attributeid), [`AttributeValue`](../wiki/Exports#attributevalue)\>
 
 #### Defined in
 
@@ -156,7 +157,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:461
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:467
 
 ___
 
@@ -166,7 +167,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:476
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:482
 
 ___
 
@@ -176,7 +177,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:477
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:483
 
 ___
 
@@ -228,7 +229,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:25](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/types.ts#L25)
+[src/core/types.ts:25](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/types.ts#L25)
 
 ___
 
@@ -244,11 +245,11 @@ ___
 
 ### Formatter
 
-Ƭ **Formatter**: ``"currency"`` \| \`date $\{string}\` \| ``"date"``
+Ƭ **Formatter**: ``"currency"`` \| \`date ${string}\` \| ``"date"``
 
 #### Defined in
 
-[src/core/formatting.ts:4](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/formatting.ts#L4)
+[src/core/formatting.ts:4](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/formatting.ts#L4)
 
 ___
 
@@ -276,7 +277,7 @@ Use `ControlValue` instead
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:484
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:490
 
 ___
 
@@ -496,11 +497,11 @@ ___
 
 ### Overrides
 
-Ƭ **Overrides**: `Record`\<`string`, `any`\>
+Ƭ **Overrides**: `Record`<`string`, `any`\>
 
 #### Defined in
 
-[src/core/types.ts:23](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/types.ts#L23)
+[src/core/types.ts:23](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/types.ts#L23)
 
 ___
 
@@ -526,11 +527,11 @@ ___
 
 ### RenderableControl
 
-Ƭ **RenderableControl**: [`BooleanControl`](../wiki/BooleanControl) \| [`CurrencyControl`](../wiki/CurrencyControl) \| [`DateControl`](../wiki/DateControl) \| [`TimeControl`](../wiki/TimeControl) \| [`DateTimeControl`](../wiki/DateTimeControl) \| [`OptionsControl`](../wiki/OptionsControl) \| [`FileControl`](../wiki/FileControl) \| [`ImageControl`](../wiki/ImageControl) \| [`NumberOfInstancesControl`](../wiki/NumberOfInstancesControl) \| [`TextControl`](../wiki/TextControl) \| [`TypographyControl`](../wiki/TypographyControl) \| [`RenderableEntityControl`](../wiki/Exports#renderableentitycontrol) \| [`RenderableSwitchContainerControl`](../wiki/RenderableSwitchContainerControl) \| [`RenderableCertaintyContainerControl`](../wiki/RenderableCertaintyContainerControl) \| [`RenderableRepeatingContainerControl`](../wiki/RenderableRepeatingContainerControl) & \{ `dynamicAttributes?`: `string`[] ; `loading?`: `boolean`  }
+Ƭ **RenderableControl**: [`BooleanControl`](../wiki/BooleanControl) \| [`CurrencyControl`](../wiki/CurrencyControl) \| [`DateControl`](../wiki/DateControl) \| [`TimeControl`](../wiki/TimeControl) \| [`DateTimeControl`](../wiki/DateTimeControl) \| [`OptionsControl`](../wiki/OptionsControl) \| [`FileControl`](../wiki/FileControl) \| [`ImageControl`](../wiki/ImageControl) \| [`NumberOfInstancesControl`](../wiki/NumberOfInstancesControl) \| [`TextControl`](../wiki/TextControl) \| [`TypographyControl`](../wiki/TypographyControl) \| [`RenderableEntityControl`](../wiki/RenderableEntityControl) \| [`RenderableSwitchContainerControl`](../wiki/RenderableSwitchContainerControl) \| [`RenderableCertaintyContainerControl`](../wiki/RenderableCertaintyContainerControl) \| [`RenderableRepeatingContainerControl`](../wiki/RenderableRepeatingContainerControl) & { `dynamicAttributes?`: `string`[] ; `loading?`: `boolean`  }
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:471
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:477
 
 ___
 
@@ -540,17 +541,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:475
-
-___
-
-### RenderableEntityControl
-
-Ƭ **RenderableEntityControl**: [`EntityControl`](../wiki/EntityControl)\<[`RenderableControl`](../wiki/Exports#renderablecontrol)\>
-
-#### Defined in
-
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:452
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:481
 
 ___
 
@@ -576,11 +567,11 @@ ___
 
 ### SessionObservable
 
-Ƭ **SessionObservable**: `Partial`\<[`SessionInstance`](../wiki/SessionInstance)\>
+Ƭ **SessionObservable**: `Partial`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Defined in
 
-[src/core/init.ts:444](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/init.ts#L444)
+[src/core/init.ts:479](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/init.ts#L479)
 
 ___
 
@@ -602,49 +593,49 @@ node_modules/@decisively-io/types-interview/dist/core.d.ts:2
 
 | Name | Type |
 | :------ | :------ |
-| `BOOLEAN` | \{ `id`: ``"boolean"`` = "boolean"; `name`: ``"Checkbox"`` = "Checkbox" } |
+| `BOOLEAN` | { `id`: ``"boolean"`` = "boolean"; `name`: ``"Checkbox"`` = "Checkbox" } |
 | `BOOLEAN.id` | ``"boolean"`` |
 | `BOOLEAN.name` | ``"Checkbox"`` |
-| `CERTAINTY_CONTAINER` | \{ `id`: ``"certainty_container"`` = "certainty\_container"; `name`: ``"Certainty Container"`` = "Certainty Container" } |
+| `CERTAINTY_CONTAINER` | { `id`: ``"certainty_container"`` = "certainty\_container"; `name`: ``"Certainty Container"`` = "Certainty Container" } |
 | `CERTAINTY_CONTAINER.id` | ``"certainty_container"`` |
 | `CERTAINTY_CONTAINER.name` | ``"Certainty Container"`` |
-| `CURRENCY` | \{ `id`: ``"currency"`` = "currency"; `name`: ``"Currency"`` = "Currency" } |
+| `CURRENCY` | { `id`: ``"currency"`` = "currency"; `name`: ``"Currency"`` = "Currency" } |
 | `CURRENCY.id` | ``"currency"`` |
 | `CURRENCY.name` | ``"Currency"`` |
-| `DATE` | \{ `id`: ``"date"`` = "date"; `name`: ``"Date"`` = "Date" } |
+| `DATE` | { `id`: ``"date"`` = "date"; `name`: ``"Date"`` = "Date" } |
 | `DATE.id` | ``"date"`` |
 | `DATE.name` | ``"Date"`` |
-| `ENTITY` | \{ `id`: ``"entity"`` = "entity"; `name`: ``"Entity"`` = "Entity" } |
+| `ENTITY` | { `id`: ``"entity"`` = "entity"; `name`: ``"Entity"`` = "Entity" } |
 | `ENTITY.id` | ``"entity"`` |
 | `ENTITY.name` | ``"Entity"`` |
-| `NUMBER_OF_INSTANCES` | \{ `id`: ``"number_of_instances"`` = "number\_of\_instances"; `name`: ``"Number Of Instances"`` = "Number Of Instances" } |
+| `NUMBER_OF_INSTANCES` | { `id`: ``"number_of_instances"`` = "number\_of\_instances"; `name`: ``"Number Of Instances"`` = "Number Of Instances" } |
 | `NUMBER_OF_INSTANCES.id` | ``"number_of_instances"`` |
 | `NUMBER_OF_INSTANCES.name` | ``"Number Of Instances"`` |
-| `OPTIONS` | \{ `id`: ``"options"`` = "options"; `name`: ``"Select"`` = "Select" } |
+| `OPTIONS` | { `id`: ``"options"`` = "options"; `name`: ``"Select"`` = "Select" } |
 | `OPTIONS.id` | ``"options"`` |
 | `OPTIONS.name` | ``"Select"`` |
-| `RADIO` | \{ `id`: ``"radio"`` = "radio"; `name`: ``"Radio Buttons"`` = "Radio Buttons" } |
+| `RADIO` | { `id`: ``"radio"`` = "radio"; `name`: ``"Radio Buttons"`` = "Radio Buttons" } |
 | `RADIO.id` | ``"radio"`` |
 | `RADIO.name` | ``"Radio Buttons"`` |
-| `REPEATING_CONTAINER` | \{ `id`: ``"repeating_container"`` = "repeating\_container"; `name`: ``"Repeat Container"`` = "Repeat Container" } |
+| `REPEATING_CONTAINER` | { `id`: ``"repeating_container"`` = "repeating\_container"; `name`: ``"Repeat Container"`` = "Repeat Container" } |
 | `REPEATING_CONTAINER.id` | ``"repeating_container"`` |
 | `REPEATING_CONTAINER.name` | ``"Repeat Container"`` |
-| `SWITCH_CONTAINER` | \{ `id`: ``"switch_container"`` = "switch\_container"; `name`: ``"Switch Container"`` = "Switch Container" } |
+| `SWITCH_CONTAINER` | { `id`: ``"switch_container"`` = "switch\_container"; `name`: ``"Switch Container"`` = "Switch Container" } |
 | `SWITCH_CONTAINER.id` | ``"switch_container"`` |
 | `SWITCH_CONTAINER.name` | ``"Switch Container"`` |
-| `TEXT` | \{ `id`: ``"text"`` = "text"; `name`: ``"Text"`` = "Text" } |
+| `TEXT` | { `id`: ``"text"`` = "text"; `name`: ``"Text"`` = "Text" } |
 | `TEXT.id` | ``"text"`` |
 | `TEXT.name` | ``"Text"`` |
-| `TIME` | \{ `id`: ``"time"`` = "time"; `name`: ``"Time"`` = "Time" } |
+| `TIME` | { `id`: ``"time"`` = "time"; `name`: ``"Time"`` = "Time" } |
 | `TIME.id` | ``"time"`` |
 | `TIME.name` | ``"Time"`` |
-| `TYPOGRAPHY` | \{ `id`: ``"typography"`` = "typography"; `name`: ``"Typography"`` = "Typography" } |
+| `TYPOGRAPHY` | { `id`: ``"typography"`` = "typography"; `name`: ``"Typography"`` = "Typography" } |
 | `TYPOGRAPHY.id` | ``"typography"`` |
 | `TYPOGRAPHY.name` | ``"Typography"`` |
 
 #### Defined in
 
-[src/core/constants.ts:1](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/constants.ts#L1)
+[src/core/constants.ts:1](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/constants.ts#L1)
 
 ___
 
@@ -713,13 +704,13 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:65](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/init.ts#L65)
+[src/core/init.ts:66](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/init.ts#L66)
 
 ## Functions
 
 ### back
 
-▸ **back**(`api`, `project`, `session`, `overrides?`): `Promise`\<[`Session`](../wiki/Session)\>
+▸ **back**(`api`, `project`, `session`, `overrides?`): `Promise`<[`Session`](../wiki/Session)\>
 
 #### Parameters
 
@@ -732,11 +723,11 @@ ___
 
 #### Returns
 
-`Promise`\<[`Session`](../wiki/Session)\>
+`Promise`<[`Session`](../wiki/Session)\>
 
 #### Defined in
 
-[src/core/api.ts:77](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/api.ts#L77)
+[src/core/api.ts:77](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/api.ts#L77)
 
 ___
 
@@ -759,7 +750,7 @@ Strips out any common attributes between two AttributeValues objects, reporting 
 
 #### Defined in
 
-[src/core/helpers.ts:57](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/helpers.ts#L57)
+[src/core/helpers.ts:57](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/helpers.ts#L57)
 
 ___
 
@@ -779,13 +770,13 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:19](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/helpers.ts#L19)
+[src/core/helpers.ts:19](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/helpers.ts#L19)
 
 ___
 
 ### create
 
-▸ **create**(`api`, `project`, `options?`): `Promise`\<[`Session`](../wiki/Session)\>
+▸ **create**(`api`, `project`, `options?`): `Promise`<[`Session`](../wiki/Session)\>
 
 #### Parameters
 
@@ -797,11 +788,11 @@ ___
 
 #### Returns
 
-`Promise`\<[`Session`](../wiki/Session)\>
+`Promise`<[`Session`](../wiki/Session)\>
 
 #### Defined in
 
-[src/core/api.ts:15](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/api.ts#L15)
+[src/core/api.ts:15](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/api.ts#L15)
 
 ___
 
@@ -814,7 +805,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `baseURL` | `string` |
-| `overrides` | `AxiosRequestConfig`\<`any`\> |
+| `overrides` | `AxiosRequestConfig`<`any`\> |
 
 #### Returns
 
@@ -822,13 +813,13 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:25](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/init.ts#L25)
+[src/core/init.ts:26](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/init.ts#L26)
 
 ___
 
 ### exportTimeline
 
-▸ **exportTimeline**(`api`, `project`, `session`): `Promise`\<`string`\>
+▸ **exportTimeline**(`api`, `project`, `session`): `Promise`<`string`\>
 
 #### Parameters
 
@@ -840,11 +831,11 @@ ___
 
 #### Returns
 
-`Promise`\<`string`\>
+`Promise`<`string`\>
 
 #### Defined in
 
-[src/core/api.ts:104](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/api.ts#L104)
+[src/core/api.ts:104](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/api.ts#L104)
 
 ___
 
@@ -865,7 +856,7 @@ ___
 
 #### Defined in
 
-[src/core/formatting.ts:76](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/formatting.ts#L76)
+[src/core/formatting.ts:76](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/formatting.ts#L76)
 
 ___
 
@@ -885,7 +876,7 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:23](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/helpers.ts#L23)
+[src/core/helpers.ts:23](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/helpers.ts#L23)
 
 ___
 
@@ -905,7 +896,7 @@ ___
 
 #### Defined in
 
-[src/core/formatting.ts:25](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/formatting.ts#L25)
+[src/core/formatting.ts:25](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/formatting.ts#L25)
 
 ___
 
@@ -927,7 +918,7 @@ newDataCallback : SDK -{updated session}-> Renderer :
 | :------ | :------ | :------ |
 | `host` | `string` | `undefined` |
 | `path` | `string` \| `string`[] | `defaultPath` |
-| `overrides` | `AxiosRequestConfig`\<`any`\> | `{}` |
+| `overrides` | `AxiosRequestConfig`<`any`\> | `{}` |
 
 #### Returns
 
@@ -935,7 +926,7 @@ newDataCallback : SDK -{updated session}-> Renderer :
 
 #### Defined in
 
-[src/core/init.ts:455](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/init.ts#L455)
+[src/core/init.ts:490](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/init.ts#L490)
 
 ___
 
@@ -962,7 +953,7 @@ NOTE: goals with zero dependencies will have themselves in the dependency list,
 
 #### Defined in
 
-[src/core/helpers.ts:82](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/helpers.ts#L82)
+[src/core/helpers.ts:82](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/helpers.ts#L82)
 
 ___
 
@@ -983,13 +974,13 @@ ___
 
 #### Defined in
 
-[src/core/util.ts:21](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/util.ts#L21)
+[src/core/util.ts:37](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/util.ts#L37)
 
 ___
 
 ### load
 
-▸ **load**(`api`, `project`, `session`): `Promise`\<[`Session`](../wiki/Session)\>
+▸ **load**(`api`, `project`, `session`): `Promise`<[`Session`](../wiki/Session)\>
 
 #### Parameters
 
@@ -1001,17 +992,17 @@ ___
 
 #### Returns
 
-`Promise`\<[`Session`](../wiki/Session)\>
+`Promise`<[`Session`](../wiki/Session)\>
 
 #### Defined in
 
-[src/core/api.ts:31](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/api.ts#L31)
+[src/core/api.ts:31](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/api.ts#L31)
 
 ___
 
 ### navigate
 
-▸ **navigate**(`api`, `project`, `session`, `step`, `overrides?`): `Promise`\<[`Session`](../wiki/Session)\>
+▸ **navigate**(`api`, `project`, `session`, `step`, `overrides?`): `Promise`<[`Session`](../wiki/Session)\>
 
 Navigate to a specific step.
 
@@ -1027,11 +1018,11 @@ Navigate to a specific step.
 
 #### Returns
 
-`Promise`\<[`Session`](../wiki/Session)\>
+`Promise`<[`Session`](../wiki/Session)\>
 
 #### Defined in
 
-[src/core/api.ts:66](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/api.ts#L66)
+[src/core/api.ts:66](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/api.ts#L66)
 
 ___
 
@@ -1052,7 +1043,7 @@ ___
 
 #### Defined in
 
-[src/core/placeholders.ts:10](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/placeholders.ts#L10)
+[src/core/placeholders.ts:10](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/placeholders.ts#L10)
 
 ___
 
@@ -1065,7 +1056,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `text` | `string` |
-| `replacements` | [`AttributeValues`](../wiki/Exports#attributevalues) \| `Record`\<`string`, `string`\> |
+| `replacements` | [`AttributeValues`](../wiki/Exports#attributevalues) \| `Record`<`string`, `string`\> |
 | `state?` | [`State`](../wiki/State)[] |
 | `locale?` | `string` |
 
@@ -1075,7 +1066,7 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:32](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/helpers.ts#L32)
+[src/core/helpers.ts:32](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/helpers.ts#L32)
 
 ___
 
@@ -1096,13 +1087,13 @@ ___
 
 #### Defined in
 
-[src/core/helpers.ts:7](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/helpers.ts#L7)
+[src/core/helpers.ts:7](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/helpers.ts#L7)
 
 ___
 
 ### simulate
 
-▸ **simulate**(`api`, `project`, `release`, `session`, `data`): `Promise`\<[`AttributeValues`](../wiki/Exports#attributevalues)\>
+▸ **simulate**(`api`, `project`, `release`, `session`, `data`): `Promise`<[`AttributeValues`](../wiki/Exports#attributevalues)\>
 
 #### Parameters
 
@@ -1112,21 +1103,21 @@ ___
 | `project` | `string` |
 | `release` | `string` |
 | `session` | `string` |
-| `data` | `Partial`\<[`Simulate`](../wiki/Simulate)\> |
+| `data` | `Partial`<[`Simulate`](../wiki/Simulate)\> |
 
 #### Returns
 
-`Promise`\<[`AttributeValues`](../wiki/Exports#attributevalues)\>
+`Promise`<[`AttributeValues`](../wiki/Exports#attributevalues)\>
 
 #### Defined in
 
-[src/core/api.ts:82](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/api.ts#L82)
+[src/core/api.ts:82](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/api.ts#L82)
 
 ___
 
 ### submit
 
-▸ **submit**(`api`, `project`, `session`, `data`, `navigate`, `overrides?`, `releaseId?`): `Promise`\<[`Session`](../wiki/Session)\>
+▸ **submit**(`api`, `project`, `session`, `data`, `navigate`, `overrides?`, `releaseId?`): `Promise`<[`Session`](../wiki/Session)\>
 
 Submit response for current step.
 
@@ -1144,11 +1135,11 @@ Submit response for current step.
 
 #### Returns
 
-`Promise`\<[`Session`](../wiki/Session)\>
+`Promise`<[`Session`](../wiki/Session)\>
 
 #### Defined in
 
-[src/core/api.ts:43](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/api.ts#L43)
+[src/core/api.ts:43](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/api.ts#L43)
 
 ___
 
@@ -1169,4 +1160,4 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:50](https://github.com/decisively-io/interview-sdk/blob/f6db7d4fe75725b9f8c20635e596acbe8e6225bb/src/core/init.ts#L50)
+[src/core/init.ts:51](https://github.com/decisively-io/interview-sdk/blob/3794ad3/src/core/init.ts#L51)

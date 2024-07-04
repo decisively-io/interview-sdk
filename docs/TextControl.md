@@ -187,7 +187,7 @@ ___
 
 ### variation
 
-• `Optional` **variation**: \{ `type`: ``"email"``  } \| \{ `type`: ``"number"``  }
+• `Optional` **variation**: { `type`: ``"email"``  } \| { `type`: ``"number"``  }
 
 #### Defined in
 

@@ -18,7 +18,7 @@ The list of controls to be displayed on the screen
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:81
+node_modules/@decisively-io/types-interview/dist/core.d.ts:82
 
 ___
 
@@ -30,7 +30,7 @@ Unique ID of the screen
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:79
+node_modules/@decisively-io/types-interview/dist/core.d.ts:80
 
 ___
 
@@ -42,4 +42,4 @@ The title of the screen. This may differ from the title in the step
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:77
+node_modules/@decisively-io/types-interview/dist/core.d.ts:78

@@ -1,3 +1,7 @@
+## 0.9.0
+
+- support for dynamic text within entity controls
+
 ## 0.8.1
 
 - only format as datetime if there is a date and time

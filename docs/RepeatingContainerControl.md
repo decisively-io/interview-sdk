@@ -1,4 +1,4 @@
-# Interface: RepeatingContainerControl\<C\>
+# Interface: RepeatingContainerControl<C\>
 
 ## Type parameters
 

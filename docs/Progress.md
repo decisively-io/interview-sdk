@@ -17,7 +17,7 @@ The percentage completed, between 0-100
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:87
+node_modules/@decisively-io/types-interview/dist/core.d.ts:88
 
 ___
 
@@ -29,4 +29,4 @@ The estimated time remaining for the interview, in seconds
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:85
+node_modules/@decisively-io/types-interview/dist/core.d.ts:86

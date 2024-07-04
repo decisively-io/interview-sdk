@@ -2,7 +2,7 @@
 
 ## Hierarchy
 
-- [`CertaintyContainerControl`](../wiki/CertaintyContainerControl)\<[`RenderableControl`](../wiki/Exports#renderablecontrol)\>
+- [`CertaintyContainerControl`](../wiki/CertaintyContainerControl)<[`RenderableControl`](../wiki/Exports#renderablecontrol)\>
 
   ↳ **`RenderableCertaintyContainerControl`**
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:457
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:463
 
 ___
 

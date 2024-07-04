@@ -28,27 +28,27 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:93
+node_modules/@decisively-io/types-interview/dist/core.d.ts:94
 
 ___
 
 ### data
 
-• **data**: `Record`\<`string`, [`AttributeData`](../wiki/AttributeData)\> & [`Parent`](../wiki/Parent)
+• **data**: `Record`<`string`, [`AttributeData`](../wiki/AttributeData)\> & [`Parent`](../wiki/Parent)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:94
+node_modules/@decisively-io/types-interview/dist/core.d.ts:95
 
 ___
 
 ### explanations
 
-• `Optional` **explanations**: `Record`\<`string`, `string`\>
+• `Optional` **explanations**: `Record`<`string`, `string`\>
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:100
+node_modules/@decisively-io/types-interview/dist/core.d.ts:101
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:101
+node_modules/@decisively-io/types-interview/dist/core.d.ts:102
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:98
+node_modules/@decisively-io/types-interview/dist/core.d.ts:99
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:99
+node_modules/@decisively-io/types-interview/dist/core.d.ts:100
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:97
+node_modules/@decisively-io/types-interview/dist/core.d.ts:98
 
 ___
 
@@ -100,7 +100,7 @@ Unique ID of the session
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:91
+node_modules/@decisively-io/types-interview/dist/core.d.ts:92
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:95
+node_modules/@decisively-io/types-interview/dist/core.d.ts:96
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:92
+node_modules/@decisively-io/types-interview/dist/core.d.ts:93
 
 ___
 
@@ -130,4 +130,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:96
+node_modules/@decisively-io/types-interview/dist/core.d.ts:97

@@ -2,6 +2,7 @@ import type { AttributeValues, ProjectId, ReleaseId, SessionId, Simulate, State 
 import type { AxiosInstance } from "axios";
 import set from "lodash.set";
 import { simulate } from "./api";
+import { getEntityIds } from "./util";
 
 export type UnknownValues = Record<string, Partial<Simulate>>;
 
@@ -19,14 +20,29 @@ export interface DynamicReplacementQueries {
 export const buildDynamicReplacementQueries = (
   state: State[],
   attribValues: AttributeValues,
+  parent?: string,
 ): DynamicReplacementQueries => {
   const knownValues: AttributeValues = { ...attribValues };
   const allData: AttributeValues = { ...attribValues };
   const unknownsWithSatisfiedDependencies: Partial<Simulate>[] = [];
 
+  const resolvedState: State[] = [];
+
   for (const stateObj of state) {
     if (allData[stateObj.id] === undefined && stateObj.value) {
       allData[stateObj.id] = stateObj.value;
+    }
+    if (stateObj.instanceTemplate) {
+      const ids = getEntityIds(stateObj.instanceTemplate, allData);
+      for (const id of ids) {
+        resolvedState.push({
+          ...stateObj,
+          id: stateObj.id.replace("@id", id),
+          dependencies: stateObj.dependencies?.map((dep) => dep.replace("@id", id)),
+        });
+      }
+    } else {
+      resolvedState.push(stateObj);
     }
   }
 
@@ -34,11 +50,13 @@ export const buildDynamicReplacementQueries = (
 
   const unknownWithMissingDependencies = [];
 
-  for (const stateObj of state) {
+  for (const stateObj of resolvedState) {
     const { id: goal, dependencies } = stateObj;
     if (goal) {
       if (dependencies && dependencies.length > 0) {
-        const data: AttributeValues = {};
+        const data: any = {
+          "@parent": parent,
+        };
         let userInputInvolved = false;
         const unknownDependencies = dependencies.reduce((unknownDependencies, dep) => {
           const value = allData[dep];
@@ -63,7 +81,9 @@ export const buildDynamicReplacementQueries = (
                 idParts.push(parts.shift());
                 const index = parts.shift();
                 idParts.push(index);
-                set(data, `${idParts.join(".")}.@id`, Number.parseInt(index as any) + 1);
+                const path = idParts.join(".");
+                const id = allData[`${path}.@id`];
+                set(data, `${path}.@id`, id ?? Number.parseInt(index as any) + 1);
               }
               set(data, key, allData[key]);
 

@@ -1,4 +1,10 @@
-import type { AttributeValues, Control, State } from "@decisively-io/types-interview";
+import type {
+  AttributeValues,
+  Control,
+  EntityControl,
+  RenderableEntityControl,
+  State,
+} from "@decisively-io/types-interview";
 
 export const buildUrl = (...args: (string | undefined)[]) => {
   return [...args.filter((a) => !!a)].join("/");
@@ -17,6 +23,16 @@ export const stateToData = (state: State[]): AttributeValues => {
 
 export const isStrNotNullOrBlank = (str: any): boolean => !/^\s*$/.test(str || "");
 export const isStrNullOrBlank = (str: any): boolean => !isStrNotNullOrBlank(str);
+
+export const getEntityIds = (entity: string, values: AttributeValues): string[] => {
+  const regex = new RegExp(`${entity}\\.(.*)\\.@id`);
+  return Object.entries(values).reduce((ids, [key, value]) => {
+    if (typeof value === "string" && regex.test(key)) {
+      ids.push(value);
+    }
+    return ids;
+  }, [] as string[]);
+};
 
 export const iterateControls = (controls: Control[], func: (control: Control) => void) => {
   for (const control of controls) {
@@ -44,8 +60,12 @@ export const iterateControls = (controls: Control[], func: (control: Control) =>
         iterateControls(ctrl.uncertain, func);
       }
     } else if (control.type === "entity") {
-      const ctrl = control;
-      if (ctrl.template) {
+      const ctrl = control as RenderableEntityControl;
+      if (ctrl.instances) {
+        for (const instance of ctrl.instances) {
+          iterateControls(instance.controls, func);
+        }
+      } else if (ctrl.template) {
         iterateControls(ctrl.template, func);
       }
     }

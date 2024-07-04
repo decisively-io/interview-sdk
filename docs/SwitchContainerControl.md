@@ -1,4 +1,4 @@
-# Interface: SwitchContainerControl\<C\>
+# Interface: SwitchContainerControl<C\>
 
 ## Type parameters
 

@@ -1,8 +1,9 @@
 import type {
-  AttributeData,
   AttributeValue,
   AttributeValues,
   Control,
+  EntityControlInstance,
+  RenderableEntityControl,
   ResponseData,
   Screen,
   Session,
@@ -20,7 +21,7 @@ import { ControlTypesInfo } from "./constants";
 import { type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
 import type { Overrides, SessionConfig } from "./types";
-import { buildUrl, iterateControls, range } from "./util";
+import { buildUrl, getEntityIds, iterateControls, range } from "./util";
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
   const { transformRequest = [] } = overrides;
@@ -166,8 +167,38 @@ export class SessionInstance implements Session {
     }
   }
 
+  /**
+   * All entity controls have a template property but we need to actually duplicate it into an `instances` array
+   * in order for dynamic text processing to work
+   */
+  private handleEntityInstances(data: any) {
+    iterateControls(this.screen.controls, (control) => {
+      if (control.type === "entity") {
+        const entityControl = control as RenderableEntityControl;
+        const entities = getEntityIds(entityControl.entity, data);
+        entityControl.instances = entities.map((id: string) => {
+          const controls = structuredClone(entityControl.template);
+          iterateControls(controls, (control: any) => {
+            if (typeof control.templateText === "string") {
+              control.templateText = control.templateText.replace(/@id/g, id);
+            }
+            if (Array.isArray(control.dynamicAttributes)) {
+              control.dynamicAttributes = control.dynamicAttributes.map((attr: string) => attr.replace(/@id/g, id));
+            }
+          });
+
+          return {
+            id: id,
+            controls: controls,
+          } satisfies EntityControlInstance;
+        });
+      }
+    });
+  }
+
   chOnScreenData(data: AttributeValues) {
     Object.assign(this.internals.userValues, data);
+    this.handleEntityInstances(this.internals.userValues);
     // call this first so the debounce doesn't fire during unknown calculation
     this.updateDynamicValues();
     this.calculateUnknowns();
@@ -183,7 +214,11 @@ export class SessionInstance implements Session {
         !isEqual(this.internals.prevUserValues, this.internals.userValues) &&
         Object.keys(this.internals.userValues).length > 0
       ) {
-        const replacementQueries = buildDynamicReplacementQueries(state, this.internals.userValues);
+        const replacementQueries = buildDynamicReplacementQueries(
+          state,
+          this.internals.userValues,
+          this.session.data["@parent"],
+        );
         if (replacementQueries.unknownValues.length || Object.keys(replacementQueries.knownValues).length > 0) {
           Object.assign(this.internals.replacements, replacementQueries?.knownValues);
 

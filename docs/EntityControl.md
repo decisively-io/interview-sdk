@@ -1,4 +1,4 @@
-# Interface: EntityControl\<C\>
+# Interface: EntityControl<C\>
 
 Collect information about instances (of an entity) within a tabular structure.
 
@@ -13,6 +13,8 @@ Collect information about instances (of an entity) within a tabular structure.
 - `BaseControl`
 
   ↳ **`EntityControl`**
+
+  ↳↳ [`RenderableEntityControl`](../wiki/RenderableEntityControl)
 
 ## Table of contents
 
