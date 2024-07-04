@@ -207,9 +207,7 @@ export class SessionInstance implements Session {
   private calculateUnknowns() {
     const { state } = this.session;
 
-    const screen = this.screen;
-
-    if (state && screen) {
+    if (state && this.screen) {
       if (
         !isEqual(this.internals.prevUserValues, this.internals.userValues) &&
         Object.keys(this.internals.userValues).length > 0
@@ -236,7 +234,7 @@ export class SessionInstance implements Session {
 
           const loading = Object.keys(this.internals.unknownsRequiringSimulate).length > 0;
 
-          const newScreen = produce(screen, (draft) => {
+          const newScreen = produce(this.screen, (draft) => {
             iterateControls(draft.controls, (control: any) => {
               if (control.dynamicAttributes && Object.keys(this.internals.unknownsRequiringSimulate).length > 0) {
                 if (
@@ -280,9 +278,7 @@ export class SessionInstance implements Session {
 
         // are we still the last request?
         if (this.internals.latestRequest === requestId) {
-          const replacedSession = await produce<SessionObservable>(this.session, async (draft) => {
-            const { screen } = draft;
-
+          const newScreen = produce(this.screen, (screen) => {
             // ask the backend to solve for any dynamic attributes, based on the entered attributes
             Object.assign(this.internals.replacements, result);
 
@@ -300,14 +296,10 @@ export class SessionInstance implements Session {
 
           this.internals.unknownsAlreadySimulated = { ...this.internals.unknownsRequiringSimulate };
           this.internals.unknownsRequiringSimulate = {};
-          if (replacedSession.screen) {
-            this.triggerUpdate({
-              externalLoading: false,
-              screen: replacedSession.screen,
-            });
-          } else {
-            this.triggerUpdate({ externalLoading: false });
-          }
+          this.triggerUpdate({
+            externalLoading: false,
+            screen: newScreen,
+          });
         }
       }
     }
@@ -335,8 +327,8 @@ export class SessionInstance implements Session {
           unknownsAlreadySimulated: {},
           latestRequest: undefined,
         };
+        this.handleEntityInstances({});
       }
-
       /*this.processedScreen = produce(session.screen as Screen, (draft) => {
         iterateControls(draft.controls, (control: any) => {
           postProcessControl(control, this.internals.replacements);
