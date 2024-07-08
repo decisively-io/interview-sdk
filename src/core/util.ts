@@ -11,7 +11,7 @@ import type {
   State,
   TypographyControl,
 } from "@decisively-io/types-interview";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { v4 as baseUuid } from "uuid";
 
 export const uuid = baseUuid;
@@ -204,7 +204,9 @@ const getDefaultControlValue = (
   }
 };
 
-export const formatDate = format;
+export const formatDate: typeof format = (argument, ...other) => {
+  return format(typeof argument === "string" ? parseISO(argument) : argument, ...other);
+};
 
 // turn deep object into flat . delimted object
 export const flatten = (value: any) => {
