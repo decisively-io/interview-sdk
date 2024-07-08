@@ -204,8 +204,12 @@ const getDefaultControlValue = (
   }
 };
 
-export const formatDate: typeof format = (argument, ...other) => {
-  return format(typeof argument === "string" ? parseISO(argument) : argument, ...other);
+export const formatDate = (
+  argument: string | Date | number,
+  dateFormat: string,
+  options?: Parameters<typeof format>[2],
+) => {
+  return format(typeof argument === "string" ? parseISO(argument) : argument, dateFormat, options);
 };
 
 // turn deep object into flat . delimted object
