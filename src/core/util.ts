@@ -2,6 +2,7 @@ import type {
   AttributeValues,
   Control,
   EntityControl,
+  EntityControlInstance,
   RenderableEntityControl,
   State,
 } from "@decisively-io/types-interview";
@@ -70,4 +71,23 @@ export const iterateControls = (controls: Control[], func: (control: Control) =>
       }
     }
   }
+};
+
+export const applyInstancesToEntityControl = (control: RenderableEntityControl, instances: string[]) => {
+  control.instances = instances.map((id: string) => {
+    const controls = structuredClone(control.template);
+    iterateControls(controls, (control: any) => {
+      if (typeof control.templateText === "string") {
+        control.templateText = control.templateText.replace(/@id/g, id);
+      }
+      if (Array.isArray(control.dynamicAttributes)) {
+        control.dynamicAttributes = control.dynamicAttributes.map((attr: string) => attr.replace(/@id/g, id));
+      }
+    });
+
+    return {
+      id: id,
+      controls: controls,
+    } satisfies EntityControlInstance;
+  });
 };

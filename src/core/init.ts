@@ -21,7 +21,7 @@ import { ControlTypesInfo } from "./constants";
 import { type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
 import type { Overrides, SessionConfig } from "./types";
-import { buildUrl, getEntityIds, iterateControls, range } from "./util";
+import { applyInstancesToEntityControl, buildUrl, getEntityIds, iterateControls, range } from "./util";
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
   const { transformRequest = [] } = overrides;
@@ -176,22 +176,7 @@ export class SessionInstance implements Session {
       if (control.type === "entity") {
         const entityControl = control as RenderableEntityControl;
         const entities = getEntityIds(entityControl.entity, data);
-        entityControl.instances = entities.map((id: string) => {
-          const controls = structuredClone(entityControl.template);
-          iterateControls(controls, (control: any) => {
-            if (typeof control.templateText === "string") {
-              control.templateText = control.templateText.replace(/@id/g, id);
-            }
-            if (Array.isArray(control.dynamicAttributes)) {
-              control.dynamicAttributes = control.dynamicAttributes.map((attr: string) => attr.replace(/@id/g, id));
-            }
-          });
-
-          return {
-            id: id,
-            controls: controls,
-          } satisfies EntityControlInstance;
-        });
+        applyInstancesToEntityControl(entityControl, entities);
       }
     });
   }
