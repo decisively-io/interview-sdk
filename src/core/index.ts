@@ -7,4 +7,11 @@ export * from "./helpers";
 export * from "./constants";
 export * from "./formatting";
 
-export { iterateControls, applyInstancesToEntityControl } from "./util";
+export {
+  iterateControls,
+  applyInstancesToEntityControl,
+  uuid,
+  formatDate,
+  deriveDefaultControlsValue,
+  flatten,
+} from "./util";

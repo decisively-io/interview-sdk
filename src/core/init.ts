@@ -21,7 +21,15 @@ import { ControlTypesInfo } from "./constants";
 import { type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
 import type { Overrides, SessionConfig } from "./types";
-import { applyInstancesToEntityControl, buildUrl, getEntityIds, iterateControls, range } from "./util";
+import {
+  applyInstancesToEntityControl,
+  buildUrl,
+  deriveDefaultControlsValue,
+  flatten,
+  getEntityIds,
+  iterateControls,
+  range,
+} from "./util";
 
 export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig = {}) => {
   const { transformRequest = [] } = overrides;
@@ -304,15 +312,16 @@ export class SessionInstance implements Session {
         }
       }
       if (prevSession?.screen?.id !== session.screen?.id) {
+        const userValues = flatten(deriveDefaultControlsValue(session.screen.controls));
         this.internals = {
-          userValues: {},
-          prevUserValues: {},
+          userValues: userValues,
+          prevUserValues: userValues,
           replacements: replacements,
           unknownsRequiringSimulate: {},
           unknownsAlreadySimulated: {},
           latestRequest: undefined,
         };
-        this.handleEntityInstances({});
+        this.handleEntityInstances(userValues);
       }
       /*this.processedScreen = produce(session.screen as Screen, (draft) => {
         iterateControls(draft.controls, (control: any) => {

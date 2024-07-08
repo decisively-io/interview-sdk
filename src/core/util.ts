@@ -1,11 +1,20 @@
 import type {
   AttributeValues,
   Control,
+  ControlsValue,
   EntityControl,
   EntityControlInstance,
+  FileControl,
+  ImageControl,
+  RenderableControl,
   RenderableEntityControl,
   State,
+  TypographyControl,
 } from "@decisively-io/types-interview";
+import { format } from "date-fns";
+import { v4 as baseUuid } from "uuid";
+
+export const uuid = baseUuid;
 
 export const buildUrl = (...args: (string | undefined)[]) => {
   return [...args.filter((a) => !!a)].join("/");
@@ -90,4 +99,129 @@ export const applyInstancesToEntityControl = (control: RenderableEntityControl, 
       controls: controls,
     } satisfies EntityControlInstance;
   });
+};
+export const deriveDefaultControlsValue = (controls: RenderableControl[]): ControlsValue => {
+  return controls.reduce((result, control) => {
+    switch (control.type) {
+      case "boolean":
+      case "currency":
+      case "date":
+      case "time":
+      case "datetime":
+      case "options":
+      case "text":
+        result[control.attribute] = getDefaultControlValue(control);
+        break;
+      case "number_of_instances":
+        result[control.entity] = getDefaultControlValue(control);
+        break;
+
+      case "entity": {
+        const { min, value, template, entityId } = control;
+
+        const entities = [];
+        const entityCount = Math.max(min || 0, value?.length || 0);
+        for (let i = 0; i < entityCount; i++) {
+          const existingEntity = value?.[i];
+          const resolveEntityId = existingEntity?.["@id"] || entityId || uuid();
+          entities.push({
+            "@id": resolveEntityId,
+            ...deriveDefaultControlsValue(template),
+            ...existingEntity,
+          });
+        }
+
+        result[control.entity] = entities;
+        break;
+      }
+
+      case "switch_container": {
+        const controls = control.branch === "true" ? control.outcome_true : control.outcome_false;
+        if (controls) {
+          Object.assign(result, deriveDefaultControlsValue(controls));
+        }
+        break;
+      }
+
+      case "repeating_container": {
+        Object.assign(result, deriveDefaultControlsValue(control.controls));
+
+        break;
+      }
+
+      default:
+        break;
+    }
+    return result;
+  }, {} as ControlsValue);
+};
+
+const getDefaultControlValue = (
+  c: Exclude<Control, EntityControl | TypographyControl | ImageControl | FileControl>,
+): ControlsValue[keyof ControlsValue] => {
+  switch (c.type) {
+    case "boolean":
+      return c.value === undefined ? c.default : c.value;
+
+    case "currency":
+      return c.value === undefined ? c.default : c.value;
+
+    case "date": {
+      const valueRaw = c.value === undefined ? c.default : c.value;
+
+      return valueRaw === "now" ? format(new Date(), "yyyy-MM-dd") : valueRaw;
+    }
+
+    case "time": {
+      const valueRaw = c.value === undefined ? c.default : c.value;
+
+      return valueRaw === "now" ? format(new Date(), "HH:mm:ss") : valueRaw;
+    }
+
+    case "datetime":
+      return c.value === undefined ? c.default : c.value;
+
+    case "options":
+      return c.value === undefined ? c.default : c.value;
+
+    case "number_of_instances":
+      return (() => {
+        if (c.value !== undefined && c.value !== null) return c.value.length;
+        if (c.default !== undefined) return c.default.length;
+
+        return c.min ?? 0;
+      })();
+
+    case "text": {
+      const v = c.value === undefined ? c.default : c.value;
+
+      // additional stringification is here, because we might get
+      // number from server
+      return v == null || v === undefined ? v : String(v);
+    }
+
+    default:
+  }
+};
+
+export const formatDate = format;
+
+// turn deep object into flat . delimted object
+export const flatten = (value: any) => {
+  const result: Record<string, any> = {};
+
+  const recurse = (obj: any, path: string[] = []) => {
+    if (typeof obj !== "object" || obj === null) {
+      result[path.join(".")] = obj;
+      return;
+    }
+
+    for (const [key, value] of Object.entries(obj)) {
+      recurse(value, [...path, key]);
+    }
+  };
+
+  recurse(value);
+
+  return result;
 };

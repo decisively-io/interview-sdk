@@ -16,7 +16,7 @@
 
 #### Defined in
 
-[src/core/formatting.ts:41](https://github.com/decisively-io/interview-sdk/blob/980ebc7/src/core/formatting.ts#L41)
+[src/core/formatting.ts:41](https://github.com/decisively-io/interview-sdk/blob/17c74d8/src/core/formatting.ts#L41)
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 #### Defined in
 
-[src/core/formatting.ts:43](https://github.com/decisively-io/interview-sdk/blob/980ebc7/src/core/formatting.ts#L43)
+[src/core/formatting.ts:43](https://github.com/decisively-io/interview-sdk/blob/17c74d8/src/core/formatting.ts#L43)
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 #### Defined in
 
-[src/core/formatting.ts:42](https://github.com/decisively-io/interview-sdk/blob/980ebc7/src/core/formatting.ts#L42)
+[src/core/formatting.ts:42](https://github.com/decisively-io/interview-sdk/blob/17c74d8/src/core/formatting.ts#L42)

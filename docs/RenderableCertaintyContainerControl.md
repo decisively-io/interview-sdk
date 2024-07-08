@@ -38,7 +38,7 @@ ___
 
 ### branch
 
-• `Optional` **branch**: ``"uncertain"`` \| ``"certain"``
+• `Optional` **branch**: ``"certain"`` \| ``"uncertain"``
 
 #### Defined in
 
