@@ -1,5 +1,6 @@
 import type { AttributeValue } from "@decisively-io/types-interview";
-import { format, isMatch, parse } from "date-fns";
+import { isMatch, parse } from "date-fns";
+import { formatDate } from "./util";
 
 export type Formatter = "currency" | `date ${string}` | "date";
 
@@ -96,7 +97,7 @@ export const formatValue = (value: AttributeValue, options?: FormatOptions) => {
           if (args[1]) {
             try {
               const fmt = args.slice(1);
-              result = format(result, fmt.join(" "));
+              result = formatDate(result, fmt.join(" "));
             } catch (error) {
               // Ignore all errors- we will just use the current string
             }

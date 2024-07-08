@@ -169,13 +169,13 @@ const getDefaultControlValue = (
     case "date": {
       const valueRaw = c.value === undefined ? c.default : c.value;
 
-      return valueRaw === "now" ? format(new Date(), "yyyy-MM-dd") : valueRaw;
+      return valueRaw === "now" ? formatDate(new Date(), "yyyy-MM-dd") : valueRaw;
     }
 
     case "time": {
       const valueRaw = c.value === undefined ? c.default : c.value;
 
-      return valueRaw === "now" ? format(new Date(), "HH:mm:ss") : valueRaw;
+      return valueRaw === "now" ? formatDate(new Date(), "HH:mm:ss") : valueRaw;
     }
 
     case "datetime":
