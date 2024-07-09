@@ -16,8 +16,17 @@
     "dev": "tsc -w",
     "deploy": "yarn build && yarn publish"
   },
-  "files": ["dist", "docs"],
-  "keywords": ["decisively", "interview", "api", "sdk", "typescript"],
+  "files": [
+    "dist",
+    "docs"
+  ],
+  "keywords": [
+    "decisively",
+    "interview",
+    "api",
+    "sdk",
+    "typescript"
+  ],
   "author": "Decisively",
   "license": "UNLICENSED",
   "devDependencies": {
@@ -39,7 +48,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@decisively-io/types-interview": "^0.5.1",
+    "@decisively-io/types-interview": "^0.5.2",
     "axios": "^0.26.1",
     "date-fns": "^2.28.0",
     "immer": "^9.0.12",
