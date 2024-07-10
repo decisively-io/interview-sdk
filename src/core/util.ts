@@ -83,6 +83,12 @@ export const iterateControls = (controls: Control[], func: (control: Control) =>
 };
 
 export const applyInstancesToEntityControl = (control: RenderableEntityControl, instances: string[]) => {
+  if (typeof control.min === "number") {
+    while (instances.length < control.min) {
+      instances.push(uuid());
+    }
+  }
+
   control.instances = instances.map((id: string) => {
     const controls = structuredClone(control.template);
     iterateControls(controls, (control: any) => {
