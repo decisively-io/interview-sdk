@@ -44,7 +44,7 @@ export const getEntityIds = (entity: string, values: AttributeValues): string[] 
   }, [] as string[]);
 };
 
-export const iterateControls = (controls: Control[], func: (control: Control) => void) => {
+export const iterateControls = (controls: Control[], func: (control: Control) => void, template?: boolean) => {
   for (const control of controls) {
     func(control);
     if (control.type === "repeating_container") {
@@ -71,7 +71,7 @@ export const iterateControls = (controls: Control[], func: (control: Control) =>
       }
     } else if (control.type === "entity") {
       const ctrl = control as RenderableEntityControl;
-      if (ctrl.instances) {
+      if (ctrl.instances && !template) {
         for (const instance of ctrl.instances) {
           iterateControls(instance.controls, func);
         }
