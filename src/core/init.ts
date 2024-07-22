@@ -2,7 +2,6 @@ import type {
   AttributeValue,
   AttributeValues,
   Control,
-  EntityControlInstance,
   RenderableEntityControl,
   ResponseData,
   Screen,

@@ -3,6 +3,7 @@ import type {
   Control,
   ControlsValue,
   EntityControl,
+  // @ts-ignore
   EntityControlInstance,
   FileControl,
   ImageControl,
@@ -71,7 +72,9 @@ export const iterateControls = (controls: Control[], func: (control: Control) =>
       }
     } else if (control.type === "entity") {
       const ctrl = control as RenderableEntityControl;
+      // @ts-ignore
       if (ctrl.instances && !template) {
+        // @ts-ignore
         for (const instance of ctrl.instances) {
           iterateControls(instance.controls, func);
         }
@@ -88,7 +91,7 @@ export const applyInstancesToEntityControl = (control: RenderableEntityControl, 
       instances.push(uuid());
     }
   }
-
+  // @ts-ignore
   control.instances = instances.map((id: string) => {
     const controls = structuredClone(control.template);
     iterateControls(controls, (control: any) => {

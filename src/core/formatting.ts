@@ -45,6 +45,7 @@ export interface FormatOptions {
 }
 
 const formatDateTimeDefault = (value: string, type: string | undefined, locale: string) => {
+  if (type === "number") return value;
   // If no formatters then we just need to clean up any dates
   const date = getDate(value);
   if (date) {

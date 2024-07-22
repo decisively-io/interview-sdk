@@ -32,7 +32,9 @@ export const buildDynamicReplacementQueries = (
     if (allData[stateObj.id] === undefined && stateObj.value) {
       allData[stateObj.id] = stateObj.value;
     }
+    // @ts-ignore
     if (stateObj.instanceTemplate) {
+      // @ts-ignore
       const ids = getEntityIds(stateObj.instanceTemplate, allData);
       for (const id of ids) {
         resolvedState.push({

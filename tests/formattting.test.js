@@ -54,6 +54,11 @@ describe("Formatting Tests", () => {
       expect(text).toEqual("value is: 01/01/2000");
     }
   });
+
+  it("5. number - that looks like a date", async () => {
+    const response = formatValue("11.1", { type: "number" });
+    expect(response).toEqual("11.1");
+  });
 });
 
 describe("Formatting with type hint", () => {
