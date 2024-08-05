@@ -98,6 +98,9 @@ export const applyInstancesToEntityControl = (control: RenderableEntityControl, 
       if (typeof control.templateText === "string") {
         control.templateText = control.templateText.replace(/@id/g, id);
       }
+      if (typeof control.attribute === "string") {
+        control.attribute = control.attribute.replace(/@id/g, id);
+      }
       if (Array.isArray(control.dynamicAttributes)) {
         control.dynamicAttributes = control.dynamicAttributes.map((attr: string) => attr.replace(/@id/g, id));
       }

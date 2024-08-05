@@ -88,6 +88,7 @@ interface SessionInstanceOptions {
   release?: string;
   newDataCallback?: (session: SessionObservable) => void;
   responseElements?: any[];
+  debug?: boolean;
 }
 
 interface SessionInternal {
@@ -138,13 +139,15 @@ export class SessionInstance implements Session {
     unknownsAlreadySimulated: {},
     latestRequest: undefined,
   };
+  private debug: boolean;
 
   constructor(options: SessionInstanceOptions) {
-    const { session, ...otherOptions } = options;
+    const { session, debug, ...otherOptions } = options;
     // @ts-ignore
     this.updateDynamicValues = debounce(this.updateDynamicValues.bind(this), 1000);
     this.options = otherOptions;
     this.updateSession(session);
+    this.debug = Boolean(debug);
 
     this.chOnScreenData = this.chOnScreenData.bind(this);
   }
@@ -273,6 +276,14 @@ export class SessionInstance implements Session {
           const newScreen = produce(this.screen, (screen) => {
             // ask the backend to solve for any dynamic attributes, based on the entered attributes
             Object.assign(this.internals.replacements, result);
+
+            if (this.debug) {
+              console.log(
+                "[@@decisively-io/interview-sdk] DEBUG: Got replacements",
+                JSON.stringify(screen.controls, null, 2),
+                this.internals.replacements,
+              );
+            }
 
             // replace anything replaceable on the screen
             if (screen?.controls) {
@@ -484,7 +495,8 @@ export const init = (
   // -- ret
   return {
     create: async (project, config, newDataCallback?) => {
-      const session = await create(api, project, config);
+      // @ts-ignore
+      const session = await create(api, project, { ...config, debug: undefined });
       return new SessionInstance({
         session: session,
         api,
