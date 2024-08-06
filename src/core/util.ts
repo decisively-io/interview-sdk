@@ -129,17 +129,16 @@ export const deriveDefaultControlsValue = (controls: RenderableControl[]): Contr
         break;
 
       case "entity": {
-        const { min, value, template, entityId } = control;
+        const { min, instances, template, entityId } = control;
 
         const entities = [];
-        const entityCount = Math.max(min || 0, value?.length || 0);
+        const entityCount = Math.max(min || 0, instances?.length || 0);
         for (let i = 0; i < entityCount; i++) {
-          const existingEntity = value?.[i];
-          const resolveEntityId = existingEntity?.["@id"] || entityId || uuid();
+          const instance = instances?.[i];
+          const resolveEntityId = instance?.id || entityId || uuid();
           entities.push({
             "@id": resolveEntityId,
-            ...deriveDefaultControlsValue(template),
-            ...existingEntity,
+            ...deriveDefaultControlsValue(instance?.controls ?? template),
           });
         }
 
