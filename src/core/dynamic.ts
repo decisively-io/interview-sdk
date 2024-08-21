@@ -11,6 +11,31 @@ export interface DynamicReplacementQueries {
   unknownValues: UnknownValues;
 }
 
+const createEntityPathedData = (data: AttributeValues): AttributeValues => {
+  const result: any = {};
+  for (const [key, value] of Object.entries(data)) {
+    const parts = key.split(".");
+    if (parts.length === 1) {
+      result[key] = value;
+      continue;
+    }
+    const currentPath = [];
+    const resultKeyParts = [];
+    while (parts.length > 1) {
+      const entity = parts.shift();
+      const index = parts.shift();
+      currentPath.push(entity);
+      currentPath.push(index);
+      const id = data[`${currentPath.join(".")}.@id`];
+      resultKeyParts.push(entity);
+      resultKeyParts.push(id);
+    }
+    resultKeyParts.push(parts.shift());
+    result[resultKeyParts.join("/")] = value;
+  }
+  return result;
+};
+
 /**
  * Builds a list of known values, and a list of requests to be made against the API for unknown values
  * @param state Is the interview state for the current step
@@ -22,7 +47,7 @@ export const buildDynamicReplacementQueries = (
   attribValues: AttributeValues,
   parent?: string,
 ): DynamicReplacementQueries => {
-  const knownValues: AttributeValues = { ...attribValues };
+  const knownValues: AttributeValues = createEntityPathedData(attribValues);
   const allData: AttributeValues = { ...attribValues };
   const unknownsWithSatisfiedDependencies: Partial<Simulate>[] = [];
 
@@ -148,6 +173,7 @@ export const buildDynamicReplacementQueries = (
       }
     }
   }
+
   return {
     knownValues, // the known values
     unknownValues: unknownValues, // the requests to be made against the API

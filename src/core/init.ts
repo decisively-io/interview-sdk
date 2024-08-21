@@ -103,7 +103,13 @@ interface SessionInternal {
   latestRequest: number | undefined;
 }
 
-const postProcessControl = (control: any, replacements: any, state: State[] | undefined, locale: Session["locale"]) => {
+const postProcessControl = (
+  control: any,
+  replacements: any,
+  state: State[] | undefined,
+  locale: Session["locale"],
+  debug?: boolean,
+) => {
   if (control.templateText) {
     control.text = replaceTemplatedText(control.templateText, replacements, state, locale);
   }
@@ -113,7 +119,7 @@ const postProcessControl = (control: any, replacements: any, state: State[] | un
   if (control.type === "switch_container" && control.kind === "dynamic" && control.attribute) {
     const update = replacements[control.attribute];
     if (update !== undefined) {
-      control.branch = replacements[control.attribute] ? "true" : "false";
+      control.branch = update ? "true" : "false";
     }
   }
   if (control.type === "certainty_container") {
@@ -167,14 +173,15 @@ export class SessionInstance implements Session {
   private triggerUpdate(update: Partial<{ externalLoading: boolean; screen: Screen }>) {
     const { externalLoading, screen } = update;
 
-    const updated = this.externalLoading !== externalLoading || !isEqual(this.processedScreen, screen);
-    if (updated) {
-      this.externalLoading = externalLoading ?? false;
-      this.processedScreen = screen ?? this.processedScreen;
-      this.renderAt = Date.now();
+    this.externalLoading = externalLoading ?? false;
+    this.processedScreen = screen ?? this.processedScreen;
+    this.renderAt = Date.now();
 
-      this.options.newDataCallback?.(update);
+    if (this.debug) {
+      console.log("[@decisively-io/interview-sdk] DEBUG: Triggering update", update);
     }
+
+    this.options.newDataCallback?.(update);
   }
 
   /**
@@ -212,6 +219,7 @@ export class SessionInstance implements Session {
           this.internals.userValues,
           this.session.data["@parent"],
         );
+
         if (replacementQueries.unknownValues.length || Object.keys(replacementQueries.knownValues).length > 0) {
           Object.assign(this.internals.replacements, replacementQueries?.knownValues);
 
@@ -227,6 +235,18 @@ export class SessionInstance implements Session {
             this.internals.unknownsRequiringSimulate[key] = value;
           }
 
+          if (this.debug) {
+            console.log(
+              "[@decisively-io/interview-sdk] DEBUG: Calculated unknowns, output:",
+              replacementQueries,
+              this.internals.replacements,
+              "input:",
+              state,
+              this.internals.userValues,
+              this.session.data["@parent"],
+            );
+          }
+
           const loading = Object.keys(this.internals.unknownsRequiringSimulate).length > 0;
 
           const newScreen = produce(this.screen, (draft) => {
@@ -239,7 +259,7 @@ export class SessionInstance implements Session {
                 }
               }
               if (!control.loading) {
-                postProcessControl(control, this.internals.replacements, this.state, this.session.locale);
+                postProcessControl(control, this.internals.replacements, this.state, this.session.locale, this.debug);
               }
             });
           });
@@ -279,7 +299,7 @@ export class SessionInstance implements Session {
 
             if (this.debug) {
               console.log(
-                "[@@decisively-io/interview-sdk] DEBUG: Got replacements",
+                "[@decisively-io/interview-sdk] DEBUG: Got replacements",
                 JSON.stringify(screen.controls, null, 2),
                 this.internals.replacements,
               );
