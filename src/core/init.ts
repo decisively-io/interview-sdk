@@ -199,6 +199,9 @@ export class SessionInstance implements Session {
   }
 
   chOnScreenData(data: AttributeValues) {
+    if (this.debug) {
+      console.log("[@decisively-io/interview-sdk] DEBUG: Value changed:", data);
+    }
     Object.assign(this.internals.userValues, data);
     this.handleEntityInstances(this.internals.userValues);
     // call this first so the debounce doesn't fire during unknown calculation
@@ -210,6 +213,13 @@ export class SessionInstance implements Session {
     const { state } = this.session;
 
     if (state && this.screen) {
+      if (this.debug) {
+        console.log(
+          "[@decisively-io/interview-sdk] DEBUG: Checking for changes:",
+          this.internals.prevUserValues,
+          this.internals.userValues,
+        );
+      }
       if (
         !isEqual(this.internals.prevUserValues, this.internals.userValues) &&
         Object.keys(this.internals.userValues).length > 0
@@ -345,7 +355,8 @@ export class SessionInstance implements Session {
         const userValues = flatten(deriveDefaultControlsValue(session.screen.controls));
         this.internals = {
           userValues: userValues,
-          prevUserValues: userValues,
+          // TODO: do a proper deep clone
+          prevUserValues: JSON.parse(JSON.stringify(userValues)),
           replacements: replacements,
           unknownsRequiringSimulate: {},
           unknownsAlreadySimulated: {},
