@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:427
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:456
 
 ___
 
@@ -66,7 +66,7 @@ if `display` is `undefined` we should assume `"list"`
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:415
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:444
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:413
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:442
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:417
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:446
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:411
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:440
 
 ___
 
@@ -126,7 +126,7 @@ indicates if this is the first instance of a repeating series (calculated at run
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:425
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:454
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:426
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:455
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:421
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:450
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:423
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:452
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:419
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:448
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:412
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:441
 
 ___
 

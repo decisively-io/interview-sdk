@@ -47,7 +47,7 @@ The base64 date URI of the image
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:293
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:300
 
 ___
 
@@ -61,7 +61,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:290
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:297
 
 ___
 
@@ -75,7 +75,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:291
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:298
 
 ___
 

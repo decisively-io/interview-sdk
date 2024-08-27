@@ -26,6 +26,7 @@ but not
 - [labelLength](../wiki/BooleanControl#labellength)
 - [required](../wiki/BooleanControl#required)
 - [showExplanation](../wiki/BooleanControl#showexplanation)
+- [sxForSeparateLabel](../wiki/BooleanControl#sxforseparatelabel)
 - [type](../wiki/BooleanControl#type)
 - [value](../wiki/BooleanControl#value)
 - [version](../wiki/BooleanControl#version)
@@ -42,7 +43,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:27
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:28
 
 ___
 
@@ -52,7 +53,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:25
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:26
 
 ___
 
@@ -62,7 +63,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:24
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:25
 
 ___
 
@@ -106,7 +107,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:22
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:23
 
 ___
 
@@ -116,7 +117,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:23
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:24
 
 ___
 
@@ -126,7 +127,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:28
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:29
+
+___
+
+### sxForSeparateLabel
+
+• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:22
 
 ___
 
@@ -150,7 +161,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:26
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:27
 
 ___
 

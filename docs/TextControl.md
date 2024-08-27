@@ -23,6 +23,7 @@ Collects text from the user.
 - [multi](../wiki/TextControl#multi)
 - [required](../wiki/TextControl#required)
 - [showExplanation](../wiki/TextControl#showexplanation)
+- [sxForSeparateLabel](../wiki/TextControl#sxforseparatelabel)
 - [type](../wiki/TextControl#type)
 - [value](../wiki/TextControl#value)
 - [variation](../wiki/TextControl#variation)
@@ -42,7 +43,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:344
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:353
 
 ___
 
@@ -52,7 +53,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:342
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:351
 
 ___
 
@@ -62,7 +63,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:341
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:350
 
 ___
 
@@ -78,7 +79,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:335
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:343
 
 ___
 
@@ -88,7 +89,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:337
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:345
 
 ___
 
@@ -98,7 +99,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:338
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:346
 
 ___
 
@@ -108,7 +109,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:339
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:348
 
 ___
 
@@ -120,7 +121,7 @@ The maximum length of the string
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:347
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:356
 
 ___
 
@@ -137,7 +138,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:353
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:362
 
 ___
 
@@ -147,7 +148,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:340
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:349
 
 ___
 
@@ -157,7 +158,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:357
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:366
+
+___
+
+### sxForSeparateLabel
+
+• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:347
 
 ___
 
@@ -171,7 +182,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:336
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:344
 
 ___
 
@@ -181,7 +192,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:345
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:354
 
 ___
 
@@ -191,7 +202,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:348
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:357
 
 ___
 

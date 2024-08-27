@@ -29,7 +29,7 @@ describe("Dynamic", () => {
       "490391b8-d532-4541-b623-a59ca58b3b94": 3,
     });
     jest.advanceTimersByTime(1000);
-    expect(dataCallback).toHaveBeenCalledTimes(3  );
+    expect(dataCallback).toHaveBeenCalledTimes(3);
     expect(session.internals.userValues).toMatchObject({
       "2f652955-8b64-4001-823a-75d8a04e6f1a": 2,
       "c0b4d98c-262a-461c-ab9c-d8b76c7630a3": 1,

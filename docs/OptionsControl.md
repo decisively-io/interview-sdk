@@ -39,6 +39,7 @@ attribute (and not send the enum_id to the client.
 - [options](../wiki/OptionsControl#options)
 - [required](../wiki/OptionsControl#required)
 - [showExplanation](../wiki/OptionsControl#showexplanation)
+- [sxForSeparateLabel](../wiki/OptionsControl#sxforseparatelabel)
 - [type](../wiki/OptionsControl#type)
 - [value](../wiki/OptionsControl#value)
 - [version](../wiki/OptionsControl#version)
@@ -53,7 +54,7 @@ Allow a user to add their own option, not in the list, in
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:246
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:252
 
 ___
 
@@ -66,7 +67,7 @@ Default display as standart select
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:233
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:238
 
 ___
 
@@ -82,7 +83,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:242
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:248
 
 ___
 
@@ -92,7 +93,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:240
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:246
 
 ___
 
@@ -102,7 +103,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:238
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:244
 
 ___
 
@@ -114,7 +115,7 @@ uuid, design time only
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:248
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:254
 
 ___
 
@@ -130,7 +131,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:227
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:232
 
 ___
 
@@ -140,7 +141,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:234
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:239
 
 ___
 
@@ -150,7 +151,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:235
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:240
 
 ___
 
@@ -160,7 +161,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:236
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:242
 
 ___
 
@@ -172,7 +173,7 @@ design and runtime
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:244
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:250
 
 ___
 
@@ -182,7 +183,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:237
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:243
 
 ___
 
@@ -192,7 +193,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:249
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:255
+
+___
+
+### sxForSeparateLabel
+
+• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:241
 
 ___
 
@@ -206,7 +217,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:228
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:233
 
 ___
 
@@ -216,7 +227,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:239
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:245
 
 ___
 
