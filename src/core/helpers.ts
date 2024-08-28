@@ -1,20 +1,7 @@
 import type { AttributeData, AttributeId, AttributeValues, Session, State, Step } from "@decisively-io/types-interview";
-import { produce } from "immer";
 import { formatValue } from "./formatting";
 
 // -- step helpers
-
-export const setCurrentInStep = (s: Step, id: Step["id"]): typeof s => {
-  return produce(s, (draft) => {
-    if (draft.steps !== undefined && draft.steps.length !== 0) {
-      draft.steps = draft.steps.map((step) => setCurrentInStep(step, id));
-    }
-
-    draft.current = draft.id === id;
-
-    return draft;
-  });
-};
 
 export const containsCurrentStep = (s: Step): boolean => {
   return Boolean(s.current || s.steps?.some((s) => containsCurrentStep(s)));

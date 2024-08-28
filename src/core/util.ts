@@ -3,7 +3,6 @@ import type {
   Control,
   ControlsValue,
   EntityControl,
-  // @ts-ignore
   EntityControlInstance,
   FileControl,
   ImageControl,
@@ -112,7 +111,7 @@ export const applyInstancesToEntityControl = (control: RenderableEntityControl, 
     } satisfies EntityControlInstance;
   });
 };
-export const deriveDefaultControlsValue = (controls: RenderableControl[]): ControlsValue => {
+export const deriveDefaultControlsValue = (controls: RenderableControl[], nested?: boolean): ControlsValue => {
   return controls.reduce((result, control) => {
     switch (control.type) {
       case "boolean":
@@ -121,9 +120,12 @@ export const deriveDefaultControlsValue = (controls: RenderableControl[]): Contr
       case "time":
       case "datetime":
       case "options":
-      case "text":
-        result[control.attribute] = getDefaultControlValue(control);
+      case "text": {
+        const attribute: string = nested ? (control.attribute.split("/").pop() as string) : control.attribute;
+
+        result[attribute] = getDefaultControlValue(control);
         break;
+      }
       case "number_of_instances":
         result[control.entity] = getDefaultControlValue(control);
         break;
@@ -138,7 +140,7 @@ export const deriveDefaultControlsValue = (controls: RenderableControl[]): Contr
           const resolveEntityId = instance?.id || entityId || uuid();
           entities.push({
             "@id": resolveEntityId,
-            ...deriveDefaultControlsValue(instance?.controls ?? template),
+            ...deriveDefaultControlsValue(instance?.controls ?? template, true),
           });
         }
 

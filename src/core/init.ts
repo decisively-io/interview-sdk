@@ -10,7 +10,6 @@ import type {
   StepId,
 } from "@decisively-io/types-interview";
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
-import produce from "immer";
 import debounce from "lodash.debounce";
 import isEmpty from "lodash.isempty";
 import isEqual from "lodash.isequal";
@@ -55,19 +54,21 @@ const transformControlValue = (value: AttributeValue, control: Control): any => 
   }
 };
 
-export const transformResponse = (session: Session, data: ResponseData): ResponseData => {
-  return produce(data, (draft) => {
-    if (session.data["@parent"]) {
-      draft["@parent"] = session.data["@parent"];
-    }
+const deepClone = <T>(obj: T): T => JSON.parse(JSON.stringify(obj));
 
-    for (const id of Object.keys(draft)) {
-      const control = (session.screen.controls as any[]).find((c) => c.attribute === id || c.entity === id);
-      if (control) {
-        draft[id] = transformControlValue(draft[id], control as Control);
-      }
+export const transformResponse = (session: Session, data: ResponseData): ResponseData => {
+  const newData = deepClone(data);
+  if (session.data["@parent"]) {
+    newData["@parent"] = session.data["@parent"];
+  }
+
+  for (const id of Object.keys(newData)) {
+    const control = (session.screen.controls as any[]).find((c) => c.attribute === id || c.entity === id);
+    if (control) {
+      newData[id] = transformControlValue(newData[id], control as Control);
     }
-  });
+  }
+  return newData;
 };
 
 export const defaultPath = ["decisionapi", "session"];
@@ -259,19 +260,18 @@ export class SessionInstance implements Session {
 
           const loading = Object.keys(this.internals.unknownsRequiringSimulate).length > 0;
 
-          const newScreen = produce(this.screen, (draft) => {
-            iterateControls(draft.controls, (control: any) => {
-              if (control.dynamicAttributes && Object.keys(this.internals.unknownsRequiringSimulate).length > 0) {
-                if (
-                  control.dynamicAttributes.some((dynamic: string) => this.internals.unknownsRequiringSimulate[dynamic])
-                ) {
-                  control.loading = true;
-                }
+          const newScreen = this.makeScreenCopy();
+          iterateControls(newScreen.controls, (control: any) => {
+            if (control.dynamicAttributes && Object.keys(this.internals.unknownsRequiringSimulate).length > 0) {
+              if (
+                control.dynamicAttributes.some((dynamic: string) => this.internals.unknownsRequiringSimulate[dynamic])
+              ) {
+                control.loading = true;
               }
-              if (!control.loading) {
-                postProcessControl(control, this.internals.replacements, this.state, this.session.locale, this.debug);
-              }
-            });
+            }
+            if (!control.loading) {
+              postProcessControl(control, this.internals.replacements, this.state, this.session.locale, this.debug);
+            }
           });
 
           if (loading) {
@@ -286,6 +286,10 @@ export class SessionInstance implements Session {
       }
     }
     this.internals.prevUserValues = { ...this.internals.userValues };
+  }
+
+  private makeScreenCopy() {
+    return this.processedScreen ? { ...this.processedScreen } : deepClone(this.session.screen);
   }
 
   private async updateDynamicValues() {
@@ -303,29 +307,29 @@ export class SessionInstance implements Session {
 
         // are we still the last request?
         if (this.internals.latestRequest === requestId) {
-          const newScreen = produce(this.screen, (screen) => {
-            // ask the backend to solve for any dynamic attributes, based on the entered attributes
-            Object.assign(this.internals.replacements, result);
+          const newScreen = this.makeScreenCopy();
 
-            if (this.debug) {
-              console.log(
-                "[@decisively-io/interview-sdk] DEBUG: Got replacements",
-                JSON.stringify(screen.controls, null, 2),
-                this.internals.replacements,
-              );
-            }
+          // ask the backend to solve for any dynamic attributes, based on the entered attributes
+          Object.assign(this.internals.replacements, result);
 
-            // replace anything replaceable on the screen
-            if (screen?.controls) {
-              iterateControls(screen.controls, (control: any) => {
-                if (control.loading) {
-                  control.loading = undefined;
-                }
+          if (this.debug) {
+            console.log(
+              "[@decisively-io/interview-sdk] DEBUG: Got replacements",
+              JSON.stringify(newScreen.controls, null, 2),
+              this.internals.replacements,
+            );
+          }
 
-                postProcessControl(control, this.internals.replacements, this.state, this.session.locale);
-              });
-            }
-          });
+          // replace anything replaceable on the screen
+          if (newScreen?.controls) {
+            iterateControls(newScreen.controls, (control: any) => {
+              if (control.loading) {
+                control.loading = undefined;
+              }
+
+              postProcessControl(control, this.internals.replacements, this.state, this.session.locale);
+            });
+          }
 
           this.internals.unknownsAlreadySimulated = { ...this.internals.unknownsRequiringSimulate };
           this.internals.unknownsRequiringSimulate = {};

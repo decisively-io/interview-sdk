@@ -24,7 +24,6 @@ Collect information about instances (of an entity) within a tabular structure.
 - [max](../wiki/RenderableEntityControl#max)
 - [min](../wiki/RenderableEntityControl#min)
 - [showExplanation](../wiki/RenderableEntityControl#showexplanation)
-- [sxForSeparateLabel](../wiki/RenderableEntityControl#sxforseparatelabel)
 - [template](../wiki/RenderableEntityControl#template)
 - [type](../wiki/RenderableEntityControl#type)
 - [value](../wiki/RenderableEntityControl#value)
@@ -58,7 +57,7 @@ describes single 'row' of entries, each of which has all controls from `template
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:426
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:397
 
 ___
 
@@ -74,7 +73,7 @@ The name of the entity
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:423
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:394
 
 ___
 
@@ -88,7 +87,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:433
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:404
 
 ___
 
@@ -104,7 +103,7 @@ unique id of the control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:416
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:388
 
 ___
 
@@ -114,7 +113,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:486
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:457
 
 ___
 
@@ -128,7 +127,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:418
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:390
 
 ___
 
@@ -142,7 +141,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:419
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:391
 
 ___
 
@@ -156,7 +155,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:421
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:392
 
 ___
 
@@ -170,7 +169,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:431
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:402
 
 ___
 
@@ -186,7 +185,7 @@ min number of instances
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:430
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:401
 
 ___
 
@@ -200,21 +199,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:432
-
-___
-
-### sxForSeparateLabel
-
-• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
-
-#### Inherited from
-
-[EntityControl](../wiki/EntityControl).[sxForSeparateLabel](../wiki/EntityControl#sxforseparatelabel)
-
-#### Defined in
-
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:420
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:403
 
 ___
 
@@ -228,7 +213,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:427
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:398
 
 ___
 
@@ -242,7 +227,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:417
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:389
 
 ___
 
@@ -256,7 +241,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:428
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:399
 
 ___
 

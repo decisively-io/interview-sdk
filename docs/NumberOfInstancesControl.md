@@ -29,7 +29,6 @@ See the link above for more detail.
 - [max](../wiki/NumberOfInstancesControl#max)
 - [min](../wiki/NumberOfInstancesControl#min)
 - [required](../wiki/NumberOfInstancesControl#required)
-- [sxForSeparateLabel](../wiki/NumberOfInstancesControl#sxforseparatelabel)
 - [template](../wiki/NumberOfInstancesControl#template)
 - [type](../wiki/NumberOfInstancesControl#type)
 - [value](../wiki/NumberOfInstancesControl#value)
@@ -57,7 +56,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:324
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:316
 
 ___
 
@@ -67,7 +66,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:325
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:317
 
 ___
 
@@ -79,7 +78,7 @@ The name of the entity
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:329
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:321
 
 ___
 
@@ -95,7 +94,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:317
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:310
 
 ___
 
@@ -105,7 +104,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:319
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:312
 
 ___
 
@@ -115,7 +114,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:320
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:313
 
 ___
 
@@ -125,7 +124,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:322
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:314
 
 ___
 
@@ -135,7 +134,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:334
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:326
 
 ___
 
@@ -147,7 +146,7 @@ The minimum number of instances. 0 or greater.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:333
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:325
 
 ___
 
@@ -157,17 +156,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:323
-
-___
-
-### sxForSeparateLabel
-
-• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
-
-#### Defined in
-
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:321
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:315
 
 ___
 
@@ -177,7 +166,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:327
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:319
 
 ___
 
@@ -191,7 +180,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:318
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:311
 
 ___
 
@@ -201,7 +190,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:326
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:318
 
 ___
 

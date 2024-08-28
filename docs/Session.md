@@ -116,7 +116,7 @@ ___
 
 ### status
 
-• **status**: ``"complete"`` \| ``"in-progress"`` \| ``"error"``
+• **status**: ``"in-progress"`` \| ``"complete"`` \| ``"error"``
 
 #### Defined in
 

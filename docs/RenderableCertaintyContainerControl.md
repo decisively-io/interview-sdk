@@ -32,7 +32,7 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:461
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:432
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:492
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:463
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:462
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:433
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:465
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:436
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:467
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:438
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:459
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:430
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:460
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:431
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:463
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:434
 
 ___
 

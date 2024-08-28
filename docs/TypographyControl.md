@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:403
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:375
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:405
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:377
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:401
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:373
 
 ___
 
@@ -84,7 +84,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:397
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:369
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:400
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:372
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:399
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:371
 
 ___
 
@@ -118,7 +118,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:398
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:370
 
 ___
 

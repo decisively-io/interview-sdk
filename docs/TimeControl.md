@@ -27,7 +27,6 @@ Do not send a date component back.
 - [minutes\_increment](../wiki/TimeControl#minutes_increment)
 - [required](../wiki/TimeControl#required)
 - [showExplanation](../wiki/TimeControl#showexplanation)
-- [sxForSeparateLabel](../wiki/TimeControl#sxforseparatelabel)
 - [type](../wiki/TimeControl#type)
 - [value](../wiki/TimeControl#value)
 - [version](../wiki/TimeControl#version)
@@ -40,7 +39,7 @@ Do not send a date component back.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:157
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:153
 
 ___
 
@@ -53,7 +52,7 @@ Regardless of this input the server expects 24 hour time
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:154
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:150
 
 ___
 
@@ -69,7 +68,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:141
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:137
 
 ___
 
@@ -81,7 +80,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:145
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:141
 
 ___
 
@@ -91,7 +90,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:139
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:135
 
 ___
 
@@ -107,7 +106,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:132
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:129
 
 ___
 
@@ -117,7 +116,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:134
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:131
 
 ___
 
@@ -127,7 +126,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:135
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:132
 
 ___
 
@@ -137,7 +136,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:137
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:133
 
 ___
 
@@ -149,7 +148,7 @@ Maximum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:149
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:145
 
 ___
 
@@ -161,7 +160,7 @@ Minimum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:147
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:143
 
 ___
 
@@ -173,7 +172,7 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:156
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:152
 
 ___
 
@@ -183,7 +182,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:138
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:134
 
 ___
 
@@ -193,17 +192,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:158
-
-___
-
-### sxForSeparateLabel
-
-• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
-
-#### Defined in
-
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:136
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:154
 
 ___
 
@@ -217,7 +206,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:133
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:130
 
 ___
 
@@ -229,7 +218,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:143
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:139
 
 ___
 

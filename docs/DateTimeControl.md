@@ -26,7 +26,6 @@ It's metadata is basically a merge of the date and time, but with seperate min/m
 - [minutes\_increment](../wiki/DateTimeControl#minutes_increment)
 - [required](../wiki/DateTimeControl#required)
 - [showExplanation](../wiki/DateTimeControl#showexplanation)
-- [sxForSeparateLabel](../wiki/DateTimeControl#sxforseparatelabel)
 - [time\_max](../wiki/DateTimeControl#time_max)
 - [time\_min](../wiki/DateTimeControl#time_min)
 - [type](../wiki/DateTimeControl#type)
@@ -44,7 +43,7 @@ Whether to display time with an 'AM/PM' or in 24 hour time.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:197
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:192
 
 ___
 
@@ -60,7 +59,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:181
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:176
 
 ___
 
@@ -72,7 +71,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:189
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:184
 
 ___
 
@@ -84,7 +83,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:187
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:182
 
 ___
 
@@ -96,7 +95,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:185
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:180
 
 ___
 
@@ -106,7 +105,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:179
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:174
 
 ___
 
@@ -122,7 +121,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:172
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:168
 
 ___
 
@@ -132,7 +131,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:174
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:170
 
 ___
 
@@ -142,7 +141,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:175
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:171
 
 ___
 
@@ -152,7 +151,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:177
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:172
 
 ___
 
@@ -164,7 +163,7 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:199
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:194
 
 ___
 
@@ -174,7 +173,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:178
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:173
 
 ___
 
@@ -186,17 +185,7 @@ mui picker doesn't have this control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:201
-
-___
-
-### sxForSeparateLabel
-
-• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
-
-#### Defined in
-
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:176
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:196
 
 ___
 
@@ -208,7 +197,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:193
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:188
 
 ___
 
@@ -220,7 +209,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:191
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:186
 
 ___
 
@@ -234,7 +223,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:173
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:169
 
 ___
 
@@ -246,7 +235,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:183
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:178
 
 ___
 

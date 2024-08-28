@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:456
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:427
 
 ___
 
@@ -66,7 +66,7 @@ if `display` is `undefined` we should assume `"list"`
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:444
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:415
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:442
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:413
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:446
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:417
 
 ___
 
@@ -102,7 +102,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:440
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:411
 
 ___
 
@@ -114,7 +114,7 @@ indicates if this is the first instance of a repeating series (calculated at run
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:454
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:425
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:455
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:426
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:450
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:421
 
 ___
 
@@ -148,7 +148,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:452
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:423
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:448
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:419
 
 ___
 
@@ -174,7 +174,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:441
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:412
 
 ___
 
