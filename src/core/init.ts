@@ -289,7 +289,7 @@ export class SessionInstance implements Session {
   }
 
   private makeScreenCopy() {
-    return this.processedScreen ? { ...this.processedScreen } : deepClone(this.session.screen);
+    return deepClone(this.processedScreen ? this.processedScreen : this.session.screen);
   }
 
   private async updateDynamicValues() {
