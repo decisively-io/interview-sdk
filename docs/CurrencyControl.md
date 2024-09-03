@@ -24,8 +24,10 @@ A number input for inputting currency values. This should:
 - [labelLength](../wiki/CurrencyControl#labellength)
 - [max](../wiki/CurrencyControl#max)
 - [min](../wiki/CurrencyControl#min)
+- [readOnly](../wiki/CurrencyControl#readonly)
 - [required](../wiki/CurrencyControl#required)
 - [showExplanation](../wiki/CurrencyControl#showexplanation)
+- [sxForSeparateLabel](../wiki/CurrencyControl#sxforseparatelabel)
 - [symbol](../wiki/CurrencyControl#symbol)
 - [type](../wiki/CurrencyControl#type)
 - [value](../wiki/CurrencyControl#value)
@@ -45,7 +47,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:51
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:54
 
 ___
 
@@ -55,7 +57,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:49
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:52
 
 ___
 
@@ -65,7 +67,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:48
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:51
 
 ___
 
@@ -81,7 +83,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:42
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:44
 
 ___
 
@@ -91,7 +93,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:44
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:46
 
 ___
 
@@ -101,7 +103,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:45
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:47
 
 ___
 
@@ -111,7 +113,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:46
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:49
 
 ___
 
@@ -123,7 +125,7 @@ Maximum number allowed - if not set assume no restriction
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:58
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:61
 
 ___
 
@@ -135,7 +137,17 @@ Minimum number allowed - if not set assume no restriction
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:56
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:59
+
+___
+
+### readOnly
+
+• `Optional` **readOnly**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:63
 
 ___
 
@@ -145,7 +157,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:47
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:50
 
 ___
 
@@ -155,7 +167,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:59
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:62
+
+___
+
+### sxForSeparateLabel
+
+• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:48
 
 ___
 
@@ -171,7 +193,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:54
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:57
 
 ___
 
@@ -185,7 +207,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:43
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:45
 
 ___
 
@@ -195,7 +217,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:52
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:55
 
 ___
 

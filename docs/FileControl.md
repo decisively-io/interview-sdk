@@ -23,6 +23,7 @@ Allow a user to upload a file. This metadata is still under construction
 - [max\_size](../wiki/FileControl#max_size)
 - [required](../wiki/FileControl#required)
 - [showExplanation](../wiki/FileControl#showexplanation)
+- [sxForSeparateLabel](../wiki/FileControl#sxforseparatelabel)
 - [type](../wiki/FileControl#type)
 - [version](../wiki/FileControl#version)
 
@@ -40,7 +41,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:268
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:281
 
 ___
 
@@ -52,7 +53,7 @@ The types of file allowed (pdf docx etc)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:272
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:285
 
 ___
 
@@ -68,7 +69,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:261
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:273
 
 ___
 
@@ -78,7 +79,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:263
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:275
 
 ___
 
@@ -88,7 +89,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:264
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:276
 
 ___
 
@@ -98,7 +99,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:265
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:278
 
 ___
 
@@ -110,7 +111,7 @@ The max number of files that can be uploaded. Defaults to 1
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:270
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:283
 
 ___
 
@@ -122,7 +123,7 @@ The maximum size of a document, in Mb
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:274
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:287
 
 ___
 
@@ -132,7 +133,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:266
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:279
 
 ___
 
@@ -142,7 +143,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:275
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:288
+
+___
+
+### sxForSeparateLabel
+
+• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:277
 
 ___
 
@@ -156,7 +167,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:262
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:274
 
 ___
 
