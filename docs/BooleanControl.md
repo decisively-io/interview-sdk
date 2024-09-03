@@ -42,7 +42,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:27
+[src/types/controls.ts:34](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L34)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:25
+[src/types/controls.ts:31](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L31)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:24
+[src/types/controls.ts:30](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L30)
 
 ___
 
@@ -76,7 +76,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:18
+[src/types/controls.ts:24](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L24)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:20
+[src/types/controls.ts:26](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L26)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:21
+[src/types/controls.ts:27](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L27)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:22
+[src/types/controls.ts:28](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L28)
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:23
+[src/types/controls.ts:29](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L29)
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:28
+[src/types/controls.ts:35](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L35)
 
 ___
 
@@ -140,7 +140,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:19
+[src/types/controls.ts:25](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L25)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:26
+[src/types/controls.ts:32](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L32)
 
 ___
 
@@ -164,4 +164,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:7
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L9)

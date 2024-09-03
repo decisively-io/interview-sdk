@@ -18,7 +18,7 @@ The list of controls to be displayed on the screen
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:82
+[src/types/core.ts:99](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/core.ts#L99)
 
 ___
 
@@ -30,7 +30,7 @@ Unique ID of the screen
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:80
+[src/types/core.ts:97](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/core.ts#L97)
 
 ___
 
@@ -42,4 +42,4 @@ The title of the screen. This may differ from the title in the step
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:78
+[src/types/core.ts:95](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/core.ts#L95)

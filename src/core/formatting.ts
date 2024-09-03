@@ -1,5 +1,5 @@
-import type { AttributeValue } from "@decisively-io/types-interview";
 import { isMatch, parse } from "date-fns";
+import type { AttributeValue } from "../types";
 import { formatDate } from "./util";
 
 export type Formatter = "currency" | `date ${string}` | "date";

@@ -43,7 +43,7 @@ Whether to display time with an 'AM/PM' or in 24 hour time.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:192
+[src/types/controls.ts:209](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L209)
 
 ___
 
@@ -59,7 +59,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:176
+[src/types/controls.ts:193](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L193)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:184
+[src/types/controls.ts:201](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L201)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:182
+[src/types/controls.ts:199](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L199)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:180
+[src/types/controls.ts:197](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L197)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:174
+[src/types/controls.ts:191](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L191)
 
 ___
 
@@ -121,7 +121,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:168
+[src/types/controls.ts:185](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L185)
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:170
+[src/types/controls.ts:187](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L187)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:171
+[src/types/controls.ts:188](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L188)
 
 ___
 
@@ -151,7 +151,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:172
+[src/types/controls.ts:189](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L189)
 
 ___
 
@@ -163,7 +163,7 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:194
+[src/types/controls.ts:211](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L211)
 
 ___
 
@@ -173,7 +173,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:173
+[src/types/controls.ts:190](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L190)
 
 ___
 
@@ -185,7 +185,7 @@ mui picker doesn't have this control
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:196
+[src/types/controls.ts:214](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L214)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:188
+[src/types/controls.ts:205](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L205)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:186
+[src/types/controls.ts:203](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L203)
 
 ___
 
@@ -223,7 +223,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:169
+[src/types/controls.ts:186](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L186)
 
 ___
 
@@ -235,7 +235,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:178
+[src/types/controls.ts:195](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L195)
 
 ___
 
@@ -249,4 +249,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:7
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L9)

@@ -36,7 +36,7 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L8)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:427
+[src/types/controls.ts:475](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L475)
 
 ___
 
@@ -66,7 +66,7 @@ if `display` is `undefined` we should assume `"list"`
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:415
+[src/types/controls.ts:463](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L463)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:413
+[src/types/controls.ts:461](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L461)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:417
+[src/types/controls.ts:465](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L465)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:411
+[src/types/controls.ts:459](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L459)
 
 ___
 
@@ -126,7 +126,7 @@ indicates if this is the first instance of a repeating series (calculated at run
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:425
+[src/types/controls.ts:473](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L473)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:426
+[src/types/controls.ts:474](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L474)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:421
+[src/types/controls.ts:469](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L469)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:423
+[src/types/controls.ts:471](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L471)
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:419
+[src/types/controls.ts:467](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L467)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:412
+[src/types/controls.ts:460](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L460)
 
 ___
 
@@ -216,4 +216,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:7
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L9)

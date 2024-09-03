@@ -36,7 +36,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L8)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:375
+[src/types/controls.ts:417](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L417)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:377
+[src/types/controls.ts:419](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L419)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:373
+[src/types/controls.ts:415](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L415)
 
 ___
 
@@ -84,7 +84,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:369
+[src/types/controls.ts:397](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L397)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:372
+[src/types/controls.ts:400](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L400)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:371
+[src/types/controls.ts:399](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L399)
 
 ___
 
@@ -118,7 +118,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:370
+[src/types/controls.ts:398](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L398)
 
 ___
 
@@ -132,4 +132,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:7
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L9)

@@ -1,15 +1,16 @@
+import type { AxiosInstance } from "axios";
 import type {
   AttributeValues,
   Navigate,
+  Overrides,
   ProjectId,
   ReleaseId,
   Session,
+  SessionConfig,
   SessionId,
   Simulate,
   StepId,
-} from "@decisively-io/types-interview";
-import { type AxiosInstance, AxiosRequestConfig } from "axios";
-import type { Overrides, SessionConfig } from "./types";
+} from "../types";
 import { buildUrl } from "./util";
 
 export const create = async (api: AxiosInstance, project: ProjectId, options: SessionConfig = {}) => {
@@ -54,6 +55,24 @@ export const submit = async (
     url,
     { data, navigate: navigate || undefined, ...overrides },
     { params: { session: session } },
+  );
+  return res.data;
+};
+
+/**
+ * Send a generative chat message
+ */
+export const chat = async (
+  api: AxiosInstance,
+  project: ProjectId,
+  session: SessionId,
+  message: string,
+  overrides?: Overrides,
+) => {
+  const res = await api.post<Session>(
+    project,
+    { prompt: message, mode: "generative", aiOptions: { model: "gpt-4o", temperature: 0.8 }, ...overrides },
+    { params: { session } },
   );
   return res.data;
 };

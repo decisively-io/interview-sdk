@@ -1,3 +1,5 @@
+import { format, parseISO } from "date-fns";
+import { v4 as baseUuid } from "uuid";
 import type {
   AttributeValues,
   Control,
@@ -10,9 +12,7 @@ import type {
   RenderableEntityControl,
   State,
   TypographyControl,
-} from "@decisively-io/types-interview";
-import { format, parseISO } from "date-fns";
-import { v4 as baseUuid } from "uuid";
+} from "../types";
 
 export const uuid = baseUuid;
 

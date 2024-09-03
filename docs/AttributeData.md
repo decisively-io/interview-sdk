@@ -15,7 +15,7 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:12
+[src/types/core.ts:15](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/core.ts#L15)
 
 ___
 
@@ -25,4 +25,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:13
+[src/types/core.ts:16](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/core.ts#L16)

@@ -1,24 +1,25 @@
-import type {
-  AttributeValue,
-  AttributeValues,
-  Control,
-  RenderableEntityControl,
-  ResponseData,
-  Screen,
-  Session,
-  State,
-  StepId,
-} from "@decisively-io/types-interview";
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
 import debounce from "lodash.debounce";
 import isEmpty from "lodash.isempty";
 import isEqual from "lodash.isequal";
 import { v4 as uuid } from "uuid";
-import { back, create, exportTimeline, load, navigate, submit } from "./api";
+import type {
+  AttributeValue,
+  AttributeValues,
+  Control,
+  Overrides,
+  RenderableEntityControl,
+  ResponseData,
+  Screen,
+  Session,
+  SessionConfig,
+  State,
+  StepId,
+} from "../types";
+import { back, chat, create, exportTimeline, load, navigate, submit } from "./api";
 import { ControlTypesInfo } from "./constants";
 import { type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
-import type { Overrides, SessionConfig } from "./types";
 import {
   applyInstancesToEntityControl,
   buildUrl,
@@ -467,6 +468,13 @@ export class SessionInstance implements Session {
         this.release,
       ),
     );
+    this.triggerUpdate({ externalLoading: false });
+    return this;
+  }
+
+  async chat(message: string, overrides: Overrides = {}) {
+    this.triggerUpdate({ externalLoading: true });
+    this.updateSession(await chat(this.api, this.project, this.sessionId, message, overrides));
     this.triggerUpdate({ externalLoading: false });
     return this;
   }

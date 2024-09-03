@@ -1,4 +1,4 @@
-import type { AttributeData, AttributeId, AttributeValues, Session, State, Step } from "@decisively-io/types-interview";
+import type { AttributeData, AttributeId, AttributeValues, Session, State, Step } from "../types";
 import { formatValue } from "./formatting";
 
 // -- step helpers

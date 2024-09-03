@@ -1,6 +1,6 @@
-import type { AttributeValues, ProjectId, ReleaseId, SessionId, Simulate, State } from "@decisively-io/types-interview";
 import type { AxiosInstance } from "axios";
 import set from "lodash.set";
+import type { AttributeValues, ProjectId, ReleaseId, SessionId, Simulate, State } from "../types";
 import { simulate } from "./api";
 import { getEntityIds } from "./util";
 
