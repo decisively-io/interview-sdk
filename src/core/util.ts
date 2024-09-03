@@ -80,6 +80,11 @@ export const iterateControls = (controls: Control[], func: (control: Control) =>
       } else if (ctrl.template) {
         iterateControls(ctrl.template, func);
       }
+    } else if (control.type === "data_container") {
+      const ctrl = control;
+      if (ctrl.controls) {
+        iterateControls(ctrl.controls, func);
+      }
     }
   }
 };

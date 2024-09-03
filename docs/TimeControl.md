@@ -25,8 +25,10 @@ Do not send a date component back.
 - [max](../wiki/TimeControl#max)
 - [min](../wiki/TimeControl#min)
 - [minutes\_increment](../wiki/TimeControl#minutes_increment)
+- [readOnly](../wiki/TimeControl#readonly)
 - [required](../wiki/TimeControl#required)
 - [showExplanation](../wiki/TimeControl#showexplanation)
+- [sxForSeparateLabel](../wiki/TimeControl#sxforseparatelabel)
 - [type](../wiki/TimeControl#type)
 - [value](../wiki/TimeControl#value)
 - [version](../wiki/TimeControl#version)
@@ -39,7 +41,7 @@ Do not send a date component back.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:153
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:160
 
 ___
 
@@ -52,7 +54,7 @@ Regardless of this input the server expects 24 hour time
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:150
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:157
 
 ___
 
@@ -68,7 +70,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:137
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:144
 
 ___
 
@@ -80,7 +82,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:141
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:148
 
 ___
 
@@ -90,7 +92,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:135
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:142
 
 ___
 
@@ -106,7 +108,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:129
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:135
 
 ___
 
@@ -116,7 +118,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:131
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:137
 
 ___
 
@@ -126,7 +128,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:132
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:138
 
 ___
 
@@ -136,7 +138,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:133
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:140
 
 ___
 
@@ -148,7 +150,7 @@ Maximum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:145
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:152
 
 ___
 
@@ -160,7 +162,7 @@ Minimum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:143
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:150
 
 ___
 
@@ -172,7 +174,17 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:152
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:159
+
+___
+
+### readOnly
+
+• `Optional` **readOnly**: `boolean`
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:162
 
 ___
 
@@ -182,7 +194,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:134
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:141
 
 ___
 
@@ -192,7 +204,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:154
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:161
+
+___
+
+### sxForSeparateLabel
+
+• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+
+#### Defined in
+
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:139
 
 ___
 
@@ -206,7 +228,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:130
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:136
 
 ___
 
@@ -218,7 +240,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:139
+node_modules/@decisively-io/types-interview/dist/controls.d.ts:146
 
 ___
 
