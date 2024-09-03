@@ -1,6 +1,6 @@
 {
   "name": "@decisively-io/interview-sdk",
-  "version": "0.9.34",
+  "version": "0.9.35",
   "description": "An SDK for the Decisively interview system.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,17 +16,8 @@
     "dev": "tsc -w",
     "deploy": "yarn build && yarn publish"
   },
-  "files": [
-    "dist",
-    "docs"
-  ],
-  "keywords": [
-    "decisively",
-    "interview",
-    "api",
-    "sdk",
-    "typescript"
-  ],
+  "files": ["dist", "docs"],
+  "keywords": ["decisively", "interview", "api", "sdk", "typescript"],
   "author": "Decisively",
   "license": "UNLICENSED",
   "devDependencies": {
