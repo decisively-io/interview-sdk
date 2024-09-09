@@ -295,51 +295,49 @@ export class SessionInstance implements Session {
   }
 
   private async updateDynamicValues() {
-    if (this.release) {
-      if (Object.keys(this.internals.unknownsRequiringSimulate).length > 0 && this.session.screen) {
-        const requestId = this.internals.latestRequest;
+    if (Object.keys(this.internals.unknownsRequiringSimulate).length > 0 && this.session.screen) {
+      const requestId = this.internals.latestRequest;
 
-        const result = await simulateUnknowns(
-          Object.values(this.internals.unknownsRequiringSimulate),
-          this.api,
-          this.project,
-          this.release,
-          this.sessionId,
-        );
+      const result = await simulateUnknowns(
+        Object.values(this.internals.unknownsRequiringSimulate),
+        this.api,
+        this.project,
+        this.release,
+        this.sessionId,
+      );
 
-        // are we still the last request?
-        if (this.internals.latestRequest === requestId) {
-          const newScreen = this.makeScreenCopy();
+      // are we still the last request?
+      if (this.internals.latestRequest === requestId) {
+        const newScreen = this.makeScreenCopy();
 
-          // ask the backend to solve for any dynamic attributes, based on the entered attributes
-          Object.assign(this.internals.replacements, result);
+        // ask the backend to solve for any dynamic attributes, based on the entered attributes
+        Object.assign(this.internals.replacements, result);
 
-          if (this.debug) {
-            console.log(
-              "[@decisively-io/interview-sdk] DEBUG: Got replacements",
-              JSON.stringify(newScreen.controls, null, 2),
-              this.internals.replacements,
-            );
-          }
+        if (this.debug) {
+          console.log(
+            "[@decisively-io/interview-sdk] DEBUG: Got replacements",
+            JSON.stringify(newScreen.controls, null, 2),
+            this.internals.replacements,
+          );
+        }
 
-          // replace anything replaceable on the screen
-          if (newScreen?.controls) {
-            iterateControls(newScreen.controls, (control: any) => {
-              if (control.loading) {
-                control.loading = undefined;
-              }
+        // replace anything replaceable on the screen
+        if (newScreen?.controls) {
+          iterateControls(newScreen.controls, (control: any) => {
+            if (control.loading) {
+              control.loading = undefined;
+            }
 
-              postProcessControl(control, this.internals.replacements, this.state, this.session.locale);
-            });
-          }
-
-          this.internals.unknownsAlreadySimulated = { ...this.internals.unknownsRequiringSimulate };
-          this.internals.unknownsRequiringSimulate = {};
-          this.triggerUpdate({
-            externalLoading: false,
-            screen: newScreen,
+            postProcessControl(control, this.internals.replacements, this.state, this.session.locale);
           });
         }
+
+        this.internals.unknownsAlreadySimulated = { ...this.internals.unknownsRequiringSimulate };
+        this.internals.unknownsRequiringSimulate = {};
+        this.triggerUpdate({
+          externalLoading: false,
+          screen: newScreen,
+        });
       }
     }
   }

@@ -51,4 +51,8 @@ export const ControlTypesInfo = {
     id: "switch_container",
     name: "Switch Container",
   },
+  DATA_CONTAINER: {
+    id: "data_container",
+    name: "Data Container",
+  },
 } as const;

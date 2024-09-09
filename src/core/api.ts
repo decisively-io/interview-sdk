@@ -108,7 +108,7 @@ export const back = async (api: AxiosInstance, project: ProjectId, session: Sess
 export const simulate = async (
   api: AxiosInstance,
   project: ProjectId,
-  release: ReleaseId,
+  release: ReleaseId | undefined,
   session: SessionId,
   data: Partial<Simulate>,
 ) => {
