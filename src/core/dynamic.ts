@@ -188,7 +188,7 @@ export const simulateUnknowns = async (
   unKnownValues: Partial<Simulate>[],
   api: AxiosInstance,
   project: ProjectId,
-  release: ReleaseId,
+  release: ReleaseId | undefined,
   sessionId: SessionId,
 ): Promise<AttributeValues> => {
   try {
