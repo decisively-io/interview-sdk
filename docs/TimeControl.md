@@ -25,8 +25,10 @@ Do not send a date component back.
 - [max](../wiki/TimeControl#max)
 - [min](../wiki/TimeControl#min)
 - [minutes\_increment](../wiki/TimeControl#minutes_increment)
+- [readOnly](../wiki/TimeControl#readonly)
 - [required](../wiki/TimeControl#required)
 - [showExplanation](../wiki/TimeControl#showexplanation)
+- [sxForSeparateLabel](../wiki/TimeControl#sxforseparatelabel)
 - [type](../wiki/TimeControl#type)
 - [value](../wiki/TimeControl#value)
 - [version](../wiki/TimeControl#version)
@@ -39,7 +41,7 @@ Do not send a date component back.
 
 #### Defined in
 
-[src/types/controls.ts:167](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L167)
+[src/types/controls.ts:181](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L181)
 
 ___
 
@@ -52,7 +54,7 @@ Regardless of this input the server expects 24 hour time
 
 #### Defined in
 
-[src/types/controls.ts:164](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L164)
+[src/types/controls.ts:178](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L178)
 
 ___
 
@@ -68,7 +70,7 @@ BaseControl.attribute
 
 #### Defined in
 
-[src/types/controls.ts:151](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L151)
+[src/types/controls.ts:165](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L165)
 
 ___
 
@@ -80,7 +82,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:155](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L155)
+[src/types/controls.ts:169](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L169)
 
 ___
 
@@ -90,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:149](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L149)
+[src/types/controls.ts:163](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L163)
 
 ___
 
@@ -106,7 +108,7 @@ BaseControl.id
 
 #### Defined in
 
-[src/types/controls.ts:143](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L143)
+[src/types/controls.ts:156](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L156)
 
 ___
 
@@ -116,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:145](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L145)
+[src/types/controls.ts:158](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L158)
 
 ___
 
@@ -126,7 +128,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:146](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L146)
+[src/types/controls.ts:159](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L159)
 
 ___
 
@@ -136,7 +138,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:147](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L147)
+[src/types/controls.ts:161](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L161)
 
 ___
 
@@ -148,7 +150,7 @@ Maximum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-[src/types/controls.ts:159](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L159)
+[src/types/controls.ts:173](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L173)
 
 ___
 
@@ -160,7 +162,7 @@ Minimum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-[src/types/controls.ts:157](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L157)
+[src/types/controls.ts:171](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L171)
 
 ___
 
@@ -172,7 +174,17 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-[src/types/controls.ts:166](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L166)
+[src/types/controls.ts:180](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L180)
+
+___
+
+### readOnly
+
+• `Optional` **readOnly**: `boolean`
+
+#### Defined in
+
+[src/types/controls.ts:183](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L183)
 
 ___
 
@@ -182,7 +194,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:148](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L148)
+[src/types/controls.ts:162](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L162)
 
 ___
 
@@ -192,7 +204,17 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:168](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L168)
+[src/types/controls.ts:182](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L182)
+
+___
+
+### sxForSeparateLabel
+
+• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+
+#### Defined in
+
+[src/types/controls.ts:160](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L160)
 
 ___
 
@@ -206,7 +228,7 @@ BaseControl.type
 
 #### Defined in
 
-[src/types/controls.ts:144](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L144)
+[src/types/controls.ts:157](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L157)
 
 ___
 
@@ -218,7 +240,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:153](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L153)
+[src/types/controls.ts:167](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L167)
 
 ___
 
@@ -232,4 +254,4 @@ BaseControl.version
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L9)

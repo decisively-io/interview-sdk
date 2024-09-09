@@ -1,4 +1,4 @@
-import { Control, type RenderableControl } from "./controls";
+import type { RenderableControl } from "./controls";
 
 export type StepId = string;
 export type ReleaseId = string;
@@ -135,3 +135,16 @@ export interface SessionConfig {
 export type Overrides = Record<string, any>;
 
 export type DynamicUpdateFunction = (data: AttributeValues) => void;
+
+export interface AiOptions {
+  temperature?: number;
+  model?: string;
+}
+
+export interface ChatResponse {
+  message: string;
+  sessionId: string;
+  interactionId: string;
+  locale: string;
+  goal: string;
+}

@@ -1,4 +1,4 @@
-import type { EntityInstance, EntityValue } from "./core";
+import type { AiOptions, EntityInstance, EntityValue } from "./core";
 
 export type LabelDisplay = "automatic" | "separate" | "inline";
 
@@ -10,6 +10,13 @@ interface BaseControl {
 }
 
 // schema controls
+
+export interface GenerativeChatControl extends BaseControl {
+  type: "generative_chat";
+  goal: string;
+  initialMessage: string;
+  aiOptions?: AiOptions;
+}
 
 /**
  * A control to collect a true or false response from a user. Usually rendered as a checkbox.
@@ -25,6 +32,7 @@ export interface BooleanControl extends BaseControl {
   type: "boolean";
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   required?: true;
   disabled?: true;
@@ -33,6 +41,7 @@ export interface BooleanControl extends BaseControl {
   // The GUID of the attribute
   attribute: string;
   showExplanation?: boolean;
+  readOnly?: boolean;
 }
 
 /**
@@ -52,6 +61,7 @@ export interface CurrencyControl extends BaseControl {
   type: "currency";
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   required?: true;
   disabled?: true;
@@ -66,6 +76,7 @@ export interface CurrencyControl extends BaseControl {
   /** Maximum number allowed - if not set assume no restriction */
   max?: number;
   showExplanation?: boolean;
+  readOnly?: boolean;
 }
 
 /**
@@ -103,6 +114,7 @@ export interface DateControl extends BaseControl {
   type: "date";
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   required?: true;
   disabled?: true;
@@ -118,6 +130,7 @@ export interface DateControl extends BaseControl {
   /** Maximum date allowed */
   max?: DateControlThreeVariantDate;
   showExplanation?: boolean;
+  readOnly?: boolean;
 }
 
 /**
@@ -144,6 +157,7 @@ export interface TimeControl extends BaseControl {
   type: "time";
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   required?: true;
   disabled?: true;
@@ -166,6 +180,7 @@ export interface TimeControl extends BaseControl {
   minutes_increment?: number;
   allowSeconds?: true;
   showExplanation?: boolean;
+  readOnly?: boolean;
 }
 
 /**
@@ -186,6 +201,7 @@ export interface DateTimeControl extends BaseControl {
   type: "datetime";
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   required?: true;
   disabled?: true;
@@ -212,6 +228,7 @@ export interface DateTimeControl extends BaseControl {
   /** mui picker doesn't have this control */
   // allow_seconds?: true;
   showExplanation?: boolean;
+  readOnly?: boolean;
 }
 
 /**
@@ -255,6 +272,7 @@ export interface OptionsControl extends BaseControl {
   asRadio?: true;
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   required?: true;
   disabled?: true;
@@ -269,6 +287,7 @@ export interface OptionsControl extends BaseControl {
   /** uuid, design time only */
   enum_id?: string;
   showExplanation?: boolean;
+  readOnly?: boolean;
 }
 
 /**
@@ -286,6 +305,7 @@ export interface FileControl extends BaseControl {
   type: "file";
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   required?: true;
   /** uuid */
@@ -339,6 +359,7 @@ export interface NumberOfInstancesControl extends BaseControl {
   type: "number_of_instances";
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   required?: true;
   default?: EntityInstance[];
@@ -352,6 +373,7 @@ export interface NumberOfInstancesControl extends BaseControl {
    */
   min?: number;
   max?: number;
+  readOnly?: boolean;
 }
 
 /**
@@ -366,6 +388,7 @@ export interface TextControl extends BaseControl {
   type: "text";
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   required?: true;
   disabled?: true;
@@ -381,12 +404,33 @@ export interface TextControl extends BaseControl {
     minRows?: number;
   };
   showExplanation?: boolean;
+  readOnly?: boolean;
 }
 
 /**
  * @deprecated Use `TextControl` instead
  */
 export type IText = TextControl;
+
+/**
+ * Denotes when documentation should be supplied/uploaded
+ */
+export interface DocumentControl extends BaseControl {
+  id: string;
+  type: "document";
+  label?: string;
+  attribute: string;
+  required?: boolean;
+  disabled?: true;
+  maxSizeBytes?: number;
+  /**
+   * we'll manipulate these together, but it's easier if they are defined separately,
+   * as one mime type can have multiple extensions, and one extension can have multiple mime types
+   * e.g.
+   */
+  allowedMimeTypes?: string[];
+  allowedExtensions?: string[];
+}
 
 /**
  * Display text to the user. This differs from the text control above, \
@@ -433,6 +477,7 @@ export interface EntityControl<C = Control> extends BaseControl {
   type: "entity";
   label?: string;
   labelDisplay?: LabelDisplay;
+  sxForSeparateLabel?: Record<string, unknown>;
   labelLength?: number;
   /** The name of the entity */
   entity: string;
@@ -500,6 +545,14 @@ export interface SwitchContainerControl<C = Control> extends BaseControl {
   columnWidth?: number;
 }
 
+export interface DataContainerControl<C = Control> extends BaseControl {
+  id: string;
+  type: "data_container";
+  label: string;
+  columns: number;
+  controls: C[];
+}
+
 // renderable controls
 
 export interface EntityControlInstance {
@@ -520,6 +573,8 @@ export interface RenderableCertaintyContainerControl extends CertaintyContainerC
 }
 
 export interface RenderableRepeatingContainerControl extends RepeatingContainerControl<RenderableControl> {}
+
+export interface RenderableDataContainerControl extends DataContainerControl<RenderableControl> {}
 
 // conditions
 
@@ -559,10 +614,13 @@ export type RenderableControl = (
   | NumberOfInstancesControl
   | TextControl
   | TypographyControl
+  | DocumentControl
   | RenderableEntityControl
   | RenderableSwitchContainerControl
   | RenderableCertaintyContainerControl
   | RenderableRepeatingContainerControl
+  | RenderableDataContainerControl
+  | GenerativeChatControl
 ) & {
   loading?: boolean;
   dynamicAttributes?: string[];
@@ -581,10 +639,13 @@ export type Control =
   | NumberOfInstancesControl
   | TextControl
   | TypographyControl
+  | DocumentControl
   | EntityControl
   | RepeatingContainerControl
   | CertaintyContainerControl
-  | SwitchContainerControl;
+  | SwitchContainerControl
+  | DataContainerControl
+  | GenerativeChatControl;
 export type ControlType = Control["type"];
 
 export interface ControlsValue {

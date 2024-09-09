@@ -35,7 +35,7 @@ BaseControl.attribute
 
 #### Defined in
 
-[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L8)
+[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L8)
 
 ___
 
@@ -47,7 +47,7 @@ The base64 date URI of the image
 
 #### Defined in
 
-[src/types/controls.ts:319](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L319)
+[src/types/controls.ts:339](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L339)
 
 ___
 
@@ -61,7 +61,7 @@ BaseControl.id
 
 #### Defined in
 
-[src/types/controls.ts:316](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L316)
+[src/types/controls.ts:336](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L336)
 
 ___
 
@@ -75,7 +75,7 @@ BaseControl.type
 
 #### Defined in
 
-[src/types/controls.ts:317](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L317)
+[src/types/controls.ts:337](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L337)
 
 ___
 
@@ -89,4 +89,4 @@ BaseControl.version
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L9)

@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
 import type {
   AttributeValue,
   AttributeValues,
+  ChatResponse,
   Control,
   Overrides,
   RenderableEntityControl,
@@ -472,11 +473,11 @@ export class SessionInstance implements Session {
     return this;
   }
 
-  async chat(message: string, overrides: Overrides = {}) {
+  async chat(message: string, overrides: Overrides = {}): Promise<ChatResponse> {
     this.triggerUpdate({ externalLoading: true });
-    this.updateSession(await chat(this.api, this.project, this.sessionId, message, overrides));
+    const payload = await chat(this.api, this.project, this.sessionId, message, overrides);
     this.triggerUpdate({ externalLoading: false });
-    return this;
+    return payload;
   }
 
   async save(data: AttributeValues) {

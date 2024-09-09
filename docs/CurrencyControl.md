@@ -24,8 +24,10 @@ A number input for inputting currency values. This should:
 - [labelLength](../wiki/CurrencyControl#labellength)
 - [max](../wiki/CurrencyControl#max)
 - [min](../wiki/CurrencyControl#min)
+- [readOnly](../wiki/CurrencyControl#readonly)
 - [required](../wiki/CurrencyControl#required)
 - [showExplanation](../wiki/CurrencyControl#showexplanation)
+- [sxForSeparateLabel](../wiki/CurrencyControl#sxforseparatelabel)
 - [symbol](../wiki/CurrencyControl#symbol)
 - [type](../wiki/CurrencyControl#type)
 - [value](../wiki/CurrencyControl#value)
@@ -45,7 +47,7 @@ BaseControl.attribute
 
 #### Defined in
 
-[src/types/controls.ts:60](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L60)
+[src/types/controls.ts:70](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L70)
 
 ___
 
@@ -55,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:58](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L58)
+[src/types/controls.ts:68](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L68)
 
 ___
 
@@ -65,7 +67,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:57](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L57)
+[src/types/controls.ts:67](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L67)
 
 ___
 
@@ -81,7 +83,7 @@ BaseControl.id
 
 #### Defined in
 
-[src/types/controls.ts:51](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L51)
+[src/types/controls.ts:60](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L60)
 
 ___
 
@@ -91,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:53](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L53)
+[src/types/controls.ts:62](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L62)
 
 ___
 
@@ -101,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:54](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L54)
+[src/types/controls.ts:63](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L63)
 
 ___
 
@@ -111,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:55](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L55)
+[src/types/controls.ts:65](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L65)
 
 ___
 
@@ -123,7 +125,7 @@ Maximum number allowed - if not set assume no restriction
 
 #### Defined in
 
-[src/types/controls.ts:67](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L67)
+[src/types/controls.ts:77](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L77)
 
 ___
 
@@ -135,7 +137,17 @@ Minimum number allowed - if not set assume no restriction
 
 #### Defined in
 
-[src/types/controls.ts:65](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L65)
+[src/types/controls.ts:75](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L75)
+
+___
+
+### readOnly
+
+• `Optional` **readOnly**: `boolean`
+
+#### Defined in
+
+[src/types/controls.ts:79](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L79)
 
 ___
 
@@ -145,7 +157,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:56](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L56)
+[src/types/controls.ts:66](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L66)
 
 ___
 
@@ -155,7 +167,17 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:68](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L68)
+[src/types/controls.ts:78](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L78)
+
+___
+
+### sxForSeparateLabel
+
+• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+
+#### Defined in
+
+[src/types/controls.ts:64](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L64)
 
 ___
 
@@ -171,7 +193,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:63](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L63)
+[src/types/controls.ts:73](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L73)
 
 ___
 
@@ -185,7 +207,7 @@ BaseControl.type
 
 #### Defined in
 
-[src/types/controls.ts:52](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L52)
+[src/types/controls.ts:61](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L61)
 
 ___
 
@@ -195,7 +217,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:61](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L61)
+[src/types/controls.ts:71](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L71)
 
 ___
 
@@ -209,4 +231,4 @@ BaseControl.version
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L9)

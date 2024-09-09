@@ -31,7 +31,7 @@ Denotes when documentation should be supplied/uploaded
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:397
+[src/types/controls.ts:432](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L432)
 
 ___
 
@@ -45,7 +45,7 @@ e.g.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:396
+[src/types/controls.ts:431](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L431)
 
 ___
 
@@ -59,7 +59,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:387
+[src/types/controls.ts:422](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L422)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:389
+[src/types/controls.ts:424](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L424)
 
 ___
 
@@ -83,7 +83,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:384
+[src/types/controls.ts:419](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L419)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:386
+[src/types/controls.ts:421](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L421)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:390
+[src/types/controls.ts:425](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L425)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:388
+[src/types/controls.ts:423](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L423)
 
 ___
 
@@ -127,7 +127,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:385
+[src/types/controls.ts:420](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L420)
 
 ___
 
@@ -141,4 +141,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:7
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L9)

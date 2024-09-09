@@ -31,6 +31,7 @@ Collect information about instances (of an entity) within a tabular structure.
 - [max](../wiki/EntityControl#max)
 - [min](../wiki/EntityControl#min)
 - [showExplanation](../wiki/EntityControl#showexplanation)
+- [sxForSeparateLabel](../wiki/EntityControl#sxforseparatelabel)
 - [template](../wiki/EntityControl#template)
 - [type](../wiki/EntityControl#type)
 - [value](../wiki/EntityControl#value)
@@ -48,7 +49,7 @@ BaseControl.attribute
 
 #### Defined in
 
-[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L8)
+[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L8)
 
 ___
 
@@ -60,7 +61,7 @@ describes single 'row' of entries, each of which has all controls from `template
 
 #### Defined in
 
-[src/types/controls.ts:441](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L441)
+[src/types/controls.ts:486](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L486)
 
 ___
 
@@ -72,7 +73,7 @@ The name of the entity
 
 #### Defined in
 
-[src/types/controls.ts:438](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L438)
+[src/types/controls.ts:483](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L483)
 
 ___
 
@@ -82,7 +83,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:448](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L448)
+[src/types/controls.ts:493](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L493)
 
 ___
 
@@ -98,7 +99,7 @@ BaseControl.id
 
 #### Defined in
 
-[src/types/controls.ts:432](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L432)
+[src/types/controls.ts:476](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L476)
 
 ___
 
@@ -108,7 +109,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:434](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L434)
+[src/types/controls.ts:478](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L478)
 
 ___
 
@@ -118,7 +119,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:435](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L435)
+[src/types/controls.ts:479](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L479)
 
 ___
 
@@ -128,7 +129,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:436](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L436)
+[src/types/controls.ts:481](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L481)
 
 ___
 
@@ -138,7 +139,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:446](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L446)
+[src/types/controls.ts:491](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L491)
 
 ___
 
@@ -150,7 +151,7 @@ min number of instances
 
 #### Defined in
 
-[src/types/controls.ts:445](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L445)
+[src/types/controls.ts:490](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L490)
 
 ___
 
@@ -160,7 +161,17 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:447](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L447)
+[src/types/controls.ts:492](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L492)
+
+___
+
+### sxForSeparateLabel
+
+• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+
+#### Defined in
+
+[src/types/controls.ts:480](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L480)
 
 ___
 
@@ -170,7 +181,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:442](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L442)
+[src/types/controls.ts:487](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L487)
 
 ___
 
@@ -184,7 +195,7 @@ BaseControl.type
 
 #### Defined in
 
-[src/types/controls.ts:433](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L433)
+[src/types/controls.ts:477](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L477)
 
 ___
 
@@ -194,7 +205,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:443](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L443)
+[src/types/controls.ts:488](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L488)
 
 ___
 
@@ -208,4 +219,4 @@ BaseControl.version
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/c6fbae0/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L9)

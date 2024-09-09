@@ -1,6 +1,7 @@
 import type { AxiosInstance } from "axios";
 import type {
   AttributeValues,
+  ChatResponse,
   Navigate,
   Overrides,
   ProjectId,
@@ -68,10 +69,16 @@ export const chat = async (
   session: SessionId,
   message: string,
   overrides?: Overrides,
-) => {
-  const res = await api.post<Session>(
+): Promise<ChatResponse> => {
+  const res = await api.post<ChatResponse>(
     project,
-    { prompt: message, mode: "generative", aiOptions: { model: "gpt-4o", temperature: 0.8 }, ...overrides },
+    {
+      prompt: message,
+      turbo: false,
+      mode: "generative",
+      aiOptions: { model: "gpt-4o", temperature: 0.8 },
+      ...overrides,
+    },
     { params: { session } },
   );
   return res.data;
