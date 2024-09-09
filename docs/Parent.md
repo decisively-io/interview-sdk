@@ -14,4 +14,4 @@
 
 #### Defined in
 
-[src/types/core.ts:22](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/core.ts#L22)
+[src/types/core.ts:22](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/core.ts#L22)

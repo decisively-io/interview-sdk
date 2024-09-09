@@ -36,7 +36,7 @@ BaseControl.attribute
 
 #### Defined in
 
-[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L8)
+[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L8)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:461](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L461)
+[src/types/controls.ts:461](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L461)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:463](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L463)
+[src/types/controls.ts:463](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L463)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:459](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L459)
+[src/types/controls.ts:459](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L459)
 
 ___
 
@@ -84,7 +84,7 @@ BaseControl.id
 
 #### Defined in
 
-[src/types/controls.ts:441](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L441)
+[src/types/controls.ts:441](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L441)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:444](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L444)
+[src/types/controls.ts:444](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L444)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:443](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L443)
+[src/types/controls.ts:443](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L443)
 
 ___
 
@@ -118,7 +118,7 @@ BaseControl.type
 
 #### Defined in
 
-[src/types/controls.ts:442](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L442)
+[src/types/controls.ts:442](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L442)
 
 ___
 
@@ -132,4 +132,4 @@ BaseControl.version
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L9)

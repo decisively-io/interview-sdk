@@ -176,7 +176,9 @@ export class SessionInstance implements Session {
   private triggerUpdate(update: Partial<{ externalLoading: boolean; screen: Screen }>) {
     const { externalLoading, screen } = update;
 
-    this.externalLoading = externalLoading ?? false;
+    if (typeof externalLoading === "boolean") {
+      this.externalLoading = externalLoading;
+    }
     this.processedScreen = screen ?? this.processedScreen;
     this.renderAt = Date.now();
 
@@ -472,10 +474,15 @@ export class SessionInstance implements Session {
   }
 
   async chat(message: string, overrides: Overrides = {}): Promise<ChatResponse> {
-    this.triggerUpdate({ externalLoading: true });
-    const payload = await chat(this.api, this.project, this.sessionId, message, overrides);
-    this.triggerUpdate({ externalLoading: false });
-    return payload;
+    try {
+      this.triggerUpdate({ externalLoading: true });
+      const payload = await chat(this.api, this.project, this.sessionId, message, overrides);
+      this.triggerUpdate({ externalLoading: false });
+      return payload;
+    } catch (error) {
+      this.triggerUpdate({ externalLoading: false });
+      throw error;
+    }
   }
 
   async save(data: AttributeValues) {

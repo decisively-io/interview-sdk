@@ -41,7 +41,7 @@ BaseControl.attribute
 
 #### Defined in
 
-[src/types/controls.ts:312](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L312)
+[src/types/controls.ts:312](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L312)
 
 ___
 
@@ -53,7 +53,7 @@ The types of file allowed (pdf docx etc)
 
 #### Defined in
 
-[src/types/controls.ts:316](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L316)
+[src/types/controls.ts:316](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L316)
 
 ___
 
@@ -69,7 +69,7 @@ BaseControl.id
 
 #### Defined in
 
-[src/types/controls.ts:304](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L304)
+[src/types/controls.ts:304](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L304)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:306](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L306)
+[src/types/controls.ts:306](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L306)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:307](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L307)
+[src/types/controls.ts:307](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L307)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:309](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L309)
+[src/types/controls.ts:309](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L309)
 
 ___
 
@@ -111,7 +111,7 @@ The max number of files that can be uploaded. Defaults to 1
 
 #### Defined in
 
-[src/types/controls.ts:314](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L314)
+[src/types/controls.ts:314](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L314)
 
 ___
 
@@ -123,7 +123,7 @@ The maximum size of a document, in Mb
 
 #### Defined in
 
-[src/types/controls.ts:318](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L318)
+[src/types/controls.ts:318](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L318)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:310](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L310)
+[src/types/controls.ts:310](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L310)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:319](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L319)
+[src/types/controls.ts:319](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L319)
 
 ___
 
@@ -153,7 +153,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:308](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L308)
+[src/types/controls.ts:308](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L308)
 
 ___
 
@@ -167,7 +167,7 @@ BaseControl.type
 
 #### Defined in
 
-[src/types/controls.ts:305](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L305)
+[src/types/controls.ts:305](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L305)
 
 ___
 
@@ -181,4 +181,4 @@ BaseControl.version
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/bdb144e/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/types/controls.ts#L9)
