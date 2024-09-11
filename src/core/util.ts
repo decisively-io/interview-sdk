@@ -51,23 +51,23 @@ export const iterateControls = (controls: Control[], func: (control: Control) =>
       const ctrl = control;
 
       if (ctrl.controls) {
-        iterateControls(ctrl.controls, func);
+        iterateControls(ctrl.controls, func, template);
       }
     } else if (control.type === "switch_container") {
       const ctrl = control;
       if (ctrl.outcome_false) {
-        iterateControls(ctrl.outcome_false, func);
+        iterateControls(ctrl.outcome_false, func, template);
       }
       if (ctrl.outcome_true) {
-        iterateControls(ctrl.outcome_true, func);
+        iterateControls(ctrl.outcome_true, func, template);
       }
     } else if (control.type === "certainty_container") {
       const ctrl = control;
       if (ctrl.certain) {
-        iterateControls(ctrl.certain, func);
+        iterateControls(ctrl.certain, func, template);
       }
       if (ctrl.uncertain) {
-        iterateControls(ctrl.uncertain, func);
+        iterateControls(ctrl.uncertain, func, template);
       }
     } else if (control.type === "entity") {
       const ctrl = control as RenderableEntityControl;
@@ -75,15 +75,15 @@ export const iterateControls = (controls: Control[], func: (control: Control) =>
       if (ctrl.instances && !template) {
         // @ts-ignore
         for (const instance of ctrl.instances) {
-          iterateControls(instance.controls, func);
+          iterateControls(instance.controls, func, template);
         }
       } else if (ctrl.template) {
-        iterateControls(ctrl.template, func);
+        iterateControls(ctrl.template, func, template);
       }
     } else if (control.type === "data_container") {
       const ctrl = control;
       if (ctrl.controls) {
-        iterateControls(ctrl.controls, func);
+        iterateControls(ctrl.controls, func, template);
       }
     }
   }
@@ -96,17 +96,20 @@ export const applyInstancesToEntityControl = (control: RenderableEntityControl, 
     }
   }
   // @ts-ignore
-  control.instances = instances.map((id: string) => {
-    const controls = structuredClone(control.template);
-    iterateControls(controls, (control: any) => {
-      if (typeof control.templateText === "string") {
-        control.templateText = control.templateText.replace(/@id/g, id);
+  control.instances = instances.map((id) => {
+    const controls =
+      control.instances?.find((instance) => instance.id === id)?.controls ?? structuredClone(control.template);
+    iterateControls(controls, (instanceControl: any) => {
+      if (typeof instanceControl.templateText === "string") {
+        instanceControl.templateText = instanceControl.templateText.replace(/@id/g, id);
       }
-      if (typeof control.attribute === "string") {
-        control.attribute = control.attribute.replace(/@id/g, id);
+      if (typeof instanceControl.attribute === "string") {
+        instanceControl.attribute = instanceControl.attribute.replace(/@id/g, id);
       }
-      if (Array.isArray(control.dynamicAttributes)) {
-        control.dynamicAttributes = control.dynamicAttributes.map((attr: string) => attr.replace(/@id/g, id));
+      if (Array.isArray(instanceControl.dynamicAttributes)) {
+        instanceControl.dynamicAttributes = instanceControl.dynamicAttributes.map((attr: string) =>
+          attr.replace(/@id/g, id),
+        );
       }
     });
 
@@ -156,13 +159,13 @@ export const deriveDefaultControlsValue = (controls: RenderableControl[], nested
       case "switch_container": {
         const controls = control.branch === "true" ? control.outcome_true : control.outcome_false;
         if (controls) {
-          Object.assign(result, deriveDefaultControlsValue(controls));
+          Object.assign(result, deriveDefaultControlsValue(controls, nested));
         }
         break;
       }
 
       case "repeating_container": {
-        Object.assign(result, deriveDefaultControlsValue(control.controls));
+        Object.assign(result, deriveDefaultControlsValue(control.controls, nested));
 
         break;
       }
