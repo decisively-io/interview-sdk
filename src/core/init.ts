@@ -1,13 +1,12 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
+import deepmerge from "deepmerge";
 import debounce from "lodash.debounce";
 import isEmpty from "lodash.isempty";
 import isEqual from "lodash.isequal";
 import { v4 as uuid } from "uuid";
 import type {
-  AttributeValue,
   AttributeValues,
   ChatResponse,
-  Control,
   Overrides,
   RenderableEntityControl,
   ResponseData,
@@ -18,7 +17,6 @@ import type {
   StepId,
 } from "../types";
 import { back, chat, create, exportTimeline, load, navigate, submit } from "./api";
-import { ControlTypesInfo } from "./constants";
 import { type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
 import {
@@ -45,17 +43,6 @@ export const createApiInstance = (baseURL: string, overrides: AxiosRequestConfig
   });
 };
 
-const transformControlValue = (value: AttributeValue, control: Control): any => {
-  switch (control.type) {
-    case ControlTypesInfo.NUMBER_OF_INSTANCES.id:
-      return range(Number(value)).map((i) => ({ "@id": uuid() }));
-    case ControlTypesInfo.ENTITY.id:
-      return value;
-    default:
-      return value;
-  }
-};
-
 const deepClone = <T>(obj: T): T => JSON.parse(JSON.stringify(obj));
 
 export const transformResponse = (session: Session, data: ResponseData): ResponseData => {
@@ -64,10 +51,10 @@ export const transformResponse = (session: Session, data: ResponseData): Respons
     newData["@parent"] = session.data["@parent"];
   }
 
-  for (const id of Object.keys(newData)) {
-    const control = (session.screen.controls as any[]).find((c) => c.attribute === id || c.entity === id);
-    if (control) {
-      newData[id] = transformControlValue(newData[id], control as Control);
+  for (const control of session.screen.controls) {
+    if (control.type === "number_of_instances") {
+      const value = newData[control.entity];
+      newData[control.entity] = range(Number(value)).map((i) => ({ "@id": uuid() }));
     }
   }
   return newData;
@@ -165,12 +152,16 @@ export class SessionInstance implements Session {
     return this.options.api;
   }
 
-  private get release() {
+  get release() {
     return this.options.release;
   }
 
-  private get project() {
+  get project() {
     return this.options.project;
+  }
+
+  get interactionId() {
+    return this.session.interactionId;
   }
 
   private triggerUpdate(update: Partial<{ externalLoading: boolean; screen: Screen }>) {
@@ -300,13 +291,7 @@ export class SessionInstance implements Session {
     if (Object.keys(this.internals.unknownsRequiringSimulate).length > 0 && this.session.screen) {
       const requestId = this.internals.latestRequest;
 
-      const result = await simulateUnknowns(
-        Object.values(this.internals.unknownsRequiringSimulate),
-        this.api,
-        this.project,
-        this.release,
-        this.sessionId,
-      );
+      const result = await simulateUnknowns(Object.values(this.internals.unknownsRequiringSimulate), this.api, this);
 
       // are we still the last request?
       if (this.internals.latestRequest === requestId) {
@@ -456,27 +441,24 @@ export class SessionInstance implements Session {
   async submit(data: AttributeValues, navigate?: any, overrides: Overrides = {}) {
     this.triggerUpdate({ externalLoading: true });
     this.updateSession(
-      await submit(
-        this.api,
-        this.project,
-        this.sessionId,
-        transformResponse(this, data as any),
-        navigate,
-        {
-          response: this.options.responseElements,
-          ...overrides,
-        },
-        this.release,
-      ),
+      await submit(this.api, this, transformResponse(this, data as any), navigate, {
+        response: this.options.responseElements,
+        ...overrides,
+      }),
     );
     this.triggerUpdate({ externalLoading: false });
     return this;
   }
 
-  async chat(message: string, overrides: Overrides = {}): Promise<ChatResponse> {
+  async chat(
+    goal: string,
+    message: string,
+    interactionId?: string | null,
+    overrides?: Overrides,
+  ): Promise<ChatResponse> {
     try {
       this.triggerUpdate({ externalLoading: true });
-      const payload = await chat(this.api, this.project, this.sessionId, message, overrides);
+      const payload = await chat(this.api, this, message, goal, overrides, interactionId);
       this.triggerUpdate({ externalLoading: false });
       return payload;
     } catch (error) {
@@ -488,15 +470,9 @@ export class SessionInstance implements Session {
   async save(data: AttributeValues) {
     this.triggerUpdate({ externalLoading: true });
     this.updateSession(
-      await submit(
-        this.api,
-        this.project,
-        this.sessionId,
-        transformResponse(this, data as any),
-        false,
-        { response: this.options.responseElements },
-        this.release,
-      ),
+      await submit(this.api, this, transformResponse(this, data as any), false, {
+        response: this.options.responseElements,
+      }),
     );
     this.triggerUpdate({ externalLoading: false });
     return this;
@@ -504,20 +480,20 @@ export class SessionInstance implements Session {
 
   async navigate(step: StepId) {
     this.triggerUpdate({ externalLoading: true });
-    this.updateSession(await navigate(this.api, this.project, this.sessionId, step));
+    this.updateSession(await navigate(this.api, this, step));
     this.triggerUpdate({ externalLoading: false });
     return this;
   }
 
   async back() {
     this.triggerUpdate({ externalLoading: true });
-    this.updateSession(await back(this.api, this.project, this.sessionId));
+    this.updateSession(await back(this.api, this));
     this.triggerUpdate({ externalLoading: false });
     return this;
   }
 
   exportTimeline() {
-    return exportTimeline(this.api, this.project, this.sessionId);
+    return exportTimeline(this.api, this);
   }
 }
 

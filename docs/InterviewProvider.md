@@ -12,11 +12,11 @@
 
 ### create
 
-• **create**: (`project`: `string`, `config`: [`SessionConfig`](../wiki/SessionConfig), `newDataCallback?`: `NewDataCallback`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+• **create**: (`project`: `string`, `config`: [`SessionConfig`](../wiki/SessionConfig), `newDataCallback?`: `NewDataCallback`) => `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Type declaration
 
-▸ (`project`, `config`, `newDataCallback?`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+▸ (`project`, `config`, `newDataCallback?`): `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
 
 ##### Parameters
 
@@ -28,11 +28,11 @@
 
 ##### Returns
 
-`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+`Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Defined in
 
-[src/core/init.ts:82](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/core/init.ts#L82)
+[src/core/init.ts:69](https://github.com/decisively-io/interview-sdk/blob/f6a9e1544070264c0422ae6f4514bc6f150675b7/src/core/init.ts#L69)
 
 ___
 
@@ -50,17 +50,17 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:84](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/core/init.ts#L84)
+[src/core/init.ts:71](https://github.com/decisively-io/interview-sdk/blob/f6a9e1544070264c0422ae6f4514bc6f150675b7/src/core/init.ts#L71)
 
 ___
 
 ### load
 
-• **load**: (`project`: `string`, `sessionId`: `string`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+• **load**: (`project`: `string`, `sessionId`: `string`) => `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Type declaration
 
-▸ (`project`, `sessionId`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+▸ (`project`, `sessionId`): `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
 
 ##### Parameters
 
@@ -71,8 +71,8 @@ ___
 
 ##### Returns
 
-`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
+`Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Defined in
 
-[src/core/init.ts:83](https://github.com/decisively-io/interview-sdk/blob/4a50c8c/src/core/init.ts#L83)
+[src/core/init.ts:70](https://github.com/decisively-io/interview-sdk/blob/f6a9e1544070264c0422ae6f4514bc6f150675b7/src/core/init.ts#L70)

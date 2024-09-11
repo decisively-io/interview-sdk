@@ -109,6 +109,7 @@ export interface Progress {
 export interface Session {
   /** Unique ID of the session */
   sessionId: string;
+  interactionId: string;
   status: "in-progress" | "complete" | "error";
   context: Context;
   data: Record<AttributeId, AttributeData> & Parent;
@@ -147,4 +148,6 @@ export interface ChatResponse {
   interactionId: string;
   locale: string;
   goal: string;
+  status: "in-progress" | "complete" | "error";
+  processedData: AttributeValues;
 }
