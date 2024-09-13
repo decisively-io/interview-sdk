@@ -142,6 +142,17 @@ export interface AiOptions {
   model?: string;
 }
 
+export interface ChatProcessed {
+  data: AttributeValues;
+  attributes: Array<{
+    id: string;
+    publicId: string | undefined;
+    path: string | undefined;
+    description: string;
+    entity: string;
+  }>;
+}
+
 export interface ChatResponse {
   message: string;
   sessionId: string;
@@ -149,5 +160,12 @@ export interface ChatResponse {
   locale: string;
   goal: string;
   status: "in-progress" | "complete" | "error";
-  processedData: AttributeValues;
+  processed: ChatProcessed;
+}
+
+export interface ChatMessage {
+  content: string;
+  self: boolean;
+  failed?: boolean;
+  processed?: ChatProcessed;
 }
