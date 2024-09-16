@@ -16,6 +16,8 @@ export interface GenerativeChatControl extends BaseControl {
   goal: string;
   initialMessage: string;
   aiOptions?: AiOptions;
+  required?: boolean;
+  showDataInline?: boolean;
 }
 
 /**

@@ -140,6 +140,7 @@ export type DynamicUpdateFunction = (data: AttributeValues) => void;
 export interface AiOptions {
   temperature?: number;
   model?: string;
+  instructions?: string;
 }
 
 export interface ChatProcessed {

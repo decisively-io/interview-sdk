@@ -1,4 +1,14 @@
-export const ControlTypesInfo = {
+export interface ControlTypeInfo {
+  id: string;
+  name: string;
+  isContainer?: boolean;
+}
+
+export const CONTROL_TYPES = {
+  TYPOGRAPHY: {
+    id: "typography",
+    name: "Typography",
+  },
   BOOLEAN: {
     id: "boolean",
     name: "Checkbox",
@@ -11,10 +21,11 @@ export const ControlTypesInfo = {
     id: "date",
     name: "Date",
   },
-  TYPOGRAPHY: {
-    id: "typography",
-    name: "Typography",
+  TIME: {
+    id: "time",
+    name: "Time",
   },
+
   RADIO: {
     id: "radio",
     name: "Radio Buttons",
@@ -27,10 +38,7 @@ export const ControlTypesInfo = {
     id: "text",
     name: "Text",
   },
-  TIME: {
-    id: "time",
-    name: "Time",
-  },
+
   NUMBER_OF_INSTANCES: {
     id: "number_of_instances",
     name: "Number Of Instances",
@@ -42,17 +50,30 @@ export const ControlTypesInfo = {
   REPEATING_CONTAINER: {
     id: "repeating_container",
     name: "Repeat Container",
+    isContainer: true,
   },
   CERTAINTY_CONTAINER: {
     id: "certainty_container",
     name: "Certainty Container",
+    isContainer: true,
   },
   SWITCH_CONTAINER: {
     id: "switch_container",
     name: "Switch Container",
+    isContainer: true,
   },
   DATA_CONTAINER: {
     id: "data_container",
     name: "Data Container",
+    isContainer: true,
   },
-} as const;
+  GENERATIVE_CHAT: {
+    id: "generative_chat",
+    name: "Generative Chat",
+  },
+} as const satisfies Record<string, ControlTypeInfo>;
+
+/**
+ * @deprecated - use CONTROL_TYPES instead
+ */
+export const ControlTypesInfo = CONTROL_TYPES;

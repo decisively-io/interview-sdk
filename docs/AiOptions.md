@@ -4,10 +4,21 @@
 
 ### Properties
 
+- [instructions](../wiki/AiOptions#instructions)
 - [model](../wiki/AiOptions#model)
 - [temperature](../wiki/AiOptions#temperature)
 
 ## Properties
+
+### instructions
+
+• `Optional` **instructions**: `string`
+
+#### Defined in
+
+[src/types/core.ts:143](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L143)
+
+___
 
 ### model
 
@@ -15,7 +26,7 @@
 
 #### Defined in
 
-[src/types/core.ts:142](https://github.com/decisively-io/interview-sdk/blob/770bbcca93a518c7b415ad9d9ccd638fa2cf2acf/src/types/core.ts#L142)
+[src/types/core.ts:142](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L142)
 
 ___
 
@@ -25,4 +36,4 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:141](https://github.com/decisively-io/interview-sdk/blob/770bbcca93a518c7b415ad9d9ccd638fa2cf2acf/src/types/core.ts#L141)
+[src/types/core.ts:141](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L141)
