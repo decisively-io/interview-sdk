@@ -315,7 +315,12 @@ export interface FileControl extends BaseControl {
   value?: FileAttributeValue | null;
   /** The max number of files that can be uploaded. Defaults to 1 */
   max?: number;
-  /** The types of file allowed (pdf docx etc) */
+  /**
+   * The types of file allowed (".pdf", ".docx", etc).\
+   * **IMPORTANT**: values has to start with a dot  as they will be passed directly \
+   * to an "accept" attribute of HTMLInputElement with type: "file". Alternatively\
+   * those can be one of valid MIME-types
+   */
   file_type?: string[];
   /** The maximum size of a document, in Mb */
   max_size?: number;
