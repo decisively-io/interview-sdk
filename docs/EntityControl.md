@@ -1,4 +1,4 @@
-# Interface: EntityControl<C\>
+# Interface: EntityControl\<C\>
 
 Collect information about instances (of an entity) within a tabular structure.
 
@@ -49,7 +49,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:6
+[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L8)
 
 ___
 
@@ -61,7 +61,7 @@ describes single 'row' of entries, each of which has all controls from `template
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:434
+[src/types/controls.ts:488](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L488)
 
 ___
 
@@ -73,7 +73,7 @@ The name of the entity
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:431
+[src/types/controls.ts:485](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L485)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:441
+[src/types/controls.ts:495](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L495)
 
 ___
 
@@ -99,7 +99,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:424
+[src/types/controls.ts:478](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L478)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:426
+[src/types/controls.ts:480](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L480)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:427
+[src/types/controls.ts:481](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L481)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:429
+[src/types/controls.ts:483](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L483)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:439
+[src/types/controls.ts:493](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L493)
 
 ___
 
@@ -151,7 +151,7 @@ min number of instances
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:438
+[src/types/controls.ts:492](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L492)
 
 ___
 
@@ -161,17 +161,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:440
+[src/types/controls.ts:494](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L494)
 
 ___
 
 ### sxForSeparateLabel
 
-• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+• `Optional` **sxForSeparateLabel**: `Record`\<`string`, `unknown`\>
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:428
+[src/types/controls.ts:482](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L482)
 
 ___
 
@@ -181,7 +181,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:435
+[src/types/controls.ts:489](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L489)
 
 ___
 
@@ -195,7 +195,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:425
+[src/types/controls.ts:479](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L479)
 
 ___
 
@@ -205,7 +205,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:436
+[src/types/controls.ts:490](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L490)
 
 ___
 
@@ -219,4 +219,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:7
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L9)

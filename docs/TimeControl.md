@@ -41,7 +41,7 @@ Do not send a date component back.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:160
+[src/types/controls.ts:183](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L183)
 
 ___
 
@@ -54,7 +54,7 @@ Regardless of this input the server expects 24 hour time
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:157
+[src/types/controls.ts:180](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L180)
 
 ___
 
@@ -70,7 +70,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:144
+[src/types/controls.ts:167](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L167)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:148
+[src/types/controls.ts:171](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L171)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:142
+[src/types/controls.ts:165](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L165)
 
 ___
 
@@ -108,7 +108,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:135
+[src/types/controls.ts:158](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L158)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:137
+[src/types/controls.ts:160](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L160)
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:138
+[src/types/controls.ts:161](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L161)
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:140
+[src/types/controls.ts:163](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L163)
 
 ___
 
@@ -150,7 +150,7 @@ Maximum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:152
+[src/types/controls.ts:175](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L175)
 
 ___
 
@@ -162,7 +162,7 @@ Minimum time allowed, 'HH:mm:ss'
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:150
+[src/types/controls.ts:173](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L173)
 
 ___
 
@@ -174,7 +174,7 @@ Eg: 15 = only allow time in 15 minute increments (3:00, 3:15, 3:30, 3:45). The i
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:159
+[src/types/controls.ts:182](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L182)
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:162
+[src/types/controls.ts:185](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L185)
 
 ___
 
@@ -194,7 +194,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:141
+[src/types/controls.ts:164](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L164)
 
 ___
 
@@ -204,17 +204,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:161
+[src/types/controls.ts:184](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L184)
 
 ___
 
 ### sxForSeparateLabel
 
-• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+• `Optional` **sxForSeparateLabel**: `Record`\<`string`, `unknown`\>
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:139
+[src/types/controls.ts:162](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L162)
 
 ___
 
@@ -228,7 +228,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:136
+[src/types/controls.ts:159](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L159)
 
 ___
 
@@ -240,7 +240,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:146
+[src/types/controls.ts:169](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L169)
 
 ___
 
@@ -254,4 +254,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:7
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L9)

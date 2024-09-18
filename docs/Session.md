@@ -11,6 +11,7 @@
 - [context](../wiki/Session#context)
 - [data](../wiki/Session#data)
 - [explanations](../wiki/Session#explanations)
+- [interactionId](../wiki/Session#interactionid)
 - [locale](../wiki/Session#locale)
 - [progress](../wiki/Session#progress)
 - [renderAt](../wiki/Session#renderat)
@@ -28,27 +29,37 @@
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:94
+[src/types/core.ts:114](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L114)
 
 ___
 
 ### data
 
-• **data**: `Record`<`string`, [`AttributeData`](../wiki/AttributeData)\> & [`Parent`](../wiki/Parent)
+• **data**: `Record`\<`string`, [`AttributeData`](../wiki/AttributeData)\> & [`Parent`](../wiki/Parent)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:95
+[src/types/core.ts:115](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L115)
 
 ___
 
 ### explanations
 
-• `Optional` **explanations**: `Record`<`string`, `string`\>
+• `Optional` **explanations**: `Record`\<`string`, `string`\>
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:101
+[src/types/core.ts:121](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L121)
+
+___
+
+### interactionId
+
+• **interactionId**: `string`
+
+#### Defined in
+
+[src/types/core.ts:112](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L112)
 
 ___
 
@@ -58,7 +69,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:102
+[src/types/core.ts:122](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L122)
 
 ___
 
@@ -68,7 +79,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:99
+[src/types/core.ts:119](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L119)
 
 ___
 
@@ -78,7 +89,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:100
+[src/types/core.ts:120](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L120)
 
 ___
 
@@ -88,7 +99,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:98
+[src/types/core.ts:118](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L118)
 
 ___
 
@@ -100,7 +111,7 @@ Unique ID of the session
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:92
+[src/types/core.ts:111](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L111)
 
 ___
 
@@ -110,7 +121,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:96
+[src/types/core.ts:116](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L116)
 
 ___
 
@@ -120,7 +131,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:93
+[src/types/core.ts:113](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L113)
 
 ___
 
@@ -130,4 +141,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:97
+[src/types/core.ts:117](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L117)

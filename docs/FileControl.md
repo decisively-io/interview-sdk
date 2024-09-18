@@ -41,7 +41,7 @@ BaseControl.attribute
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:281
+[src/types/controls.ts:314](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L314)
 
 ___
 
@@ -53,7 +53,7 @@ The types of file allowed (pdf docx etc)
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:285
+[src/types/controls.ts:318](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L318)
 
 ___
 
@@ -69,7 +69,7 @@ BaseControl.id
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:273
+[src/types/controls.ts:306](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L306)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:275
+[src/types/controls.ts:308](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L308)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:276
+[src/types/controls.ts:309](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L309)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:278
+[src/types/controls.ts:311](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L311)
 
 ___
 
@@ -111,7 +111,7 @@ The max number of files that can be uploaded. Defaults to 1
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:283
+[src/types/controls.ts:316](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L316)
 
 ___
 
@@ -123,7 +123,7 @@ The maximum size of a document, in Mb
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:287
+[src/types/controls.ts:320](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L320)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:279
+[src/types/controls.ts:312](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L312)
 
 ___
 
@@ -143,17 +143,17 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:288
+[src/types/controls.ts:321](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L321)
 
 ___
 
 ### sxForSeparateLabel
 
-• `Optional` **sxForSeparateLabel**: `Record`<`string`, `unknown`\>
+• `Optional` **sxForSeparateLabel**: `Record`\<`string`, `unknown`\>
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:277
+[src/types/controls.ts:310](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L310)
 
 ___
 
@@ -167,7 +167,7 @@ BaseControl.type
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:274
+[src/types/controls.ts:307](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L307)
 
 ___
 
@@ -181,4 +181,4 @@ BaseControl.version
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/controls.d.ts:7
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L9)

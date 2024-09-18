@@ -24,7 +24,7 @@ Is the screen complete, that is has data been provided for the attributes in thi
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:66
+[src/types/core.ts:82](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L82)
 
 ___
 
@@ -36,7 +36,7 @@ The context of the step
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:62
+[src/types/core.ts:78](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L78)
 
 ___
 
@@ -48,7 +48,7 @@ Whether the step is the current step of the interview. Only one step is marked c
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:64
+[src/types/core.ts:80](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L80)
 
 ___
 
@@ -60,7 +60,7 @@ Unique ID of the screen
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:58
+[src/types/core.ts:74](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L74)
 
 ___
 
@@ -72,7 +72,7 @@ True if the screen was skipped due to relevancy or conditional rules. The user c
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:70
+[src/types/core.ts:86](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L86)
 
 ___
 
@@ -84,7 +84,7 @@ An array of sub-steps
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:74
+[src/types/core.ts:90](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L90)
 
 ___
 
@@ -96,7 +96,7 @@ Title of the step. The screen may have a different title, so this title is inten
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:60
+[src/types/core.ts:76](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L76)
 
 ___
 
@@ -108,7 +108,7 @@ Whether a user can navigate to this screen. Some screens only exist as grouping 
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:72
+[src/types/core.ts:88](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L88)
 
 ___
 
@@ -120,4 +120,4 @@ Has this step been visited by the user. A screen is marked as visited when eithe
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:68
+[src/types/core.ts:84](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L84)

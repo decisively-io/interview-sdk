@@ -19,7 +19,7 @@ Data structure used to calculate the value for a Dynamic Attribute.
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:46
+[src/types/core.ts:58](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L58)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:45
+[src/types/core.ts:57](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L57)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:43
+[src/types/core.ts:55](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L55)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:44
+[src/types/core.ts:56](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L56)

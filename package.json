@@ -1,6 +1,6 @@
 {
   "name": "@decisively-io/interview-sdk",
-  "version": "0.9.44",
+  "version": "0.10.0-alpha.29",
   "description": "An SDK for the Decisively interview system.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
     "prepublishOnly": "npm run check:fix && npm run test && npm run build",
     "clean": "rimraf dist && rimraf docs",
     "doc": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-github-wiki-theme",
-    "check:fix": "tsc --noEmit --project tsconfig.json && npx @biomejs/biome check --apply .",
+    "check:fix": "tsc --noEmit --project tsconfig.json && npx @biomejs/biome check --write .",
     "check": "tsc --noEmit --project tsconfig.json && npx @biomejs/biome check .",
     "build": "yarn clean && tsc && npm run doc",
     "dev": "tsc -w",
@@ -39,9 +39,9 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@decisively-io/types-interview": "^0.5.5",
     "axios": "^0.26.1",
     "date-fns": "^2.28.0",
+    "deepmerge": "^4.3.1",
     "lodash.debounce": "^4.0.8",
     "lodash.isempty": "^4.4.0",
     "lodash.isequal": "^4.5.0",

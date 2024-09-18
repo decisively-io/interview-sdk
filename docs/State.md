@@ -20,7 +20,7 @@ The state attribute provides the values and additional information about attribu
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:52
+[src/types/core.ts:66](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L66)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:50
+[src/types/core.ts:63](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L63)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:54
+[src/types/core.ts:69](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L69)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:51
+[src/types/core.ts:64](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L64)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:53
+[src/types/core.ts:67](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L67)

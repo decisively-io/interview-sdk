@@ -1,3 +1,7 @@
+## 0.10.0
+
+- move types to this package instead of types-interview
+
 ## 0.9.0
 
 - support for dynamic text within entity controls

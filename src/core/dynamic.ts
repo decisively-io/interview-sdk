@@ -1,7 +1,8 @@
-import type { AttributeValues, ProjectId, ReleaseId, SessionId, Simulate, State } from "@decisively-io/types-interview";
 import type { AxiosInstance } from "axios";
 import set from "lodash.set";
+import type { AttributeValues, ProjectId, ReleaseId, SessionId, Simulate, State } from "../types";
 import { simulate } from "./api";
+import type { SessionInstance } from "./init";
 import { getEntityIds } from "./util";
 
 export type UnknownValues = Record<string, Partial<Simulate>>;
@@ -187,21 +188,20 @@ export const buildDynamicReplacementQueries = (
 export const simulateUnknowns = async (
   unKnownValues: Partial<Simulate>[],
   api: AxiosInstance,
-  project: ProjectId,
-  release: ReleaseId | undefined,
-  sessionId: SessionId,
+  session: SessionInstance,
 ): Promise<AttributeValues> => {
   try {
-    const simResAll = (
-      await Promise.all(unKnownValues.map((simReq) => simulate(api, project, release, sessionId, simReq)))
-    ).reduce((acc, simRes, idx) => {
-      const goal = unKnownValues[idx].goal;
-      if (goal) {
-        //console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
-        acc[goal] = simRes.outcome;
-      }
-      return acc;
-    }, {} as AttributeValues);
+    const simResAll = (await Promise.all(unKnownValues.map((simReq) => simulate(api, session, simReq)))).reduce(
+      (acc, simRes, idx) => {
+        const goal = unKnownValues[idx].goal;
+        if (goal) {
+          //console.log(`simulated ${unKnownValues[idx].goal} = ${simRes.outcome}`);
+          acc[goal] = simRes.outcome;
+        }
+        return acc;
+      },
+      {} as AttributeValues,
+    );
 
     return simResAll;
   } catch (e) {

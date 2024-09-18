@@ -20,7 +20,7 @@ Entity defines the entity that the screen belongs to. Either 'global' for the gl
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:35
+[src/types/core.ts:46](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L46)
 
 ___
 
@@ -32,7 +32,7 @@ Defines the id of the instance of the entity that is being referred to. For inst
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:37
+[src/types/core.ts:48](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L48)
 
 ___
 
@@ -44,4 +44,4 @@ Defines the parent path (if present) to the specific instance. The parent is of 
 
 #### Defined in
 
-node_modules/@decisively-io/types-interview/dist/core.d.ts:39
+[src/types/core.ts:50](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/core.ts#L50)
