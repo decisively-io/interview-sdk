@@ -18,7 +18,7 @@ The list of controls to be displayed on the screen
 
 #### Defined in
 
-[src/types/core.ts:124](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/core.ts#L124)
+[src/types/core.ts:124](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L124)
 
 ___
 
@@ -30,7 +30,7 @@ Unique ID of the screen
 
 #### Defined in
 
-[src/types/core.ts:122](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/core.ts#L122)
+[src/types/core.ts:122](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L122)
 
 ___
 
@@ -42,4 +42,4 @@ The title of the screen. This may differ from the title in the step
 
 #### Defined in
 
-[src/types/core.ts:120](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/core.ts#L120)
+[src/types/core.ts:120](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L120)

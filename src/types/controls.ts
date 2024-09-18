@@ -1,4 +1,4 @@
-import type { EntityInstance, EntityValue, FileAttributeValue } from "./core";
+import type { AiOptions, EntityInstance, EntityValue, FileAttributeValue } from "./core";
 
 export type LabelDisplay = "automatic" | "separate" | "inline";
 
@@ -10,6 +10,15 @@ interface BaseControl {
 }
 
 // schema controls
+
+export interface GenerativeChatControl extends BaseControl {
+  type: "generative_chat";
+  goal: string;
+  initialMessage: string;
+  aiOptions?: AiOptions;
+  required?: boolean;
+  showDataInline?: boolean;
+}
 
 /**
  * A control to collect a true or false response from a user. Usually rendered as a checkbox.
@@ -609,6 +618,7 @@ export type RenderableControl = (
   | TextControl
   | TypographyControl
   | DocumentControl
+  | GenerativeChatControl
   | RenderableEntityControl
   | RenderableSwitchContainerControl
   | RenderableCertaintyContainerControl
@@ -634,6 +644,7 @@ export type Control =
   | TypographyControl
   | DocumentControl
   | EntityControl
+  | GenerativeChatControl
   | RepeatingContainerControl
   | CertaintyContainerControl
   | SwitchContainerControl
