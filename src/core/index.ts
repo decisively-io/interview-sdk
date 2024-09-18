@@ -5,6 +5,7 @@ export * from "./placeholders";
 export * from "./helpers";
 export * from "./constants";
 export * from "./formatting";
+export * from "./sidebar";
 
 export {
   iterateControls,

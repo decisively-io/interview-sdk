@@ -1,3 +1,4 @@
+import type { RenderableSidebar, Sidebar } from "../core";
 import type { RenderableControl } from "./controls";
 
 export type StepId = string;
@@ -113,6 +114,9 @@ export interface Step {
   visitable: boolean;
   /** An array of sub-steps */
   steps?: Step[];
+
+  sameAsPreviousSidebar?: boolean;
+  sidebar?: Sidebar | null;
 }
 
 export interface Screen {
@@ -122,6 +126,8 @@ export interface Screen {
   id: string;
   /** The list of controls to be displayed on the screen */
   controls: RenderableControl[];
+  /** The sidebar to render **/
+  sidebar?: RenderableSidebar | null;
 }
 
 export interface Progress {

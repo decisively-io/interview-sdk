@@ -8,6 +8,8 @@
 - [context](../wiki/Step#context)
 - [current](../wiki/Step#current)
 - [id](../wiki/Step#id)
+- [sameAsPreviousSidebar](../wiki/Step#sameasprevioussidebar)
+- [sidebar](../wiki/Step#sidebar)
 - [skipped](../wiki/Step#skipped)
 - [steps](../wiki/Step#steps)
 - [title](../wiki/Step#title)
@@ -24,7 +26,7 @@ Is the screen complete, that is has data been provided for the attributes in thi
 
 #### Defined in
 
-[src/types/core.ts:107](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L107)
+[src/types/core.ts:108](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L108)
 
 ___
 
@@ -36,7 +38,7 @@ The context of the step
 
 #### Defined in
 
-[src/types/core.ts:103](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L103)
+[src/types/core.ts:104](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L104)
 
 ___
 
@@ -48,7 +50,7 @@ Whether the step is the current step of the interview. Only one step is marked c
 
 #### Defined in
 
-[src/types/core.ts:105](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L105)
+[src/types/core.ts:106](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L106)
 
 ___
 
@@ -60,7 +62,27 @@ Unique ID of the screen
 
 #### Defined in
 
-[src/types/core.ts:99](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L99)
+[src/types/core.ts:100](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L100)
+
+___
+
+### sameAsPreviousSidebar
+
+• `Optional` **sameAsPreviousSidebar**: `boolean`
+
+#### Defined in
+
+[src/types/core.ts:118](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L118)
+
+___
+
+### sidebar
+
+• `Optional` **sidebar**: ``null`` \| [`EntityListSidebar`](../wiki/Exports#entitylistsidebar)
+
+#### Defined in
+
+[src/types/core.ts:119](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L119)
 
 ___
 
@@ -72,7 +94,7 @@ True if the screen was skipped due to relevancy or conditional rules. The user c
 
 #### Defined in
 
-[src/types/core.ts:111](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L111)
+[src/types/core.ts:112](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L112)
 
 ___
 
@@ -84,7 +106,7 @@ An array of sub-steps
 
 #### Defined in
 
-[src/types/core.ts:115](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L115)
+[src/types/core.ts:116](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L116)
 
 ___
 
@@ -96,7 +118,7 @@ Title of the step. The screen may have a different title, so this title is inten
 
 #### Defined in
 
-[src/types/core.ts:101](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L101)
+[src/types/core.ts:102](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L102)
 
 ___
 
@@ -108,7 +130,7 @@ Whether a user can navigate to this screen. Some screens only exist as grouping 
 
 #### Defined in
 
-[src/types/core.ts:113](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L113)
+[src/types/core.ts:114](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L114)
 
 ___
 
@@ -120,4 +142,4 @@ Has this step been visited by the user. A screen is marked as visited when eithe
 
 #### Defined in
 
-[src/types/core.ts:109](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L109)
+[src/types/core.ts:110](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L110)

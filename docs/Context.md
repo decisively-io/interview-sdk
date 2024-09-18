@@ -20,7 +20,7 @@ Entity defines the entity that the screen belongs to. Either 'global' for the gl
 
 #### Defined in
 
-[src/types/core.ts:71](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L71)
+[src/types/core.ts:72](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L72)
 
 ___
 
@@ -32,7 +32,7 @@ Defines the id of the instance of the entity that is being referred to. For inst
 
 #### Defined in
 
-[src/types/core.ts:73](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L73)
+[src/types/core.ts:74](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L74)
 
 ___
 
@@ -44,4 +44,4 @@ Defines the parent path (if present) to the specific instance. The parent is of 
 
 #### Defined in
 
-[src/types/core.ts:75](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L75)
+[src/types/core.ts:76](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L76)

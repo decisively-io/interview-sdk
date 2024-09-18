@@ -17,7 +17,7 @@ The percentage completed, between 0-100
 
 #### Defined in
 
-[src/types/core.ts:131](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L131)
+[src/types/core.ts:137](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L137)
 
 ___
 
@@ -29,4 +29,4 @@ The estimated time remaining for the interview, in seconds
 
 #### Defined in
 
-[src/types/core.ts:129](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/core.ts#L129)
+[src/types/core.ts:135](https://github.com/decisively-io/interview-sdk/blob/919a52acaf4d23d3a6e65e9ac2647b658082e269/src/types/core.ts#L135)
