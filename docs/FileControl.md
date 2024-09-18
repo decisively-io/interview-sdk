@@ -25,6 +25,7 @@ Allow a user to upload a file. This metadata is still under construction
 - [showExplanation](../wiki/FileControl#showexplanation)
 - [sxForSeparateLabel](../wiki/FileControl#sxforseparatelabel)
 - [type](../wiki/FileControl#type)
+- [value](../wiki/FileControl#value)
 - [version](../wiki/FileControl#version)
 
 ## Properties
@@ -41,19 +42,19 @@ BaseControl.attribute
 
 #### Defined in
 
-[src/types/controls.ts:314](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L314)
+[src/types/controls.ts:305](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L305)
 
 ___
 
 ### file\_type
 
-• `Optional` **file\_type**: `string`
+• `Optional` **file\_type**: `string`[]
 
 The types of file allowed (pdf docx etc)
 
 #### Defined in
 
-[src/types/controls.ts:318](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L318)
+[src/types/controls.ts:310](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L310)
 
 ___
 
@@ -69,7 +70,7 @@ BaseControl.id
 
 #### Defined in
 
-[src/types/controls.ts:306](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L306)
+[src/types/controls.ts:297](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L297)
 
 ___
 
@@ -79,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:308](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L308)
+[src/types/controls.ts:299](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L299)
 
 ___
 
@@ -89,7 +90,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:309](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L309)
+[src/types/controls.ts:300](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L300)
 
 ___
 
@@ -99,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:311](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L311)
+[src/types/controls.ts:302](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L302)
 
 ___
 
@@ -111,7 +112,7 @@ The max number of files that can be uploaded. Defaults to 1
 
 #### Defined in
 
-[src/types/controls.ts:316](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L316)
+[src/types/controls.ts:308](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L308)
 
 ___
 
@@ -123,7 +124,7 @@ The maximum size of a document, in Mb
 
 #### Defined in
 
-[src/types/controls.ts:320](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L320)
+[src/types/controls.ts:312](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L312)
 
 ___
 
@@ -133,7 +134,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:312](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L312)
+[src/types/controls.ts:303](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L303)
 
 ___
 
@@ -143,7 +144,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:321](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L321)
+[src/types/controls.ts:313](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L313)
 
 ___
 
@@ -153,7 +154,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:310](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L310)
+[src/types/controls.ts:301](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L301)
 
 ___
 
@@ -167,7 +168,17 @@ BaseControl.type
 
 #### Defined in
 
-[src/types/controls.ts:307](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L307)
+[src/types/controls.ts:298](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L298)
+
+___
+
+### value
+
+• `Optional` **value**: ``null`` \| `string`[]
+
+#### Defined in
+
+[src/types/controls.ts:306](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L306)
 
 ___
 
@@ -181,4 +192,4 @@ BaseControl.version
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/19c4f70cce9e8197103d83c7fc3c34bc1d672377/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/af9aa08fe36010caf4221082fb0b23e871b5758c/src/types/controls.ts#L9)

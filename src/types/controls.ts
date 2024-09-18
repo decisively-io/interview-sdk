@@ -1,4 +1,4 @@
-import type { AiOptions, EntityInstance, EntityValue } from "./core";
+import type { EntityInstance, EntityValue, FileAttributeValue } from "./core";
 
 export type LabelDisplay = "automatic" | "separate" | "inline";
 
@@ -10,15 +10,6 @@ interface BaseControl {
 }
 
 // schema controls
-
-export interface GenerativeChatControl extends BaseControl {
-  type: "generative_chat";
-  goal: string;
-  initialMessage: string;
-  aiOptions?: AiOptions;
-  required?: boolean;
-  showDataInline?: boolean;
-}
 
 /**
  * A control to collect a true or false response from a user. Usually rendered as a checkbox.
@@ -312,10 +303,11 @@ export interface FileControl extends BaseControl {
   required?: true;
   /** uuid */
   attribute: string;
+  value?: FileAttributeValue["value"] | null;
   /** The max number of files that can be uploaded. Defaults to 1 */
   max?: number;
   /** The types of file allowed (pdf docx etc) */
-  file_type?: string;
+  file_type?: string[];
   /** The maximum size of a document, in Mb */
   max_size?: number;
   showExplanation?: boolean;
@@ -622,7 +614,6 @@ export type RenderableControl = (
   | RenderableCertaintyContainerControl
   | RenderableRepeatingContainerControl
   | RenderableDataContainerControl
-  | GenerativeChatControl
 ) & {
   loading?: boolean;
   dynamicAttributes?: string[];
@@ -646,8 +637,7 @@ export type Control =
   | RepeatingContainerControl
   | CertaintyContainerControl
   | SwitchContainerControl
-  | DataContainerControl
-  | GenerativeChatControl;
+  | DataContainerControl;
 export type ControlType = Control["type"];
 
 export interface ControlsValue {
