@@ -312,7 +312,7 @@ export interface FileControl extends BaseControl {
   required?: true;
   /** uuid */
   attribute: string;
-  value?: FileAttributeValue["value"] | null;
+  value?: FileAttributeValue | null;
   /** The max number of files that can be uploaded. Defaults to 1 */
   max?: number;
   /** The types of file allowed (pdf docx etc) */
@@ -548,12 +548,24 @@ export interface SwitchContainerControl<C = Control> extends BaseControl {
   columnWidth?: number;
 }
 
-export interface DataContainerControl<C = Control> extends BaseControl {
+export interface DataContainerControl extends BaseControl {
   id: string;
   type: "data_container";
   label: string;
   columns: number;
-  controls: C[];
+  controls: Array<
+    | BooleanControl
+    | CurrencyControl
+    | DateControl
+    | TimeControl
+    | DateTimeControl
+    | OptionsControl
+    | FileControl
+    | ImageControl
+    | NumberOfInstancesControl
+    | TextControl
+    | DocumentControl
+  >;
 }
 
 // renderable controls
@@ -577,7 +589,7 @@ export interface RenderableCertaintyContainerControl extends CertaintyContainerC
 
 export interface RenderableRepeatingContainerControl extends RepeatingContainerControl<RenderableControl> {}
 
-export interface RenderableDataContainerControl extends DataContainerControl<RenderableControl> {}
+export interface RenderableDataContainerControl extends DataContainerControl {}
 
 // conditions
 
