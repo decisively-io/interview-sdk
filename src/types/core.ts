@@ -8,8 +8,9 @@ export type SessionId = string;
 export type InterviewId = string;
 export type AttributeId = string;
 
+//# region FileAttributeValue
+
 export type FileAttributeValue = {
-  type: "file";
   /**
    * `id` is a ref identifier in file storage\
    * value after "base64" is a file name
@@ -20,17 +21,38 @@ export type FileAttributeValue = {
    *    "data:id=6bbf79d2-6e84-49cc-9473-3bc3c3dfbcc1;base64,iuytrew"
    *  ]
    */
-  value: string[];
+  fileRefs: string[];
 };
 export const isFileAttributeValue = (v: unknown): v is FileAttributeValue => {
   if (typeof v !== "object" || v === null) return false;
 
   const typed = v as FileAttributeValue;
-  if (typed.type !== "file" || Array.isArray(typed.value) === false) return false;
-  if (typed.value.some((it) => it.indexOf("data:id=") !== 0)) return false;
+  if (Array.isArray(typed.fileRefs) === false || typed.fileRefs.some((it) => it.indexOf("data:id=") !== 0)) {
+    return false;
+  }
 
   return true;
 };
+
+/**
+ * taken from https://developer.mozilla.org/en-US/docs/Glossary/Base64#the_unicode_problem \
+ * original examples from mdn:
+ *    new TextDecoder().decode(__base64ToBytes("YSDEgCDwkICAIOaWhyDwn6aE")); // "a Ā 𐀀 文 🦄"
+ */
+function __base64ToBytes(base64: string): Uint8Array {
+  const binString = atob(base64);
+  return Uint8Array.from(binString, (m) => m.codePointAt(0) || 0);
+}
+const decodeFromBase64 = (base64Str: string) => new TextDecoder().decode(__base64ToBytes(base64Str));
+
+export const getNameFromFileAttributeRef = (ref: FileAttributeValue["fileRefs"][0]) => {
+  const base64Indx = ref.indexOf("base64,");
+  const nameBase64 = ref.slice(base64Indx + 7).trim();
+
+  return decodeFromBase64(nameBase64);
+};
+
+//# endregion
 
 export type AttributeValue = string | number | boolean | FileAttributeValue | Record<string, AttributeValue>[];
 

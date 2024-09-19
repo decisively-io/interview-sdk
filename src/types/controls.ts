@@ -312,10 +312,15 @@ export interface FileControl extends BaseControl {
   required?: true;
   /** uuid */
   attribute: string;
-  value?: FileAttributeValue["value"] | null;
+  value?: FileAttributeValue | null;
   /** The max number of files that can be uploaded. Defaults to 1 */
   max?: number;
-  /** The types of file allowed (pdf docx etc) */
+  /**
+   * The types of file allowed (".pdf", ".docx", etc).\
+   * **IMPORTANT**: values has to start with a dot  as they will be passed directly \
+   * to an "accept" attribute of HTMLInputElement with type: "file". Alternatively\
+   * those can be one of valid MIME-types
+   */
   file_type?: string[];
   /** The maximum size of a document, in Mb */
   max_size?: number;
@@ -548,12 +553,24 @@ export interface SwitchContainerControl<C = Control> extends BaseControl {
   columnWidth?: number;
 }
 
-export interface DataContainerControl<C = Control> extends BaseControl {
+export interface DataContainerControl extends BaseControl {
   id: string;
   type: "data_container";
   label: string;
   columns: number;
-  controls: C[];
+  controls: Array<
+    | BooleanControl
+    | CurrencyControl
+    | DateControl
+    | TimeControl
+    | DateTimeControl
+    | OptionsControl
+    | FileControl
+    | ImageControl
+    | NumberOfInstancesControl
+    | TextControl
+    | DocumentControl
+  >;
 }
 
 // renderable controls
@@ -577,7 +594,7 @@ export interface RenderableCertaintyContainerControl extends CertaintyContainerC
 
 export interface RenderableRepeatingContainerControl extends RepeatingContainerControl<RenderableControl> {}
 
-export interface RenderableDataContainerControl extends DataContainerControl<RenderableControl> {}
+export interface RenderableDataContainerControl extends DataContainerControl {}
 
 // conditions
 
