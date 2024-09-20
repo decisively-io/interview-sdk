@@ -22,11 +22,17 @@ type RenderableSidebarOf<TSidebar extends Sidebar, TData extends {}> = TSidebar 
   data: TData;
 };
 
+export interface DescriptionAttribute {
+  value: string;
+  label?: string;
+}
+
 // entity list
 
 export type EntityListSidebar = BaseSidebar<{
   entity: string;
   titleAttribute?: string;
+  descriptionAttributes?: DescriptionAttribute[];
 }>;
 
 export type RenderableEntityListSidebar = RenderableSidebarOf<
@@ -34,6 +40,7 @@ export type RenderableEntityListSidebar = RenderableSidebarOf<
   {
     entities: any[];
     titleAttributeDescription?: string;
+    descriptionAttributes?: DescriptionAttribute[];
   }
 >;
 

@@ -19,7 +19,7 @@ The list of controls to be displayed on the screen
 
 #### Defined in
 
-[src/types/core.ts:150](https://github.com/decisively-io/interview-sdk/blob/788cba6cb7809c4413e7442a2858cfe86092535b/src/types/core.ts#L150)
+[src/types/core.ts:150](https://github.com/decisively-io/interview-sdk/blob/cf808315745e6d834adb0a03116afacf67b97a69/src/types/core.ts#L150)
 
 ___
 
@@ -31,7 +31,7 @@ Unique ID of the screen
 
 #### Defined in
 
-[src/types/core.ts:148](https://github.com/decisively-io/interview-sdk/blob/788cba6cb7809c4413e7442a2858cfe86092535b/src/types/core.ts#L148)
+[src/types/core.ts:148](https://github.com/decisively-io/interview-sdk/blob/cf808315745e6d834adb0a03116afacf67b97a69/src/types/core.ts#L148)
 
 ___
 
@@ -43,7 +43,7 @@ The sidebar to render *
 
 #### Defined in
 
-[src/types/core.ts:152](https://github.com/decisively-io/interview-sdk/blob/788cba6cb7809c4413e7442a2858cfe86092535b/src/types/core.ts#L152)
+[src/types/core.ts:152](https://github.com/decisively-io/interview-sdk/blob/cf808315745e6d834adb0a03116afacf67b97a69/src/types/core.ts#L152)
 
 ___
 
@@ -55,4 +55,4 @@ The title of the screen. This may differ from the title in the step
 
 #### Defined in
 
-[src/types/core.ts:146](https://github.com/decisively-io/interview-sdk/blob/788cba6cb7809c4413e7442a2858cfe86092535b/src/types/core.ts#L146)
+[src/types/core.ts:146](https://github.com/decisively-io/interview-sdk/blob/cf808315745e6d834adb0a03116afacf67b97a69/src/types/core.ts#L146)
