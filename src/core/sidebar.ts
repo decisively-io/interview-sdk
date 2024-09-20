@@ -15,6 +15,7 @@ interface BaseSidebar<TConfig extends {}> {
   type: SidebarType;
   id?: string;
   config?: TConfig;
+  title?: string;
 }
 
 type RenderableSidebarOf<TSidebar extends Sidebar, TData extends {}> = TSidebar & {
@@ -25,12 +26,14 @@ type RenderableSidebarOf<TSidebar extends Sidebar, TData extends {}> = TSidebar 
 
 export type EntityListSidebar = BaseSidebar<{
   entity: string;
+  titleAttribute?: string;
 }>;
 
 export type RenderableEntityListSidebar = RenderableSidebarOf<
   EntityListSidebar,
   {
     entities: any[];
+    titleAttributeDescription?: string;
   }
 >;
 
