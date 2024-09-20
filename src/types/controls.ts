@@ -573,6 +573,27 @@ export interface DataContainerControl extends BaseControl {
   >;
 }
 
+/** Allows for an interview to be embedded within another interview */
+export interface InterviewContainerControl extends BaseControl {
+  type: "interview_container";
+  label?: string;
+  required?: true;
+  showExplanation?: boolean;
+  /** may point to interviews from different workspaces and/or projects */
+  interviewRef: {
+    /** available options will vary depending on whether the interview is within the same project or not */
+    interactionMode: "same-session" | "new-session" | "different-project";
+    workspaceId: string;
+    /** only specify the project ID and not the release because we'll always take the latest */
+    projectId: string;
+    interviewId: string;
+  };
+  /** optional JSON string */
+  initialData?: string;
+
+  attribute?: never;
+}
+
 // renderable controls
 
 export interface EntityControlInstance {
@@ -595,6 +616,8 @@ export interface RenderableCertaintyContainerControl extends CertaintyContainerC
 export interface RenderableRepeatingContainerControl extends RepeatingContainerControl<RenderableControl> {}
 
 export interface RenderableDataContainerControl extends DataContainerControl {}
+
+export interface RenderableInterviewContainerControl extends InterviewContainerControl {}
 
 // conditions
 
@@ -641,6 +664,7 @@ export type RenderableControl = (
   | RenderableCertaintyContainerControl
   | RenderableRepeatingContainerControl
   | RenderableDataContainerControl
+  | RenderableInterviewContainerControl
 ) & {
   loading?: boolean;
   dynamicAttributes?: string[];
@@ -665,7 +689,8 @@ export type Control =
   | RepeatingContainerControl
   | CertaintyContainerControl
   | SwitchContainerControl
-  | DataContainerControl;
+  | DataContainerControl
+  | InterviewContainerControl;
 export type ControlType = Control["type"];
 
 export interface ControlsValue {

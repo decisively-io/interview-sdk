@@ -67,6 +67,11 @@ export const CONTROL_TYPES = {
     name: "Data Container",
     isContainer: true,
   },
+  INTERVIEW_CONTAINER: {
+    id: "interview_container",
+    name: "Interview Container",
+    // isContainer: true, // kind of.... but not really
+  },
   GENERATIVE_CHAT: {
     id: "generative_chat",
     name: "Generative Chat",
