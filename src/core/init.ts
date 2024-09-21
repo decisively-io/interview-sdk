@@ -67,7 +67,7 @@ type NewDataCallback = ((data: any) => void) | undefined;
 export interface InterviewProvider {
   // create a SessionInstance to work with by calling on the decisively service
   create: (project: string, config: SessionConfig, newDataCallback?: NewDataCallback) => Promise<SessionInstance>;
-  load: (project: string, sessionId: string) => Promise<SessionInstance>;
+  load: (project: string, sessionId: string, interactionId?: string) => Promise<SessionInstance>;
   finish: () => void;
 }
 
@@ -531,8 +531,8 @@ export const init = (
         ...config,
       });
     },
-    load: async (project, sessionId) => {
-      const session = await load(api, project, sessionId);
+    load: async (project, sessionId, interactionId) => {
+      const session = await load(api, project, sessionId, interactionId);
       return new SessionInstance({ session, api, project });
     },
     finish: () => {},
