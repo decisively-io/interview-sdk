@@ -1,10 +1,4 @@
-# Interface: DataContainerControl\<C\>
-
-## Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `C` | [`Control`](../wiki/Exports#control) |
+# Interface: DataContainerControl
 
 ## Hierarchy
 
@@ -38,7 +32,7 @@ BaseControl.attribute
 
 #### Defined in
 
-[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/controls.ts#L8)
+[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/types/controls.ts#L8)
 
 ___
 
@@ -48,17 +42,17 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:555](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/controls.ts#L555)
+[src/types/controls.ts:560](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/types/controls.ts#L560)
 
 ___
 
 ### controls
 
-• **controls**: `C`[]
+• **controls**: ([`BooleanControl`](../wiki/BooleanControl) \| [`CurrencyControl`](../wiki/CurrencyControl) \| [`DateControl`](../wiki/DateControl) \| [`TimeControl`](../wiki/TimeControl) \| [`DateTimeControl`](../wiki/DateTimeControl) \| [`OptionsControl`](../wiki/OptionsControl) \| [`FileControl`](../wiki/FileControl) \| [`ImageControl`](../wiki/ImageControl) \| [`NumberOfInstancesControl`](../wiki/NumberOfInstancesControl) \| [`TextControl`](../wiki/TextControl) \| [`DocumentControl`](../wiki/DocumentControl))[]
 
 #### Defined in
 
-[src/types/controls.ts:556](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/controls.ts#L556)
+[src/types/controls.ts:561](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/types/controls.ts#L561)
 
 ___
 
@@ -72,7 +66,7 @@ BaseControl.id
 
 #### Defined in
 
-[src/types/controls.ts:552](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/controls.ts#L552)
+[src/types/controls.ts:557](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/types/controls.ts#L557)
 
 ___
 
@@ -82,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:554](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/controls.ts#L554)
+[src/types/controls.ts:559](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/types/controls.ts#L559)
 
 ___
 
@@ -96,7 +90,7 @@ BaseControl.type
 
 #### Defined in
 
-[src/types/controls.ts:553](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/controls.ts#L553)
+[src/types/controls.ts:558](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/types/controls.ts#L558)
 
 ___
 
@@ -110,4 +104,4 @@ BaseControl.version
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/types/controls.ts#L9)
