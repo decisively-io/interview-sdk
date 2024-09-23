@@ -29,8 +29,8 @@ export const create = async (api: AxiosInstance, project: ProjectId, options: Se
   return res.data;
 };
 
-export const load = async (api: AxiosInstance, project: string, sessionId: string) => {
-  const res = await api.patch<Session>(project, {}, { params: { session: sessionId } });
+export const load = async (api: AxiosInstance, project: string, sessionId: string, interactionId?: string) => {
+  const res = await api.patch<Session>(project, {}, { params: { session: sessionId, interaction: interactionId } });
   return res.data;
 };
 

@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[src/core/init.ts:69](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/core/init.ts#L69)
+[src/core/init.ts:69](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/core/init.ts#L69)
 
 ___
 
@@ -50,17 +50,17 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:71](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/core/init.ts#L71)
+[src/core/init.ts:71](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/core/init.ts#L71)
 
 ___
 
 ### load
 
-• **load**: (`project`: `string`, `sessionId`: `string`) => `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
+• **load**: (`project`: `string`, `sessionId`: `string`, `interactionId?`: `string`) => `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Type declaration
 
-▸ (`project`, `sessionId`): `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
+▸ (`project`, `sessionId`, `interactionId?`): `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
 
 ##### Parameters
 
@@ -68,6 +68,7 @@ ___
 | :------ | :------ |
 | `project` | `string` |
 | `sessionId` | `string` |
+| `interactionId?` | `string` |
 
 ##### Returns
 
@@ -75,4 +76,4 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:70](https://github.com/decisively-io/interview-sdk/blob/8f7e4477d688e71f550587a1ff3e071ac92d0276/src/core/init.ts#L70)
+[src/core/init.ts:70](https://github.com/decisively-io/interview-sdk/blob/d46fabdc06b3374be895c52fe9624c00f5646b37/src/core/init.ts#L70)

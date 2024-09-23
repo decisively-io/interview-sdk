@@ -156,6 +156,7 @@ export interface Progress {
 export interface Session {
   /** Unique ID of the session */
   sessionId: string;
+  /** Unique ID of the interaction */
   interactionId: string;
   status: "in-progress" | "complete" | "error";
   context: Context;
