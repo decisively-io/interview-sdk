@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/types/core.ts:221](https://github.com/decisively-io/interview-sdk/blob/cf808315745e6d834adb0a03116afacf67b97a69/src/types/core.ts#L221)
+[src/types/core.ts:222](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L222)
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:223](https://github.com/decisively-io/interview-sdk/blob/cf808315745e6d834adb0a03116afacf67b97a69/src/types/core.ts#L223)
+[src/types/core.ts:224](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L224)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:224](https://github.com/decisively-io/interview-sdk/blob/cf808315745e6d834adb0a03116afacf67b97a69/src/types/core.ts#L224)
+[src/types/core.ts:225](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L225)
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:222](https://github.com/decisively-io/interview-sdk/blob/cf808315745e6d834adb0a03116afacf67b97a69/src/types/core.ts#L222)
+[src/types/core.ts:223](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L223)
