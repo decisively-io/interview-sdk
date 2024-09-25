@@ -171,13 +171,15 @@ export interface Session {
 }
 
 export interface SessionConfig {
-  // An initial state with information already provided
+  /** An initial state with information already provided */
   initialData?: AttributeValues;
-  // Id of the desired interview
+  /** Id of the desired interview */
   interview?: InterviewId;
-  // Specific release, for testing purposes
+  /** existing session (to create an interaction) */
+  sessionId?: SessionId;
+  /** Specific release, for testing purposes */
   release?: ReleaseId;
-  // response elements for next/submit
+  /** response elements for next/submit */
   responseElements?: any[];
 }
 

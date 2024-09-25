@@ -577,6 +577,7 @@ export interface DataContainerControl extends BaseControl {
 export interface InterviewContainerControl extends BaseControl {
   type: "interview_container";
   label?: string;
+  labelDisplay?: LabelDisplay;
   required?: true;
   showExplanation?: boolean;
   /** may point to interviews from different workspaces and/or projects */
