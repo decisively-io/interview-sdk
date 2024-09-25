@@ -23,11 +23,15 @@ export const create = async (api: AxiosInstance, project: ProjectId, options: Se
 
   const postConfig = sessionId ? { params: { session: sessionId } } : undefined;
 
-  const res = await api.post<Session>(buildUrl(project, release), {
-    data: initialData ?? {},
-    response: responseElements,
-    ...rest,
-  }, postConfig);
+  const res = await api.post<Session>(
+    buildUrl(project, release),
+    {
+      data: initialData ?? {},
+      response: responseElements,
+      ...rest,
+    },
+    postConfig,
+  );
   return res.data;
 };
 
