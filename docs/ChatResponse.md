@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/types/core.ts:216](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L216)
+[src/types/core.ts:217](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L217)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:214](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L214)
+[src/types/core.ts:215](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L215)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:215](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L215)
+[src/types/core.ts:216](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L216)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:212](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L212)
+[src/types/core.ts:213](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L213)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:218](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L218)
+[src/types/core.ts:219](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L219)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:213](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L213)
+[src/types/core.ts:214](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L214)
 
 ___
 
@@ -80,4 +80,4 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:217](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/core.ts#L217)
+[src/types/core.ts:218](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L218)

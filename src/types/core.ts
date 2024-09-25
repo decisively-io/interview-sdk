@@ -102,8 +102,9 @@ export interface Context {
 export interface Simulate {
   mode: "api";
   save: false;
-  goal: AttributeId;
+  goal?: AttributeId;
   data: AttributeValues;
+  sidebars?: Sidebar[];
 }
 
 /** The state attribute provides the values and additional information about attributes that will be displayed on the screen, but may require checking with the server for the latest information (aka: Dynamic Attributes). */
@@ -138,7 +139,7 @@ export interface Step {
   steps?: Step[];
 
   sameAsPreviousSidebar?: boolean;
-  sidebar?: Sidebar | null;
+  sidebars?: Sidebar[] | null;
 }
 
 export interface Screen {
@@ -149,7 +150,7 @@ export interface Screen {
   /** The list of controls to be displayed on the screen */
   controls: RenderableControl[];
   /** The sidebar to render **/
-  sidebar?: RenderableSidebar | null;
+  sidebars?: RenderableSidebar[] | null;
 }
 
 export interface Progress {

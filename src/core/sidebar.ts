@@ -20,6 +20,8 @@ interface BaseSidebar<TConfig extends {}> {
 
 type RenderableSidebarOf<TSidebar extends Sidebar, TData extends {}> = TSidebar & {
   data: TData;
+  dynamicAttributes?: string[];
+  loading?: boolean;
 };
 
 export interface DescriptionAttribute {

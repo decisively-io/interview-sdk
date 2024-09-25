@@ -1,5 +1,4 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
-import deepmerge from "deepmerge";
 import debounce from "lodash.debounce";
 import isEmpty from "lodash.isempty";
 import isEqual from "lodash.isequal";
@@ -13,10 +12,11 @@ import type {
   Screen,
   Session,
   SessionConfig,
+  Simulate,
   State,
   StepId,
 } from "../types";
-import { back, chat, create, exportTimeline, load, navigate, submit } from "./api";
+import { back, chat, create, exportTimeline, load, navigate, simulate, submit } from "./api";
 import { type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
 import {
@@ -88,6 +88,7 @@ interface SessionInternal {
   replacements: AttributeValues;
   unknownsRequiringSimulate: UnknownValues;
   unknownsAlreadySimulated: UnknownValues;
+  sidebarSimulate: Simulate | undefined;
 
   // we only care about the latest request
   latestRequest: number | undefined;
@@ -134,6 +135,7 @@ export class SessionInstance implements Session {
     unknownsRequiringSimulate: {},
     unknownsAlreadySimulated: {},
     latestRequest: undefined,
+    sidebarSimulate: undefined,
   };
   private debug: boolean;
 
@@ -222,6 +224,7 @@ export class SessionInstance implements Session {
       ) {
         const replacementQueries = buildDynamicReplacementQueries(
           state,
+          this.screen.sidebars || undefined,
           this.internals.userValues,
           this.session.data["@parent"],
         );
@@ -256,6 +259,14 @@ export class SessionInstance implements Session {
           const loading = Object.keys(this.internals.unknownsRequiringSimulate).length > 0;
 
           const newScreen = this.makeScreenCopy();
+
+          this.internals.sidebarSimulate = replacementQueries.sidebarSimulate;
+          if (newScreen.sidebars) {
+            for (const sidebar of newScreen.sidebars) {
+              sidebar.loading = this.internals.sidebarSimulate?.sidebars?.some((other) => other.id === sidebar.id);
+            }
+          }
+
           iterateControls(newScreen.controls, (control: any) => {
             if (control.dynamicAttributes && Object.keys(this.internals.unknownsRequiringSimulate).length > 0) {
               if (
@@ -288,6 +299,7 @@ export class SessionInstance implements Session {
   }
 
   private async updateDynamicValues() {
+    let newScreen: Screen | undefined = undefined;
     if (Object.keys(this.internals.unknownsRequiringSimulate).length > 0 && this.session.screen) {
       const requestId = this.internals.latestRequest;
 
@@ -295,7 +307,7 @@ export class SessionInstance implements Session {
 
       // are we still the last request?
       if (this.internals.latestRequest === requestId) {
-        const newScreen = this.makeScreenCopy();
+        newScreen = this.makeScreenCopy();
 
         // ask the backend to solve for any dynamic attributes, based on the entered attributes
         Object.assign(this.internals.replacements, result);
@@ -321,11 +333,31 @@ export class SessionInstance implements Session {
 
         this.internals.unknownsAlreadySimulated = { ...this.internals.unknownsRequiringSimulate };
         this.internals.unknownsRequiringSimulate = {};
-        this.triggerUpdate({
-          externalLoading: false,
-          screen: newScreen,
-        });
       }
+    }
+
+    if (this.internals.sidebarSimulate) {
+      const result = await simulate(this.api, this, this.internals.sidebarSimulate);
+      if (Array.isArray(result.sidebars)) {
+        for (const sidebar of result.sidebars) {
+          if (!newScreen) {
+            newScreen = this.makeScreenCopy();
+          }
+
+          const screenSidebar = newScreen.sidebars?.find((s) => s.id === sidebar.id);
+          if (screenSidebar) {
+            Object.assign(screenSidebar, sidebar);
+            screenSidebar.loading = false;
+          }
+        }
+      }
+    }
+
+    if (newScreen) {
+      this.triggerUpdate({
+        externalLoading: false,
+        screen: newScreen,
+      });
     }
   }
 
@@ -352,6 +384,7 @@ export class SessionInstance implements Session {
           unknownsRequiringSimulate: {},
           unknownsAlreadySimulated: {},
           latestRequest: undefined,
+          sidebarSimulate: undefined,
         };
         this.handleEntityInstances(userValues);
       }

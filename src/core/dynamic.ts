@@ -1,8 +1,9 @@
 import type { AxiosInstance } from "axios";
 import set from "lodash.set";
-import type { AttributeValues, ProjectId, ReleaseId, SessionId, Simulate, State } from "../types";
+import type { AttributeValues, Simulate, State } from "../types";
 import { simulate } from "./api";
 import type { SessionInstance } from "./init";
+import type { RenderableSidebar, Sidebar } from "./sidebar";
 import { getEntityIds } from "./util";
 
 export type UnknownValues = Record<string, Partial<Simulate>>;
@@ -10,6 +11,7 @@ export type UnknownValues = Record<string, Partial<Simulate>>;
 export interface DynamicReplacementQueries {
   knownValues: AttributeValues;
   unknownValues: UnknownValues;
+  sidebarSimulate: Simulate | undefined;
 }
 
 const createEntityPathedData = (data: AttributeValues): AttributeValues => {
@@ -45,6 +47,7 @@ const createEntityPathedData = (data: AttributeValues): AttributeValues => {
  */
 export const buildDynamicReplacementQueries = (
   state: State[],
+  sidebars: RenderableSidebar[] | undefined,
   attribValues: AttributeValues,
   parent?: string,
 ): DynamicReplacementQueries => {
@@ -175,9 +178,33 @@ export const buildDynamicReplacementQueries = (
     }
   }
 
+  const sidebarSimulate: Sidebar[] = [];
+  if (sidebars) {
+    for (const sidebar of sidebars) {
+      if (sidebar.id) {
+        const hasData = sidebar.dynamicAttributes?.some((attr) => knownValues[attr] !== undefined);
+        if (hasData) {
+          sidebarSimulate.push({
+            type: sidebar.type,
+            id: sidebar.id,
+            config: sidebar.config,
+          });
+        }
+      }
+    }
+  }
+
   return {
     knownValues, // the known values
     unknownValues: unknownValues, // the requests to be made against the API
+    sidebarSimulate: sidebarSimulate.length
+      ? {
+          mode: "api",
+          save: false,
+          data: knownValues,
+          sidebars: sidebarSimulate,
+        }
+      : undefined,
   };
 };
 

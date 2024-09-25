@@ -48,6 +48,7 @@ describe("Dynamic", () => {
           dependencies: ["c817df3b-5674-4d72-9340-417c38789728"],
         },
       ],
+      undefined,
       {
         "numbers.0.c817df3b-5674-4d72-9340-417c38789728": "12",
         "numbers.1.c817df3b-5674-4d72-9340-417c38789728": "25",

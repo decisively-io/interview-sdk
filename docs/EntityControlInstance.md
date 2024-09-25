@@ -15,7 +15,7 @@
 
 #### Defined in
 
-[src/types/controls.ts:580](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/controls.ts#L580)
+[src/types/controls.ts:580](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L580)
 
 ___
 
@@ -25,4 +25,4 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:579](https://github.com/decisively-io/interview-sdk/blob/8029f4d7290023e428f90f3a3cf1800390136e51/src/types/controls.ts#L579)
+[src/types/controls.ts:579](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L579)
