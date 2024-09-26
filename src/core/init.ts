@@ -7,6 +7,7 @@ import { v4 as uuid } from "uuid";
 import type {
   AttributeValues,
   ChatResponse,
+  FileCtrlTypesNS,
   Overrides,
   RenderableEntityControl,
   ResponseData,
@@ -71,7 +72,7 @@ export interface InterviewProvider {
   finish: () => void;
 }
 
-interface SessionInstanceOptions {
+export interface SessionInstanceOptions {
   session: Session;
   api: AxiosInstance;
   project: string;
@@ -79,6 +80,9 @@ interface SessionInstanceOptions {
   newDataCallback?: (session: SessionObservable) => void;
   responseElements?: any[];
   debug?: boolean;
+  uploadFile?: FileCtrlTypesNS.UploadFile;
+  removeFile?: FileCtrlTypesNS.RemoveFile;
+  onFileTooBig?: FileCtrlTypesNS.OnFileTooBig;
 }
 
 interface SessionInternal {
@@ -146,6 +150,10 @@ export class SessionInstance implements Session {
     this.debug = Boolean(debug);
 
     this.chOnScreenData = this.chOnScreenData.bind(this);
+
+    this.uploadFile = options.uploadFile || this.uploadFile;
+    this.removeFile = options.removeFile || this.removeFile;
+    this.onFileTooBig = options.onFileTooBig || this.onFileTooBig;
   }
 
   private get api() {
@@ -495,6 +503,22 @@ export class SessionInstance implements Session {
   exportTimeline() {
     return exportTimeline(this.api, this);
   }
+
+  // ----- File control utils
+
+  uploadFile: NonNullable<SessionInstanceOptions["uploadFile"]> = async () => {
+    console.warn("YY2xjYIpqH | interview-sdk, uploadFile is a noop fallback");
+
+    return { id: "", reference: "" };
+  };
+
+  removeFile: NonNullable<SessionInstanceOptions["removeFile"]> = async () => {
+    console.warn("MSp13ZrhJz | interview-sdk, removeFile is a noop fallback");
+  };
+
+  onFileTooBig: NonNullable<SessionInstanceOptions["onFileTooBig"]> = () => {
+    console.warn("cp9GiRdMeO | interview-sdk, onFileTooBig is a noop fallback");
+  };
 }
 
 export type SessionObservable = Partial<SessionInstance>;
