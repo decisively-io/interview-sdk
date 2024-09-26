@@ -17,8 +17,9 @@ import type {
   StepId,
 } from "../types";
 import { back, chat, create, exportTimeline, load, navigate, simulate, submit } from "./api";
-import { type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
+import { type SidebarSimulate, type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
+import { SIDEBAR_DATA_INFO } from "./sidebars/sidebar";
 import {
   applyInstancesToEntityControl,
   buildUrl,
@@ -88,7 +89,7 @@ interface SessionInternal {
   replacements: AttributeValues;
   unknownsRequiringSimulate: UnknownValues;
   unknownsAlreadySimulated: UnknownValues;
-  sidebarSimulate: Simulate | undefined;
+  sidebarSimulate: SidebarSimulate | undefined;
 
   // we only care about the latest request
   latestRequest: number | undefined;
@@ -263,7 +264,9 @@ export class SessionInstance implements Session {
           this.internals.sidebarSimulate = replacementQueries.sidebarSimulate;
           if (newScreen.sidebars) {
             for (const sidebar of newScreen.sidebars) {
-              sidebar.loading = this.internals.sidebarSimulate?.sidebars?.some((other) => other.id === sidebar.id);
+              if (sidebar.id) {
+                sidebar.loading = this.internals.sidebarSimulate?.ids.includes(sidebar.id);
+              }
             }
           }
 
@@ -337,18 +340,23 @@ export class SessionInstance implements Session {
     }
 
     if (this.internals.sidebarSimulate) {
-      const result = await simulate(this.api, this, this.internals.sidebarSimulate);
-      if (Array.isArray(result.sidebars)) {
-        for (const sidebar of result.sidebars) {
-          if (!newScreen) {
-            newScreen = this.makeScreenCopy();
-          }
+      const result = await simulate(this.api, this, this.internals.sidebarSimulate.simulate);
+      for (const sidebarId of this.internals.sidebarSimulate.ids) {
+        if (!newScreen) {
+          newScreen = this.makeScreenCopy();
+        }
 
-          const screenSidebar = newScreen.sidebars?.find((s) => s.id === sidebar.id);
-          if (screenSidebar) {
-            Object.assign(screenSidebar, sidebar);
-            screenSidebar.loading = false;
+        const screenSidebar = newScreen.sidebars?.find((s) => s.id === sidebarId);
+        if (screenSidebar) {
+          const dataInfo = SIDEBAR_DATA_INFO[screenSidebar.type];
+          if (dataInfo) {
+            try {
+              Object.assign(screenSidebar.data, dataInfo.generateData(screenSidebar.config, result));
+            } catch (error) {
+              console.error("[@decisively-io/interview-sdk] Error generating sidebar data", error);
+            }
           }
+          screenSidebar.loading = false;
         }
       }
     }

@@ -106,7 +106,7 @@ export interface Simulate {
   save: false;
   goal?: AttributeId;
   data: AttributeValues;
-  sidebars?: Sidebar[];
+  response?: any[];
 }
 
 /** The state attribute provides the values and additional information about attributes that will be displayed on the screen, but may require checking with the server for the latest information (aka: Dynamic Attributes). */

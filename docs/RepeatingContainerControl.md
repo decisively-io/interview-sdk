@@ -1,4 +1,4 @@
-# Interface: RepeatingContainerControl\<C\>
+# Interface: RepeatingContainerControl<C\>
 
 ## Type parameters
 
@@ -44,7 +44,7 @@ BaseControl.attribute
 
 #### Defined in
 
-[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L8)
+[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L8)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:528](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L528)
+[src/types/controls.ts:528](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L528)
 
 ___
 
@@ -66,7 +66,7 @@ if `display` is `undefined` we should assume `"list"`
 
 #### Defined in
 
-[src/types/controls.ts:516](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L516)
+[src/types/controls.ts:516](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L516)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:514](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L514)
+[src/types/controls.ts:514](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L514)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:518](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L518)
+[src/types/controls.ts:518](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L518)
 
 ___
 
@@ -102,7 +102,7 @@ BaseControl.id
 
 #### Defined in
 
-[src/types/controls.ts:512](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L512)
+[src/types/controls.ts:512](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L512)
 
 ___
 
@@ -114,7 +114,7 @@ indicates if this is the first instance of a repeating series (calculated at run
 
 #### Defined in
 
-[src/types/controls.ts:526](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L526)
+[src/types/controls.ts:526](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L526)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:527](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L527)
+[src/types/controls.ts:527](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L527)
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:522](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L522)
+[src/types/controls.ts:522](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L522)
 
 ___
 
@@ -148,7 +148,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:524](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L524)
+[src/types/controls.ts:524](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L524)
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:520](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L520)
+[src/types/controls.ts:520](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L520)
 
 ___
 
@@ -174,7 +174,7 @@ BaseControl.type
 
 #### Defined in
 
-[src/types/controls.ts:513](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L513)
+[src/types/controls.ts:513](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L513)
 
 ___
 
@@ -188,4 +188,4 @@ BaseControl.version
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L9)

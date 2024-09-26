@@ -3,15 +3,20 @@ import set from "lodash.set";
 import type { AttributeValues, Simulate, State } from "../types";
 import { simulate } from "./api";
 import type { SessionInstance } from "./init";
-import type { RenderableSidebar, Sidebar } from "./sidebars/sidebar";
+import { type RenderableSidebar, SIDEBAR_DATA_INFO } from "./sidebars/sidebar";
 import { getEntityIds } from "./util";
 
 export type UnknownValues = Record<string, Partial<Simulate>>;
 
+export interface SidebarSimulate {
+  ids: string[];
+  simulate: Simulate;
+}
+
 export interface DynamicReplacementQueries {
   knownValues: AttributeValues;
   unknownValues: UnknownValues;
-  sidebarSimulate: Simulate | undefined;
+  sidebarSimulate: SidebarSimulate | undefined;
 }
 
 const createEntityPathedData = (data: AttributeValues): AttributeValues => {
@@ -178,17 +183,29 @@ export const buildDynamicReplacementQueries = (
     }
   }
 
-  const sidebarSimulate: Sidebar[] = [];
+  let sidebarSimulate: SidebarSimulate | undefined;
   if (sidebars) {
     for (const sidebar of sidebars) {
       if (sidebar.id) {
         const hasData = sidebar.dynamicAttributes?.some((attr) => knownValues[attr] !== undefined);
         if (hasData) {
-          sidebarSimulate.push({
-            type: sidebar.type,
-            id: sidebar.id,
-            config: sidebar.config,
-          });
+          const dataInfo = SIDEBAR_DATA_INFO[sidebar.type];
+          if (dataInfo) {
+            const responseElements = dataInfo.getResponseElements(sidebar.config);
+            if (!sidebarSimulate) {
+              sidebarSimulate = {
+                ids: [],
+                simulate: {
+                  mode: "api",
+                  save: false,
+                  data: knownValues,
+                  response: [],
+                },
+              };
+            }
+            sidebarSimulate.ids.push(sidebar.id);
+            sidebarSimulate.simulate.response?.push(...responseElements);
+          }
         }
       }
     }
@@ -197,14 +214,7 @@ export const buildDynamicReplacementQueries = (
   return {
     knownValues, // the known values
     unknownValues: unknownValues, // the requests to be made against the API
-    sidebarSimulate: sidebarSimulate.length
-      ? {
-          mode: "api",
-          save: false,
-          data: knownValues,
-          sidebars: sidebarSimulate,
-        }
-      : undefined,
+    sidebarSimulate: sidebarSimulate,
   };
 };
 

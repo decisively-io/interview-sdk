@@ -20,7 +20,7 @@ The state attribute provides the values and additional information about attribu
 
 #### Defined in
 
-[src/types/core.ts:115](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L115)
+[src/types/core.ts:117](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L117)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:112](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L112)
+[src/types/core.ts:114](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L114)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:118](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L118)
+[src/types/core.ts:120](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L120)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:113](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L113)
+[src/types/core.ts:115](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L115)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:116](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L116)
+[src/types/core.ts:118](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L118)

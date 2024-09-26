@@ -12,11 +12,11 @@
 
 ### create
 
-• **create**: (`project`: `string`, `config`: [`SessionConfig`](../wiki/SessionConfig), `newDataCallback?`: `NewDataCallback`) => `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
+• **create**: (`project`: `string`, `config`: [`SessionConfig`](../wiki/SessionConfig), `newDataCallback?`: `NewDataCallback`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Type declaration
 
-▸ (`project`, `config`, `newDataCallback?`): `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
+▸ (`project`, `config`, `newDataCallback?`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 ##### Parameters
 
@@ -28,11 +28,11 @@
 
 ##### Returns
 
-`Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
+`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Defined in
 
-[src/core/init.ts:69](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/core/init.ts#L69)
+[src/core/init.ts:70](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/core/init.ts#L70)
 
 ___
 
@@ -50,17 +50,17 @@ ___
 
 #### Defined in
 
-[src/core/init.ts:71](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/core/init.ts#L71)
+[src/core/init.ts:72](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/core/init.ts#L72)
 
 ___
 
 ### load
 
-• **load**: (`project`: `string`, `sessionId`: `string`, `interactionId?`: `string`) => `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
+• **load**: (`project`: `string`, `sessionId`: `string`, `interactionId?`: `string`) => `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Type declaration
 
-▸ (`project`, `sessionId`, `interactionId?`): `Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
+▸ (`project`, `sessionId`, `interactionId?`): `Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 ##### Parameters
 
@@ -72,8 +72,8 @@ ___
 
 ##### Returns
 
-`Promise`\<[`SessionInstance`](../wiki/SessionInstance)\>
+`Promise`<[`SessionInstance`](../wiki/SessionInstance)\>
 
 #### Defined in
 
-[src/core/init.ts:70](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/core/init.ts#L70)
+[src/core/init.ts:71](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/core/init.ts#L71)

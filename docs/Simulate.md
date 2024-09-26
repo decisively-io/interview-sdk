@@ -9,8 +9,8 @@ Data structure used to calculate the value for a Dynamic Attribute.
 - [data](../wiki/Simulate#data)
 - [goal](../wiki/Simulate#goal)
 - [mode](../wiki/Simulate#mode)
+- [response](../wiki/Simulate#response)
 - [save](../wiki/Simulate#save)
-- [sidebars](../wiki/Simulate#sidebars)
 
 ## Properties
 
@@ -20,7 +20,7 @@ Data structure used to calculate the value for a Dynamic Attribute.
 
 #### Defined in
 
-[src/types/core.ts:106](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L106)
+[src/types/core.ts:108](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L108)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:105](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L105)
+[src/types/core.ts:107](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L107)
 
 ___
 
@@ -40,7 +40,17 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:103](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L103)
+[src/types/core.ts:105](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L105)
+
+___
+
+### response
+
+• `Optional` **response**: `any`[]
+
+#### Defined in
+
+[src/types/core.ts:109](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L109)
 
 ___
 
@@ -50,14 +60,4 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:104](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L104)
-
-___
-
-### sidebars
-
-• `Optional` **sidebars**: [`EntityListSidebar`](../wiki/Exports#entitylistsidebar)[]
-
-#### Defined in
-
-[src/types/core.ts:107](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L107)
+[src/types/core.ts:106](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L106)

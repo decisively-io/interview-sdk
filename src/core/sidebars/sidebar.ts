@@ -57,9 +57,9 @@ export type Sidebar = EntityListSidebar;
 export interface SidebarDataInfo<S extends RenderableSidebar> {
   getResponseElements: (config: S["config"]) => any[];
   type: S["type"];
-  generateData: (response: any) => S["data"];
+  generateData: (config: S["config"], response: any) => Partial<S["data"]>;
 }
 
 export const SIDEBAR_DATA_INFO: Record<SidebarType, SidebarDataInfo<RenderableSidebar>> = {
-  [SIDEBAR_TYPES.ENTITY_LIST.id]: ENTITY_LIST_SIDEBAR_DATA_INFO
-}
+  [SIDEBAR_TYPES.ENTITY_LIST.id]: ENTITY_LIST_SIDEBAR_DATA_INFO,
+};

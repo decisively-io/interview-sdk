@@ -8,6 +8,7 @@
 - [interview](../wiki/SessionConfig#interview)
 - [release](../wiki/SessionConfig#release)
 - [responseElements](../wiki/SessionConfig#responseelements)
+- [sessionId](../wiki/SessionConfig#sessionid)
 
 ## Properties
 
@@ -15,9 +16,11 @@
 
 • `Optional` **initialData**: [`AttributeValues`](../wiki/Exports#attributevalues)
 
+An initial state with information already provided
+
 #### Defined in
 
-[src/types/core.ts:182](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L182)
+[src/types/core.ts:184](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L184)
 
 ___
 
@@ -25,9 +28,11 @@ ___
 
 • `Optional` **interview**: `string`
 
+Id of the desired interview
+
 #### Defined in
 
-[src/types/core.ts:184](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L184)
+[src/types/core.ts:186](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L186)
 
 ___
 
@@ -35,9 +40,11 @@ ___
 
 • `Optional` **release**: `string`
 
+Specific release, for testing purposes
+
 #### Defined in
 
-[src/types/core.ts:186](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L186)
+[src/types/core.ts:190](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L190)
 
 ___
 
@@ -45,6 +52,20 @@ ___
 
 • `Optional` **responseElements**: `any`[]
 
+response elements for next/submit
+
 #### Defined in
 
-[src/types/core.ts:188](https://github.com/decisively-io/interview-sdk/blob/4eec9a19760741f59f131856d1e1811e232ea805/src/types/core.ts#L188)
+[src/types/core.ts:192](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L192)
+
+___
+
+### sessionId
+
+• `Optional` **sessionId**: `string`
+
+existing session (to create an interaction)
+
+#### Defined in
+
+[src/types/core.ts:188](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L188)
