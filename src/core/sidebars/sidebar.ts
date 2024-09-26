@@ -1,3 +1,5 @@
+import ENTITY_LIST_SIDEBAR_DATA_INFO from "./entityListSidebar";
+
 export interface SidebarTypeInfo {
   id: string;
   name: string;
@@ -51,3 +53,13 @@ export type RenderableEntityListSidebar = RenderableSidebarOf<
 export type RenderableSidebar = RenderableEntityListSidebar;
 
 export type Sidebar = EntityListSidebar;
+
+export interface SidebarDataInfo<S extends RenderableSidebar> {
+  getResponseElements: (config: S["config"]) => any[];
+  type: S["type"];
+  generateData: (response: any) => S["data"];
+}
+
+export const SIDEBAR_DATA_INFO: Record<SidebarType, SidebarDataInfo<RenderableSidebar>> = {
+  [SIDEBAR_TYPES.ENTITY_LIST.id]: ENTITY_LIST_SIDEBAR_DATA_INFO
+}

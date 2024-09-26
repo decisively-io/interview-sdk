@@ -3,7 +3,7 @@ import set from "lodash.set";
 import type { AttributeValues, Simulate, State } from "../types";
 import { simulate } from "./api";
 import type { SessionInstance } from "./init";
-import type { RenderableSidebar, Sidebar } from "./sidebar";
+import type { RenderableSidebar, Sidebar } from "./sidebars/sidebar";
 import { getEntityIds } from "./util";
 
 export type UnknownValues = Record<string, Partial<Simulate>>;
