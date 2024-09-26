@@ -317,7 +317,7 @@ export interface FileControl extends BaseControl {
   max?: number;
   /**
    * The types of file allowed (".pdf", ".docx", etc).\
-   * **IMPORTANT**: values has to start with a dot  as they will be passed directly \
+   * **IMPORTANT**: values have to start with a dot  as they will be passed directly \
    * to an "accept" attribute of HTMLInputElement with type: "file". Alternatively\
    * those can be one of valid MIME-types
    */

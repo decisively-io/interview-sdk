@@ -50,6 +50,8 @@ export const getNameFromFileAttributeRef = (ref: FileAttributeValue["fileRefs"][
 
   return decodeFromBase64(nameBase64);
 };
+export const getIdFromFileAttributeRef = (ref: FileAttributeValue["fileRefs"][0]) =>
+  ref.replace("data:id=", "").slice(0, 36);
 
 //# endregion
 

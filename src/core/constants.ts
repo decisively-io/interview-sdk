@@ -43,6 +43,10 @@ export const CONTROL_TYPES = {
     id: "number_of_instances",
     name: "Number Of Instances",
   },
+  FILE: {
+    id: "file",
+    name: "File Upload",
+  },
   ENTITY: {
     id: "entity",
     name: "Entity",
