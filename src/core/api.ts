@@ -14,18 +14,24 @@ import type { SessionInstance } from "./init";
 import { buildUrl } from "./util";
 
 export const create = async (api: AxiosInstance, project: ProjectId, options: SessionConfig = {}) => {
-  const { initialData, release, responseElements, ...rest } = options;
+  const { initialData, release, responseElements, sessionId, ...rest } = options;
   // const config: AxiosRequestConfig = {
   //   params: {
   //     interview
   //   }
   // };
 
-  const res = await api.post<Session>(buildUrl(project, release), {
-    data: initialData ?? {},
-    response: responseElements,
-    ...rest,
-  });
+  const postConfig = sessionId ? { params: { session: sessionId } } : undefined;
+
+  const res = await api.post<Session>(
+    buildUrl(project, release),
+    {
+      data: initialData ?? {},
+      response: responseElements,
+      ...rest,
+    },
+    postConfig,
+  );
   return res.data;
 };
 

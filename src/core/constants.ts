@@ -43,6 +43,10 @@ export const CONTROL_TYPES = {
     id: "number_of_instances",
     name: "Number Of Instances",
   },
+  FILE: {
+    id: "file",
+    name: "File Upload",
+  },
   ENTITY: {
     id: "entity",
     name: "Entity",
@@ -66,6 +70,11 @@ export const CONTROL_TYPES = {
     id: "data_container",
     name: "Data Container",
     isContainer: true,
+  },
+  INTERVIEW_CONTAINER: {
+    id: "interview_container",
+    name: "Interview Container",
+    // isContainer: true, // kind of.... but not really
   },
   GENERATIVE_CHAT: {
     id: "generative_chat",
