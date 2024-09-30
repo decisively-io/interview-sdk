@@ -517,7 +517,7 @@ export class SessionInstance implements Session {
 
   removeFile: NonNullable<SessionInstanceOptions["removeFile"]> = async (ref) => {
     try {
-      this.options.fileApi.delete(getIdFromFileAttributeRef(ref));
+      await this.options.fileApi.delete(getIdFromFileAttributeRef(ref));
     } catch (e) {
       if (
         typeof e === "object" &&
