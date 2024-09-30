@@ -1,6 +1,7 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
 import deepmerge from "deepmerge";
 import debounce from "lodash.debounce";
+import get from "lodash.get";
 import isEmpty from "lodash.isempty";
 import isEqual from "lodash.isequal";
 import { v4 as uuid } from "uuid";
@@ -519,12 +520,7 @@ export class SessionInstance implements Session {
     try {
       await this.options.fileApi.delete(getIdFromFileAttributeRef(ref));
     } catch (e) {
-      if (
-        typeof e === "object" &&
-        e !== null &&
-        "message" in e &&
-        e.message === "Unable to retrieve data - check the file reference"
-      ) {
+      if (get(e, ["response", "data", "message"], "") === "Unable to retrieve data - check the file reference") {
         /**
          * this is an expected error which means that file is in staging area \
          * and so we can't remove it using delete, but it will be removed automatically\
