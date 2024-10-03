@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L8)
+[src/types/controls.ts:8](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/controls.ts#L8)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:560](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L560)
+[src/types/controls.ts:560](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/controls.ts#L560)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:561](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L561)
+[src/types/controls.ts:561](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/controls.ts#L561)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:557](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L557)
+[src/types/controls.ts:557](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/controls.ts#L557)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:559](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L559)
+[src/types/controls.ts:559](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/controls.ts#L559)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:558](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L558)
+[src/types/controls.ts:558](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/controls.ts#L558)
 
 ___
 
@@ -114,4 +114,4 @@ ___
 
 #### Defined in
 
-[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/controls.ts#L9)
+[src/types/controls.ts:9](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/controls.ts#L9)

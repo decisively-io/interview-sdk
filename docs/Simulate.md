@@ -20,7 +20,7 @@ Data structure used to calculate the value for a Dynamic Attribute.
 
 #### Defined in
 
-[src/types/core.ts:108](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L108)
+[src/types/core.ts:108](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L108)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:107](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L107)
+[src/types/core.ts:107](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L107)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:105](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L105)
+[src/types/core.ts:105](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L105)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:109](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L109)
+[src/types/core.ts:109](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L109)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:106](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L106)
+[src/types/core.ts:106](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L106)

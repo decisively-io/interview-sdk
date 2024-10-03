@@ -20,7 +20,7 @@ An initial state with information already provided
 
 #### Defined in
 
-[src/types/core.ts:184](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L184)
+[src/types/core.ts:184](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L184)
 
 ___
 
@@ -32,7 +32,7 @@ Id of the desired interview
 
 #### Defined in
 
-[src/types/core.ts:186](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L186)
+[src/types/core.ts:186](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L186)
 
 ___
 
@@ -44,7 +44,7 @@ Specific release, for testing purposes
 
 #### Defined in
 
-[src/types/core.ts:190](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L190)
+[src/types/core.ts:190](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L190)
 
 ___
 
@@ -56,7 +56,7 @@ response elements for next/submit
 
 #### Defined in
 
-[src/types/core.ts:192](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L192)
+[src/types/core.ts:192](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L192)
 
 ___
 
@@ -68,4 +68,4 @@ existing session (to create an interaction)
 
 #### Defined in
 
-[src/types/core.ts:188](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L188)
+[src/types/core.ts:188](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L188)

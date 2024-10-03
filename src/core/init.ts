@@ -14,9 +14,9 @@ import {
   type Screen,
   type Session,
   type SessionConfig,
+  type Simulate,
   type State,
   type StepId,
-  type Simulate,
   getIdFromFileAttributeRef,
 } from "../types";
 import { back, chat, create, exportTimeline, load, navigate, simulate, submit } from "./api";

@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/types/core.ts:221](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L221)
+[src/types/core.ts:221](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L221)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:219](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L219)
+[src/types/core.ts:219](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L219)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:220](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L220)
+[src/types/core.ts:220](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L220)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:217](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L217)
+[src/types/core.ts:217](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L217)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:223](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L223)
+[src/types/core.ts:223](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L223)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:218](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L218)
+[src/types/core.ts:218](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L218)
 
 ___
 
@@ -80,4 +80,4 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:222](https://github.com/decisively-io/interview-sdk/blob/6c5a6e0/src/types/core.ts#L222)
+[src/types/core.ts:222](https://github.com/decisively-io/interview-sdk/blob/3e6bd8aef036b04e16a1e39d9ad7edd1b29b4058/src/types/core.ts#L222)
