@@ -1,20 +1,23 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
 import debounce from "lodash.debounce";
+import get from "lodash.get";
 import isEmpty from "lodash.isempty";
 import isEqual from "lodash.isequal";
 import { v4 as uuid } from "uuid";
-import type {
-  AttributeValues,
-  ChatResponse,
-  Overrides,
-  RenderableEntityControl,
-  ResponseData,
-  Screen,
-  Session,
-  SessionConfig,
-  Simulate,
-  State,
-  StepId,
+import {
+  type AttributeValues,
+  type ChatResponse,
+  type FileCtrlTypesNS,
+  type Overrides,
+  type RenderableEntityControl,
+  type ResponseData,
+  type Screen,
+  type Session,
+  type SessionConfig,
+  type State,
+  type StepId,
+  type Simulate,
+  getIdFromFileAttributeRef,
 } from "../types";
 import { back, chat, create, exportTimeline, load, navigate, simulate, submit } from "./api";
 import { type SidebarSimulate, type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
@@ -62,6 +65,7 @@ export const transformResponse = (session: Session, data: ResponseData): Respons
 };
 
 export const defaultPath = ["decisionapi", "session"];
+export const defaultFilePath = ["decisionapi", "file"];
 
 type NewDataCallback = ((data: any) => void) | undefined;
 
@@ -75,11 +79,15 @@ export interface InterviewProvider {
 interface SessionInstanceOptions {
   session: Session;
   api: AxiosInstance;
+  fileApi: AxiosInstance;
   project: string;
   release?: string;
   newDataCallback?: (session: SessionObservable) => void;
   responseElements?: any[];
   debug?: boolean;
+  uploadFile?: FileCtrlTypesNS.UploadFile;
+  removeFile?: FileCtrlTypesNS.RemoveFile;
+  onFileTooBig?: FileCtrlTypesNS.OnFileTooBig;
 }
 
 interface SessionInternal {
@@ -149,6 +157,10 @@ export class SessionInstance implements Session {
     this.debug = Boolean(debug);
 
     this.chOnScreenData = this.chOnScreenData.bind(this);
+
+    this.uploadFile = options.uploadFile || this.uploadFile;
+    this.removeFile = options.removeFile || this.removeFile;
+    this.onFileTooBig = options.onFileTooBig || this.onFileTooBig;
   }
 
   private get api() {
@@ -536,27 +548,62 @@ export class SessionInstance implements Session {
   exportTimeline() {
     return exportTimeline(this.api, this);
   }
+
+  // ----- File control utils
+
+  uploadFile: NonNullable<SessionInstanceOptions["uploadFile"]> = async (arg) => {
+    const { data } = await this.options.fileApi.post("", arg);
+
+    return data;
+  };
+
+  removeFile: NonNullable<SessionInstanceOptions["removeFile"]> = async (ref) => {
+    try {
+      await this.options.fileApi.delete(getIdFromFileAttributeRef(ref));
+    } catch (e) {
+      if (get(e, ["response", "data", "message"], "") === "Unable to retrieve data - check the file reference") {
+        /**
+         * this is an expected error which means that file is in staging area \
+         * and so we can't remove it using delete, but it will be removed automatically\
+         * after some time
+         */
+        return;
+      }
+
+      // anything else -> some other type of problem -> signal to user
+      console.error("x23rqPx3PO | interview-sdk, remove file error", e);
+      throw e;
+    }
+  };
+
+  onFileTooBig: NonNullable<SessionInstanceOptions["onFileTooBig"]> = (file) => {
+    console.error("cp9GiRdMeO | interview-sdk, onFileTooBig", file);
+  };
 }
 
 export type SessionObservable = Partial<SessionInstance>;
 
-/**
- * Initialize the SDK
- *
- * chOnScreenData  : Renderer -{updated attribute}-> SDK
- *    - (the function never moves, so we can safely give it to the renderer)
- * newDataCallback : SDK -{updated session}-> Renderer :
- *    - if using react, the renderer needs to be careful, because unless this function is within
- *      a HOC, it will be recreated every render, and the SDK will not be able to send updates
- */
-export const init = (
-  host: string,
-  path: string | string[] = defaultPath,
-  overrides: AxiosRequestConfig = {},
-): InterviewProvider => {
+export type InitConfigFileUtils = {
+  filePath?: string[];
+  uploadFile?: FileCtrlTypesNS.UploadFile;
+  removeFile?: FileCtrlTypesNS.RemoveFile;
+  onFileTooBig?: FileCtrlTypesNS.OnFileTooBig;
+};
+export type InitConfig = {
+  host: string;
+  path?: string | string[];
+  overrides?: AxiosRequestConfig;
+  fileUtils?: InitConfigFileUtils;
+};
+const initCore = (config: InitConfig): InterviewProvider => {
+  const { host, overrides = {}, path = defaultPath, fileUtils = {} } = config;
   // -- create the api instance
   const baseUrl = buildUrl(host, ...(typeof path === "string" ? [path] : path));
   const api = createApiInstance(baseUrl, overrides);
+
+  const { filePath = defaultFilePath, ...fileUtilsOverride } = fileUtils;
+  const fileBaseUrl = buildUrl(host, ...filePath);
+  const fileApi = createApiInstance(fileBaseUrl, overrides);
 
   // -- ret
   return {
@@ -569,13 +616,44 @@ export const init = (
         responseElements: config.responseElements,
         project,
         newDataCallback,
+        fileApi,
+        ...fileUtilsOverride,
         ...config,
       });
     },
     load: async (project, sessionId, interactionId) => {
       const session = await load(api, project, sessionId, interactionId);
-      return new SessionInstance({ session, api, project });
+      return new SessionInstance({ session, api, project, fileApi, ...fileUtilsOverride });
     },
     finish: () => {},
   };
 };
+
+/** Initialise the interview SDK */
+export function init(config: InitConfig): InterviewProvider;
+/** @deprecated Use `init(config: InitConfig)` */
+export function init(
+  host: string,
+  path?: string | string[],
+  overrides?: AxiosRequestConfig,
+  fileUtils?: InitConfigFileUtils,
+): InterviewProvider;
+
+export function init(
+  hostOrConfig: string | InitConfig,
+  path?: string | string[],
+  overrides?: AxiosRequestConfig,
+  fileUtils?: InitConfigFileUtils,
+): InterviewProvider {
+  const config: InitConfig =
+    typeof hostOrConfig !== "string"
+      ? hostOrConfig
+      : {
+          host: hostOrConfig,
+          path,
+          overrides,
+          fileUtils,
+        };
+
+  return initCore(config);
+}
