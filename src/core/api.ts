@@ -57,7 +57,7 @@ export const submit = async (
   const url = session.release === undefined ? session.project : buildUrl(session.project, session.release);
   const res = await api.patch<Session>(
     url,
-    { data, navigate: navigate || undefined, ...overrides },
+    { data, navigate: navigate || undefined, index: session.index, ...overrides },
     { params: { session: session.sessionId, interaction: session.interactionId } },
   );
   return res.data;

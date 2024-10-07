@@ -88,6 +88,7 @@ interface SessionInstanceOptions {
   uploadFile?: FileCtrlTypesNS.UploadFile;
   removeFile?: FileCtrlTypesNS.RemoveFile;
   onFileTooBig?: FileCtrlTypesNS.OnFileTooBig;
+  index?: string[];
 }
 
 interface SessionInternal {
@@ -148,8 +149,10 @@ export class SessionInstance implements Session {
   };
   private debug: boolean;
 
+  public index: string[] | undefined;
+
   constructor(options: SessionInstanceOptions) {
-    const { session, debug, ...otherOptions } = options;
+    const { session, debug, index, ...otherOptions } = options;
     // @ts-ignore
     this.updateDynamicValues = debounce(this.updateDynamicValues.bind(this), 1000);
     this.options = otherOptions;
@@ -161,6 +164,7 @@ export class SessionInstance implements Session {
     this.uploadFile = options.uploadFile || this.uploadFile;
     this.removeFile = options.removeFile || this.removeFile;
     this.onFileTooBig = options.onFileTooBig || this.onFileTooBig;
+    this.index = index;
   }
 
   private get api() {
@@ -617,6 +621,7 @@ const initCore = (config: InitConfig): InterviewProvider => {
         project,
         newDataCallback,
         fileApi,
+        index: config.index,
         ...fileUtilsOverride,
         ...config,
       });

@@ -190,6 +190,8 @@ export interface SessionConfig {
   release?: ReleaseId;
   /** response elements for next/submit */
   responseElements?: any[];
+  /** which attributes to index */
+  index?: string[];
 }
 
 export type Overrides = Record<string, any>;
