@@ -6,12 +6,12 @@ export interface SidebarTypeInfo {
 }
 
 export const SIDEBAR_TYPES = {
-  ENTITY_LIST: {
+  entity_list: {
     id: "entity_list",
     name: "Entity List",
   },
 } as const satisfies Record<string, SidebarTypeInfo>;
-export type SidebarType = (typeof SIDEBAR_TYPES)[keyof typeof SIDEBAR_TYPES]["id"];
+export type SidebarType = keyof typeof SIDEBAR_TYPES;
 
 interface BaseSidebar<TConfig extends {}> {
   type: SidebarType;
@@ -61,5 +61,5 @@ export interface SidebarDataInfo<S extends RenderableSidebar> {
 }
 
 export const SIDEBAR_DATA_INFO: Record<SidebarType, SidebarDataInfo<RenderableSidebar>> = {
-  [SIDEBAR_TYPES.ENTITY_LIST.id]: ENTITY_LIST_SIDEBAR_DATA_INFO,
+  [SIDEBAR_TYPES.entity_list.id]: ENTITY_LIST_SIDEBAR_DATA_INFO,
 };

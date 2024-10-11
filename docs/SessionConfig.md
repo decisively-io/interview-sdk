@@ -21,7 +21,7 @@ which attributes to index
 
 #### Defined in
 
-[src/types/core.ts:194](https://github.com/decisively-io/interview-sdk/blob/77d32c1ca407f93925481973bd6e1fbe32ee8c59/src/types/core.ts#L194)
+[src/types/core.ts:194](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/core.ts#L194)
 
 ___
 
@@ -33,7 +33,7 @@ An initial state with information already provided
 
 #### Defined in
 
-[src/types/core.ts:184](https://github.com/decisively-io/interview-sdk/blob/77d32c1ca407f93925481973bd6e1fbe32ee8c59/src/types/core.ts#L184)
+[src/types/core.ts:184](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/core.ts#L184)
 
 ___
 
@@ -45,7 +45,7 @@ Id of the desired interview
 
 #### Defined in
 
-[src/types/core.ts:186](https://github.com/decisively-io/interview-sdk/blob/77d32c1ca407f93925481973bd6e1fbe32ee8c59/src/types/core.ts#L186)
+[src/types/core.ts:186](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/core.ts#L186)
 
 ___
 
@@ -57,7 +57,7 @@ Specific release, for testing purposes
 
 #### Defined in
 
-[src/types/core.ts:190](https://github.com/decisively-io/interview-sdk/blob/77d32c1ca407f93925481973bd6e1fbe32ee8c59/src/types/core.ts#L190)
+[src/types/core.ts:190](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/core.ts#L190)
 
 ___
 
@@ -69,7 +69,7 @@ response elements for next/submit
 
 #### Defined in
 
-[src/types/core.ts:192](https://github.com/decisively-io/interview-sdk/blob/77d32c1ca407f93925481973bd6e1fbe32ee8c59/src/types/core.ts#L192)
+[src/types/core.ts:192](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/core.ts#L192)
 
 ___
 
@@ -81,4 +81,4 @@ existing session (to create an interaction)
 
 #### Defined in
 
-[src/types/core.ts:188](https://github.com/decisively-io/interview-sdk/blob/77d32c1ca407f93925481973bd6e1fbe32ee8c59/src/types/core.ts#L188)
+[src/types/core.ts:188](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/core.ts#L188)
