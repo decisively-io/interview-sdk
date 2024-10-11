@@ -15,9 +15,9 @@ export type SidebarType = (typeof SIDEBAR_TYPES)[keyof typeof SIDEBAR_TYPES]["id
 
 interface BaseSidebar<TConfig extends {}> {
   type: SidebarType;
-  id?: string;
+  id: string;
   config?: TConfig;
-  title?: string;
+  title: string;
 }
 
 type RenderableSidebarOf<TSidebar extends Sidebar, TData extends {}> = TSidebar & {
