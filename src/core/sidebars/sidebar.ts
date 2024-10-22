@@ -10,6 +10,22 @@ export const SIDEBAR_TYPES = {
     id: "entity_list",
     name: "Entity List",
   },
+  data: {
+    id: "data",
+    name: "Data",
+  },
+  explanation: {
+    id: "explanation",
+    name: "Explanation",
+  },
+  conversation: {
+    id: "conversation",
+    name: "Conversation",
+  },
+  interview: {
+    id: "interview",
+    name: "Interview",
+  },
 } as const satisfies Record<string, SidebarTypeInfo>;
 export type SidebarType = keyof typeof SIDEBAR_TYPES;
 
@@ -48,11 +64,81 @@ export type RenderableEntityListSidebar = RenderableSidebarOf<
   }
 >;
 
+// data sidebar
+
+export type DataSidebar = BaseSidebar<{
+  description?: string;
+  showAllAttributes?: boolean;
+  canModify?: boolean;
+  descriptionAttributes?: DescriptionAttribute[];
+}>;
+
+export type RenderableDataSidebar = RenderableSidebarOf<DataSidebar, {
+  // TODO
+}>;
+
+// explanation sidebar
+
+export type ExplanationSidebar = BaseSidebar<{
+  text?: string;
+  showAttributeExplanations?: boolean;
+}>;
+
+export type RenderableExplanationSidebar = RenderableSidebarOf<ExplanationSidebar, {
+  // TODO
+}>;
+
+// conversation sidebar
+
+export const INTERACTION_MODE = {
+  same_session: {
+    id: "same_session",
+    name: "Within same session",
+  },
+  separate_session: {
+    id: "separate_session",
+    name: "Separate session, same project",
+  },
+  different_project: {
+    id: "different_project",
+    name: "Different project",
+  }
+} as const;
+export type InteractionMode = keyof typeof INTERACTION_MODE;
+
+export type ConversationSidebar = BaseSidebar<{
+  prompt: string;
+  initialMessage?: string;
+  temperature?: number;
+  model?: string;
+  goal: string;
+  interactionMode: InteractionMode;
+  project?: string; // Only if interactionMode is different_project
+  showInlineData?: boolean; // Only if interactionMode is same_session
+}>;
+
+export type RenderableConversationSidebar = RenderableSidebarOf<ConversationSidebar, {
+  // TODO
+}>;
+
+// interview sidebar
+
+export type InterviewSidebar = BaseSidebar<{
+  description?: string;
+  interactionMode: InteractionMode;
+  project?: string; // Only if interactionMode is different_project
+  interview: string;
+}>;
+
+export type RenderableInterviewSidebar = RenderableSidebarOf<InterviewSidebar, {
+  // TODO
+}>;
+
 // ---
 
-export type RenderableSidebar = RenderableEntityListSidebar;
+export type RenderableSidebar = RenderableEntityListSidebar | RenderableDataSidebar | RenderableExplanationSidebar | RenderableConversationSidebar | RenderableInterviewSidebar;
 
-export type Sidebar = EntityListSidebar;
+export type Sidebar = EntityListSidebar | DataSidebar | ExplanationSidebar | ConversationSidebar | InterviewSidebar;
 
 export interface SidebarDataInfo<S extends RenderableSidebar> {
   getResponseElements: (config: S["config"]) => any[];
