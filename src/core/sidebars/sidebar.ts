@@ -73,10 +73,13 @@ export type DataSidebar = BaseSidebar<{
   descriptionAttributes?: DescriptionAttribute[];
 }>;
 
-export type RenderableDataSidebar = RenderableSidebarOf<DataSidebar, {
-  data: any;
-  descriptionAttributes?: DescriptionAttribute[];
-}>;
+export type RenderableDataSidebar = RenderableSidebarOf<
+  DataSidebar,
+  {
+    data: any;
+    descriptionAttributes?: DescriptionAttribute[];
+  }
+>;
 
 // explanation sidebar
 
@@ -85,10 +88,12 @@ export type ExplanationSidebar = BaseSidebar<{
   showAttributeExplanations?: boolean;
 }>;
 
-export type RenderableExplanationSidebar = RenderableSidebarOf<ExplanationSidebar, {
-  text?: string; // rendered text from config
-  attributeExplanations?: any[]; // TODO - CONFIRM THIS
-}>;
+export type RenderableExplanationSidebar = RenderableSidebarOf<
+  ExplanationSidebar,
+  {
+    text?: string; // rendered text from config
+  }
+>;
 
 // conversation sidebar
 
@@ -104,43 +109,58 @@ export const INTERACTION_MODE = {
   "different-project": {
     id: "different-project",
     name: "Different project",
-  }
+  },
 } as const;
 export type InteractionMode = keyof typeof INTERACTION_MODE;
 
 export type ConversationSidebar = BaseSidebar<{
-  prompt: string;
+  aiOptions: {
+    instructions?: string;
+    temperature?: number;
+    model?: string; // AI model
+  }
   initialMessage?: string;
-  temperature?: number;
-  model?: string; // AI model
   goal: string;
   interactionMode: InteractionMode;
   projectId?: string; // Only if interactionMode is different-project
   workspaceId?: string; // Only if interactionMode is different-project
-  showInlineData?: boolean; // Only if interactionMode is same-session
+  showDataInline?: boolean; // Only if interactionMode is same-session
 }>;
 
-export type RenderableConversationSidebar = RenderableSidebarOf<ConversationSidebar, {
-  // TODO
-}>;
+export type RenderableConversationSidebar = RenderableSidebarOf<
+  ConversationSidebar,
+  {
+    // TODO
+    todo: undefined;
+  }
+>;
 
 // interview sidebar
 
 export type InterviewSidebar = BaseSidebar<{
   description?: string;
   interactionMode: InteractionMode;
+  interviewId: string;
   projectId?: string; // Only if interactionMode is different-project
   workspaceId?: string; // Only if interactionMode is different-project
-  interviewId: string;
 }>;
 
-export type RenderableInterviewSidebar = RenderableSidebarOf<InterviewSidebar, {
-  // TODO
-}>;
+export type RenderableInterviewSidebar = RenderableSidebarOf<
+  InterviewSidebar,
+  {
+    // TODO
+    todo: undefined;
+  }
+>;
 
 // ---
 
-export type RenderableSidebar = RenderableEntityListSidebar | RenderableDataSidebar | RenderableExplanationSidebar | RenderableConversationSidebar | RenderableInterviewSidebar;
+export type RenderableSidebar =
+  | RenderableEntityListSidebar
+  | RenderableDataSidebar
+  | RenderableExplanationSidebar
+  | RenderableConversationSidebar
+  | RenderableInterviewSidebar;
 
 export type Sidebar = EntityListSidebar | DataSidebar | ExplanationSidebar | ConversationSidebar | InterviewSidebar;
 
