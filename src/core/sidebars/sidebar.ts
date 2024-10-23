@@ -74,7 +74,8 @@ export type DataSidebar = BaseSidebar<{
 }>;
 
 export type RenderableDataSidebar = RenderableSidebarOf<DataSidebar, {
-  // TODO
+  data: any;
+  descriptionAttributes?: DescriptionAttribute[];
 }>;
 
 // explanation sidebar
@@ -85,22 +86,23 @@ export type ExplanationSidebar = BaseSidebar<{
 }>;
 
 export type RenderableExplanationSidebar = RenderableSidebarOf<ExplanationSidebar, {
-  // TODO
+  text?: string; // rendered text from config
+  attributeExplanations?: any[]; // TODO - CONFIRM THIS
 }>;
 
 // conversation sidebar
 
 export const INTERACTION_MODE = {
-  same_session: {
-    id: "same_session",
+  "same-session": {
+    id: "same-session",
     name: "Within same session",
   },
-  separate_session: {
-    id: "separate_session",
-    name: "Separate session, same project",
+  "new-session": {
+    id: "new-session",
+    name: "New session, same project",
   },
-  different_project: {
-    id: "different_project",
+  "different-project": {
+    id: "different-project",
     name: "Different project",
   }
 } as const;
@@ -110,11 +112,12 @@ export type ConversationSidebar = BaseSidebar<{
   prompt: string;
   initialMessage?: string;
   temperature?: number;
-  model?: string;
+  model?: string; // AI model
   goal: string;
   interactionMode: InteractionMode;
-  project?: string; // Only if interactionMode is different_project
-  showInlineData?: boolean; // Only if interactionMode is same_session
+  projectId?: string; // Only if interactionMode is different-project
+  workspaceId?: string; // Only if interactionMode is different-project
+  showInlineData?: boolean; // Only if interactionMode is same-session
 }>;
 
 export type RenderableConversationSidebar = RenderableSidebarOf<ConversationSidebar, {
@@ -126,8 +129,9 @@ export type RenderableConversationSidebar = RenderableSidebarOf<ConversationSide
 export type InterviewSidebar = BaseSidebar<{
   description?: string;
   interactionMode: InteractionMode;
-  project?: string; // Only if interactionMode is different_project
-  interview: string;
+  projectId?: string; // Only if interactionMode is different-project
+  workspaceId?: string; // Only if interactionMode is different-project
+  interviewId: string;
 }>;
 
 export type RenderableInterviewSidebar = RenderableSidebarOf<InterviewSidebar, {
@@ -146,6 +150,6 @@ export interface SidebarDataInfo<S extends RenderableSidebar> {
   generateData: (config: S["config"], response: any) => Partial<S["data"]>;
 }
 
-export const SIDEBAR_DATA_INFO: Record<SidebarType, SidebarDataInfo<RenderableSidebar>> = {
+export const SIDEBAR_DATA_INFO: Partial<Record<SidebarType, SidebarDataInfo<any>>> = {
   [SIDEBAR_TYPES.entity_list.id]: ENTITY_LIST_SIDEBAR_DATA_INFO,
 };
