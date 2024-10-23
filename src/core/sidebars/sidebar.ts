@@ -118,7 +118,7 @@ export type ConversationSidebar = BaseSidebar<{
     instructions?: string;
     temperature?: number;
     model?: string; // AI model
-  }
+  };
   initialMessage?: string;
   goal: string;
   interactionMode: InteractionMode;
