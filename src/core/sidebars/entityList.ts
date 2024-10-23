@@ -1,4 +1,19 @@
-import type { RenderableEntityListSidebar, SidebarDataInfo } from "./sidebar";
+import type { BaseSidebar, DescriptionAttribute, RenderableSidebarOf, SidebarDataInfo, sidebarType } from "./core";
+
+export type EntityListSidebar = { type: typeof sidebarType.entity_list } & BaseSidebar<{
+  entity: string;
+  titleAttribute?: string;
+  descriptionAttributes?: DescriptionAttribute[];
+}>;
+
+export type RenderableEntityListSidebar = RenderableSidebarOf<
+  EntityListSidebar,
+  {
+    entities: any[];
+    titleAttributeDescription?: string;
+    descriptionAttributes?: DescriptionAttribute[];
+  }
+>;
 
 const ENTITY_LIST_SIDEBAR_DATA_INFO: SidebarDataInfo<RenderableEntityListSidebar> = {
   getResponseElements: (config) => [

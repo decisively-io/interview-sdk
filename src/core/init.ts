@@ -22,7 +22,7 @@ import {
 import { back, chat, create, exportTimeline, load, navigate, simulate, submit } from "./api";
 import { type SidebarSimulate, type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
-import { SIDEBAR_DATA_INFO } from "./sidebars/sidebar";
+import { SIDEBAR_DATA_INFO } from "./sidebars";
 import {
   applyInstancesToEntityControl,
   buildUrl,
