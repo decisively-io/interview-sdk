@@ -37,7 +37,7 @@ that file is too big.
 
 #### Defined in
 
-[src/types/FileCtrl_types.ts:28](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/FileCtrl_types.ts#L28)
+[src/types/FileCtrl_types.ts:28](https://github.com/decisively-io/interview-sdk/blob/de8f2ee69dbcb31d956f391c52b0e0db7d4d25b4/src/types/FileCtrl_types.ts#L28)
 
 ___
 
@@ -65,7 +65,7 @@ when uploading files and those are in temporary storage (for more general code)
 
 #### Defined in
 
-[src/types/FileCtrl_types.ts:20](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/FileCtrl_types.ts#L20)
+[src/types/FileCtrl_types.ts:20](https://github.com/decisively-io/interview-sdk/blob/de8f2ee69dbcb31d956f391c52b0e0db7d4d25b4/src/types/FileCtrl_types.ts#L20)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/types/FileCtrl_types.ts:13](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/FileCtrl_types.ts#L13)
+[src/types/FileCtrl_types.ts:13](https://github.com/decisively-io/interview-sdk/blob/de8f2ee69dbcb31d956f391c52b0e0db7d4d25b4/src/types/FileCtrl_types.ts#L13)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/types/FileCtrl_types.ts:1](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/FileCtrl_types.ts#L1)
+[src/types/FileCtrl_types.ts:1](https://github.com/decisively-io/interview-sdk/blob/de8f2ee69dbcb31d956f391c52b0e0db7d4d25b4/src/types/FileCtrl_types.ts#L1)
 
 ___
 
@@ -123,4 +123,4 @@ ___
 
 #### Defined in
 
-[src/types/FileCtrl_types.ts:7](https://github.com/decisively-io/interview-sdk/blob/88201aefe0053753c57ed3533baaa60dd3f28a04/src/types/FileCtrl_types.ts#L7)
+[src/types/FileCtrl_types.ts:7](https://github.com/decisively-io/interview-sdk/blob/de8f2ee69dbcb31d956f391c52b0e0db7d4d25b4/src/types/FileCtrl_types.ts#L7)

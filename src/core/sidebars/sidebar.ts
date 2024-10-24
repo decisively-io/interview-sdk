@@ -29,8 +29,8 @@ export const SIDEBAR_TYPES = {
 } as const satisfies Record<string, SidebarTypeInfo>;
 export type SidebarType = keyof typeof SIDEBAR_TYPES;
 
-interface BaseSidebar<TConfig extends {}> {
-  type: SidebarType;
+interface BaseSidebar<TType extends SidebarType, TConfig extends {}> {
+  type: TType;
   id: string;
   config?: TConfig;
   title: string;
@@ -49,11 +49,14 @@ export interface DescriptionAttribute {
 
 // entity list
 
-export type EntityListSidebar = BaseSidebar<{
-  entity: string;
-  titleAttribute?: string;
-  descriptionAttributes?: DescriptionAttribute[];
-}>;
+export type EntityListSidebar = BaseSidebar<
+  "entity_list",
+  {
+    entity: string;
+    titleAttribute?: string;
+    descriptionAttributes?: DescriptionAttribute[];
+  }
+>;
 
 export type RenderableEntityListSidebar = RenderableSidebarOf<
   EntityListSidebar,
@@ -66,12 +69,15 @@ export type RenderableEntityListSidebar = RenderableSidebarOf<
 
 // data sidebar
 
-export type DataSidebar = BaseSidebar<{
-  description?: string;
-  showAllAttributes?: boolean;
-  canModify?: boolean;
-  descriptionAttributes?: DescriptionAttribute[];
-}>;
+export type DataSidebar = BaseSidebar<
+  "data",
+  {
+    description?: string;
+    showAllAttributes?: boolean;
+    canModify?: boolean;
+    descriptionAttributes?: DescriptionAttribute[];
+  }
+>;
 
 export type RenderableDataSidebar = RenderableSidebarOf<
   DataSidebar,
@@ -83,10 +89,13 @@ export type RenderableDataSidebar = RenderableSidebarOf<
 
 // explanation sidebar
 
-export type ExplanationSidebar = BaseSidebar<{
-  text?: string;
-  showAttributeExplanations?: boolean;
-}>;
+export type ExplanationSidebar = BaseSidebar<
+  "explanation",
+  {
+    text?: string;
+    showAttributeExplanations?: boolean;
+  }
+>;
 
 export type RenderableExplanationSidebar = RenderableSidebarOf<
   ExplanationSidebar,
@@ -113,19 +122,22 @@ export const INTERACTION_MODE = {
 } as const;
 export type InteractionMode = keyof typeof INTERACTION_MODE;
 
-export type ConversationSidebar = BaseSidebar<{
-  aiOptions: {
-    instructions?: string;
-    temperature?: number;
-    model?: string; // AI model
-  };
-  initialMessage?: string;
-  goal: string;
-  interactionMode: InteractionMode;
-  projectId?: string; // Only if interactionMode is different-project
-  workspaceId?: string; // Only if interactionMode is different-project
-  showDataInline?: boolean; // Only if interactionMode is same-session
-}>;
+export type ConversationSidebar = BaseSidebar<
+  "conversation",
+  {
+    aiOptions: {
+      instructions?: string;
+      temperature?: number;
+      model?: string; // AI model
+    };
+    initialMessage?: string;
+    goal: string;
+    interactionMode: InteractionMode;
+    projectId?: string; // Only if interactionMode is different-project
+    workspaceId?: string; // Only if interactionMode is different-project
+    showDataInline?: boolean; // Only if interactionMode is same-session
+  }
+>;
 
 export type RenderableConversationSidebar = RenderableSidebarOf<
   ConversationSidebar,
@@ -137,13 +149,16 @@ export type RenderableConversationSidebar = RenderableSidebarOf<
 
 // interview sidebar
 
-export type InterviewSidebar = BaseSidebar<{
-  description?: string;
-  interactionMode: InteractionMode;
-  interviewId: string;
-  projectId?: string; // Only if interactionMode is different-project
-  workspaceId?: string; // Only if interactionMode is different-project
-}>;
+export type InterviewSidebar = BaseSidebar<
+  "interview",
+  {
+    description?: string;
+    interactionMode: InteractionMode;
+    interviewId: string;
+    projectId?: string; // Only if interactionMode is different-project
+    workspaceId?: string; // Only if interactionMode is different-project
+  }
+>;
 
 export type RenderableInterviewSidebar = RenderableSidebarOf<
   InterviewSidebar,
@@ -164,12 +179,12 @@ export type RenderableSidebar =
 
 export type Sidebar = EntityListSidebar | DataSidebar | ExplanationSidebar | ConversationSidebar | InterviewSidebar;
 
-export interface SidebarDataInfo<S extends RenderableSidebar> {
+export interface SidebarDynamicDataInfo<S extends RenderableSidebar> {
   getResponseElements: (config: S["config"]) => any[];
   type: S["type"];
   generateData: (config: S["config"], response: any) => Partial<S["data"]>;
 }
 
-export const SIDEBAR_DATA_INFO: Partial<Record<SidebarType, SidebarDataInfo<any>>> = {
+export const SIDEBAR_DYNAMIC_DATA_INFO: Partial<Record<SidebarType, SidebarDynamicDataInfo<any>>> = {
   [SIDEBAR_TYPES.entity_list.id]: ENTITY_LIST_SIDEBAR_DATA_INFO,
 };

@@ -22,7 +22,7 @@ import {
 import { back, chat, create, exportTimeline, load, navigate, simulate, submit } from "./api";
 import { type SidebarSimulate, type UnknownValues, buildDynamicReplacementQueries, simulateUnknowns } from "./dynamic";
 import { replaceTemplatedText } from "./helpers";
-import { SIDEBAR_DATA_INFO } from "./sidebars/sidebar";
+import { SIDEBAR_DYNAMIC_DATA_INFO } from "./sidebars/sidebar";
 import {
   applyInstancesToEntityControl,
   buildUrl,
@@ -364,7 +364,7 @@ export class SessionInstance implements Session {
 
         const screenSidebar = newScreen.sidebars?.find((s) => s.id === sidebarId);
         if (screenSidebar) {
-          const dataInfo = SIDEBAR_DATA_INFO[screenSidebar.type];
+          const dataInfo = SIDEBAR_DYNAMIC_DATA_INFO[screenSidebar.type];
           if (dataInfo) {
             try {
               Object.assign(screenSidebar.data, dataInfo.generateData(screenSidebar.config, result));

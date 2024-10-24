@@ -3,7 +3,7 @@ import set from "lodash.set";
 import type { AttributeValues, Simulate, State } from "../types";
 import { simulate } from "./api";
 import type { SessionInstance } from "./init";
-import { type RenderableSidebar, SIDEBAR_DATA_INFO } from "./sidebars/sidebar";
+import { type RenderableSidebar, SIDEBAR_DYNAMIC_DATA_INFO } from "./sidebars/sidebar";
 import { getEntityIds } from "./util";
 
 export type UnknownValues = Record<string, Partial<Simulate>>;
@@ -189,7 +189,7 @@ export const buildDynamicReplacementQueries = (
       if (sidebar.id) {
         const hasData = sidebar.dynamicAttributes?.some((attr) => knownValues[attr] !== undefined);
         if (hasData) {
-          const dataInfo = SIDEBAR_DATA_INFO[sidebar.type];
+          const dataInfo = SIDEBAR_DYNAMIC_DATA_INFO[sidebar.type];
           if (dataInfo) {
             const responseElements = dataInfo.getResponseElements(sidebar.config);
             if (!sidebarSimulate) {
