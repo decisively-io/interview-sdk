@@ -28,7 +28,7 @@ export type RenderableSidebarOf<TSidebar extends BaseSidebar<object>, TData exte
   loading?: boolean;
 };
 
-export interface DescriptionAttribute {
+export interface AttributeInfo {
   value: string;
   label?: string;
 }

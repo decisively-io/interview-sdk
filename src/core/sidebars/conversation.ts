@@ -16,8 +16,5 @@ export type ConversationSidebar = { type: typeof sidebarType.conversation } & Ba
 
 export type RenderableConversationSidebar = RenderableSidebarOf<
   ConversationSidebar,
-  {
-    // TODO
-    todo: undefined;
-  }
+  {}
 >;

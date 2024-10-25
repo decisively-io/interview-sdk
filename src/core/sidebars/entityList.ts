@@ -1,9 +1,9 @@
-import type { BaseSidebar, DescriptionAttribute, RenderableSidebarOf, SidebarDataInfo, sidebarType } from "./core";
+import type { BaseSidebar, AttributeInfo, RenderableSidebarOf, SidebarDataInfo, sidebarType } from "./core";
 
 export type EntityListSidebar = { type: typeof sidebarType.entity_list } & BaseSidebar<{
   entity: string;
   titleAttribute?: string;
-  descriptionAttributes?: DescriptionAttribute[];
+  descriptionAttributes?: AttributeInfo[];
 }>;
 
 export type RenderableEntityListSidebar = RenderableSidebarOf<
@@ -11,7 +11,7 @@ export type RenderableEntityListSidebar = RenderableSidebarOf<
   {
     entities: any[];
     titleAttributeDescription?: string;
-    descriptionAttributes?: DescriptionAttribute[];
+    descriptionAttributes?: AttributeInfo[];
   }
 >;
 

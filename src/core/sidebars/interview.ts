@@ -10,8 +10,5 @@ export type InterviewSidebar = { type: typeof sidebarType.interview } & BaseSide
 
 export type RenderableInterviewSidebar = RenderableSidebarOf<
   InterviewSidebar,
-  {
-    // TODO
-    todo: undefined;
-  }
+  {}
 >;
