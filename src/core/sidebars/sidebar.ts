@@ -54,6 +54,7 @@ export type EntityListSidebar = BaseSidebar<
   {
     entity: string;
     titleAttribute?: string;
+    filterAttribute?: string;
     descriptionAttributes?: AttributeInfo[];
   }
 >;
@@ -63,6 +64,7 @@ export type RenderableEntityListSidebar = RenderableSidebarOf<
   {
     entities: any[];
     titleAttributeDescription?: string;
+    filterAttributeDescription?: string;
     descriptionAttributes?: AttributeInfo[];
   }
 >;
