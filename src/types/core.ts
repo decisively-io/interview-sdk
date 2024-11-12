@@ -144,6 +144,16 @@ export interface Step {
   sidebars?: Sidebar[] | null;
 }
 
+export interface DynamicNextButton {
+  dependencies: string[];
+  defaultEnabled: boolean;
+}
+
+export interface ScreenButtons {
+  next: DynamicNextButton | boolean;
+  back: boolean;
+}
+
 export interface Screen {
   /** The title of the screen. This may differ from the title in the step */
   title: string;
@@ -153,6 +163,11 @@ export interface Screen {
   controls: RenderableControl[];
   /** The sidebar to render **/
   sidebars?: RenderableSidebar[] | null;
+  /** Should the next/back buttons be enabled **/
+  buttons?: ScreenButtons;
+
+  attributes: string[];
+  allAttributes: string[];
 }
 
 export interface Progress {

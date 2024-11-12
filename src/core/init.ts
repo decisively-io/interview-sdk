@@ -14,7 +14,6 @@ import {
   type Screen,
   type Session,
   type SessionConfig,
-  type Simulate,
   type State,
   type StepId,
   getIdFromFileAttributeRef,
@@ -102,6 +101,9 @@ interface SessionInternal {
 
   // we only care about the latest request
   latestRequest: number | undefined;
+
+  // progress tracking
+  canProgress: boolean;
 }
 
 const postProcessControl = (
@@ -146,6 +148,7 @@ export class SessionInstance implements Session {
     unknownsAlreadySimulated: {},
     latestRequest: undefined,
     sidebarSimulate: undefined,
+    canProgress: false,
   };
   private debug: boolean;
 
@@ -239,12 +242,7 @@ export class SessionInstance implements Session {
         !isEqual(this.internals.prevUserValues, this.internals.userValues) &&
         Object.keys(this.internals.userValues).length > 0
       ) {
-        const replacementQueries = buildDynamicReplacementQueries(
-          state,
-          this.screen.sidebars || undefined,
-          this.internals.userValues,
-          this.session.data["@parent"],
-        );
+        const replacementQueries = buildDynamicReplacementQueries(this, this.internals.userValues);
 
         if (replacementQueries.unknownValues.length || Object.keys(replacementQueries.knownValues).length > 0) {
           Object.assign(this.internals.replacements, replacementQueries?.knownValues);
@@ -377,6 +375,13 @@ export class SessionInstance implements Session {
       }
     }
 
+    const nextButton = this.screen.buttons?.next;
+    if (nextButton && typeof nextButton === "object") {
+      this.internals.canProgress = nextButton.dependencies.every(
+        (attr) => (this.internals.userValues[attr] || this.internals.replacements[attr]) === true,
+      );
+    }
+
     if (newScreen) {
       this.triggerUpdate({
         externalLoading: false,
@@ -400,6 +405,13 @@ export class SessionInstance implements Session {
       }
       if (prevSession?.screen?.id !== session.screen?.id) {
         const userValues = flatten(deriveDefaultControlsValue(session.screen.controls));
+
+        const nextButton = session.screen.buttons?.next;
+        let canProgress = true;
+        if (nextButton && typeof nextButton === "object") {
+          canProgress = nextButton.defaultEnabled;
+        }
+
         this.internals = {
           userValues: userValues,
           // TODO: do a proper deep clone
@@ -409,6 +421,7 @@ export class SessionInstance implements Session {
           unknownsAlreadySimulated: {},
           latestRequest: undefined,
           sidebarSimulate: undefined,
+          canProgress: canProgress,
         };
         this.handleEntityInstances(userValues);
       }
@@ -433,6 +446,10 @@ export class SessionInstance implements Session {
         screen: session.screen,
       });
     }
+  }
+
+  get canProgress() {
+    return this.internals.canProgress;
   }
 
   // -- session getters

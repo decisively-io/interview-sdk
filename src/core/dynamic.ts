@@ -51,34 +51,38 @@ const createEntityPathedData = (data: AttributeValues): AttributeValues => {
  * @returns A list of known values, plus preformed requests to be made against the API for the unknown values
  */
 export const buildDynamicReplacementQueries = (
-  state: State[],
-  sidebars: RenderableSidebar[] | undefined,
+  session: SessionInstance,
   attribValues: AttributeValues,
-  parent?: string,
 ): DynamicReplacementQueries => {
+  const state = session.state;
+  const parent = session.data["@parent"];
+  const sidebars = session.screen.sidebars;
+
   const knownValues: AttributeValues = createEntityPathedData(attribValues);
   const allData: AttributeValues = { ...attribValues };
   const unknownsWithSatisfiedDependencies: Partial<Simulate>[] = [];
 
   const resolvedState: State[] = [];
 
-  for (const stateObj of state) {
-    if (allData[stateObj.id] === undefined && stateObj.value) {
-      allData[stateObj.id] = stateObj.value;
-    }
-    // @ts-ignore
-    if (stateObj.instanceTemplate) {
-      // @ts-ignore
-      const ids = getEntityIds(stateObj.instanceTemplate, allData);
-      for (const id of ids) {
-        resolvedState.push({
-          ...stateObj,
-          id: stateObj.id.replace("@id", id),
-          dependencies: stateObj.dependencies?.map((dep) => dep.replace("@id", id)),
-        });
+  if (state) {
+    for (const stateObj of state) {
+      if (allData[stateObj.id] === undefined && stateObj.value) {
+        allData[stateObj.id] = stateObj.value;
       }
-    } else {
-      resolvedState.push(stateObj);
+      // @ts-ignore
+      if (stateObj.instanceTemplate) {
+        // @ts-ignore
+        const ids = getEntityIds(stateObj.instanceTemplate, allData);
+        for (const id of ids) {
+          resolvedState.push({
+            ...stateObj,
+            id: stateObj.id.replace("@id", id),
+            dependencies: stateObj.dependencies?.map((dep) => dep.replace("@id", id)),
+          });
+        }
+      } else {
+        resolvedState.push(stateObj);
+      }
     }
   }
 
