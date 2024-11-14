@@ -54,6 +54,7 @@ export type EntityListSidebar = BaseSidebar<
   {
     entity: string;
     titleAttribute?: string;
+    filterAttribute?: string;
     descriptionAttributes?: AttributeInfo[];
   }
 >;
@@ -63,6 +64,7 @@ export type RenderableEntityListSidebar = RenderableSidebarOf<
   {
     entities: any[];
     titleAttributeDescription?: string;
+    filterAttributeDescription?: string;
     descriptionAttributes?: AttributeInfo[];
   }
 >;
@@ -75,7 +77,7 @@ export type DataSidebar = BaseSidebar<
     description?: string;
     showAllAttributes?: boolean;
     canModify?: boolean;
-    descriptionAttributes?: AttributeInfo[];
+    attributes?: AttributeInfo[];
   }
 >;
 
@@ -83,7 +85,7 @@ export type RenderableDataSidebar = RenderableSidebarOf<
   DataSidebar,
   {
     data: any;
-    descriptionAttributes?: AttributeInfo[];
+    attributes?: AttributeInfo[];
   }
 >;
 
@@ -139,13 +141,8 @@ export type ConversationSidebar = BaseSidebar<
   }
 >;
 
-export type RenderableConversationSidebar = RenderableSidebarOf<
-  ConversationSidebar,
-  {
-    // TODO
-    todo: undefined;
-  }
->;
+// biome-ignore lint: we don't need anything in the data for now but we may need it in future
+export type RenderableConversationSidebar = RenderableSidebarOf<ConversationSidebar, {}>;
 
 // interview sidebar
 
@@ -160,13 +157,8 @@ export type InterviewSidebar = BaseSidebar<
   }
 >;
 
-export type RenderableInterviewSidebar = RenderableSidebarOf<
-  InterviewSidebar,
-  {
-    // TODO
-    todo: undefined;
-  }
->;
+// biome-ignore lint: we don't need anything in the data for now but we may need it in future
+export type RenderableInterviewSidebar = RenderableSidebarOf<InterviewSidebar, {}>;
 
 // ---
 
