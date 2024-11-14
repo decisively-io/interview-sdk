@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/types/core.ts:170](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/types/core.ts#L170)
+[src/types/core.ts:170](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/types/core.ts#L170)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:169](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/types/core.ts#L169)
+[src/types/core.ts:169](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/types/core.ts#L169)
 
 ___
 
@@ -42,7 +42,7 @@ Should the next/back buttons be enabled *
 
 #### Defined in
 
-[src/types/core.ts:167](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/types/core.ts#L167)
+[src/types/core.ts:167](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/types/core.ts#L167)
 
 ___
 
@@ -54,7 +54,7 @@ The list of controls to be displayed on the screen
 
 #### Defined in
 
-[src/types/core.ts:163](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/types/core.ts#L163)
+[src/types/core.ts:163](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/types/core.ts#L163)
 
 ___
 
@@ -66,19 +66,19 @@ Unique ID of the screen
 
 #### Defined in
 
-[src/types/core.ts:161](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/types/core.ts#L161)
+[src/types/core.ts:161](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/types/core.ts#L161)
 
 ___
 
 ### sidebars
 
-• `Optional` **sidebars**: ``null`` \| [`RenderableEntityListSidebar`](../wiki/Exports#renderableentitylistsidebar)[]
+• `Optional` **sidebars**: ``null`` \| [`RenderableSidebar`](../wiki/Exports#renderablesidebar)[]
 
 The sidebar to render *
 
 #### Defined in
 
-[src/types/core.ts:165](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/types/core.ts#L165)
+[src/types/core.ts:165](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/types/core.ts#L165)
 
 ___
 
@@ -90,4 +90,4 @@ The title of the screen. This may differ from the title in the step
 
 #### Defined in
 
-[src/types/core.ts:159](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/types/core.ts#L159)
+[src/types/core.ts:159](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/types/core.ts#L159)

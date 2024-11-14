@@ -1,4 +1,4 @@
-# Interface: SidebarDataInfo\<S\>
+# Interface: SidebarDynamicDataInfo\<S\>
 
 ## Type parameters
 
@@ -10,9 +10,9 @@
 
 ### Properties
 
-- [generateData](../wiki/SidebarDataInfo#generatedata)
-- [getResponseElements](../wiki/SidebarDataInfo#getresponseelements)
-- [type](../wiki/SidebarDataInfo#type)
+- [generateData](../wiki/SidebarDynamicDataInfo#generatedata)
+- [getResponseElements](../wiki/SidebarDynamicDataInfo#getresponseelements)
+- [type](../wiki/SidebarDynamicDataInfo#type)
 
 ## Properties
 
@@ -37,7 +37,7 @@
 
 #### Defined in
 
-[src/core/sidebars/sidebar.ts:60](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/core/sidebars/sidebar.ts#L60)
+[src/core/sidebars/sidebar.ts:185](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/core/sidebars/sidebar.ts#L185)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/core/sidebars/sidebar.ts:58](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/core/sidebars/sidebar.ts#L58)
+[src/core/sidebars/sidebar.ts:183](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/core/sidebars/sidebar.ts#L183)
 
 ___
 
@@ -71,4 +71,4 @@ ___
 
 #### Defined in
 
-[src/core/sidebars/sidebar.ts:59](https://github.com/decisively-io/interview-sdk/blob/446690b60c81e927aa0482c392a4609421447e92/src/core/sidebars/sidebar.ts#L59)
+[src/core/sidebars/sidebar.ts:184](https://github.com/decisively-io/interview-sdk/blob/627ef82666aecd2a7bca80832b00b07c957b7ddc/src/core/sidebars/sidebar.ts#L184)
