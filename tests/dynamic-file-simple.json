@@ -1,0 +1,84 @@
+{
+  "context": {
+    "entity": "global"
+  },
+  "data": {
+    "4c387897-4f7a-462f-9c51-1358779ef672": {
+      "type": "auto"
+    }
+  },
+  "reportId": "ce5d4717-5dac-44ad-901c-80a35edfee3a",
+  "steps": [
+    {
+      "id": "14fb2f67-b6aa-4f37-8cf2-cca79ddc23c6",
+      "title": "Step 1",
+      "context": {
+        "entity": "global"
+      },
+      "current": true,
+      "complete": false,
+      "visited": false,
+      "time_estimate": 0,
+      "progress": "the application is complete",
+      "skipped": false
+    }
+  ],
+  "screen": {
+    "title": "Step 1",
+    "id": "14fb2f67-b6aa-4f37-8cf2-cca79ddc23c6",
+    "controls": [
+      {
+        "id": "c1ff6689-597d-4f29-9ac9-42199903ac9f",
+        "type": "file",
+        "required": true,
+        "label": "the document has been provided",
+        "labelDisplay": "automatic",
+        "attribute": "4c387897-4f7a-462f-9c51-1358779ef672",
+        "max": 1,
+        "file_type": [],
+        "showExplanation": false
+      }
+    ],
+    "attributes": [
+      "4c387897-4f7a-462f-9c51-1358779ef672"
+    ],
+    "allAttributes": [
+      "4c387897-4f7a-462f-9c51-1358779ef672"
+    ],
+    "type": "interview",
+    "buttons": {
+      "next": {
+        "dependencies": [
+          "a52174f5-3d44-4ca6-aa42-193d39cc88f1"
+        ],
+        "defaultEnabled": false
+      },
+      "back": false
+    }
+  },
+  "state": [
+    {
+      "type": "auto",
+      "id": "a52174f5-3d44-4ca6-aa42-193d39cc88f1",
+      "dependencies": [
+        "4c387897-4f7a-462f-9c51-1358779ef672"
+      ]
+    }
+  ],
+  "progress": {
+    "percentage": 0,
+    "time": 15
+  },
+  "sessionId": "66329d2a-7d8a-4e8c-9dae-3e90161232f6",
+  "interactionId": "0e8e89b8-9fd9-4b85-bf6a-b807820471a2",
+  "status": "in-progress",
+  "explanations": {},
+  "locale": "en-au",
+  "goal": "a52174f5-3d44-4ca6-aa42-193d39cc88f1",
+  "timing": {
+    "total": 145.8648,
+    "preData": 0.6341,
+    "data": 1.0419,
+    "logic": 1.1651
+  }
+}

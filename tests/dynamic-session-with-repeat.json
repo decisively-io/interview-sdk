@@ -1,0 +1,1859 @@
+{
+  "context": {
+    "entity": "global"
+  },
+  "data": {
+    "4e78e94b-5801-4a01-bf21-e7af37d1d2db": {
+      "type": "auto"
+    },
+    "procurement_documents": [
+      {
+        "@id": "1",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "@id": "2",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": true
+        },
+        "a3e53494-df7e-4641-b23b-b2b0802fb05f": {
+          "type": "auto",
+          "value": false
+        },
+        "c702977c-425a-45d1-af88-507f203dbb20": {
+          "type": "auto"
+        }
+      },
+      {
+        "@id": "3",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "@id": "4",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": true
+        },
+        "a3e53494-df7e-4641-b23b-b2b0802fb05f": {
+          "type": "auto",
+          "value": false
+        },
+        "c702977c-425a-45d1-af88-507f203dbb20": {
+          "type": "auto"
+        }
+      },
+      {
+        "@id": "5",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "@id": "6",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": true
+        },
+        "a3e53494-df7e-4641-b23b-b2b0802fb05f": {
+          "type": "auto",
+          "value": false
+        },
+        "c702977c-425a-45d1-af88-507f203dbb20": {
+          "type": "auto"
+        }
+      },
+      {
+        "@id": "7",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": true
+        },
+        "a3e53494-df7e-4641-b23b-b2b0802fb05f": {
+          "type": "auto",
+          "value": false
+        },
+        "c702977c-425a-45d1-af88-507f203dbb20": {
+          "type": "auto"
+        }
+      },
+      {
+        "@id": "8",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": true
+        },
+        "a3e53494-df7e-4641-b23b-b2b0802fb05f": {
+          "type": "auto",
+          "value": false
+        },
+        "c702977c-425a-45d1-af88-507f203dbb20": {
+          "type": "auto"
+        }
+      },
+      {
+        "@id": "9",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": true
+        },
+        "a3e53494-df7e-4641-b23b-b2b0802fb05f": {
+          "type": "auto",
+          "value": false
+        },
+        "c702977c-425a-45d1-af88-507f203dbb20": {
+          "type": "auto"
+        }
+      },
+      {
+        "@id": "10",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": true
+        },
+        "a3e53494-df7e-4641-b23b-b2b0802fb05f": {
+          "type": "auto",
+          "value": false
+        },
+        "c702977c-425a-45d1-af88-507f203dbb20": {
+          "type": "auto"
+        }
+      },
+      {
+        "@id": "11",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": true
+        },
+        "a3e53494-df7e-4641-b23b-b2b0802fb05f": {
+          "type": "auto",
+          "value": false
+        },
+        "c702977c-425a-45d1-af88-507f203dbb20": {
+          "type": "auto"
+        }
+      },
+      {
+        "@id": "12",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "@id": "13",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "@id": "14",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": true
+        },
+        "a3e53494-df7e-4641-b23b-b2b0802fb05f": {
+          "type": "auto",
+          "value": false
+        },
+        "c702977c-425a-45d1-af88-507f203dbb20": {
+          "type": "auto"
+        }
+      },
+      {
+        "@id": "15",
+        "a3b53e42-4f65-4245-8c67-f078fd83ae16": {
+          "type": "boolean",
+          "value": null
+        }
+      }
+    ]
+  },
+  "reportId": "366c4514-32ff-4f29-99a9-8ab522bcb5b3",
+  "steps": [
+    {
+      "id": "a8bc2706-6007-4d0a-9bf8-5819d566ab42",
+      "title": "Details",
+      "context": {
+        "entity": "global"
+      },
+      "current": false,
+      "complete": true,
+      "visited": true,
+      "time_estimate": 0,
+      "skipped": false
+    },
+    {
+      "id": "215f1144-567e-4dd1-ad8a-f3e13d6b2c6c",
+      "title": "Additional Questions",
+      "context": {
+        "entity": "global"
+      },
+      "current": false,
+      "complete": false,
+      "visited": false,
+      "time_estimate": 0,
+      "special": {
+        "type": "autogen",
+        "attribute": "25fa45ee-9ca6-40c6-ac8f-9c340d2715c9"
+      },
+      "skipped": true
+    },
+    {
+      "id": "55965e00-3ffd-4256-b886-c09dd237a693",
+      "title": "Documents",
+      "context": {
+        "entity": "global"
+      },
+      "current": true,
+      "complete": false,
+      "visited": false,
+      "time_estimate": 0,
+      "progress": "all documents have been provided",
+      "skipped": false
+    }
+  ],
+  "screen": {
+    "title": "Documents",
+    "id": "55965e00-3ffd-4256-b886-c09dd237a693",
+    "controls": [
+      {
+        "id": "9c35e4bd-8e6c-4b6f-9157-a3ed9be88378",
+        "type": "typography",
+        "text": "Vendor Completion",
+        "style": "h3"
+      },
+      {
+        "id": "742af9f8-6673-4d0e-8833-cbe6b2051822",
+        "type": "typography",
+        "text": "You can either upload the necessary documents directly or request them from the vendor using a guided interview. Simply enter their email address below, and they will receive a link to provide the documents.",
+        "style": "body1"
+      },
+      {
+        "id": "4eeeb168-529e-46e8-83d7-54b8b759f1c8",
+        "type": "text",
+        "attribute": "4e78e94b-5801-4a01-bf21-e7af37d1d2db",
+        "label": "Vendor Email",
+        "labelDisplay": "automatic",
+        "showExplanation": false,
+        "readOnly": false
+      },
+      {
+        "id": "c27b3bd4-8f53-45c2-8aea-9479ea0a998c",
+        "type": "typography",
+        "text": "Documentation Required",
+        "style": "h3"
+      },
+      {
+        "id": "b56f5c27-2f95-48e8-af01-7310b1d7b901",
+        "type": "typography",
+        "text": "The documents required for your procurement have been identified below. Please ensure that you submit these documents to the procurement team.",
+        "style": "banner-green"
+      },
+      {
+        "id": "0f4326f1-5bdc-4ac1-86b4-7a5c07b05042",
+        "type": "typography",
+        "text": "The following documents are required:",
+        "style": "body1"
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/1/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/1/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Override Memo or Approve by FMS System​**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/1/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/1/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Override Memo or Approve by FMS System​",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/1/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/1/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/1/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/1/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/1/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/1/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/1/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "false"
+          }
+        ],
+        "value": [],
+        "isFirst": true
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/2/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/2/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Retro PO Memo or Approve by FMS System​**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/2/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/2/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Retro PO Memo or Approve by FMS System​",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/2/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/2/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/2/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/2/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/2/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/2/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/2/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "true"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/3/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/3/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "New Vendor Registration Form**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/3/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/3/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "New Vendor Registration Form",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/3/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/3/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/3/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/3/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/3/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/3/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/3/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "false"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/4/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/4/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Third-Party Identification Form​**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/4/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/4/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Third-Party Identification Form​",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/4/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/4/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/4/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/4/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/4/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/4/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/4/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "true"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/5/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/5/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Check related persons - RPT**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/5/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/5/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Check related persons - RPT",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/5/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/5/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/5/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/5/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/5/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/5/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/5/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "false"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/6/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/6/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "IT Third-Party Identification Form​**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/6/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/6/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "IT Third-Party Identification Form​",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/6/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/6/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/6/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/6/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/6/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/6/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/6/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "true"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/7/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/7/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "IT Third-Party Risk Assessment**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/7/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/7/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "IT Third-Party Risk Assessment",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/7/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/7/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/7/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/7/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/7/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/7/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/7/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "true"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/8/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/8/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "KYC Vendor (Check Every PR)​**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/8/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/8/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "KYC Vendor (Check Every PR)​",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/8/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/8/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/8/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/8/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/8/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/8/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/8/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "true"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/9/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/9/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Non-disclosure agreement (NDA)​**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/9/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/9/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Non-disclosure agreement (NDA)​",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/9/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/9/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/9/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/9/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/9/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/9/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/9/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "true"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/10/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/10/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "SCB* Supplier Code of Conduct (SCB* SCOC)​**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/10/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/10/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "SCB* Supplier Code of Conduct (SCB* SCOC)​",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/10/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/10/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/10/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/10/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/10/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/10/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/10/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "true"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/11/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/11/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Scope of Work Sign-off or TOR or RFP​**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/11/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/11/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Scope of Work Sign-off or TOR or RFP​",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/11/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/11/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/11/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/11/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/11/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/11/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/11/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "true"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/12/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/12/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Financial Assessment**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/12/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/12/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Financial Assessment",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/12/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/12/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/12/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/12/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/12/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/12/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/12/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "false"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/13/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/13/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Contract**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/13/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/13/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Contract",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/13/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/13/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/13/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/13/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/13/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/13/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/13/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "false"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/14/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/14/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Data Processing Agreement**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/14/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/14/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Data Processing Agreement",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/14/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/14/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/14/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/14/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/14/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/14/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/14/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "true"
+          }
+        ],
+        "value": []
+      },
+      {
+        "id": "97596589-a581-4443-bb04-8c1bed9d01d6",
+        "version": 2,
+        "type": "repeating_container",
+        "entity": "procurement_documents",
+        "display": "list",
+        "filter": null,
+        "sort": null,
+        "showBorders": true,
+        "showHeaders": true,
+        "controls": [
+          {
+            "id": "ff6fd5a6-1886-4d87-b35b-ea6f665ccd9a",
+            "version": 2,
+            "kind": "dynamic",
+            "type": "switch_container",
+            "attribute": "procurement_documents/15/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+            "outcome_true": [
+              {
+                "id": "1cc8eb6f-1345-49c9-97f7-35a7522e5efe",
+                "version": 2,
+                "kind": "dynamic",
+                "type": "switch_container",
+                "attribute": "procurement_documents/15/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+                "outcome_true": [
+                  {
+                    "id": "3dfdd4d7-f17b-4480-bd99-bf535d443a48",
+                    "type": "typography",
+                    "text": "Tax Implication - Withholding Tax**",
+                    "style": "body1",
+                    "emoji": "◾️",
+                    "templateText": "{{procurement_documents/15/7905642f-f379-4c1c-82b0-2d20652000ae}}**",
+                    "dynamicAttributes": [
+                      "procurement_documents/15/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_false": [
+                  {
+                    "id": "fc4daba2-2112-4303-83cf-67c3d18caf90",
+                    "type": "typography",
+                    "text": "Tax Implication - Withholding Tax",
+                    "style": "body1",
+                    "templateText": "{{procurement_documents/15/7905642f-f379-4c1c-82b0-2d20652000ae}}",
+                    "dynamicAttributes": [
+                      "procurement_documents/15/7905642f-f379-4c1c-82b0-2d20652000ae"
+                    ]
+                  }
+                ],
+                "outcome_true_attributes": [],
+                "outcome_false_attributes": [],
+                "dynamicAttributes": [
+                  "procurement_documents/15/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+                ],
+                "branch": "false"
+              },
+              {
+                "id": "154a8b14-f461-4c09-a19e-edb042744f77",
+                "type": "file",
+                "label": "Upload",
+                "labelDisplay": "automatic",
+                "attribute": "procurement_documents/15/c702977c-425a-45d1-af88-507f203dbb20",
+                "max": 1,
+                "file_type": [],
+                "showExplanation": false
+              }
+            ],
+            "outcome_false": [],
+            "outcome_true_attributes": [
+              "procurement_documents/15/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+              "procurement_documents/15/c702977c-425a-45d1-af88-507f203dbb20"
+            ],
+            "outcome_false_attributes": [],
+            "dynamicAttributes": [
+              "procurement_documents/15/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+            ],
+            "branch": "false"
+          }
+        ],
+        "value": [],
+        "isLast": true
+      }
+    ],
+    "attributes": [
+      "4e78e94b-5801-4a01-bf21-e7af37d1d2db",
+      "procurement_documents/1/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/2/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/2/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/2/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/3/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/4/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/4/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/4/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/5/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/6/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/6/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/6/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/7/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/7/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/7/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/8/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/8/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/8/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/9/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/9/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/9/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/10/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/10/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/10/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/11/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/11/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/11/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/12/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/13/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/14/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/14/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/14/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/15/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    ],
+    "allAttributes": [
+      "4e78e94b-5801-4a01-bf21-e7af37d1d2db",
+      "procurement_documents/1/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/1/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/1/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/1/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/2/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/2/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/2/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/2/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/3/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/3/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/3/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/3/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/4/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/4/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/4/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/4/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/5/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/5/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/5/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/5/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/6/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/6/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/6/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/6/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/7/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/7/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/7/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/7/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/8/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/8/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/8/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/8/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/9/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/9/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/9/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/9/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/10/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/10/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/10/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/10/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/11/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/11/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/11/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/11/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/12/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/12/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/12/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/12/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/13/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/13/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/13/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/13/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/14/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/14/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/14/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/14/a3b53e42-4f65-4245-8c67-f078fd83ae16",
+      "procurement_documents/15/7905642f-f379-4c1c-82b0-2d20652000ae",
+      "procurement_documents/15/a3e53494-df7e-4641-b23b-b2b0802fb05f",
+      "procurement_documents/15/c702977c-425a-45d1-af88-507f203dbb20",
+      "procurement_documents/15/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    ],
+    "type": "interview",
+    "buttons": {
+      "next": {
+        "dependencies": [
+          "af0f8dab-b317-4ee0-838a-de0c7016c459"
+        ],
+        "defaultEnabled": false
+      },
+      "back": true
+    }
+  },
+  "state": [
+    {
+      "type": "boolean",
+      "value": false,
+      "id": "procurement_documents/1/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/1/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Override Memo or Approve by FMS System​",
+      "id": "procurement_documents/1/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": true,
+      "id": "procurement_documents/2/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/2/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Retro PO Memo or Approve by FMS System​",
+      "id": "procurement_documents/2/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": false,
+      "id": "procurement_documents/3/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/3/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "New Vendor Registration Form",
+      "id": "procurement_documents/3/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": true,
+      "id": "procurement_documents/4/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/4/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Third-Party Identification Form​",
+      "id": "procurement_documents/4/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": false,
+      "id": "procurement_documents/5/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/5/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Check related persons - RPT",
+      "id": "procurement_documents/5/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": true,
+      "id": "procurement_documents/6/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/6/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "IT Third-Party Identification Form​",
+      "id": "procurement_documents/6/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": true,
+      "id": "procurement_documents/7/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/7/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "IT Third-Party Risk Assessment",
+      "id": "procurement_documents/7/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": true,
+      "id": "procurement_documents/8/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/8/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "KYC Vendor (Check Every PR)​",
+      "id": "procurement_documents/8/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": true,
+      "id": "procurement_documents/9/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/9/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Non-disclosure agreement (NDA)​",
+      "id": "procurement_documents/9/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": true,
+      "id": "procurement_documents/10/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/10/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "SCB* Supplier Code of Conduct (SCB* SCOC)​",
+      "id": "procurement_documents/10/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": true,
+      "id": "procurement_documents/11/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/11/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Scope of Work Sign-off or TOR or RFP​",
+      "id": "procurement_documents/11/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": false,
+      "id": "procurement_documents/12/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/12/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Financial Assessment",
+      "id": "procurement_documents/12/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": false,
+      "id": "procurement_documents/13/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/13/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Contract",
+      "id": "procurement_documents/13/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": true,
+      "id": "procurement_documents/14/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/14/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Data Processing Agreement",
+      "id": "procurement_documents/14/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "value": null,
+      "id": "procurement_documents/15/a3b53e42-4f65-4245-8c67-f078fd83ae16"
+    },
+    {
+      "type": "auto",
+      "value": false,
+      "id": "procurement_documents/15/a3e53494-df7e-4641-b23b-b2b0802fb05f"
+    },
+    {
+      "type": "text",
+      "value": "Tax Implication - Withholding Tax",
+      "id": "procurement_documents/15/7905642f-f379-4c1c-82b0-2d20652000ae"
+    },
+    {
+      "type": "boolean",
+      "id": "af0f8dab-b317-4ee0-838a-de0c7016c459",
+      "dependencies": [
+        "procurement_documents/1/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/2/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/3/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/4/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/5/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/6/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/7/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/8/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/9/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/10/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/11/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/12/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/13/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/14/c702977c-425a-45d1-af88-507f203dbb20",
+        "procurement_documents/15/c702977c-425a-45d1-af88-507f203dbb20"
+      ]
+    }
+  ],
+  "progress": {
+    "percentage": 33.33333333333333,
+    "time": 15
+  },
+  "sessionId": "c3d1c463-0ad1-4dd9-8d5c-17a21c9a5470",
+  "interactionId": "05ae305c-261f-456b-9af5-ca2df19066e5",
+  "status": "in-progress",
+  "explanations": {},
+  "locale": "en-au",
+  "goal": "a2aa5983-1dc6-4d67-97ce-8d720e0e3f57",
+  "timing": {
+    "total": 263.2432,
+    "preData": 41.5999,
+    "data": 23.1952,
+    "logic": 92.4067
+  }
+}

@@ -639,4 +639,54 @@ describe("Dynamic", () => {
       },
     });
   });
+
+  it("4. handles repeat container", async () => {
+    jest.useFakeTimers();
+    const provider = await init("localhost:3000", "hello", {
+      // mock the adapter
+      adapter: async (config) => {
+        return {
+          data: require("./dynamic-session-with-repeat"),
+        };
+      },
+    });
+    const dataCallback = jest.fn();
+    const session = await provider.create(
+      "a",
+      {
+        release: "a",
+      },
+      dataCallback,
+    );
+    session.chOnScreenData({
+      "procurement_documents/1/c702977c-425a-45d1-af88-507f203dbb20": 1,
+    });
+    jest.advanceTimersByTime(1000);
+    expect(dataCallback).toHaveBeenCalledTimes(2);
+  });
+
+  it("5. handles file upload", async () => {
+    jest.useFakeTimers();
+    const provider = await init("localhost:3000", "hello", {
+      // mock the adapter
+      adapter: async (config) => {
+        return {
+          data: require("./dynamic-file-simple"),
+        };
+      },
+    });
+    const dataCallback = jest.fn();
+    const session = await provider.create(
+      "a",
+      {
+        release: "a",
+      },
+      dataCallback,
+    );
+    session.chOnScreenData({
+      "4c387897-4f7a-462f-9c51-1358779ef672": 1,
+    });
+    jest.advanceTimersByTime(1000);
+    expect(dataCallback).toHaveBeenCalledTimes(2);
+  });
 });

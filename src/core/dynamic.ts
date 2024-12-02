@@ -158,7 +158,33 @@ export const buildDynamicReplacementQueries = (
       }
     }
   }
+  // The previous implementation (below) is actually wrong - it could be that we have missing dependencies, but when we check with the backend the goal might be satisifed (it could be that the backend uses an OR or other complex rule base).
+  // So we actually just send anything that has atleast one data point to the backend to check
+  for (const unknownWithMissingDependency of unknownWithMissingDependencies) {
+    const { goal, data, unknownDependencies } = unknownWithMissingDependency;
+    const hasData = Object.keys(data).some((d) => {
+      if (typeof data[d] !== "undefined") return true;
+      else return false;
+    });
+    if (hasData) {
+      unknownsWithSatisfiedDependencies.push({
+        goal,
+        data,
+      });
+    }
+  }
 
+  // remove requests where the goal already has a value, or was entered directly by the user
+  const unknownValues: UnknownValues = {};
+  for (const unknownValue of unknownsWithSatisfiedDependencies) {
+    if (unknownValue.goal) {
+      if (attribValues[unknownValue.goal] === undefined) {
+        unknownValues[unknownValue.goal] = unknownValue;
+      }
+    }
+  }
+
+  /** 
   // ok now we have a list of unknowns with missing dependencies, we need to check if any of the missing dependencies are also states and if they ARE known, then we can add the goal to the unKnownValues
   for (const unknownWithMissingDependency of unknownWithMissingDependencies) {
     const { goal, data, unknownDependencies } = unknownWithMissingDependency;
@@ -185,7 +211,7 @@ export const buildDynamicReplacementQueries = (
         unknownValues[unknownValue.goal] = unknownValue;
       }
     }
-  }
+  }*/
 
   let sidebarSimulate: SidebarSimulate | undefined;
   if (sidebars) {
