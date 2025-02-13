@@ -207,6 +207,10 @@ export interface SessionConfig {
   responseElements?: any[];
   /** which attributes to index */
   index?: string[];
+  /** the goal */
+  goal?: string;
+  /** the session goal */
+  sessionGoal?: string;
 }
 
 export type Overrides = Record<string, any>;
