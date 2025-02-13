@@ -76,6 +76,7 @@ export interface InterviewProvider {
 }
 
 interface SessionInstanceOptions {
+  provider: InterviewProvider;
   session: Session;
   api: AxiosInstance;
   fileApi: AxiosInstance;
@@ -173,6 +174,10 @@ export class SessionInstance implements Session {
 
   private get api() {
     return this.options.api;
+  }
+
+  get provider() {
+    return this.options.provider;
   }
 
   get release() {
@@ -640,11 +645,12 @@ const initCore = (config: InitConfig): InterviewProvider => {
   const fileApi = createApiInstance(fileBaseUrl, overrides);
 
   // -- ret
-  return {
+  const provider: InterviewProvider = {
     create: async (project, config, newDataCallback?) => {
       // @ts-ignore
       const session = await create(api, project, { ...config, debug: undefined });
       return new SessionInstance({
+        provider,
         session: session,
         api,
         responseElements: config.responseElements,
@@ -658,10 +664,19 @@ const initCore = (config: InitConfig): InterviewProvider => {
     },
     load: async (project, sessionId, interactionId) => {
       const session = await load(api, project, sessionId, interactionId);
-      return new SessionInstance({ session, api, project, fileApi, ...fileUtilsOverride });
+      return new SessionInstance({
+        provider,
+        session,
+        api,
+        project,
+        fileApi,
+        ...fileUtilsOverride,
+      });
     },
     finish: () => {},
   };
+
+  return provider;
 };
 
 /** Initialise the interview SDK */
