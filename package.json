@@ -1,6 +1,6 @@
 {
   "name": "@decisively-io/interview-sdk",
-  "version": "0.12.12",
+  "version": "0.12.13",
   "description": "An SDK for the Decisively interview system.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
-    "date-fns": "^2.28.0",
+    "date-fns": "3.2.0",
     "deepmerge": "^4.3.1",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
