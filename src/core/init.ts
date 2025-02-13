@@ -85,6 +85,7 @@ interface SessionInstanceOptions {
   responseElements?: any[];
   debug?: boolean;
   uploadFile?: FileCtrlTypesNS.UploadFile;
+  downloadFile?: any;
   removeFile?: FileCtrlTypesNS.RemoveFile;
   onFileTooBig?: FileCtrlTypesNS.OnFileTooBig;
   index?: string[];
@@ -578,6 +579,18 @@ export class SessionInstance implements Session {
     return data;
   };
 
+  downloadFile = async (ref: any) => {
+    let result: any;
+    try {
+      result = await this.options.fileApi.get(getIdFromFileAttributeRef(ref));
+    } catch (e) {
+      // anything else -> some other type of problem -> signal to user
+      console.error("x23rqPx3PO | interview-sdk, remove file error", e);
+      throw e;
+    }
+    return result.data;
+  };
+
   removeFile: NonNullable<SessionInstanceOptions["removeFile"]> = async (ref) => {
     try {
       await this.options.fileApi.delete(getIdFromFileAttributeRef(ref));
@@ -621,7 +634,7 @@ const initCore = (config: InitConfig): InterviewProvider => {
   // -- create the api instance
   const baseUrl = buildUrl(host, ...(typeof path === "string" ? [path] : path));
   const api = createApiInstance(baseUrl, overrides);
-
+  console.log("SDK CORE INIT", baseUrl);
   const { filePath = defaultFilePath, ...fileUtilsOverride } = fileUtils;
   const fileBaseUrl = buildUrl(host, ...filePath);
   const fileApi = createApiInstance(fileBaseUrl, overrides);

@@ -325,6 +325,7 @@ export interface FileControl extends BaseControl {
   /** The maximum size of a document, in Mb */
   max_size?: number;
   showExplanation?: boolean;
+  readOnly?: boolean;
 }
 
 /**
