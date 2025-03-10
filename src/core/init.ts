@@ -1,8 +1,8 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosRequestTransformer } from "axios";
-import debounce from "lodash.debounce";
-import get from "lodash.get";
-import isEmpty from "lodash.isempty";
-import isEqual from "lodash.isequal";
+import debounce from "lodash/debounce";
+import get from "lodash/get";
+import isEmpty from "lodash/isempty";
+import isEqual from "lodash/isequal";
 import { v4 as uuid } from "uuid";
 import {
   type AttributeValues,

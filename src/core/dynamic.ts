@@ -1,5 +1,5 @@
 import type { AxiosInstance } from "axios";
-import set from "lodash.set";
+import set from "lodash/set";
 import type { AttributeValues, Simulate, State } from "../types";
 import { simulate } from "./api";
 import type { SessionInstance } from "./init";
@@ -184,7 +184,7 @@ export const buildDynamicReplacementQueries = (
     }
   }
 
-  /** 
+  /**
   // ok now we have a list of unknowns with missing dependencies, we need to check if any of the missing dependencies are also states and if they ARE known, then we can add the goal to the unKnownValues
   for (const unknownWithMissingDependency of unknownWithMissingDependencies) {
     const { goal, data, unknownDependencies } = unknownWithMissingDependency;
