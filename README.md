@@ -1,3 +1,5 @@
+# DEPRECATED: this code now lives in the main Decisively repository
+
 # Decisively Interview SDK
 
 This library provides the base wrapper for interacting with the Decisively Interview SDK. This library does not define the UI controls and interactions necessary for interacting with the API. Use the React Interview SDK to include a pre-built UI component layer that works with this library.
